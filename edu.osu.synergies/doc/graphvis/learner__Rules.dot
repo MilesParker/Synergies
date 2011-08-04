@@ -1,0 +1,294 @@
+digraph learner {
+	concentrate=true;
+	
+	subgraph clustercontextKey {
+		fontname=Helvetica;
+		label="Parameters";
+		style="filled";
+		fillcolor=ghostwhite;
+		color=white;
+		labeljust=l;
+		contextOverview [style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="black",label=""];
+	}
+	subgraph clusterlearnerKey {
+		fontname=Helvetica;
+		nodesep=0.1;
+		style="filled";
+		fillcolor=ghostwhite;
+		label="Learner";
+		color=white;
+		labeljust=l;
+		findHomeOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.125, 0.9 , 0.8",label="",URL="learner__Overview.svg"];
+		movementOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.5, 0.9 , 0.8",label="",URL="learner__Overview.svg"];
+		resourceEngagementOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.625, 0.9 , 0.8",label="",URL="learner__Overview.svg"];
+		deriveLearnerIndexOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.0, 0.9 , 0.8",label="",URL="learner__Overview.svg"];
+		startDayOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.75, 0.9 , 0.8",label="",URL="learner__Overview.svg"];
+findHomeOverview -> movementOverview -> resourceEngagementOverview -> deriveLearnerIndexOverview -> startDayOverview [style=invis];
+	}
+	subgraph clusterhomeKey {
+		fontname=Helvetica;
+		nodesep=0.1;
+		style="filled";
+		fillcolor=ghostwhite;
+		label="Home";
+		color=white;
+		labeljust=l;
+		learnerCopyOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.174, 0.9 , 0.8",label="",URL="home__Overview.svg"];
+		learnerCopyCopyOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.224, 0.9 , 0.8",label="",URL="home__Overview.svg"];
+		learnerHomeOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.537, 0.9 , 0.8",label="",URL="home__Overview.svg"];
+learnerCopyOverview -> learnerCopyCopyOverview -> learnerHomeOverview [style=invis];
+	}
+	subgraph clusterlearningResourceKey {
+		fontname=Helvetica;
+		nodesep=0.1;
+		style="filled";
+		fillcolor=ghostwhite;
+		label="Learning Resource";
+		color=white;
+		labeljust=l;
+		soughtResourceOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.611, 0.9 , 0.8",label="",URL="learningResource__Overview.svg"];
+		encounteredResourceOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.662, 0.9 , 0.8",label="",URL="learningResource__Overview.svg"];
+soughtResourceOverview -> encounteredResourceOverview [style=invis];
+	}
+	subgraph clusterresourceInteractionKey {
+		fontname=Helvetica;
+		nodesep=0.1;
+		style="filled";
+		fillcolor=ghostwhite;
+		label="Resource Interaction";
+		color=white;
+		labeljust=l;
+		createAgentsOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.736, 0.9 , 0.8",label="",URL="resourceInteraction__Overview.svg"];
+		allLearnerInteractionsOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.699, 0.9 , 0.8",label="",URL="resourceInteraction__Overview.svg"];
+		targetResourceOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.824, 0.9 , 0.8",label="",URL="resourceInteraction__Overview.svg"];
+createAgentsOverview -> allLearnerInteractionsOverview -> targetResourceOverview [style=invis];
+	}
+		learnerlearnerID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Learner ID"];
+
+//subgraph clusterderiveLearnerIndex {
+	//style=filled;
+	//color=white;
+	//fillcolor="0.0, 0.0, 0.98";
+		deriveLearnerIndex [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.0, 0.2, 1.0",label="Derive Learner Index",URL="learner_deriveLearnerIndex.svg"];
+	deriveLearnerIndex ->  identityLearnerID [color="0.0, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		identityLearnerID [shape=none,style="rounded,filled",fontname=Helvetica,color="0.0, 0.2, 1.0",label="Identity?"];
+//}
+		learnerlearnerID -> identityLearnerID:nw [style=dotted,arrowhead=dot,color="0.0, 0.9 , 0.8",penwidth=2.0];
+
+//subgraph clusterfindHome {
+	//style=filled;
+	//color=white;
+	//fillcolor="0.0, 0.0, 0.98";
+		findHome [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.125, 0.2, 1.0",label="Find Home",URL="learner_findHome.svg"];
+	findHome ->  learnerCopy [color="0.125, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		connectLearner [shape=none,style="rounded,filled",fontname=Helvetica,color="0.125, 0.2, 1.0",label="Connect"];
+	findHome ->  connectLearner:nw [style=dashed,color="0.125, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	learnerCopyCopy -> connectLearner:ne [style=dashed,color="0.224, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		nearestQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.224, 0.2, 1.0",label="Nearest "];
+	nearestQuery ->  connectLearner [color="0.224, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		not__Or_NeighborQuery_ [shape=none,style="rounded,filled",fontname=Helvetica,color="0.174, 0.2, 1.0",label="Else"];
+	not__Or_NeighborQuery_ ->  learnerCopyCopy [color="0.174, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		learnerCopy [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.174, 0.2, 1.0",label="Learner Copy"];
+	learnerCopy ->  neighborQuery [color="0.174, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		learnerCopyCopy [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.224, 0.2, 1.0",label="Learner Copy Copy"];
+	learnerCopyCopy ->  nearestQuery [color="0.224, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		neighborQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.174, 0.2, 1.0",label="Neighbor"];
+	neighborQuery ->  not__Or_NeighborQuery_ [color="0.174, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+//}
+		learnerengagementRecord [shape=record,fontname=Helvetica,style=filled,color=none,fillcolor=white,label="{<learnerengagement> Engagement | {<learnerengagementnotInterested> Not Interested|<learnerengagementseekingResource> Seeking Resource|<learnerengagementfoundResource> Found Resource}}"];
+		simpleResourcestimeSegment [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label=<<i>Time Segment</i>>];
+		learnertargetResourceID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Target Resource ID"];
+		simpleResourcessubsequentEngagementFactor [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label=<<i>Subsequent Engagement Factor </i>>];
+		resourceInteractionstrength [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Strength"];
+		resourceInteractionresourceID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Resource ID"];
+		resourceInteractionlearnerID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Learner ID"];
+		learnerlearnerID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Learner ID"];
+		learnerengagementRecord [shape=record,fontname=Helvetica,style=filled,color=none,fillcolor=white,label="{<learnerengagement> Engagement | {<learnerengagementnotInterested> Not Interested|<learnerengagementseekingResource> Seeking Resource|<learnerengagementfoundResource> Found Resource}}"];
+
+//subgraph clusterstartDay {
+	//style=filled;
+	//color=white;
+	//fillcolor="0.0, 0.0, 0.98";
+		startDay [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.75, 0.2, 1.0",label="Start Day",URL="learner_startDay.svg"];
+	startDay ->  timeSegmentIdenticalZeroQuery [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		timeSegmentIdenticalZeroQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.75, 0.2, 1.0",label="Identical?"];
+		timeSegmentIdenticalZeroQuery ->  setTargetResourceIDToZero [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	setTargetResourceIDToZero ->  learnertargetResourceID [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+			timeSegmentIdenticalZeroQuery ->  learnerengagementRecord:learnerengagementnotInterested [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.75, 0.2, 1.0",label="Lesser?"];
+	randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery ->  resourceIDAddZeroCopy [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+			randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery ->  learnerengagementRecord:learnerengagementseekingResource [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		strengthMultiplySubsequentEngagementFactor [shape=none,style="rounded,filled",fontname=Helvetica,color="0.75, 0.2, 1.0",label="Multiply"];
+	strengthMultiplySubsequentEngagementFactor ->  randomUnit [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		resourceIDAddZeroCopy [shape=none,style="rounded,filled",fontname=Helvetica,color="0.824, 0.2, 1.0",label="Add"];
+			resourceIDAddZeroCopy ->  learnertargetResourceID [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		targetResource [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.824, 0.2, 1.0",label="Target Resource"];
+	targetResource ->  learnerIDIdenticalLearnerIDQueryCopy [color="0.824, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		learnerIDIdenticalLearnerIDQueryCopy [shape=none,style="rounded,filled",fontname=Helvetica,color="0.824, 0.2, 1.0",label="Identical?"];
+	learnerIDIdenticalLearnerIDQueryCopy ->  strengthMultiplySubsequentEngagementFactor [color="0.824, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		randomUnit [shape=none,style="rounded,filled",fontname=Helvetica,color="0.75, 0.2, 1.0",label="Random Unit"];
+	randomUnit ->  randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+
+		setTargetResourceIDToZero [shape=none,style="rounded,filled",fontname=Helvetica,color="0.75, 0.2, 1.0",label="Set"];
+	setTargetResourceIDToZero ->  targetResource [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+//}
+		simpleResourcestimeSegment -> timeSegmentIdenticalZeroQuery:nw [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+	
+		importxyxtimeSegmentIdenticalZeroQueryfunctionszero0 [fontname=Helvetica,shape=none,label="0"];
+		importxyxtimeSegmentIdenticalZeroQueryfunctionszero0 -> timeSegmentIdenticalZeroQuery:ne [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+		strengthMultiplySubsequentEngagementFactor -> randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery:ne [style=dotted,arrowhead=dot,color=blue,penwidth=2.0];
+		randomUnit -> randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery:nw [style=dotted,arrowhead=dot,color=blue,penwidth=2.0];
+		resourceInteractionstrength -> strengthMultiplySubsequentEngagementFactor:nw [style=dotted,arrowhead=dot,color="0.824, 0.9 , 0.8",penwidth=2.0];
+		simpleResourcessubsequentEngagementFactor -> strengthMultiplySubsequentEngagementFactor:ne [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+		resourceInteractionresourceID -> resourceIDAddZeroCopy:nw [style=dotted,arrowhead=dot,color="0.824, 0.9 , 0.8",penwidth=2.0];
+	
+		importxyxresourceIDAddZeroCopyfunctionszero0 [fontname=Helvetica,shape=none,label="0"];
+		importxyxresourceIDAddZeroCopyfunctionszero0 -> resourceIDAddZeroCopy:ne [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+		learnerlearnerID -> learnerIDIdenticalLearnerIDQueryCopy:nw [style=dotted,arrowhead=dot,color="0.75, 0.9 , 0.8",penwidth=2.0];
+		resourceInteractionlearnerID -> learnerIDIdenticalLearnerIDQueryCopy:ne [style=dotted,arrowhead=dot,color="0.824, 0.9 , 0.8",penwidth=2.0];
+
+		importabcsetTargetResourceIDToZerofunctionszero [fontname=Helvetica,shape=none,label="0"];
+		importabcsetTargetResourceIDToZerofunctionszero -> setTargetResourceIDToZero:"ne" [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+		learnerengagementRecord [shape=record,fontname=Helvetica,style=filled,color=none,fillcolor=white,label="{<learnerengagement> Engagement | {<learnerengagementnotInterested> Not Interested|<learnerengagementseekingResource> Seeking Resource|<learnerengagementfoundResource> Found Resource}}"];
+		simpleResourceswanderingRecord [shape=record,fontname=Helvetica,style=filled,color=none,fillcolor=white,label="{<simpleResourceswanderingRecord> Wandering | {<true> True| <false> False}}"];
+		learningResourceresourceID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Resource ID"];
+		learnertargetResourceID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Target Resource ID"];
+
+//subgraph clustermovement {
+	//style=filled;
+	//color=white;
+	//fillcolor="0.0, 0.0, 0.98";
+		movement [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.5, 0.2, 1.0",label="Movement",URL="learner_movement.svg"];
+	movement ->  identityWanderingQuery [color="0.5, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	movement ->  notWanderingQuery [color="0.5, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		towardQueryCopy [shape=none,style="rounded,filled",fontname=Helvetica,color="0.611, 0.2, 1.0",label="Toward"];
+	towardQueryCopy ->  _SoughtResourceAndTowardQueryCopy_ [color="0.611, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		learnerCopyCopyCopy [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.574, 0.2, 1.0",label="Learner Copy Copy Copy"];
+	learnerCopyCopyCopy ->  neighborQueryCopyCopy [color="0.574, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	learnerCopyCopyCopy ->  availableQueryCopy [color="0.574, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		moveLearnerCopyCopy [shape=none,style="rounded,filled",fontname=Helvetica,color="0.5, 0.2, 1.0",label="Move"];
+	movement ->  moveLearnerCopyCopy:nw [style=dashed,color="0.5, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	soughtResource -> moveLearnerCopyCopy:ne [style=dashed,color="0.611, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		availableQueryCopy [shape=none,style="rounded,filled",fontname=Helvetica,color="0.574, 0.2, 1.0",label="Available"];
+	availableQueryCopy ->  _And_NeighborQueryCopyCopy [color="0.574, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		_TowardQueryAndAvailableQueryCopy_ [shape=none,style="rounded,filled",fontname=Helvetica,color="0.537, 0.2, 1.0",label="And"];
+	_TowardQueryAndAvailableQueryCopy_ ->  moveHome [color="0.537, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		towardQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.537, 0.2, 1.0",label="Toward"];
+	towardQuery ->  _TowardQueryAndAvailableQueryCopy_ [color="0.537, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		moveHome [shape=none,style="rounded,filled",fontname=Helvetica,color="0.5, 0.2, 1.0",label="Move"];
+	movement ->  moveHome:nw [style=dashed,color="0.5, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	learnerHome -> moveHome:ne [style=dashed,color="0.537, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		neighborQueryCopy [shape=none,style="rounded,filled",fontname=Helvetica,color="0.537, 0.2, 1.0",label="Neighbor"];
+	neighborQueryCopy ->  _TowardQueryAndAvailableQueryCopy_ [color="0.537, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		_SoughtResourceAndTowardQueryCopy_ [shape=none,style="rounded,filled",fontname=Helvetica,color="0.611, 0.2, 1.0",label="And"];
+	_SoughtResourceAndTowardQueryCopy_ ->  moveLearnerCopyCopy [color="0.611, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		soughtResource [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.611, 0.2, 1.0",label="Sought Resource"];
+	soughtResource ->  resourceIDIdenticalTargetResourceIDQuery [color="0.611, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	soughtResource ->  towardQueryCopy [color="0.611, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	soughtResource ->  nearestQueryCopy [color="0.611, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		_And_NeighborQueryCopyCopy [shape=none,style="rounded,filled",fontname=Helvetica,color="0.574, 0.2, 1.0",label="And"];
+	_And_NeighborQueryCopyCopy ->  moveLearnerCopy [color="0.574, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		learnerHome [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.537, 0.2, 1.0",label="Learner Home"];
+	learnerHome ->  neighborQueryCopy [color="0.537, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	learnerHome ->  towardQuery [color="0.537, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		notWanderingQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.5, 0.2, 1.0",label="Is Not?"];
+	notWanderingQuery ->  learnerHome [color="0.5, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		moveLearnerCopy [shape=none,style="rounded,filled",fontname=Helvetica,color="0.5, 0.2, 1.0",label="Move"];
+	movement ->  moveLearnerCopy:nw [style=dashed,color="0.5, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	learnerCopyCopyCopy -> moveLearnerCopy:ne [style=dashed,color="0.574, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		identityWanderingQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.5, 0.2, 1.0",label="Is?"];
+	identityWanderingQuery ->  engagementIdenticalSeekingResourceQuery [color="0.5, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	identityWanderingQuery ->  engagementIdenticalNotInterestedQuery [color="0.5, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		nearestQueryCopy [shape=none,style="rounded,filled",fontname=Helvetica,color="0.611, 0.2, 1.0",label="Nearest "];
+	nearestQueryCopy ->  _SoughtResourceAndTowardQueryCopy_ [color="0.611, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		resourceIDIdenticalTargetResourceIDQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.611, 0.2, 1.0",label="Identical?"];
+	resourceIDIdenticalTargetResourceIDQuery ->  _SoughtResourceAndTowardQueryCopy_ [color="0.611, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		engagementIdenticalNotInterestedQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.5, 0.2, 1.0",label="Is?"];
+	engagementIdenticalNotInterestedQuery ->  learnerCopyCopyCopy [color="0.5, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		engagementIdenticalSeekingResourceQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.5, 0.2, 1.0",label="Is?"];
+	engagementIdenticalSeekingResourceQuery ->  soughtResource [color="0.5, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		neighborQueryCopyCopy [shape=none,style="rounded,filled",fontname=Helvetica,color="0.574, 0.2, 1.0",label="Neighbor"];
+	neighborQueryCopyCopy ->  _And_NeighborQueryCopyCopy [color="0.574, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+//}
+		simpleResourceswanderingRecord -> notWanderingQuery:nw [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+		simpleResourceswanderingRecord -> identityWanderingQuery:nw [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+		learningResourceresourceID -> resourceIDIdenticalTargetResourceIDQuery:nw [style=dotted,arrowhead=dot,color="0.611, 0.9 , 0.8",penwidth=2.0];
+		learnertargetResourceID -> resourceIDIdenticalTargetResourceIDQuery:ne [style=dotted,arrowhead=dot,color="0.5, 0.9 , 0.8",penwidth=2.0];
+		learnerengagementRecord:learnerengagementnotInterested -> engagementIdenticalNotInterestedQuery:ne [style=dotted,arrowhead=dot,color="0.5, 0.9 , 0.8",penwidth=2.0];
+		learnerengagementRecord:learnerengagementseekingResource -> engagementIdenticalSeekingResourceQuery:ne [style=dotted,arrowhead=dot,color="0.5, 0.9 , 0.8",penwidth=2.0];
+		learnerengagementRecord [shape=record,fontname=Helvetica,style=filled,color=none,fillcolor=white,label="{<learnerengagement> Engagement | {<learnerengagementnotInterested> Not Interested|<learnerengagementseekingResource> Seeking Resource|<learnerengagementfoundResource> Found Resource}}"];
+		resourceInteractionlearnerID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Learner ID"];
+		learnerlearningInterest [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Learning Interest"];
+		learningResourceefficacy [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Efficacy"];
+		resourceInteractionresourceID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Resource ID"];
+		learningResourceresourceID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Resource ID"];
+		learnerlearnerID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Learner ID"];
+		resourceInteractionstrength [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Strength"];
+		learnerengagementRecord [shape=record,fontname=Helvetica,style=filled,color=none,fillcolor=white,label="{<learnerengagement> Engagement | {<learnerengagementnotInterested> Not Interested|<learnerengagementseekingResource> Seeking Resource|<learnerengagementfoundResource> Found Resource}}"];
+		learnerresourceEngagements [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Resource Engagements"];
+
+//subgraph clusterresourceEngagement {
+	//style=filled;
+	//color=white;
+	//fillcolor="0.0, 0.0, 0.98";
+		resourceEngagement [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.625, 0.2, 1.0",label="Resource Engagement",URL="learner_resourceEngagement.svg"];
+	resourceEngagement ->  engagementIdenticalNotEngagedTodayQuery [color="0.625, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+
+		setLearnerIDToLearnerID [shape=none,style="rounded,filled",fontname=Helvetica,color="0.736, 0.2, 1.0",label="Set"];
+	setLearnerIDToLearnerID ->  resourceIDAddZero [color="0.736, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		minimum_LearningInterestAddEfficacyUnit_ [shape=none,style="rounded,filled",fontname=Helvetica,color="0.625, 0.2, 1.0",label="Minimum?"];
+			minimum_LearningInterestAddEfficacyUnit_ ->  learnerlearningInterest [color="0.625, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		learningInterestAddEfficacy [shape=none,style="rounded,filled",fontname=Helvetica,color="0.625, 0.2, 1.0",label="Add"];
+	learningInterestAddEfficacy ->  minimum_LearningInterestAddEfficacyUnit_ [color="0.625, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		resourceIDIdenticalIDQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.699, 0.2, 1.0",label="Identical?"];
+	resourceIDIdenticalIDQuery ->  _And_NeighborQueryCopyCopyCopyCopy [color="0.699, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		not__Or__And_NeighborQueryCopyCopyCopyCopy_ [shape=none,style="rounded,filled",fontname=Helvetica,color="0.699, 0.2, 1.0",label="Else"];
+	not__Or__And_NeighborQueryCopyCopyCopyCopy_ ->  createAgents [color="0.699, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		learnerIDIdenticalLearnerIDQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.699, 0.2, 1.0",label="Identical?"];
+	learnerIDIdenticalLearnerIDQuery ->  _And_NeighborQueryCopyCopyCopyCopy [color="0.699, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		_And_NeighborQueryCopyCopyCopyCopy [shape=none,style="rounded,filled",fontname=Helvetica,color="0.699, 0.2, 1.0",label="And"];
+	_And_NeighborQueryCopyCopyCopyCopy ->  newStrength [color="0.699, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	_And_NeighborQueryCopyCopyCopyCopy ->  not__Or__And_NeighborQueryCopyCopyCopyCopy_ [color="0.699, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	_And_NeighborQueryCopyCopyCopyCopy ->  incrementResourceEngagements [color="0.699, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		engagementIdenticalNotEngagedTodayQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.625, 0.2, 1.0",label="Is Not?"];
+	engagementIdenticalNotEngagedTodayQuery ->  encounteredResource [color="0.625, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		encounteredResource [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.662, 0.2, 1.0",label="Encountered Resource"];
+	encounteredResource ->  neighborQueryCopyCopyCopy [color="0.662, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		createAgents [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.736, 0.2, 1.0",label="Create Agents"];
+	createAgents ->  setLearnerIDToLearnerID [color="0.736, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	setLearnerIDToLearnerID ->  resourceInteractionlearnerID [color="0.736, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		resourceIDAddZero [shape=none,style="rounded,filled",fontname=Helvetica,color="0.662, 0.2, 1.0",label="Add"];
+			resourceIDAddZero ->  resourceInteractionresourceID [color="0.736, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		allLearnerInteractions [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.699, 0.2, 1.0",label="All Learner Interactions"];
+	allLearnerInteractions ->  resourceIDIdenticalIDQuery [color="0.699, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	allLearnerInteractions ->  learnerIDIdenticalLearnerIDQuery [color="0.699, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		newStrength [shape=none,style="rounded,filled",fontname=Helvetica,color="0.699, 0.2, 1.0",label="Increment"];
+			newStrength ->  resourceInteractionstrength [color="0.699, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		incrementResourceEngagements [shape=none,style="rounded,filled",fontname=Helvetica,color="0.625, 0.2, 1.0",label="Increment"];
+			incrementResourceEngagements ->  learnerengagementRecord:learnerengagementfoundResource [color="0.625, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+			incrementResourceEngagements ->  learnerresourceEngagements [color="0.625, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		neighborQueryCopyCopyCopy [shape=none,style="rounded,filled",fontname=Helvetica,color="0.662, 0.2, 1.0",label="Neighbor"];
+	neighborQueryCopyCopyCopy ->  allLearnerInteractions [color="0.662, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	neighborQueryCopyCopyCopy ->  learningInterestAddEfficacy [color="0.662, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+//}
+
+		importabcsetLearnerIDToLearnerIDlearnerlearnerID [fontname=Helvetica,shape=none,label="Learner ID"];
+		importabcsetLearnerIDToLearnerIDlearnerlearnerID -> setLearnerIDToLearnerID:"ne" [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+		learningInterestAddEfficacy -> minimum_LearningInterestAddEfficacyUnit_:nw [style=dotted,arrowhead=dot,color=blue,penwidth=2.0];
+	
+		importxyxminimum_LearningInterestAddEfficacyUnit_functionsunit1 [fontname=Helvetica,shape=none,label="1"];
+		importxyxminimum_LearningInterestAddEfficacyUnit_functionsunit1 -> minimum_LearningInterestAddEfficacyUnit_:ne [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+		learnerlearningInterest -> learningInterestAddEfficacy:nw [style=dotted,arrowhead=dot,color="0.625, 0.9 , 0.8",penwidth=2.0];
+		learningResourceefficacy -> learningInterestAddEfficacy:ne [style=dotted,arrowhead=dot,color="0.662, 0.9 , 0.8",penwidth=2.0];
+		resourceInteractionresourceID -> resourceIDIdenticalIDQuery:nw [style=dotted,arrowhead=dot,color="0.662, 0.9 , 0.8",penwidth=2.0];
+		learningResourceresourceID -> resourceIDIdenticalIDQuery:ne [style=dotted,arrowhead=dot,color="0.699, 0.9 , 0.8",penwidth=2.0];
+		resourceInteractionlearnerID -> learnerIDIdenticalLearnerIDQuery:nw [style=dotted,arrowhead=dot,color="0.625, 0.9 , 0.8",penwidth=2.0];
+		learnerlearnerID -> learnerIDIdenticalLearnerIDQuery:ne [style=dotted,arrowhead=dot,color="0.699, 0.9 , 0.8",penwidth=2.0];
+		learnerengagementRecord:learnerengagementfoundResource -> engagementIdenticalNotEngagedTodayQuery:ne [style=dotted,arrowhead=dot,color="0.625, 0.9 , 0.8",penwidth=2.0];
+		learningResourceresourceID -> resourceIDAddZero:nw [style=dotted,arrowhead=dot,color="0.662, 0.9 , 0.8",penwidth=2.0];
+	
+		importxyxresourceIDAddZerofunctionszero0 [fontname=Helvetica,shape=none,label="0"];
+		importxyxresourceIDAddZerofunctionszero0 -> resourceIDAddZero:ne [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+		resourceInteractionstrength -> newStrength:nw [style=dotted,arrowhead=dot,color="0.699, 0.9 , 0.8",penwidth=2.0];
+		learnerresourceEngagements -> incrementResourceEngagements:nw [style=dotted,arrowhead=dot,color="0.625, 0.9 , 0.8",penwidth=2.0];
+}

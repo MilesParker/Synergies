@@ -1,0 +1,25 @@
+building a model for the community w/ is a reflection of what community thinks as weel as having a solid grounding in terms of solution planning theory.
+
+
+Renninger: Psychological but missing access physical context. GIS is important.
+Rogoffian: 
+
+Process. In late fall build a model that reflects social community model.
+Two very simple models:
+1. Show what an ABM model can do.
+2. Illustrate 
+a) threshold
+b) feedback
+3. Vehicle for introducing social science work.
+
+Ideas:
+1) Start with the Physical:
+Emergence of interest from interaction of resources. Located in specific fixed places. Closer you are the more likely to engage. Setting where we learn science.
+Reinforcing feedback. The more frequent, the next time.
+Variability along interest.
+External resources.
+2) Social space:
+Threshold effect. Up to a certain point, guidance agents effect interest, but after that point that falls off. Guides should have variability. Some will enhance interest and some will not. 
+Bi-Modal Distribution. 
+Tally of number of kids who have exceeded threshold effect. More interest -> Darker Green.
+

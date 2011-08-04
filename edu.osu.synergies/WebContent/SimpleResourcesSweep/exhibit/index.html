@@ -1,0 +1,1035 @@
+<html>
+<head>
+    <title>WebContent/SimpleResourcesSweep/ Data</title>
+    
+    <link href="data.json" type="application/json" rel="exhibit/data" />
+<!--    For webserver without local timeline -->
+	<script src="http://api.simile-widgets.org/exhibit/2.2.0/exhibit-api.js"></script>
+    <script src="http://api.simile-widgets.org/exhibit/2.2.0/extensions/timeplot/timeplot-extension.js"></script>
+    <script type="text/javascript">
+    var timeGeometer = function(grid) {
+        return new Timeplot.DefaultTimeGeometry({
+            gridColor: grid,
+            axisLabelsPlacement: "top"
+        });
+    };
+
+    var valueGeometer = function(grid) {
+        return new Timeplot.DefaultValueGeometry({
+            gridColor: grid,
+            axisLabelsPlacement: "left",
+            gridType: "long"
+        });
+    };
+    </script>
+</head>
+
+<body>
+    <div ex:role="exhibit-collection" ex:itemTypes="DataPoint"></div>
+    <div ex:role="coder" ex:coderClass="Color" id="run-colors">
+	    <span ex:collapsed="true" ex:color="#e60202">Count Learners Population Run 0</span>
+	    <span ex:collapsed="true" ex:color="#e67402">Count Learner Learning Interest Run 0</span>
+	    <span ex:collapsed="true" ex:color="#e6e602">Minimum Learner Learning Interest Run 0</span>
+	    <span ex:collapsed="true" ex:color="#74e602">Maximum Learner Learning Interest Run 0</span>
+	    <span ex:collapsed="true" ex:color="#02e602">Sum Learner Learning Interest Run 0</span>
+	    <span ex:collapsed="true" ex:color="#02e674">Average Learner Learning Interest Run 0</span>
+	    <span ex:collapsed="true" ex:color="#02e6e6">Count Learner Resource Engagements Run 0</span>
+	    <span ex:collapsed="true" ex:color="#0274e6">Minimum Learner Resource Engagements Run 0</span>
+	    <span ex:collapsed="true" ex:color="#0202e6">Maximum Learner Resource Engagements Run 0</span>
+	    <span ex:collapsed="true" ex:color="#7402e6">Sum Learner Resource Engagements Run 0</span>
+	    <span ex:collapsed="true" ex:color="#e602e6">Average Learner Resource Engagements Run 0</span>
+	    <span ex:collapsed="true" ex:color="#e60274">Count Learner Not Interested Engagement Run 0</span>
+	    <span ex:collapsed="true" ex:color="#e60202">Count Learner Seeking Resource Engagement Run 0</span>
+	    <span ex:collapsed="true" ex:color="#e67402">Count Learner Found Resource Engagement Run 0</span>
+	    <span ex:collapsed="true" ex:color="#e6e602">Count Learning Resources Population Run 0</span>
+	    <span ex:collapsed="true" ex:color="#74e602">Count Resource Interactions Population Run 0</span>
+	    <span ex:collapsed="true" ex:color="#02e602">Count Resource Interaction Strength Run 0</span>
+	    <span ex:collapsed="true" ex:color="#02e674">Minimum Resource Interaction Strength Run 0</span>
+	    <span ex:collapsed="true" ex:color="#02e6e6">Maximum Resource Interaction Strength Run 0</span>
+	    <span ex:collapsed="true" ex:color="#0274e6">Sum Resource Interaction Strength Run 0</span>
+	    <span ex:collapsed="true" ex:color="#0202e6">Average Resource Interaction Strength Run 0</span>
+	    <span ex:collapsed="true" ex:color="#7402e6">Count Homes Population Run 0</span>
+	    <span ex:collapsed="true" ex:color="#e63030">Count Learners Population Run 1</span>
+	    <span ex:collapsed="true" ex:color="#e68b30">Count Learner Learning Interest Run 1</span>
+	    <span ex:collapsed="true" ex:color="#e6e630">Minimum Learner Learning Interest Run 1</span>
+	    <span ex:collapsed="true" ex:color="#8be630">Maximum Learner Learning Interest Run 1</span>
+	    <span ex:collapsed="true" ex:color="#30e630">Sum Learner Learning Interest Run 1</span>
+	    <span ex:collapsed="true" ex:color="#30e68b">Average Learner Learning Interest Run 1</span>
+	    <span ex:collapsed="true" ex:color="#30e6e6">Count Learner Resource Engagements Run 1</span>
+	    <span ex:collapsed="true" ex:color="#308be6">Minimum Learner Resource Engagements Run 1</span>
+	    <span ex:collapsed="true" ex:color="#3030e6">Maximum Learner Resource Engagements Run 1</span>
+	    <span ex:collapsed="true" ex:color="#8b30e6">Sum Learner Resource Engagements Run 1</span>
+	    <span ex:collapsed="true" ex:color="#e630e6">Average Learner Resource Engagements Run 1</span>
+	    <span ex:collapsed="true" ex:color="#e6308b">Count Learner Not Interested Engagement Run 1</span>
+	    <span ex:collapsed="true" ex:color="#e63030">Count Learner Seeking Resource Engagement Run 1</span>
+	    <span ex:collapsed="true" ex:color="#e68b30">Count Learner Found Resource Engagement Run 1</span>
+	    <span ex:collapsed="true" ex:color="#e6e630">Count Learning Resources Population Run 1</span>
+	    <span ex:collapsed="true" ex:color="#8be630">Count Resource Interactions Population Run 1</span>
+	    <span ex:collapsed="true" ex:color="#30e630">Count Resource Interaction Strength Run 1</span>
+	    <span ex:collapsed="true" ex:color="#30e68b">Minimum Resource Interaction Strength Run 1</span>
+	    <span ex:collapsed="true" ex:color="#30e6e6">Maximum Resource Interaction Strength Run 1</span>
+	    <span ex:collapsed="true" ex:color="#308be6">Sum Resource Interaction Strength Run 1</span>
+	    <span ex:collapsed="true" ex:color="#3030e6">Average Resource Interaction Strength Run 1</span>
+	    <span ex:collapsed="true" ex:color="#8b30e6">Count Homes Population Run 1</span>
+	    <span ex:collapsed="true" ex:color="#e65e5e">Count Learners Population Run 2</span>
+	    <span ex:collapsed="true" ex:color="#e6a25e">Count Learner Learning Interest Run 2</span>
+	    <span ex:collapsed="true" ex:color="#e6e65e">Minimum Learner Learning Interest Run 2</span>
+	    <span ex:collapsed="true" ex:color="#a2e65e">Maximum Learner Learning Interest Run 2</span>
+	    <span ex:collapsed="true" ex:color="#5ee65e">Sum Learner Learning Interest Run 2</span>
+	    <span ex:collapsed="true" ex:color="#5ee6a2">Average Learner Learning Interest Run 2</span>
+	    <span ex:collapsed="true" ex:color="#5ee6e6">Count Learner Resource Engagements Run 2</span>
+	    <span ex:collapsed="true" ex:color="#5ea2e6">Minimum Learner Resource Engagements Run 2</span>
+	    <span ex:collapsed="true" ex:color="#5e5ee6">Maximum Learner Resource Engagements Run 2</span>
+	    <span ex:collapsed="true" ex:color="#a25ee6">Sum Learner Resource Engagements Run 2</span>
+	    <span ex:collapsed="true" ex:color="#e65ee6">Average Learner Resource Engagements Run 2</span>
+	    <span ex:collapsed="true" ex:color="#e65ea2">Count Learner Not Interested Engagement Run 2</span>
+	    <span ex:collapsed="true" ex:color="#e65e5e">Count Learner Seeking Resource Engagement Run 2</span>
+	    <span ex:collapsed="true" ex:color="#e6a25e">Count Learner Found Resource Engagement Run 2</span>
+	    <span ex:collapsed="true" ex:color="#e6e65e">Count Learning Resources Population Run 2</span>
+	    <span ex:collapsed="true" ex:color="#a2e65e">Count Resource Interactions Population Run 2</span>
+	    <span ex:collapsed="true" ex:color="#5ee65e">Count Resource Interaction Strength Run 2</span>
+	    <span ex:collapsed="true" ex:color="#5ee6a2">Minimum Resource Interaction Strength Run 2</span>
+	    <span ex:collapsed="true" ex:color="#5ee6e6">Maximum Resource Interaction Strength Run 2</span>
+	    <span ex:collapsed="true" ex:color="#5ea2e6">Sum Resource Interaction Strength Run 2</span>
+	    <span ex:collapsed="true" ex:color="#5e5ee6">Average Resource Interaction Strength Run 2</span>
+	    <span ex:collapsed="true" ex:color="#a25ee6">Count Homes Population Run 2</span>
+	    <span ex:collapsed="true" ex:color="#e68c8c">Count Learners Population Run 3</span>
+	    <span ex:collapsed="true" ex:color="#e6b98c">Count Learner Learning Interest Run 3</span>
+	    <span ex:collapsed="true" ex:color="#e6e68c">Minimum Learner Learning Interest Run 3</span>
+	    <span ex:collapsed="true" ex:color="#b9e68c">Maximum Learner Learning Interest Run 3</span>
+	    <span ex:collapsed="true" ex:color="#8ce68c">Sum Learner Learning Interest Run 3</span>
+	    <span ex:collapsed="true" ex:color="#8ce6b9">Average Learner Learning Interest Run 3</span>
+	    <span ex:collapsed="true" ex:color="#8ce6e6">Count Learner Resource Engagements Run 3</span>
+	    <span ex:collapsed="true" ex:color="#8cb9e6">Minimum Learner Resource Engagements Run 3</span>
+	    <span ex:collapsed="true" ex:color="#8c8ce6">Maximum Learner Resource Engagements Run 3</span>
+	    <span ex:collapsed="true" ex:color="#b98ce6">Sum Learner Resource Engagements Run 3</span>
+	    <span ex:collapsed="true" ex:color="#e68ce6">Average Learner Resource Engagements Run 3</span>
+	    <span ex:collapsed="true" ex:color="#e68cb9">Count Learner Not Interested Engagement Run 3</span>
+	    <span ex:collapsed="true" ex:color="#e68c8c">Count Learner Seeking Resource Engagement Run 3</span>
+	    <span ex:collapsed="true" ex:color="#e6b98c">Count Learner Found Resource Engagement Run 3</span>
+	    <span ex:collapsed="true" ex:color="#e6e68c">Count Learning Resources Population Run 3</span>
+	    <span ex:collapsed="true" ex:color="#b9e68c">Count Resource Interactions Population Run 3</span>
+	    <span ex:collapsed="true" ex:color="#8ce68c">Count Resource Interaction Strength Run 3</span>
+	    <span ex:collapsed="true" ex:color="#8ce6b9">Minimum Resource Interaction Strength Run 3</span>
+	    <span ex:collapsed="true" ex:color="#8ce6e6">Maximum Resource Interaction Strength Run 3</span>
+	    <span ex:collapsed="true" ex:color="#8cb9e6">Sum Resource Interaction Strength Run 3</span>
+	    <span ex:collapsed="true" ex:color="#8c8ce6">Average Resource Interaction Strength Run 3</span>
+	    <span ex:collapsed="true" ex:color="#b98ce6">Count Homes Population Run 3</span>
+	    <span ex:collapsed="true" ex:color="#e6baba">Count Learners Population Run 4</span>
+	    <span ex:collapsed="true" ex:color="#e6d0ba">Count Learner Learning Interest Run 4</span>
+	    <span ex:collapsed="true" ex:color="#e6e6ba">Minimum Learner Learning Interest Run 4</span>
+	    <span ex:collapsed="true" ex:color="#d0e6ba">Maximum Learner Learning Interest Run 4</span>
+	    <span ex:collapsed="true" ex:color="#bae6ba">Sum Learner Learning Interest Run 4</span>
+	    <span ex:collapsed="true" ex:color="#bae6d0">Average Learner Learning Interest Run 4</span>
+	    <span ex:collapsed="true" ex:color="#bae6e6">Count Learner Resource Engagements Run 4</span>
+	    <span ex:collapsed="true" ex:color="#bad0e6">Minimum Learner Resource Engagements Run 4</span>
+	    <span ex:collapsed="true" ex:color="#babae6">Maximum Learner Resource Engagements Run 4</span>
+	    <span ex:collapsed="true" ex:color="#d0bae6">Sum Learner Resource Engagements Run 4</span>
+	    <span ex:collapsed="true" ex:color="#e6bae6">Average Learner Resource Engagements Run 4</span>
+	    <span ex:collapsed="true" ex:color="#e6bad0">Count Learner Not Interested Engagement Run 4</span>
+	    <span ex:collapsed="true" ex:color="#e6baba">Count Learner Seeking Resource Engagement Run 4</span>
+	    <span ex:collapsed="true" ex:color="#e6d0ba">Count Learner Found Resource Engagement Run 4</span>
+	    <span ex:collapsed="true" ex:color="#e6e6ba">Count Learning Resources Population Run 4</span>
+	    <span ex:collapsed="true" ex:color="#d0e6ba">Count Resource Interactions Population Run 4</span>
+	    <span ex:collapsed="true" ex:color="#bae6ba">Count Resource Interaction Strength Run 4</span>
+	    <span ex:collapsed="true" ex:color="#bae6d0">Minimum Resource Interaction Strength Run 4</span>
+	    <span ex:collapsed="true" ex:color="#bae6e6">Maximum Resource Interaction Strength Run 4</span>
+	    <span ex:collapsed="true" ex:color="#bad0e6">Sum Resource Interaction Strength Run 4</span>
+	    <span ex:collapsed="true" ex:color="#babae6">Average Resource Interaction Strength Run 4</span>
+	    <span ex:collapsed="true" ex:color="#d0bae6">Count Homes Population Run 4</span>
+	    <span ex:collapsed="true" ex:color="#e60202">Count Learners Population Run 5</span>
+	    <span ex:collapsed="true" ex:color="#e67402">Count Learner Learning Interest Run 5</span>
+	    <span ex:collapsed="true" ex:color="#e6e602">Minimum Learner Learning Interest Run 5</span>
+	    <span ex:collapsed="true" ex:color="#74e602">Maximum Learner Learning Interest Run 5</span>
+	    <span ex:collapsed="true" ex:color="#02e602">Sum Learner Learning Interest Run 5</span>
+	    <span ex:collapsed="true" ex:color="#02e674">Average Learner Learning Interest Run 5</span>
+	    <span ex:collapsed="true" ex:color="#02e6e6">Count Learner Resource Engagements Run 5</span>
+	    <span ex:collapsed="true" ex:color="#0274e6">Minimum Learner Resource Engagements Run 5</span>
+	    <span ex:collapsed="true" ex:color="#0202e6">Maximum Learner Resource Engagements Run 5</span>
+	    <span ex:collapsed="true" ex:color="#7402e6">Sum Learner Resource Engagements Run 5</span>
+	    <span ex:collapsed="true" ex:color="#e602e6">Average Learner Resource Engagements Run 5</span>
+	    <span ex:collapsed="true" ex:color="#e60274">Count Learner Not Interested Engagement Run 5</span>
+	    <span ex:collapsed="true" ex:color="#e60202">Count Learner Seeking Resource Engagement Run 5</span>
+	    <span ex:collapsed="true" ex:color="#e67402">Count Learner Found Resource Engagement Run 5</span>
+	    <span ex:collapsed="true" ex:color="#e6e602">Count Learning Resources Population Run 5</span>
+	    <span ex:collapsed="true" ex:color="#74e602">Count Resource Interactions Population Run 5</span>
+	    <span ex:collapsed="true" ex:color="#02e602">Count Resource Interaction Strength Run 5</span>
+	    <span ex:collapsed="true" ex:color="#02e674">Minimum Resource Interaction Strength Run 5</span>
+	    <span ex:collapsed="true" ex:color="#02e6e6">Maximum Resource Interaction Strength Run 5</span>
+	    <span ex:collapsed="true" ex:color="#0274e6">Sum Resource Interaction Strength Run 5</span>
+	    <span ex:collapsed="true" ex:color="#0202e6">Average Resource Interaction Strength Run 5</span>
+	    <span ex:collapsed="true" ex:color="#7402e6">Count Homes Population Run 5</span>
+	    <span ex:collapsed="true" ex:color="#e63030">Count Learners Population Run 6</span>
+	    <span ex:collapsed="true" ex:color="#e68b30">Count Learner Learning Interest Run 6</span>
+	    <span ex:collapsed="true" ex:color="#e6e630">Minimum Learner Learning Interest Run 6</span>
+	    <span ex:collapsed="true" ex:color="#8be630">Maximum Learner Learning Interest Run 6</span>
+	    <span ex:collapsed="true" ex:color="#30e630">Sum Learner Learning Interest Run 6</span>
+	    <span ex:collapsed="true" ex:color="#30e68b">Average Learner Learning Interest Run 6</span>
+	    <span ex:collapsed="true" ex:color="#30e6e6">Count Learner Resource Engagements Run 6</span>
+	    <span ex:collapsed="true" ex:color="#308be6">Minimum Learner Resource Engagements Run 6</span>
+	    <span ex:collapsed="true" ex:color="#3030e6">Maximum Learner Resource Engagements Run 6</span>
+	    <span ex:collapsed="true" ex:color="#8b30e6">Sum Learner Resource Engagements Run 6</span>
+	    <span ex:collapsed="true" ex:color="#e630e6">Average Learner Resource Engagements Run 6</span>
+	    <span ex:collapsed="true" ex:color="#e6308b">Count Learner Not Interested Engagement Run 6</span>
+	    <span ex:collapsed="true" ex:color="#e63030">Count Learner Seeking Resource Engagement Run 6</span>
+	    <span ex:collapsed="true" ex:color="#e68b30">Count Learner Found Resource Engagement Run 6</span>
+	    <span ex:collapsed="true" ex:color="#e6e630">Count Learning Resources Population Run 6</span>
+	    <span ex:collapsed="true" ex:color="#8be630">Count Resource Interactions Population Run 6</span>
+	    <span ex:collapsed="true" ex:color="#30e630">Count Resource Interaction Strength Run 6</span>
+	    <span ex:collapsed="true" ex:color="#30e68b">Minimum Resource Interaction Strength Run 6</span>
+	    <span ex:collapsed="true" ex:color="#30e6e6">Maximum Resource Interaction Strength Run 6</span>
+	    <span ex:collapsed="true" ex:color="#308be6">Sum Resource Interaction Strength Run 6</span>
+	    <span ex:collapsed="true" ex:color="#3030e6">Average Resource Interaction Strength Run 6</span>
+	    <span ex:collapsed="true" ex:color="#8b30e6">Count Homes Population Run 6</span>
+	    <span ex:collapsed="true" ex:color="#e65e5e">Count Learners Population Run 7</span>
+	    <span ex:collapsed="true" ex:color="#e6a25e">Count Learner Learning Interest Run 7</span>
+	    <span ex:collapsed="true" ex:color="#e6e65e">Minimum Learner Learning Interest Run 7</span>
+	    <span ex:collapsed="true" ex:color="#a2e65e">Maximum Learner Learning Interest Run 7</span>
+	    <span ex:collapsed="true" ex:color="#5ee65e">Sum Learner Learning Interest Run 7</span>
+	    <span ex:collapsed="true" ex:color="#5ee6a2">Average Learner Learning Interest Run 7</span>
+	    <span ex:collapsed="true" ex:color="#5ee6e6">Count Learner Resource Engagements Run 7</span>
+	    <span ex:collapsed="true" ex:color="#5ea2e6">Minimum Learner Resource Engagements Run 7</span>
+	    <span ex:collapsed="true" ex:color="#5e5ee6">Maximum Learner Resource Engagements Run 7</span>
+	    <span ex:collapsed="true" ex:color="#a25ee6">Sum Learner Resource Engagements Run 7</span>
+	    <span ex:collapsed="true" ex:color="#e65ee6">Average Learner Resource Engagements Run 7</span>
+	    <span ex:collapsed="true" ex:color="#e65ea2">Count Learner Not Interested Engagement Run 7</span>
+	    <span ex:collapsed="true" ex:color="#e65e5e">Count Learner Seeking Resource Engagement Run 7</span>
+	    <span ex:collapsed="true" ex:color="#e6a25e">Count Learner Found Resource Engagement Run 7</span>
+	    <span ex:collapsed="true" ex:color="#e6e65e">Count Learning Resources Population Run 7</span>
+	    <span ex:collapsed="true" ex:color="#a2e65e">Count Resource Interactions Population Run 7</span>
+	    <span ex:collapsed="true" ex:color="#5ee65e">Count Resource Interaction Strength Run 7</span>
+	    <span ex:collapsed="true" ex:color="#5ee6a2">Minimum Resource Interaction Strength Run 7</span>
+	    <span ex:collapsed="true" ex:color="#5ee6e6">Maximum Resource Interaction Strength Run 7</span>
+	    <span ex:collapsed="true" ex:color="#5ea2e6">Sum Resource Interaction Strength Run 7</span>
+	    <span ex:collapsed="true" ex:color="#5e5ee6">Average Resource Interaction Strength Run 7</span>
+	    <span ex:collapsed="true" ex:color="#a25ee6">Count Homes Population Run 7</span>
+	    <span ex:collapsed="true" ex:color="#e68c8c">Count Learners Population Run 8</span>
+	    <span ex:collapsed="true" ex:color="#e6b98c">Count Learner Learning Interest Run 8</span>
+	    <span ex:collapsed="true" ex:color="#e6e68c">Minimum Learner Learning Interest Run 8</span>
+	    <span ex:collapsed="true" ex:color="#b9e68c">Maximum Learner Learning Interest Run 8</span>
+	    <span ex:collapsed="true" ex:color="#8ce68c">Sum Learner Learning Interest Run 8</span>
+	    <span ex:collapsed="true" ex:color="#8ce6b9">Average Learner Learning Interest Run 8</span>
+	    <span ex:collapsed="true" ex:color="#8ce6e6">Count Learner Resource Engagements Run 8</span>
+	    <span ex:collapsed="true" ex:color="#8cb9e6">Minimum Learner Resource Engagements Run 8</span>
+	    <span ex:collapsed="true" ex:color="#8c8ce6">Maximum Learner Resource Engagements Run 8</span>
+	    <span ex:collapsed="true" ex:color="#b98ce6">Sum Learner Resource Engagements Run 8</span>
+	    <span ex:collapsed="true" ex:color="#e68ce6">Average Learner Resource Engagements Run 8</span>
+	    <span ex:collapsed="true" ex:color="#e68cb9">Count Learner Not Interested Engagement Run 8</span>
+	    <span ex:collapsed="true" ex:color="#e68c8c">Count Learner Seeking Resource Engagement Run 8</span>
+	    <span ex:collapsed="true" ex:color="#e6b98c">Count Learner Found Resource Engagement Run 8</span>
+	    <span ex:collapsed="true" ex:color="#e6e68c">Count Learning Resources Population Run 8</span>
+	    <span ex:collapsed="true" ex:color="#b9e68c">Count Resource Interactions Population Run 8</span>
+	    <span ex:collapsed="true" ex:color="#8ce68c">Count Resource Interaction Strength Run 8</span>
+	    <span ex:collapsed="true" ex:color="#8ce6b9">Minimum Resource Interaction Strength Run 8</span>
+	    <span ex:collapsed="true" ex:color="#8ce6e6">Maximum Resource Interaction Strength Run 8</span>
+	    <span ex:collapsed="true" ex:color="#8cb9e6">Sum Resource Interaction Strength Run 8</span>
+	    <span ex:collapsed="true" ex:color="#8c8ce6">Average Resource Interaction Strength Run 8</span>
+	    <span ex:collapsed="true" ex:color="#b98ce6">Count Homes Population Run 8</span>
+	    <span ex:collapsed="true" ex:color="#e6baba">Count Learners Population Run 9</span>
+	    <span ex:collapsed="true" ex:color="#e6d0ba">Count Learner Learning Interest Run 9</span>
+	    <span ex:collapsed="true" ex:color="#e6e6ba">Minimum Learner Learning Interest Run 9</span>
+	    <span ex:collapsed="true" ex:color="#d0e6ba">Maximum Learner Learning Interest Run 9</span>
+	    <span ex:collapsed="true" ex:color="#bae6ba">Sum Learner Learning Interest Run 9</span>
+	    <span ex:collapsed="true" ex:color="#bae6d0">Average Learner Learning Interest Run 9</span>
+	    <span ex:collapsed="true" ex:color="#bae6e6">Count Learner Resource Engagements Run 9</span>
+	    <span ex:collapsed="true" ex:color="#bad0e6">Minimum Learner Resource Engagements Run 9</span>
+	    <span ex:collapsed="true" ex:color="#babae6">Maximum Learner Resource Engagements Run 9</span>
+	    <span ex:collapsed="true" ex:color="#d0bae6">Sum Learner Resource Engagements Run 9</span>
+	    <span ex:collapsed="true" ex:color="#e6bae6">Average Learner Resource Engagements Run 9</span>
+	    <span ex:collapsed="true" ex:color="#e6bad0">Count Learner Not Interested Engagement Run 9</span>
+	    <span ex:collapsed="true" ex:color="#e6baba">Count Learner Seeking Resource Engagement Run 9</span>
+	    <span ex:collapsed="true" ex:color="#e6d0ba">Count Learner Found Resource Engagement Run 9</span>
+	    <span ex:collapsed="true" ex:color="#e6e6ba">Count Learning Resources Population Run 9</span>
+	    <span ex:collapsed="true" ex:color="#d0e6ba">Count Resource Interactions Population Run 9</span>
+	    <span ex:collapsed="true" ex:color="#bae6ba">Count Resource Interaction Strength Run 9</span>
+	    <span ex:collapsed="true" ex:color="#bae6d0">Minimum Resource Interaction Strength Run 9</span>
+	    <span ex:collapsed="true" ex:color="#bae6e6">Maximum Resource Interaction Strength Run 9</span>
+	    <span ex:collapsed="true" ex:color="#bad0e6">Sum Resource Interaction Strength Run 9</span>
+	    <span ex:collapsed="true" ex:color="#babae6">Average Resource Interaction Strength Run 9</span>
+	    <span ex:collapsed="true" ex:color="#d0bae6">Count Homes Population Run 9</span>
+	    <span ex:collapsed="true" ex:color="#e60202">Count Learners Population Run 10</span>
+	    <span ex:collapsed="true" ex:color="#e67402">Count Learner Learning Interest Run 10</span>
+	    <span ex:collapsed="true" ex:color="#e6e602">Minimum Learner Learning Interest Run 10</span>
+	    <span ex:collapsed="true" ex:color="#74e602">Maximum Learner Learning Interest Run 10</span>
+	    <span ex:collapsed="true" ex:color="#02e602">Sum Learner Learning Interest Run 10</span>
+	    <span ex:collapsed="true" ex:color="#02e674">Average Learner Learning Interest Run 10</span>
+	    <span ex:collapsed="true" ex:color="#02e6e6">Count Learner Resource Engagements Run 10</span>
+	    <span ex:collapsed="true" ex:color="#0274e6">Minimum Learner Resource Engagements Run 10</span>
+	    <span ex:collapsed="true" ex:color="#0202e6">Maximum Learner Resource Engagements Run 10</span>
+	    <span ex:collapsed="true" ex:color="#7402e6">Sum Learner Resource Engagements Run 10</span>
+	    <span ex:collapsed="true" ex:color="#e602e6">Average Learner Resource Engagements Run 10</span>
+	    <span ex:collapsed="true" ex:color="#e60274">Count Learner Not Interested Engagement Run 10</span>
+	    <span ex:collapsed="true" ex:color="#e60202">Count Learner Seeking Resource Engagement Run 10</span>
+	    <span ex:collapsed="true" ex:color="#e67402">Count Learner Found Resource Engagement Run 10</span>
+	    <span ex:collapsed="true" ex:color="#e6e602">Count Learning Resources Population Run 10</span>
+	    <span ex:collapsed="true" ex:color="#74e602">Count Resource Interactions Population Run 10</span>
+	    <span ex:collapsed="true" ex:color="#02e602">Count Resource Interaction Strength Run 10</span>
+	    <span ex:collapsed="true" ex:color="#02e674">Minimum Resource Interaction Strength Run 10</span>
+	    <span ex:collapsed="true" ex:color="#02e6e6">Maximum Resource Interaction Strength Run 10</span>
+	    <span ex:collapsed="true" ex:color="#0274e6">Sum Resource Interaction Strength Run 10</span>
+	    <span ex:collapsed="true" ex:color="#0202e6">Average Resource Interaction Strength Run 10</span>
+	    <span ex:collapsed="true" ex:color="#7402e6">Count Homes Population Run 10</span>
+	    <span ex:collapsed="true" ex:color="#e63030">Count Learners Population Run 11</span>
+	    <span ex:collapsed="true" ex:color="#e68b30">Count Learner Learning Interest Run 11</span>
+	    <span ex:collapsed="true" ex:color="#e6e630">Minimum Learner Learning Interest Run 11</span>
+	    <span ex:collapsed="true" ex:color="#8be630">Maximum Learner Learning Interest Run 11</span>
+	    <span ex:collapsed="true" ex:color="#30e630">Sum Learner Learning Interest Run 11</span>
+	    <span ex:collapsed="true" ex:color="#30e68b">Average Learner Learning Interest Run 11</span>
+	    <span ex:collapsed="true" ex:color="#30e6e6">Count Learner Resource Engagements Run 11</span>
+	    <span ex:collapsed="true" ex:color="#308be6">Minimum Learner Resource Engagements Run 11</span>
+	    <span ex:collapsed="true" ex:color="#3030e6">Maximum Learner Resource Engagements Run 11</span>
+	    <span ex:collapsed="true" ex:color="#8b30e6">Sum Learner Resource Engagements Run 11</span>
+	    <span ex:collapsed="true" ex:color="#e630e6">Average Learner Resource Engagements Run 11</span>
+	    <span ex:collapsed="true" ex:color="#e6308b">Count Learner Not Interested Engagement Run 11</span>
+	    <span ex:collapsed="true" ex:color="#e63030">Count Learner Seeking Resource Engagement Run 11</span>
+	    <span ex:collapsed="true" ex:color="#e68b30">Count Learner Found Resource Engagement Run 11</span>
+	    <span ex:collapsed="true" ex:color="#e6e630">Count Learning Resources Population Run 11</span>
+	    <span ex:collapsed="true" ex:color="#8be630">Count Resource Interactions Population Run 11</span>
+	    <span ex:collapsed="true" ex:color="#30e630">Count Resource Interaction Strength Run 11</span>
+	    <span ex:collapsed="true" ex:color="#30e68b">Minimum Resource Interaction Strength Run 11</span>
+	    <span ex:collapsed="true" ex:color="#30e6e6">Maximum Resource Interaction Strength Run 11</span>
+	    <span ex:collapsed="true" ex:color="#308be6">Sum Resource Interaction Strength Run 11</span>
+	    <span ex:collapsed="true" ex:color="#3030e6">Average Resource Interaction Strength Run 11</span>
+	    <span ex:collapsed="true" ex:color="#8b30e6">Count Homes Population Run 11</span>
+    </div>
+    <table width="100%" cellpadding="0" style="background: #bbb;">
+        <tr>
+	        <td width="20%" style="background: #bbb;">
+	        <table style="background: #bbb;">
+		        <tr><td>
+	        
+		<h3>Open Parameters</h3>
+		<table>
+			<tr>
+	            <td valign="top"><div ex:role="facet" ex:expression=".run.ResourceEfficacyMinimum" ex:facetLabel="Resource Efficacy Minimum" ex:height="6em" ex:collapsable="true"></div></td>
+	    	</tr>
+			<tr>
+	            <td valign="top"><div ex:role="facet" ex:expression=".run.ResourceEfficacyMaximum" ex:facetLabel="Resource Efficacy Maximum" ex:height="6em" ex:collapsable="true"></div></td>
+	    	</tr>
+    	</table>
+
+		        </td></tr><tr><td>
+	        
+		<h3>Fixed Parameters</h3>
+		<table>
+			<tr><th align="left">Parameter</th><th align="left">Value</th></tr>
+	    		<tr>
+	    			<td></td><td align="right">130</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">60</td>
+    			</tr>
+	    		<tr>
+	    			<td>Engagement Reinforcement</td><td align="right">0.1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Home Count</td><td align="right">50</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Minimum</td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Maximum</td><td align="right">0.35</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learner Count</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learning Resource Count</td><td align="right">8</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Learner ID</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Resource ID</td><td align="right">10</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">2147483647</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1312387707590</td>
+    			</tr>
+	    		<tr>
+	    			<td>Resource Interaction Count</td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">3000</td>
+    			</tr>
+	    		<tr>
+	    			<td>Subsequent Engagement Factor </td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments Wandering</td><td align="right">24</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments in Day</td><td align="right">96</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">130</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">60</td>
+    			</tr>
+	    		<tr>
+	    			<td>Engagement Reinforcement</td><td align="right">0.1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Home Count</td><td align="right">50</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Minimum</td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Maximum</td><td align="right">0.35</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learner Count</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learning Resource Count</td><td align="right">8</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Learner ID</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Resource ID</td><td align="right">10</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">2147483647</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1312387708354</td>
+    			</tr>
+	    		<tr>
+	    			<td>Resource Interaction Count</td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">3000</td>
+    			</tr>
+	    		<tr>
+	    			<td>Subsequent Engagement Factor </td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments Wandering</td><td align="right">24</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments in Day</td><td align="right">96</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">130</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">60</td>
+    			</tr>
+	    		<tr>
+	    			<td>Engagement Reinforcement</td><td align="right">0.1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Home Count</td><td align="right">50</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Minimum</td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Maximum</td><td align="right">0.35</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learner Count</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learning Resource Count</td><td align="right">8</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Learner ID</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Resource ID</td><td align="right">10</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">2147483647</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1312387709179</td>
+    			</tr>
+	    		<tr>
+	    			<td>Resource Interaction Count</td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">3000</td>
+    			</tr>
+	    		<tr>
+	    			<td>Subsequent Engagement Factor </td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments Wandering</td><td align="right">24</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments in Day</td><td align="right">96</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">130</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">60</td>
+    			</tr>
+	    		<tr>
+	    			<td>Engagement Reinforcement</td><td align="right">0.1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Home Count</td><td align="right">50</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Minimum</td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Maximum</td><td align="right">0.35</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learner Count</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learning Resource Count</td><td align="right">8</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Learner ID</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Resource ID</td><td align="right">10</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">2147483647</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1312387710118</td>
+    			</tr>
+	    		<tr>
+	    			<td>Resource Interaction Count</td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">3000</td>
+    			</tr>
+	    		<tr>
+	    			<td>Subsequent Engagement Factor </td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments Wandering</td><td align="right">24</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments in Day</td><td align="right">96</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">130</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">60</td>
+    			</tr>
+	    		<tr>
+	    			<td>Engagement Reinforcement</td><td align="right">0.1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Home Count</td><td align="right">50</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Minimum</td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Maximum</td><td align="right">0.35</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learner Count</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learning Resource Count</td><td align="right">8</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Learner ID</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Resource ID</td><td align="right">10</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">2147483647</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1312387711142</td>
+    			</tr>
+	    		<tr>
+	    			<td>Resource Interaction Count</td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">3000</td>
+    			</tr>
+	    		<tr>
+	    			<td>Subsequent Engagement Factor </td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments Wandering</td><td align="right">24</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments in Day</td><td align="right">96</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">130</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">60</td>
+    			</tr>
+	    		<tr>
+	    			<td>Engagement Reinforcement</td><td align="right">0.1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Home Count</td><td align="right">50</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Minimum</td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Maximum</td><td align="right">0.35</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learner Count</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learning Resource Count</td><td align="right">8</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Learner ID</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Resource ID</td><td align="right">10</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">2147483647</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1312387712206</td>
+    			</tr>
+	    		<tr>
+	    			<td>Resource Interaction Count</td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">3000</td>
+    			</tr>
+	    		<tr>
+	    			<td>Subsequent Engagement Factor </td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments Wandering</td><td align="right">24</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments in Day</td><td align="right">96</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">130</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">60</td>
+    			</tr>
+	    		<tr>
+	    			<td>Engagement Reinforcement</td><td align="right">0.1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Home Count</td><td align="right">50</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Minimum</td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Maximum</td><td align="right">0.35</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learner Count</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learning Resource Count</td><td align="right">8</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Learner ID</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Resource ID</td><td align="right">10</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">2147483647</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1312387713504</td>
+    			</tr>
+	    		<tr>
+	    			<td>Resource Interaction Count</td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">3000</td>
+    			</tr>
+	    		<tr>
+	    			<td>Subsequent Engagement Factor </td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments Wandering</td><td align="right">24</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments in Day</td><td align="right">96</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">130</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">60</td>
+    			</tr>
+	    		<tr>
+	    			<td>Engagement Reinforcement</td><td align="right">0.1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Home Count</td><td align="right">50</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Minimum</td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Maximum</td><td align="right">0.35</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learner Count</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learning Resource Count</td><td align="right">8</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Learner ID</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Resource ID</td><td align="right">10</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">2147483647</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1312387714922</td>
+    			</tr>
+	    		<tr>
+	    			<td>Resource Interaction Count</td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">3000</td>
+    			</tr>
+	    		<tr>
+	    			<td>Subsequent Engagement Factor </td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments Wandering</td><td align="right">24</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments in Day</td><td align="right">96</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">130</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">60</td>
+    			</tr>
+	    		<tr>
+	    			<td>Engagement Reinforcement</td><td align="right">0.1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Home Count</td><td align="right">50</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Minimum</td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Maximum</td><td align="right">0.35</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learner Count</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learning Resource Count</td><td align="right">8</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Learner ID</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Resource ID</td><td align="right">10</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">2147483647</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1312387716352</td>
+    			</tr>
+	    		<tr>
+	    			<td>Resource Interaction Count</td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">3000</td>
+    			</tr>
+	    		<tr>
+	    			<td>Subsequent Engagement Factor </td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments Wandering</td><td align="right">24</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments in Day</td><td align="right">96</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">130</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">60</td>
+    			</tr>
+	    		<tr>
+	    			<td>Engagement Reinforcement</td><td align="right">0.1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Home Count</td><td align="right">50</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Minimum</td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Maximum</td><td align="right">0.35</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learner Count</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learning Resource Count</td><td align="right">8</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Learner ID</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Resource ID</td><td align="right">10</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">2147483647</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1312387718021</td>
+    			</tr>
+	    		<tr>
+	    			<td>Resource Interaction Count</td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">3000</td>
+    			</tr>
+	    		<tr>
+	    			<td>Subsequent Engagement Factor </td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments Wandering</td><td align="right">24</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments in Day</td><td align="right">96</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">130</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">60</td>
+    			</tr>
+	    		<tr>
+	    			<td>Engagement Reinforcement</td><td align="right">0.1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Home Count</td><td align="right">50</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Minimum</td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Maximum</td><td align="right">0.35</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learner Count</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learning Resource Count</td><td align="right">8</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Learner ID</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Resource ID</td><td align="right">10</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">2147483647</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1312387719746</td>
+    			</tr>
+	    		<tr>
+	    			<td>Resource Interaction Count</td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">3000</td>
+    			</tr>
+	    		<tr>
+	    			<td>Subsequent Engagement Factor </td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments Wandering</td><td align="right">24</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments in Day</td><td align="right">96</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">130</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">60</td>
+    			</tr>
+	    		<tr>
+	    			<td>Engagement Reinforcement</td><td align="right">0.1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Home Count</td><td align="right">50</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Minimum</td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td>Initial Interest Maximum</td><td align="right">0.35</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learner Count</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Learning Resource Count</td><td align="right">8</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Learner ID</td><td align="right">100</td>
+    			</tr>
+	    		<tr>
+	    			<td>Next Resource ID</td><td align="right">10</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">2147483647</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1312387721650</td>
+    			</tr>
+	    		<tr>
+	    			<td>Resource Interaction Count</td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">0</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">3000</td>
+    			</tr>
+	    		<tr>
+	    			<td>Subsequent Engagement Factor </td><td align="right">0.05</td>
+    			</tr>
+	    		<tr>
+	    			<td></td><td align="right">1</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments Wandering</td><td align="right">24</td>
+    			</tr>
+	    		<tr>
+	    			<td>Time Segments in Day</td><td align="right">96</td>
+    			</tr>
+		</table>
+
+		        </td></tr>
+		    </table>
+	        </td>
+	        <td width="80%" valign="top">
+	        
+	        <table>
+		        <tr>
+		            <td valign="top"><div ex:role="facet" ex:expression=".measurement.attribute" ex:facetLabel="Metric" ex:height="6em" ex:collapsable="true"></div></td>
+		            <td valign="top"><div ex:role="facet" ex:expression=".measurement.statType" ex:facetLabel="Measure" ex:height="6em" ex:collapsable="true"></div></td>
+		            <td valign="top"><div ex:role="facet" ex:expression=".run" ex:facetLabel="Run" ex:height="6em" ex:collapsable="true"></div></td>
+		        </tr>
+	        </table>
+
+	        
+	        <div ex:role="view" style="background: #FFF;"
+	            ex:viewClass="Timeplot"
+	            ex:label="SimpleResourcesSweep Results"
+	            ex:seriesConnector=".measurement"
+	            ex:pointTime=".period"
+	            ex:pointValue=".value"
+	            ex:timeplotHeight="500"
+	            ex:gridColor="#666666"
+	            ex:timeGeometry="timeGeometer"
+	            ex:valueGeometry="valueGeometer"
+				ex:colorKey=".measurement"
+	            ex:colorCoder="run-colors"
+	            >
+	        </div>
+
+	        </td>
+        </tr>
+    </table>
+</body>
+</html>

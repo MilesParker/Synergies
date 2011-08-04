@@ -1,0 +1,56 @@
+digraph findHome {
+
+	subgraph clustercontextKey {
+		fontname=Helvetica;
+		label="Parameters";
+		style="filled";
+		fillcolor=ghostwhite;
+		color=white;
+		labeljust=l;
+		contextOverview [style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="black",label=""];
+	}
+	subgraph clusterlearnerKey {
+		fontname=Helvetica;
+		nodesep=0.1;
+		style="filled";
+		fillcolor=ghostwhite;
+		label="Learner";
+		color=white;
+		labeljust=l;
+		findHomeOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.125, 0.9 , 0.8",label="",URL="learner__Overview.svg"];
+
+	}
+	subgraph clusterhomeKey {
+		fontname=Helvetica;
+		nodesep=0.1;
+		style="filled";
+		fillcolor=ghostwhite;
+		label="Home";
+		color=white;
+		labeljust=l;
+		learnerCopyOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.174, 0.9 , 0.8",label="",URL="home__Overview.svg"];
+		learnerCopyCopyOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.224, 0.9 , 0.8",label="",URL="home__Overview.svg"];
+learnerCopyOverview -> learnerCopyCopyOverview [style=invis];
+	}
+
+//subgraph clusterfindHome {
+	//style=filled;
+	//color=white;
+	//fillcolor="0.0, 0.0, 0.98";
+		findHome [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.125, 0.2, 1.0",label="Find Home",URL="learner_findHome.svg"];
+	findHome ->  learnerCopy [color="0.125, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		connectLearner [shape=none,style="rounded,filled",fontname=Helvetica,color="0.125, 0.2, 1.0",label="Connect"];
+	findHome ->  connectLearner:nw [style=dashed,color="0.125, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	learnerCopyCopy -> connectLearner:ne [style=dashed,color="0.224, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		nearestQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.224, 0.2, 1.0",label="Nearest "];
+	nearestQuery ->  connectLearner [color="0.224, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		not__Or_NeighborQuery_ [shape=none,style="rounded,filled",fontname=Helvetica,color="0.174, 0.2, 1.0",label="Else"];
+	not__Or_NeighborQuery_ ->  learnerCopyCopy [color="0.174, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		learnerCopy [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.174, 0.2, 1.0",label="Learner Copy"];
+	learnerCopy ->  neighborQuery [color="0.174, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		learnerCopyCopy [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.224, 0.2, 1.0",label="Learner Copy Copy"];
+	learnerCopyCopy ->  nearestQuery [color="0.224, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		neighborQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.174, 0.2, 1.0",label="Neighbor"];
+	neighborQuery ->  not__Or_NeighborQuery_ [color="0.174, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+//}
+}

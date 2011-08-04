@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Require-Bundle: org.ascape.ui.swing;visibility:=reexport
+Bundle-ManifestVersion: 2
+Bundle-Name: edu.osu.synergies.ascape
+Bundle-SymbolicName: edu.osu.synergies.ascape
+Bundle-Version: 0.9.0.qualifier
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Import-Package: org.apache.commons.lang
+Export-Package: edu.osu.synergies.simple.model1

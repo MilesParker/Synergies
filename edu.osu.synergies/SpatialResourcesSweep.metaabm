@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metaabm:SContext xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:act="http://metaabm.org/act" xmlns:function="http://metaabm.org/function" xmlns:metaabm="http://metaabm.org/structure" label="SimpleResourcesSweep" ID="simpleResourcesSweep" pluralLabel="SimpleResourcesSweeps">
+  <attributes label="Learner Count" ID="learnerCount" pluralLabel="Learner Counts" description="The number of learners to create." defaultValue="100"/>
+  <attributes label="Learning Resource Count" ID="learningResourceCount" pluralLabel="Learning Resource Counts" description="The number of learning resources to create." defaultValue="10"/>
+  <attributes label="Initial Interest Minimum" ID="initialInterestMinimum" pluralLabel="Initial Interest Minimums" sType="REAL" defaultValue="0.05"/>
+  <attributes label="Initial Interest Maximum" ID="initialInterestMaximum" pluralLabel="Initial Interest Maximums" sType="REAL" defaultValue="0.35"/>
+  <attributes label="Resource Efficacy Minimum" ID="resourceEfficacyMinimum" pluralLabel="Resource Efficacy Minimums" sType="REAL" defaultValue="0.02"/>
+  <attributes label="Resource Efficacy Maximum" ID="resourceEfficacyMaximum" pluralLabel="Resource Efficacy Maximums" sType="REAL" defaultValue="0.09"/>
+  <attributes label="Resource Interaction Count" ID="resourceInteractionCount" pluralLabel="Resource Interaction Counts" description="The number of resource interactions to create."/>
+  <attributes label="Home Count" ID="homeCount" pluralLabel="Home Counts" description="The number of homes to create." defaultValue="50"/>
+  <attributes label="Time Segment" ID="timeSegment" pluralLabel="Time Segments" gatherData="true" derived="true"/>
+  <attributes label="Time Segments in Day" ID="timeSegmentsinDay" pluralLabel="Time Segments in Days" defaultValue="96"/>
+  <attributes label="Time Segments Wandering" ID="timeSegmentsWandering" pluralLabel="Time Segments Wanderings" defaultValue="24"/>
+  <attributes label="Wandering" ID="wandering" pluralLabel="Wanderings" sType="BOOLEAN" gatherData="true" derived="true"/>
+  <attributes label="Engagement Reinforcement" ID="engagementReinforcement" pluralLabel="Engagement Reinforcements" sType="REAL" defaultValue="0.1"/>
+  <attributes label="Next Learner ID" ID="nextLearnerID" pluralLabel="Next Learner IDs"/>
+  <attributes label="Next Resource ID" ID="nextResourceID" pluralLabel="Next Resource IDs"/>
+  <attributes label="Subsequent Engagement Factor " ID="subsequentEngagementFactor" pluralLabel="Subsequent Engagement Factor s" sType="REAL" defaultValue=".05"/>
+  <rootActivity xsi:type="act:AGroup" label="Actions" ID="actions" pluralLabel="Actionss">
+    <members xsi:type="act:ABuild" label="Build SimpleResources" ID="buildSimpleResources" targets="//@rootActivity/@members[ID='buildGrids'] //@rootActivity/@members[ID='createLearners'] //@rootActivity/@members[ID='createLearningResources'] //@rootActivity/@members[ID='buildNetworks'] //@rootActivity/@members[ID='createHomes'] //@rootActivity/@members[ID='createResourceInteractions']" selected="//@rootActivity/@members[ID='buildSimpleResources']" agent="/" pluralLabel="Build SimpleResourcess"/>
+    <members xsi:type="act:ACreateAgents" label="Create Learners" ID="createLearners" sources="//@rootActivity/@members[ID='buildSimpleResources']" selected="//@rootActivity/@members[ID='buildSimpleResources']" agent="//@agents[ID='learner']" agentCount="//@attributes[ID='learnerCount']"/>
+    <members xsi:type="act:ABuildGrid" label="Build Grids" ID="buildGrids" sources="//@rootActivity/@members[ID='buildSimpleResources']" selected="//@rootActivity/@members[ID='buildSimpleResources']" pluralLabel="Build Gridss" agents="//@agents[ID='learningResource'] //@agents[ID='learner']" projection="//@projections[ID='district']"/>
+    <members xsi:type="act:ACreateAgents" label="Create Learning Resources" ID="createLearningResources" sources="//@rootActivity/@members[ID='buildSimpleResources']" selected="//@rootActivity/@members[ID='buildSimpleResources']" agent="//@agents[ID='learningResource']" agentCount="//@attributes[ID='learningResourceCount']"/>
+    <members xsi:type="act:ABuildNetwork" label="Build Networks" ID="buildNetworks" sources="//@rootActivity/@members[ID='buildSimpleResources']" selected="//@rootActivity/@members[ID='buildSimpleResources']" pluralLabel="Build Networkss" projection="//@projections[ID='homes']"/>
+    <members xsi:type="act:ACreateAgents" label="Create Resource Interactions" ID="createResourceInteractions" sources="//@rootActivity/@members[ID='buildSimpleResources']" selected="//@rootActivity/@members[ID='buildSimpleResources']" agent="//@agents[ID='resourceInteraction']" agentCount="//@attributes[ID='resourceInteractionCount']"/>
+    <members xsi:type="act:ACreateAgents" label="Create Homes" ID="createHomes" sources="//@rootActivity/@members[ID='buildSimpleResources']" selected="//@rootActivity/@members[ID='buildSimpleResources']" agent="//@agents[ID='home']" agentCount="//@attributes[ID='homeCount']"/>
+    <members xsi:type="act:ADerive" label="Derive Time Segment" ID="deriveTimeSegment" targets="//@rootActivity/@members[ID='now']" selected="//@rootActivity/@members[ID='deriveTimeSegment']" attribute="//@attributes[ID='timeSegment']" agent="/"/>
+    <members xsi:type="act:AEvaluate" label="Now() Modulo Now() Modulo [?]" ID="nowModuloNowModulo" sources="//@rootActivity/@members[ID='now']" selected="//@rootActivity/@members[ID='deriveTimeSegment']">
+      <inputs selected="//@rootActivity/@members[ID='deriveTimeSegment']" value="//@rootActivity/@members[ID='now']"/>
+      <inputs selected="//@rootActivity/@members[ID='deriveTimeSegment']" value="//@attributes[ID='timeSegmentsinDay']"/>
+      <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='mod']"/>
+    </members>
+    <members xsi:type="act:AEvaluate" label="Now()" ID="now" sources="//@rootActivity/@members[ID='deriveTimeSegment']" targets="//@rootActivity/@members[ID='nowModuloNowModulo']" selected="//@rootActivity/@members[ID='deriveTimeSegment']">
+      <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='time']/@functions[ID='timeNow']"/>
+    </members>
+    <members xsi:type="act:ADerive" label="Derive Wandering" ID="deriveWandering" targets="//@rootActivity/@members[ID='timeSegmentLesserorEqualTimeSegmentsWandering']" selected="//@rootActivity/@members[ID='deriveWandering']" attribute="//@attributes[ID='wandering']" agent="/"/>
+    <members xsi:type="act:AEvaluate" label="Time Segment Lesser or Equal Time Segments Wandering" ID="timeSegmentLesserorEqualTimeSegmentsWandering" sources="//@rootActivity/@members[ID='deriveWandering']" selected="//@rootActivity/@members[ID='deriveWandering']">
+      <inputs selected="//@rootActivity/@members[ID='deriveWandering']" value="//@attributes[ID='timeSegment']"/>
+      <inputs selected="//@rootActivity/@members[ID='deriveWandering']" value="//@attributes[ID='timeSegmentsWandering']"/>
+      <function xsi:type="function:FLogicalOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='logicalOperators']/@functions[ID='lesserorEqual']"/>
+    </members>
+    <members xsi:type="act:AInitialize" label="Initialize" ID="initialize" targets="//@rootActivity/@members[ID='setNextLearnerIDToZero'] //@rootActivity/@members[ID='setNextResourceIDToZero']" selected="//@rootActivity/@members[ID='initialize']" agent="/" pluralLabel="Initializes"/>
+    <members xsi:type="act:ASet" label="Set Next Learner ID To Zero" ID="setNextLearnerIDToZero" sources="//@rootActivity/@members[ID='initialize']" selected="//@rootActivity/@members[ID='initialize']" attribute="//@attributes[ID='nextLearnerID']">
+      <parameter xsi:type="metaabm:SAttribute" href="http://metaabm.org/core_library.metaabm#//@attributes[ID='zero']"/>
+    </members>
+    <members xsi:type="act:ASet" label="Set Next Resource ID To Zero" ID="setNextResourceIDToZero" sources="//@rootActivity/@members[ID='initialize']" selected="//@rootActivity/@members[ID='initialize']" attribute="//@attributes[ID='nextResourceID']">
+      <parameter xsi:type="metaabm:SAttribute" href="http://metaabm.org/core_library.metaabm#//@attributes[ID='zero']"/>
+    </members>
+  </rootActivity>
+  <implementation package="edu.osu.synergies.simple.model1" className="SimpleResourcesSweep" basePath="" mode="LOAD"/>
+  <agents label="Learner" ID="learner" pluralLabel="Learners">
+    <attributes label="Learning Interest" ID="learningInterest" pluralLabel="Learning Interests" sType="REAL" gatherData="true"/>
+    <attributes label="Learner ID" ID="learnerID" pluralLabel="Learner IDs"/>
+    <attributes label="Learner Index" ID="learnerIndex" pluralLabel="Learner Indexs" sType="REAL" units="" derived="true"/>
+    <attributes label="Resource Engagements" ID="resourceEngagements" pluralLabel="Resource Engagementss" gatherData="true"/>
+    <attributes xsi:type="metaabm:SState" label="Engagement" ID="engagement" pluralLabel="Engagements" sType="SYMBOL" gatherData="true" defaultValue="Not Interested" defaultOption="//@agents[ID='learner']/@attributes[ID='engagement']/@options.0">
+      <options label="Not Interested" ID="notInterested" pluralLabel="Not Interesteds"/>
+      <options label="Seeking Resource" ID="seekingResource" pluralLabel="Seeking Resources"/>
+      <options label="Found Resource" ID="foundResource" pluralLabel="Found Resources"/>
+    </attributes>
+    <attributes label="Target Resource ID" ID="targetResourceID" pluralLabel="Target Resource IDs"/>
+    <rootActivity xsi:type="act:AGroup" label="Actions" ID="actions" pluralLabel="Actionss">
+      <members xsi:type="act:AInitialize" label="Initialize Location" ID="initializeLocation" targets="//@agents[ID='learner']/@rootActivity/@members[ID='learner']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeLocation']" agent="//@agents[ID='learner']" space="//@projections[ID='district']" pluralLabel="Initialize Locations"/>
+      <members xsi:type="act:ASelect" label="Learner" ID="learner" sources="//@agents[ID='learner']/@rootActivity/@members[ID='initializeLocation']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='availableQuery']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeLocation']" space="//@projections[ID='district']"/>
+      <members xsi:type="act:AQuery" label="Available() Query" ID="availableQuery" sources="//@agents[ID='learner']/@rootActivity/@members[ID='learner']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='moveLearner']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='learner']">
+        <function xsi:type="function:FGenericLogical" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='spatial']/@functions[ID='available']"/>
+      </members>
+      <members xsi:type="act:AMove" label="Move Learner" ID="moveLearner" sources="//@agents[ID='learner']/@rootActivity/@members[ID='availableQuery']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeLocation']" destination="//@agents[ID='learner']/@rootActivity/@members[ID='learner']"/>
+      <members xsi:type="act:AInitialize" label="Initialize State" ID="initializeState" targets="//@agents[ID='learner']/@rootActivity/@members[ID='initialInterest'] //@agents[ID='learner']/@rootActivity/@members[ID='setLearnerIDToNextLearnerID']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']" agent="//@agents[ID='learner']" space="//@projections[ID='district']" pluralLabel="Initialize States"/>
+      <members xsi:type="act:AEvaluate" label="Initial Interest" ID="initialInterest" sources="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='setLearningInterestToInitialInterest']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']" value="//@agents[ID='learner']/@rootActivity/@members[ID='initialInterest']/@inputs.0/@literal">
+          <literal xsi:type="act:AMultiValue" label="Initial Interest States" ID="initialInterestStates"/>
+        </inputs>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']" value="//@agents[ID='learner']/@rootActivity/@members[ID='initialInterest']/@inputs.1/@literal">
+          <literal xsi:type="act:AMultiValue" label="Initial Interest Minimum" ID="initialInterestMinimum" values="//@attributes[ID='initialInterestMinimum']"/>
+        </inputs>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']" value="//@agents[ID='learner']/@rootActivity/@members[ID='initialInterest']/@inputs.2/@literal">
+          <literal xsi:type="act:AMultiValue" label="Initial Interest Maximum" ID="initialInterestMaximum" values="//@attributes[ID='initialInterestMaximum']"/>
+        </inputs>
+        <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='distribution']/@functions[ID='uniformAdditiveDistribution']"/>
+      </members>
+      <members xsi:type="act:ASet" label="Set Learning Interest To Initial Interest" ID="setLearningInterestToInitialInterest" sources="//@agents[ID='learner']/@rootActivity/@members[ID='initialInterest']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']" attribute="//@agents[ID='learner']/@attributes[ID='learningInterest']" parameter="//@agents[ID='learner']/@rootActivity/@members[ID='initialInterest']"/>
+      <members xsi:type="act:ARule" label="Find Home" ID="findHome" targets="//@agents[ID='learner']/@rootActivity/@members[ID='learnerCopy']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='findHome']" agent="//@agents[ID='learner']" pluralLabel="Find Homes"/>
+      <members xsi:type="act:ARule" label="Movement" ID="movement" targets="//@agents[ID='learner']/@rootActivity/@members[ID='identityWanderingQuery'] //@agents[ID='learner']/@rootActivity/@members[ID='notWanderingQuery']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='movement']" agent="//@agents[ID='learner']" pluralLabel="Movements"/>
+      <members xsi:type="act:ASelect" label="Learner Copy" ID="learnerCopy" sources="//@agents[ID='learner']/@rootActivity/@members[ID='findHome']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='neighborQuery']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='findHome']" agent="//@agents[ID='home']" space="//@projections[ID='homes']"/>
+      <members xsi:type="act:AQuery" label="Neighbor() Query" ID="neighborQuery" sources="//@agents[ID='learner']/@rootActivity/@members[ID='learnerCopy']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='not__Or_NeighborQuery_']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='learnerCopy']">
+        <function xsi:type="function:FGenericLogical" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='spatial']/@functions[ID='neighbor']"/>
+      </members>
+      <members xsi:type="act:ANone" label="!((|) Neighbor() Query)" ID="not__Or_NeighborQuery_" sources="//@agents[ID='learner']/@rootActivity/@members[ID='neighborQuery']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='learnerCopyCopy']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='learnerCopy']"/>
+      <members xsi:type="act:ASelect" label="Learner Copy Copy" ID="learnerCopyCopy" sources="//@agents[ID='learner']/@rootActivity/@members[ID='not__Or_NeighborQuery_']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='nearestQuery']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='findHome']" agent="//@agents[ID='home']" space="//@projections[ID='district']"/>
+      <members xsi:type="act:AQuery" label="Nearest () Query" ID="nearestQuery" sources="//@agents[ID='learner']/@rootActivity/@members[ID='learnerCopyCopy']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='connectLearner']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='learnerCopyCopy']">
+        <function xsi:type="function:FGenericLogical" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='spatial']/@functions[ID='nearest']"/>
+      </members>
+      <members xsi:type="act:AConnect" label="Connect Learner" ID="connectLearner" sources="//@agents[ID='learner']/@rootActivity/@members[ID='nearestQuery']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='findHome']" destination="//@agents[ID='learner']/@rootActivity/@members[ID='learnerCopyCopy']" within="//@projections[ID='homes']"/>
+      <members xsi:type="act:ASelect" label="Learner Home" ID="learnerHome" sources="//@agents[ID='learner']/@rootActivity/@members[ID='notWanderingQuery']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='neighborQueryCopy'] //@agents[ID='learner']/@rootActivity/@members[ID='towardQuery']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='movement']" agent="//@agents[ID='home']" space="//@projections[ID='homes']"/>
+      <members xsi:type="act:AQuery" label="Neighbor() Query Copy" ID="neighborQueryCopy" sources="//@agents[ID='learner']/@rootActivity/@members[ID='learnerHome']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='_TowardQueryAndAvailableQueryCopy_']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='learnerHome']">
+        <function xsi:type="function:FGenericLogical" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='spatial']/@functions[ID='neighbor']"/>
+      </members>
+      <members xsi:type="act:AQuery" label="Toward() Query" ID="towardQuery" sources="//@agents[ID='learner']/@rootActivity/@members[ID='learnerHome']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='_TowardQueryAndAvailableQueryCopy_']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='learnerHome']">
+        <function xsi:type="function:FGenericLogical" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='spatial']/@functions[ID='toward']"/>
+      </members>
+      <members xsi:type="act:AAll" label="(Toward() Query &amp; Available() Query Copy)" ID="_TowardQueryAndAvailableQueryCopy_" sources="//@agents[ID='learner']/@rootActivity/@members[ID='towardQuery'] //@agents[ID='learner']/@rootActivity/@members[ID='neighborQueryCopy']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='moveHome']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='learnerHome']"/>
+      <members xsi:type="act:AMove" label="Move Home" ID="moveHome" sources="//@agents[ID='learner']/@rootActivity/@members[ID='_TowardQueryAndAvailableQueryCopy_']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='movement']" destination="//@agents[ID='learner']/@rootActivity/@members[ID='learnerHome']"/>
+      <members xsi:type="act:AQuery" label="Identity Wandering Query" ID="identityWanderingQuery" sources="//@agents[ID='learner']/@rootActivity/@members[ID='movement']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='engagementIdenticalSeekingResourceQuery'] //@agents[ID='learner']/@rootActivity/@members[ID='engagementIdenticalNotInterestedQuery']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='movement']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='movement']" value="//@attributes[ID='wandering']"/>
+        <function xsi:type="function:FLogicalOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='logicalOperators']/@functions[ID='identity']"/>
+      </members>
+      <members xsi:type="act:ASelect" label="Learner Copy Copy Copy" ID="learnerCopyCopyCopy" sources="//@agents[ID='learner']/@rootActivity/@members[ID='engagementIdenticalNotInterestedQuery']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='neighborQueryCopyCopy'] //@agents[ID='learner']/@rootActivity/@members[ID='availableQueryCopy']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='movement']" space="//@projections[ID='district']"/>
+      <members xsi:type="act:AQuery" label="Neighbor() Query Copy Copy" ID="neighborQueryCopyCopy" sources="//@agents[ID='learner']/@rootActivity/@members[ID='learnerCopyCopyCopy']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='_And_NeighborQueryCopyCopy']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='learnerCopyCopyCopy']">
+        <function xsi:type="function:FGenericLogical" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='spatial']/@functions[ID='neighbor']"/>
+      </members>
+      <members xsi:type="act:AQuery" label="Available() Query Copy" ID="availableQueryCopy" sources="//@agents[ID='learner']/@rootActivity/@members[ID='learnerCopyCopyCopy']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='_And_NeighborQueryCopyCopy']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='learnerCopyCopyCopy']">
+        <function xsi:type="function:FGenericLogical" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='spatial']/@functions[ID='available']"/>
+      </members>
+      <members xsi:type="act:AAll" label="(&amp;) Neighbor() Query Copy Copy" ID="_And_NeighborQueryCopyCopy" sources="//@agents[ID='learner']/@rootActivity/@members[ID='neighborQueryCopyCopy'] //@agents[ID='learner']/@rootActivity/@members[ID='availableQueryCopy']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='moveLearnerCopy']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='learnerCopyCopyCopy']"/>
+      <members xsi:type="act:AMove" label="Move Learner Copy" ID="moveLearnerCopy" sources="//@agents[ID='learner']/@rootActivity/@members[ID='_And_NeighborQueryCopyCopy']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='movement']" destination="//@agents[ID='learner']/@rootActivity/@members[ID='learnerCopyCopyCopy']"/>
+      <members xsi:type="act:ARule" label="Resource Engagement" ID="resourceEngagement" targets="//@agents[ID='learner']/@rootActivity/@members[ID='engagementIdenticalNotEngagedTodayQuery']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='resourceEngagement']" agent="//@agents[ID='learner']" pluralLabel="Resource Engagements"/>
+      <members xsi:type="act:ASelect" label="Encountered Resource" ID="encounteredResource" sources="//@agents[ID='learner']/@rootActivity/@members[ID='engagementIdenticalNotEngagedTodayQuery']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='neighborQueryCopyCopyCopy']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='resourceEngagement']" agent="//@agents[ID='learningResource']" space="//@projections[ID='district']"/>
+      <members xsi:type="act:AQuery" label="Neighbor() Query Copy Copy Copy" ID="neighborQueryCopyCopyCopy" sources="//@agents[ID='learner']/@rootActivity/@members[ID='encounteredResource']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='allLearnerInteractions'] //@agents[ID='learner']/@rootActivity/@members[ID='learningInterestAddEfficacy']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='encounteredResource']">
+        <function xsi:type="function:FGenericLogical" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='spatial']/@functions[ID='neighbor']"/>
+      </members>
+      <members xsi:type="act:ASelect" label="All Learner Interactions" ID="allLearnerInteractions" sources="//@agents[ID='learner']/@rootActivity/@members[ID='neighborQueryCopyCopyCopy']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='resourceIDIdenticalIDQuery'] //@agents[ID='learner']/@rootActivity/@members[ID='learnerIDIdenticalLearnerIDQuery']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='encounteredResource']" agent="//@agents[ID='resourceInteraction']"/>
+      <members xsi:type="act:AQuery" label="Resource ID Identical ID Query" ID="resourceIDIdenticalIDQuery" sources="//@agents[ID='learner']/@rootActivity/@members[ID='allLearnerInteractions']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='_And_NeighborQueryCopyCopyCopyCopy']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='allLearnerInteractions']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='encounteredResource']" value="//@agents[ID='resourceInteraction']/@attributes[ID='resourceID']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='allLearnerInteractions']" value="//@agents[ID='learningResource']/@attributes[ID='resourceID']"/>
+        <function xsi:type="function:FLogicalOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='logicalOperators']/@functions[ID='identical']"/>
+      </members>
+      <members xsi:type="act:ASet" label="Set Learner ID To Next Learner ID" ID="setLearnerIDToNextLearnerID" sources="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='incrementNextLearnerID']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']" attribute="//@agents[ID='learner']/@attributes[ID='learnerID']" parameter="//@attributes[ID='nextLearnerID']"/>
+      <members xsi:type="act:AEvaluate" label="Increment Next Learner ID" ID="incrementNextLearnerID" sources="//@agents[ID='learner']/@rootActivity/@members[ID='setLearnerIDToNextLearnerID']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='setNextLearnerIDToIncrementNextLearnerID']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']" value="//@attributes[ID='nextLearnerID']"/>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='increment']"/>
+      </members>
+      <members xsi:type="act:ASet" label="Set Next Learner ID To Increment Next Learner ID" ID="setNextLearnerIDToIncrementNextLearnerID" sources="//@agents[ID='learner']/@rootActivity/@members[ID='incrementNextLearnerID']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']" attribute="//@attributes[ID='nextLearnerID']" parameter="//@agents[ID='learner']/@rootActivity/@members[ID='incrementNextLearnerID']"/>
+      <members xsi:type="act:AQuery" label="Learner ID Identical Learner ID Query" ID="learnerIDIdenticalLearnerIDQuery" sources="//@agents[ID='learner']/@rootActivity/@members[ID='allLearnerInteractions']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='_And_NeighborQueryCopyCopyCopyCopy']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='allLearnerInteractions']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='resourceEngagement']" value="//@agents[ID='resourceInteraction']/@attributes[ID='learnerID']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='allLearnerInteractions']" value="//@agents[ID='learner']/@attributes[ID='learnerID']"/>
+        <function xsi:type="function:FLogicalOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='logicalOperators']/@functions[ID='identical']"/>
+      </members>
+      <members xsi:type="act:AAll" label="(&amp;) Neighbor() Query Copy Copy Copy Copy" ID="_And_NeighborQueryCopyCopyCopyCopy" sources="//@agents[ID='learner']/@rootActivity/@members[ID='resourceIDIdenticalIDQuery'] //@agents[ID='learner']/@rootActivity/@members[ID='learnerIDIdenticalLearnerIDQuery']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='newStrength'] //@agents[ID='learner']/@rootActivity/@members[ID='not__Or__And_NeighborQueryCopyCopyCopyCopy_'] //@agents[ID='learner']/@rootActivity/@members[ID='incrementResourceEngagements']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='allLearnerInteractions']"/>
+      <members xsi:type="act:ADerive" label="Derive Learner Index" ID="deriveLearnerIndex" targets="//@agents[ID='learner']/@rootActivity/@members[ID='identityLearnerID']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='deriveLearnerIndex']" attribute="//@agents[ID='learner']/@attributes[ID='learnerIndex']" agent="//@agents[ID='learner']"/>
+      <members xsi:type="act:AEvaluate" label="Identity Learner ID" ID="identityLearnerID" sources="//@agents[ID='learner']/@rootActivity/@members[ID='deriveLearnerIndex']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='deriveLearnerIndex']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='deriveLearnerIndex']" value="//@agents[ID='learner']/@attributes[ID='learnerID']"/>
+        <function xsi:type="function:FLogicalOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='logicalOperators']/@functions[ID='identity']"/>
+      </members>
+      <members xsi:type="act:AEvaluate" label="New Strength" ID="newStrength" sources="//@agents[ID='learner']/@rootActivity/@members[ID='_And_NeighborQueryCopyCopyCopyCopy']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='setStrengthToNewStrength']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='allLearnerInteractions']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='allLearnerInteractions']" value="//@agents[ID='resourceInteraction']/@attributes[ID='strength']"/>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='increment']"/>
+      </members>
+      <members xsi:type="act:ASet" label="Set Strength To New Strength" ID="setStrengthToNewStrength" sources="//@agents[ID='learner']/@rootActivity/@members[ID='newStrength']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='allLearnerInteractions']" attribute="//@agents[ID='resourceInteraction']/@attributes[ID='strength']" parameter="//@agents[ID='learner']/@rootActivity/@members[ID='newStrength']"/>
+      <members xsi:type="act:ANone" label="!((|) (&amp;) Neighbor() Query Copy Copy Copy Copy)" ID="not__Or__And_NeighborQueryCopyCopyCopyCopy_" sources="//@agents[ID='learner']/@rootActivity/@members[ID='_And_NeighborQueryCopyCopyCopyCopy']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='createAgents']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='allLearnerInteractions']"/>
+      <members xsi:type="act:ACreateAgents" label="Create Agents" ID="createAgents" sources="//@agents[ID='learner']/@rootActivity/@members[ID='not__Or__And_NeighborQueryCopyCopyCopyCopy_']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='setLearnerIDToLearnerID']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='allLearnerInteractions']" agent="//@agents[ID='resourceInteraction']"/>
+      <members xsi:type="act:ASet" label="Set Learner ID To Learner ID" ID="setLearnerIDToLearnerID" sources="//@agents[ID='learner']/@rootActivity/@members[ID='createAgents']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='resourceIDAddZero']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='createAgents']" attribute="//@agents[ID='resourceInteraction']/@attributes[ID='learnerID']" parameter="//@agents[ID='learner']/@attributes[ID='learnerID']"/>
+      <members xsi:type="act:ASet" label="Set Resource ID To Resource ID Add Zero" ID="setResourceIDToResourceIDAddZero" sources="//@agents[ID='learner']/@rootActivity/@members[ID='resourceIDAddZero']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='createAgents']" attribute="//@agents[ID='resourceInteraction']/@attributes[ID='resourceID']" parameter="//@agents[ID='learner']/@rootActivity/@members[ID='resourceIDAddZero']"/>
+      <members xsi:type="act:AEvaluate" label="Resource ID Add Zero" ID="resourceIDAddZero" sources="//@agents[ID='learner']/@rootActivity/@members[ID='setLearnerIDToLearnerID']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='setResourceIDToResourceIDAddZero']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='encounteredResource']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='encounteredResource']" value="//@agents[ID='learningResource']/@attributes[ID='resourceID']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='resourceEngagement']">
+          <value xsi:type="metaabm:SAttribute" href="http://metaabm.org/core_library.metaabm#//@attributes[ID='zero']"/>
+        </inputs>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='add']"/>
+      </members>
+      <members xsi:type="act:AQuery" label="Engagement Identical Not Engaged Today Query" ID="engagementIdenticalNotEngagedTodayQuery" sources="//@agents[ID='learner']/@rootActivity/@members[ID='resourceEngagement']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='encounteredResource']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='resourceEngagement']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='resourceEngagement']" value="//@agents[ID='learner']/@attributes[ID='engagement']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='resourceEngagement']" value="//@agents[ID='learner']/@attributes[ID='engagement']/@options.2"/>
+        <function xsi:type="function:FLogicalOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='logicalOperators']/@functions[ID='different']"/>
+      </members>
+      <members xsi:type="act:ASet" label="Set Resource Engagements To Increment Resource Engagements" ID="setResourceEngagementsToIncrementResourceEngagements" sources="//@agents[ID='learner']/@rootActivity/@members[ID='incrementResourceEngagements']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='setEngagementToFoundResource']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='resourceEngagement']" attribute="//@agents[ID='learner']/@attributes[ID='resourceEngagements']" parameter="//@agents[ID='learner']/@rootActivity/@members[ID='incrementResourceEngagements']"/>
+      <members xsi:type="act:AEvaluate" label="Increment Resource Engagements" ID="incrementResourceEngagements" sources="//@agents[ID='learner']/@rootActivity/@members[ID='_And_NeighborQueryCopyCopyCopyCopy']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='setResourceEngagementsToIncrementResourceEngagements']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='resourceEngagement']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='resourceEngagement']" value="//@agents[ID='learner']/@attributes[ID='resourceEngagements']"/>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='increment']"/>
+      </members>
+      <members xsi:type="act:ARule" label="Start Day" ID="startDay" targets="//@agents[ID='learner']/@rootActivity/@members[ID='timeSegmentIdenticalZeroQuery']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='startDay']" agent="//@agents[ID='learner']" pluralLabel="Start Days"/>
+      <members xsi:type="act:AQuery" label="Time Segment Identical Zero Query" ID="timeSegmentIdenticalZeroQuery" sources="//@agents[ID='learner']/@rootActivity/@members[ID='startDay']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='setEngagementToNotEngagedToday']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='startDay']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='startDay']" value="//@attributes[ID='timeSegment']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='startDay']">
+          <value xsi:type="metaabm:SAttribute" href="http://metaabm.org/core_library.metaabm#//@attributes[ID='zero']"/>
+        </inputs>
+        <function xsi:type="function:FLogicalOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='logicalOperators']/@functions[ID='identical']"/>
+      </members>
+      <members xsi:type="act:ASet" label="Set Engagement To Not Engaged Today" ID="setEngagementToNotEngagedToday" sources="//@agents[ID='learner']/@rootActivity/@members[ID='timeSegmentIdenticalZeroQuery']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='setTargetResourceIDToZero']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='startDay']" attribute="//@agents[ID='learner']/@attributes[ID='engagement']" parameter="//@agents[ID='learner']/@attributes[ID='engagement']/@options.0"/>
+      <members xsi:type="act:ASelect" label="Target Resource" ID="targetResource" sources="//@agents[ID='learner']/@rootActivity/@members[ID='setTargetResourceIDToZero']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='learnerIDIdenticalLearnerIDQueryCopy']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='startDay']" agent="//@agents[ID='resourceInteraction']"/>
+      <members xsi:type="act:AQuery" label="Learner ID Identical Learner ID Query Copy" ID="learnerIDIdenticalLearnerIDQueryCopy" sources="//@agents[ID='learner']/@rootActivity/@members[ID='targetResource']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='strengthMultiplySubsequentEngagementFactor']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='targetResource']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='startDay']" value="//@agents[ID='learner']/@attributes[ID='learnerID']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='targetResource']" value="//@agents[ID='resourceInteraction']/@attributes[ID='learnerID']"/>
+        <function xsi:type="function:FLogicalOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='logicalOperators']/@functions[ID='identical']"/>
+      </members>
+      <members xsi:type="act:AEvaluate" label="Strength Multiply Subsequent Engagement Factor " ID="strengthMultiplySubsequentEngagementFactor" sources="//@agents[ID='learner']/@rootActivity/@members[ID='learnerIDIdenticalLearnerIDQueryCopy']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='randomUnit']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='startDay']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='targetResource']" value="//@agents[ID='resourceInteraction']/@attributes[ID='strength']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='targetResource']" value="//@attributes[ID='subsequentEngagementFactor']"/>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='mul']"/>
+      </members>
+      <members xsi:type="act:AEvaluate" label="Random Unit()" ID="randomUnit" sources="//@agents[ID='learner']/@rootActivity/@members[ID='strengthMultiplySubsequentEngagementFactor']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='startDay']">
+        <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='random']/@functions[ID='randomUnit']"/>
+      </members>
+      <members xsi:type="act:AQuery" label="Random Unit() Lesser Strength Multiply Subsequent Engagement Factor  Query" ID="randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery" sources="//@agents[ID='learner']/@rootActivity/@members[ID='randomUnit']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='setEngagementToSeekingResource'] //@agents[ID='learner']/@rootActivity/@members[ID='resourceIDAddZeroCopy']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='startDay']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='startDay']" value="//@agents[ID='learner']/@rootActivity/@members[ID='randomUnit']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='startDay']" value="//@agents[ID='learner']/@rootActivity/@members[ID='strengthMultiplySubsequentEngagementFactor']"/>
+        <function xsi:type="function:FLogicalOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='logicalOperators']/@functions[ID='lesser']"/>
+      </members>
+      <members xsi:type="act:ASelect" label="Sought Resource" ID="soughtResource" sources="//@agents[ID='learner']/@rootActivity/@members[ID='engagementIdenticalSeekingResourceQuery']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='resourceIDIdenticalTargetResourceIDQuery'] //@agents[ID='learner']/@rootActivity/@members[ID='towardQueryCopy'] //@agents[ID='learner']/@rootActivity/@members[ID='nearestQueryCopy']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='movement']" agent="//@agents[ID='learningResource']" space="//@projections[ID='district']"/>
+      <members xsi:type="act:ASet" label="Set Engagement To Seeking Resource" ID="setEngagementToSeekingResource" sources="//@agents[ID='learner']/@rootActivity/@members[ID='randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='startDay']" attribute="//@agents[ID='learner']/@attributes[ID='engagement']" parameter="//@agents[ID='learner']/@attributes[ID='engagement']/@options.1"/>
+      <members xsi:type="act:ASet" label="Set Engagement To Found Resource" ID="setEngagementToFoundResource" sources="//@agents[ID='learner']/@rootActivity/@members[ID='setResourceEngagementsToIncrementResourceEngagements']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='resourceEngagement']" attribute="//@agents[ID='learner']/@attributes[ID='engagement']" parameter="//@agents[ID='learner']/@attributes[ID='engagement']/@options.2"/>
+      <members xsi:type="act:AQuery" label="Engagement Identical Seeking Resource Query" ID="engagementIdenticalSeekingResourceQuery" sources="//@agents[ID='learner']/@rootActivity/@members[ID='identityWanderingQuery']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='soughtResource']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='movement']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='movement']" value="//@agents[ID='learner']/@attributes[ID='engagement']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='movement']" value="//@agents[ID='learner']/@attributes[ID='engagement']/@options.1"/>
+        <function xsi:type="function:FLogicalOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='logicalOperators']/@functions[ID='identical']"/>
+      </members>
+      <members xsi:type="act:AQuery" label="Resource ID Identical Target Resource ID Query" ID="resourceIDIdenticalTargetResourceIDQuery" sources="//@agents[ID='learner']/@rootActivity/@members[ID='soughtResource']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='_SoughtResourceAndTowardQueryCopy_']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='soughtResource']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='soughtResource']" value="//@agents[ID='learningResource']/@attributes[ID='resourceID']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='movement']" value="//@agents[ID='learner']/@attributes[ID='targetResourceID']"/>
+        <function xsi:type="function:FLogicalOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='logicalOperators']/@functions[ID='identical']"/>
+      </members>
+      <members xsi:type="act:AMove" label="Move Learner Copy Copy" ID="moveLearnerCopyCopy" sources="//@agents[ID='learner']/@rootActivity/@members[ID='_SoughtResourceAndTowardQueryCopy_']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='movement']" destination="//@agents[ID='learner']/@rootActivity/@members[ID='soughtResource']"/>
+      <members xsi:type="act:AQuery" label="Toward() Query Copy" ID="towardQueryCopy" sources="//@agents[ID='learner']/@rootActivity/@members[ID='soughtResource']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='_SoughtResourceAndTowardQueryCopy_']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='soughtResource']">
+        <function xsi:type="function:FGenericLogical" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='spatial']/@functions[ID='toward']"/>
+      </members>
+      <members xsi:type="act:AAll" label="(Sought Resource &amp; Toward() Query Copy)" ID="_SoughtResourceAndTowardQueryCopy_" sources="//@agents[ID='learner']/@rootActivity/@members[ID='towardQueryCopy'] //@agents[ID='learner']/@rootActivity/@members[ID='resourceIDIdenticalTargetResourceIDQuery'] //@agents[ID='learner']/@rootActivity/@members[ID='nearestQueryCopy']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='moveLearnerCopyCopy']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='soughtResource']"/>
+      <members xsi:type="act:AQuery" label="Engagement Identical Not Interested Query" ID="engagementIdenticalNotInterestedQuery" sources="//@agents[ID='learner']/@rootActivity/@members[ID='identityWanderingQuery']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='learnerCopyCopyCopy']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='movement']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='movement']" value="//@agents[ID='learner']/@attributes[ID='engagement']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='movement']" value="//@agents[ID='learner']/@attributes[ID='engagement']/@options.0"/>
+        <function xsi:type="function:FLogicalOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='logicalOperators']/@functions[ID='identical']"/>
+      </members>
+      <members xsi:type="act:AQuery" label="Not Wandering Query" ID="notWanderingQuery" sources="//@agents[ID='learner']/@rootActivity/@members[ID='movement']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='learnerHome']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='movement']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='movement']" value="//@attributes[ID='wandering']"/>
+        <function xsi:type="function:FLogicalOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='logicalOperators']/@functions[ID='not']"/>
+      </members>
+      <members xsi:type="act:ASet" label="Set Target Resource ID To Zero" ID="setTargetResourceIDToZero" sources="//@agents[ID='learner']/@rootActivity/@members[ID='setEngagementToNotEngagedToday']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='targetResource']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='startDay']" attribute="//@agents[ID='learner']/@attributes[ID='targetResourceID']">
+        <parameter xsi:type="metaabm:SAttribute" href="http://metaabm.org/core_library.metaabm#//@attributes[ID='zero']"/>
+      </members>
+      <members xsi:type="act:ASet" label="Set Target Resource ID To Resource ID Add Zero Copy" ID="setTargetResourceIDToResourceIDAddZeroCopy" sources="//@agents[ID='learner']/@rootActivity/@members[ID='resourceIDAddZeroCopy']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='startDay']" attribute="//@agents[ID='learner']/@attributes[ID='targetResourceID']" parameter="//@agents[ID='learner']/@rootActivity/@members[ID='resourceIDAddZeroCopy']"/>
+      <members xsi:type="act:AEvaluate" label="Resource ID Add Zero Copy" ID="resourceIDAddZeroCopy" sources="//@agents[ID='learner']/@rootActivity/@members[ID='randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='setTargetResourceIDToResourceIDAddZeroCopy']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='targetResource']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='targetResource']" value="//@agents[ID='resourceInteraction']/@attributes[ID='resourceID']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='startDay']">
+          <value xsi:type="metaabm:SAttribute" href="http://metaabm.org/core_library.metaabm#//@attributes[ID='zero']"/>
+        </inputs>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='add']"/>
+      </members>
+      <members xsi:type="act:AQuery" label="Nearest () Query Copy" ID="nearestQueryCopy" sources="//@agents[ID='learner']/@rootActivity/@members[ID='soughtResource']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='_SoughtResourceAndTowardQueryCopy_']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='soughtResource']">
+        <function xsi:type="function:FGenericLogical" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='spatial']/@functions[ID='nearest']"/>
+      </members>
+      <members xsi:type="act:AEvaluate" label="Learning Interest Add Efficacy" ID="learningInterestAddEfficacy" sources="//@agents[ID='learner']/@rootActivity/@members[ID='neighborQueryCopyCopyCopy']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='minimum_LearningInterestAddEfficacyUnit_']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='resourceEngagement']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='resourceEngagement']" value="//@agents[ID='learner']/@attributes[ID='learningInterest']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='encounteredResource']" value="//@agents[ID='learningResource']/@attributes[ID='efficacy']"/>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='add']"/>
+      </members>
+      <members xsi:type="act:ASet" label="Set Learning Interest To Minimum(Learning Interest Add Efficacy, Unit)" ID="setLearningInterestToMinimum_LearningInterestAddEfficacyUnit_" sources="//@agents[ID='learner']/@rootActivity/@members[ID='minimum_LearningInterestAddEfficacyUnit_']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='resourceEngagement']" attribute="//@agents[ID='learner']/@attributes[ID='learningInterest']" parameter="//@agents[ID='learner']/@rootActivity/@members[ID='minimum_LearningInterestAddEfficacyUnit_']"/>
+      <members xsi:type="act:AEvaluate" label="Minimum(Learning Interest Add Efficacy, Unit)" ID="minimum_LearningInterestAddEfficacyUnit_" sources="//@agents[ID='learner']/@rootActivity/@members[ID='learningInterestAddEfficacy']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='setLearningInterestToMinimum_LearningInterestAddEfficacyUnit_']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='resourceEngagement']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='resourceEngagement']" value="//@agents[ID='learner']/@rootActivity/@members[ID='learningInterestAddEfficacy']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='resourceEngagement']">
+          <value xsi:type="metaabm:SAttribute" href="http://metaabm.org/core_library.metaabm#//@attributes[ID='unit']"/>
+        </inputs>
+        <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='math']/@functions[ID='min']"/>
+      </members>
+    </rootActivity>
+    <implementation className="Learner"/>
+    <styles xsi:type="metaabm:SStyle2D" label="Learner Style 2D" ID="learnerStyle2D" pluralLabel="Learner Style 2Ds">
+      <rootActivity xsi:type="act:AGroup" label="Actions" ID="actions" pluralLabel="Actionss">
+        <members xsi:type="act:ARule" label="Default SimpleResources Agent Style" ID="defaultSimpleResourcesAgentStyle" targets="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='learnerIndexDivideLearnerCount']" selected="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']" agent="//@agents[ID='learner']" pluralLabel="Default SimpleResources Agent Styles"/>
+        <members xsi:type="act:AEvaluate" label="Default SimpleResources Agent Color" ID="defaultSimpleResourcesAgentColor" sources="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='learnerIndexDivideLearnerCount']" targets="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentShape']" selected="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']">
+          <inputs selected="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']" value="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentColor']/@inputs.0/@literal">
+            <literal label="Literal 0.5" ID="literal0pt5" valueLiteral="0.5"/>
+          </inputs>
+          <inputs selected="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']" value="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentColor']/@inputs.1/@literal">
+            <literal label="Opt5" ID="opt5" valueLiteral="0.6"/>
+          </inputs>
+          <inputs selected="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']" value="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='learnerIndexDivideLearnerCount']"/>
+          <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='graphic']/@functions[ID='colorRGB']"/>
+        </members>
+        <members xsi:type="act:AEvaluate" label="Default SimpleResources Agent Shape" ID="defaultSimpleResourcesAgentShape" sources="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentColor']" targets="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentPaint']" selected="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']">
+          <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='graphic']/@functions[ID='shapeOval']"/>
+        </members>
+        <members xsi:type="act:AEvaluate" label="Default SimpleResources Agent Paint" ID="defaultSimpleResourcesAgentPaint" sources="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentShape']" selected="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']">
+          <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='graphic']/@functions[ID='graphicFill']"/>
+        </members>
+        <members xsi:type="act:AEvaluate" label="Learner Index Divide Learner Count" ID="learnerIndexDivideLearnerCount" sources="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']" targets="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentColor']" selected="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']">
+          <inputs selected="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']" value="//@agents[ID='learner']/@attributes[ID='learnerIndex']"/>
+          <inputs selected="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']" value="//@attributes[ID='learnerCount']"/>
+          <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='div']"/>
+        </members>
+      </rootActivity>
+      <implementation className="LearnerStyle2D"/>
+    </styles>
+  </agents>
+  <agents label="Learning Resource" ID="learningResource" pluralLabel="Learning Resources">
+    <attributes label="Efficacy" ID="efficacy" pluralLabel="Efficacys" sType="REAL"/>
+    <attributes label="Resource ID" ID="resourceID" pluralLabel="Resource IDs"/>
+    <rootActivity xsi:type="act:AGroup" label="Actions" ID="actions" pluralLabel="Actionss">
+      <members xsi:type="act:AInitialize" label="Initialize" ID="initialize" targets="//@agents[ID='learningResource']/@rootActivity/@members[ID='learningResource']" selected="//@agents[ID='learningResource']/@rootActivity/@members[ID='initialize']" agent="//@agents[ID='learningResource']" space="//@projections[ID='district']" pluralLabel="Initializes"/>
+      <members xsi:type="act:ASelect" label="Learning Resource" ID="learningResource" sources="//@agents[ID='learningResource']/@rootActivity/@members[ID='initialize']" targets="//@agents[ID='learningResource']/@rootActivity/@members[ID='availableQuery']" selected="//@agents[ID='learningResource']/@rootActivity/@members[ID='initialize']" space="//@projections[ID='district']"/>
+      <members xsi:type="act:AQuery" label="Available() Query" ID="availableQuery" sources="//@agents[ID='learningResource']/@rootActivity/@members[ID='learningResource']" targets="//@agents[ID='learningResource']/@rootActivity/@members[ID='moveLearningResource']" selected="//@agents[ID='learningResource']/@rootActivity/@members[ID='learningResource']">
+        <function xsi:type="function:FGenericLogical" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='spatial']/@functions[ID='available']"/>
+      </members>
+      <members xsi:type="act:AMove" label="Move Learning Resource" ID="moveLearningResource" sources="//@agents[ID='learningResource']/@rootActivity/@members[ID='availableQuery']" selected="//@agents[ID='learningResource']/@rootActivity/@members[ID='initialize']" destination="//@agents[ID='learningResource']/@rootActivity/@members[ID='learningResource']"/>
+      <members xsi:type="act:AInitialize" label="Initialize State" ID="initializeState" targets="//@agents[ID='learningResource']/@rootActivity/@members[ID='resourceEfficacy']" selected="//@agents[ID='learningResource']/@rootActivity/@members[ID='initializeState']" agent="//@agents[ID='learningResource']" space="//@projections[ID='district']" pluralLabel="Initialize States"/>
+      <members xsi:type="act:AEvaluate" label="Resource Efficacy" ID="resourceEfficacy" sources="//@agents[ID='learningResource']/@rootActivity/@members[ID='initializeState']" targets="//@agents[ID='learningResource']/@rootActivity/@members[ID='setEfficacyToResourceEfficacy']" selected="//@agents[ID='learningResource']/@rootActivity/@members[ID='initializeState']">
+        <inputs selected="//@agents[ID='learningResource']/@rootActivity/@members[ID='initializeState']" value="//@agents[ID='learningResource']/@rootActivity/@members[ID='resourceEfficacy']/@inputs.0/@literal">
+          <literal xsi:type="act:AMultiValue" label="Resource Efficacy States" ID="resourceEfficacyStates"/>
+        </inputs>
+        <inputs selected="//@agents[ID='learningResource']/@rootActivity/@members[ID='initializeState']" value="//@agents[ID='learningResource']/@rootActivity/@members[ID='resourceEfficacy']/@inputs.1/@literal">
+          <literal xsi:type="act:AMultiValue" label="Resource Efficacy Minimum" ID="resourceEfficacyMinimum" values="//@attributes[ID='resourceEfficacyMinimum']"/>
+        </inputs>
+        <inputs selected="//@agents[ID='learningResource']/@rootActivity/@members[ID='initializeState']" value="//@agents[ID='learningResource']/@rootActivity/@members[ID='resourceEfficacy']/@inputs.2/@literal">
+          <literal xsi:type="act:AMultiValue" label="Resource Efficacy Maximum" ID="resourceEfficacyMaximum" values="//@attributes[ID='resourceEfficacyMaximum']"/>
+        </inputs>
+        <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='distribution']/@functions[ID='uniformAdditiveDistribution']"/>
+      </members>
+      <members xsi:type="act:ASet" label="Set Efficacy To Resource Efficacy" ID="setEfficacyToResourceEfficacy" sources="//@agents[ID='learningResource']/@rootActivity/@members[ID='resourceEfficacy']" selected="//@agents[ID='learningResource']/@rootActivity/@members[ID='initializeState']" attribute="//@agents[ID='learningResource']/@attributes[ID='efficacy']" parameter="//@agents[ID='learningResource']/@rootActivity/@members[ID='resourceEfficacy']"/>
+      <members xsi:type="act:AInitialize" label="Initialize ID" ID="initializeID" targets="//@agents[ID='learningResource']/@rootActivity/@members[ID='setResourceIDToNextResourceID']" selected="//@agents[ID='learningResource']/@rootActivity/@members[ID='initializeID']" agent="//@agents[ID='learningResource']" pluralLabel="Initialize IDs"/>
+      <members xsi:type="act:ASet" label="Set Resource ID To Next Resource ID" ID="setResourceIDToNextResourceID" sources="//@agents[ID='learningResource']/@rootActivity/@members[ID='initializeID']" targets="//@agents[ID='learningResource']/@rootActivity/@members[ID='incrementResourceID']" selected="//@agents[ID='learningResource']/@rootActivity/@members[ID='initializeID']" attribute="//@agents[ID='learningResource']/@attributes[ID='resourceID']" parameter="//@attributes[ID='nextResourceID']"/>
+      <members xsi:type="act:AEvaluate" label="Increment Resource ID" ID="incrementResourceID" sources="//@agents[ID='learningResource']/@rootActivity/@members[ID='setResourceIDToNextResourceID']" targets="//@agents[ID='learningResource']/@rootActivity/@members[ID='setNextResourceIDToIncrementResourceID']" selected="//@agents[ID='learningResource']/@rootActivity/@members[ID='initializeID']">
+        <inputs selected="//@agents[ID='learningResource']/@rootActivity/@members[ID='initializeID']" value="//@agents[ID='learningResource']/@attributes[ID='resourceID']"/>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='increment']"/>
+      </members>
+      <members xsi:type="act:ASet" label="Set Next Resource ID To Increment Resource ID" ID="setNextResourceIDToIncrementResourceID" sources="//@agents[ID='learningResource']/@rootActivity/@members[ID='incrementResourceID']" selected="//@agents[ID='learningResource']/@rootActivity/@members[ID='initializeID']" attribute="//@attributes[ID='nextResourceID']" parameter="//@agents[ID='learningResource']/@rootActivity/@members[ID='incrementResourceID']"/>
+    </rootActivity>
+    <implementation className="LearningResource"/>
+    <styles xsi:type="metaabm:SStyle2D" label="Learning Resource Style 2D" ID="learningResourceStyle2D" pluralLabel="Learning Resource Style 2Ds">
+      <rootActivity xsi:type="act:AGroup" label="Actions" ID="actions" pluralLabel="Actionss">
+        <members xsi:type="act:ARule" label="Default SimpleResources Agent Style" ID="defaultSimpleResourcesAgentStyle" targets="//@agents[ID='learningResource']/@styles[ID='learningResourceStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentColor']" selected="//@agents[ID='learningResource']/@styles[ID='learningResourceStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']" agent="//@agents[ID='learningResource']" space="//@projections[ID='district']" pluralLabel="Default SimpleResources Agent Styles"/>
+        <members xsi:type="act:AEvaluate" label="Default SimpleResources Agent Color" ID="defaultSimpleResourcesAgentColor" sources="//@agents[ID='learningResource']/@styles[ID='learningResourceStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']" targets="//@agents[ID='learningResource']/@styles[ID='learningResourceStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentShape']" selected="//@agents[ID='learningResource']/@styles[ID='learningResourceStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']">
+          <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='graphic']/@functions[ID='colorBlack']"/>
+        </members>
+        <members xsi:type="act:AEvaluate" label="Default SimpleResources Agent Shape" ID="defaultSimpleResourcesAgentShape" sources="//@agents[ID='learningResource']/@styles[ID='learningResourceStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentColor']" targets="//@agents[ID='learningResource']/@styles[ID='learningResourceStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentPaint']" selected="//@agents[ID='learningResource']/@styles[ID='learningResourceStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']">
+          <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='graphic']/@functions[ID='shapeRectangle']"/>
+        </members>
+        <members xsi:type="act:AEvaluate" label="Default SimpleResources Agent Paint" ID="defaultSimpleResourcesAgentPaint" sources="//@agents[ID='learningResource']/@styles[ID='learningResourceStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentShape']" selected="//@agents[ID='learningResource']/@styles[ID='learningResourceStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']">
+          <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='graphic']/@functions[ID='graphicFill']"/>
+        </members>
+      </rootActivity>
+      <implementation className="LearningResourceStyle2D"/>
+    </styles>
+  </agents>
+  <agents label="Resource Interaction" ID="resourceInteraction" pluralLabel="Resource Interactions">
+    <attributes label="Strength" ID="strength" pluralLabel="Strengths" sType="REAL" gatherData="true"/>
+    <attributes label="Resource ID" ID="resourceID" pluralLabel="Resource IDs"/>
+    <attributes label="Learner ID" ID="learnerID" pluralLabel="Learner IDs"/>
+    <rootActivity xsi:type="act:AGroup" label="Actions" ID="actions" pluralLabel="Actionss"/>
+    <implementation className="ResourceInteraction"/>
+    <styles xsi:type="metaabm:SStyle2D" label="Resource Interaction Style 2D" ID="resourceInteractionStyle2D" pluralLabel="Resource Interaction Style 2Ds">
+      <rootActivity xsi:type="act:AGroup" label="Actions" ID="actions" pluralLabel="Actionss">
+        <members xsi:type="act:ARule" label="Default SimpleResources Agent Style" ID="defaultSimpleResourcesAgentStyle" targets="//@agents[ID='resourceInteraction']/@styles[ID='resourceInteractionStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentColor']" selected="//@agents[ID='resourceInteraction']/@styles[ID='resourceInteractionStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']" agent="//@agents[ID='resourceInteraction']" space="//@projections[ID='district']" pluralLabel="Default SimpleResources Agent Styles"/>
+        <members xsi:type="act:AEvaluate" label="Default SimpleResources Agent Color" ID="defaultSimpleResourcesAgentColor" sources="//@agents[ID='resourceInteraction']/@styles[ID='resourceInteractionStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']" targets="//@agents[ID='resourceInteraction']/@styles[ID='resourceInteractionStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentShape']" selected="//@agents[ID='resourceInteraction']/@styles[ID='resourceInteractionStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']">
+          <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='graphic']/@functions[ID='colorBlue']"/>
+        </members>
+        <members xsi:type="act:AEvaluate" label="Default SimpleResources Agent Shape" ID="defaultSimpleResourcesAgentShape" sources="//@agents[ID='resourceInteraction']/@styles[ID='resourceInteractionStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentColor']" targets="//@agents[ID='resourceInteraction']/@styles[ID='resourceInteractionStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentPaint']" selected="//@agents[ID='resourceInteraction']/@styles[ID='resourceInteractionStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']">
+          <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='graphic']/@functions[ID='shapeOval']"/>
+        </members>
+        <members xsi:type="act:AEvaluate" label="Default SimpleResources Agent Paint" ID="defaultSimpleResourcesAgentPaint" sources="//@agents[ID='resourceInteraction']/@styles[ID='resourceInteractionStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentShape']" selected="//@agents[ID='resourceInteraction']/@styles[ID='resourceInteractionStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']">
+          <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='graphic']/@functions[ID='graphicFill']"/>
+        </members>
+      </rootActivity>
+      <implementation className="ResourceInteractionStyle2D"/>
+    </styles>
+  </agents>
+  <agents label="Home" ID="home" pluralLabel="Homes">
+    <rootActivity xsi:type="act:AGroup" label="Actions" ID="actions" pluralLabel="Actionss">
+      <members xsi:type="act:AInitialize" label="Initialize" ID="initialize" targets="//@agents[ID='home']/@rootActivity/@members[ID='home']" selected="//@agents[ID='home']/@rootActivity/@members[ID='initialize']" agent="//@agents[ID='home']" pluralLabel="Initializes"/>
+      <members xsi:type="act:ASelect" label="Home" ID="home" sources="//@agents[ID='home']/@rootActivity/@members[ID='initialize']" targets="//@agents[ID='home']/@rootActivity/@members[ID='availableQuery']" selected="//@agents[ID='home']/@rootActivity/@members[ID='initialize']" space="//@projections[ID='district']"/>
+      <members xsi:type="act:AQuery" label="Available() Query" ID="availableQuery" sources="//@agents[ID='home']/@rootActivity/@members[ID='home']" targets="//@agents[ID='home']/@rootActivity/@members[ID='moveHome']" selected="//@agents[ID='home']/@rootActivity/@members[ID='home']">
+        <function xsi:type="function:FGenericLogical" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='spatial']/@functions[ID='available']"/>
+      </members>
+      <members xsi:type="act:AMove" label="Move Home" ID="moveHome" sources="//@agents[ID='home']/@rootActivity/@members[ID='availableQuery']" selected="//@agents[ID='home']/@rootActivity/@members[ID='initialize']" destination="//@agents[ID='home']/@rootActivity/@members[ID='home']"/>
+    </rootActivity>
+    <implementation className="Home"/>
+    <styles xsi:type="metaabm:SStyle2D" label="Home Style 2D" ID="homeStyle2D" pluralLabel="Home Style 2Ds">
+      <rootActivity xsi:type="act:AGroup" label="Actions" ID="actions" pluralLabel="Actionss">
+        <members xsi:type="act:ARule" label="Default SimpleResources Agent Style" ID="defaultSimpleResourcesAgentStyle" targets="//@agents[ID='home']/@styles[ID='homeStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentColor']" selected="//@agents[ID='home']/@styles[ID='homeStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']" agent="//@agents[ID='home']" pluralLabel="Default SimpleResources Agent Styles"/>
+        <members xsi:type="act:AEvaluate" label="Default SimpleResources Agent Color" ID="defaultSimpleResourcesAgentColor" sources="//@agents[ID='home']/@styles[ID='homeStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']" targets="//@agents[ID='home']/@styles[ID='homeStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentShape']" selected="//@agents[ID='home']/@styles[ID='homeStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']">
+          <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='graphic']/@functions[ID='colorWhite']"/>
+        </members>
+        <members xsi:type="act:AEvaluate" label="Default SimpleResources Agent Shape" ID="defaultSimpleResourcesAgentShape" sources="//@agents[ID='home']/@styles[ID='homeStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentColor']" targets="//@agents[ID='home']/@styles[ID='homeStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentPaint']" selected="//@agents[ID='home']/@styles[ID='homeStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']">
+          <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='graphic']/@functions[ID='shapeRectangle']"/>
+        </members>
+        <members xsi:type="act:AEvaluate" label="Default SimpleResources Agent Paint" ID="defaultSimpleResourcesAgentPaint" sources="//@agents[ID='home']/@styles[ID='homeStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentShape']" selected="//@agents[ID='home']/@styles[ID='homeStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']">
+          <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='graphic']/@functions[ID='graphicFill']"/>
+        </members>
+      </rootActivity>
+      <implementation className="HomeStyle2D"/>
+    </styles>
+  </agents>
+  <projections xsi:type="metaabm:SGrid" label="District" ID="district" pluralLabel="Districts" dimensionality="2">
+    <attributes label="Width" ID="width" pluralLabel="Widths" description="The horizontal extent of the space." defaultValue="60"/>
+    <attributes label="Height" ID="height" pluralLabel="Heights" description="The vertical extent of the space." defaultValue="130" units=""/>
+  </projections>
+  <projections xsi:type="metaabm:SNetwork" label="Homes" ID="homes" pluralLabel="Homess"/>
+</metaabm:SContext>

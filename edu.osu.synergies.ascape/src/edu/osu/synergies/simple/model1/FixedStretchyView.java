@@ -48,6 +48,7 @@ public class FixedStretchyView extends StretchyView {
      */
     public FixedStretchyView(String name, int maxElements, int maxDisplayElements) {
         super(maxElements, maxDisplayElements);
+        agentView = new Agent[maxAgents];
     }
 
     /* (non-Javadoc)

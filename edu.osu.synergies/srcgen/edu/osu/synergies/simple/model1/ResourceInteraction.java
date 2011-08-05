@@ -163,18 +163,8 @@ public class ResourceInteraction extends CellOccupant
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SimpleResources getSimpleResources() {
-		return (SimpleResources) getScape().getScape();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * 
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public List getNetwork() {
-		return Collections.emptyList();
+	public SpatialResources getSpatialResources() {
+		return (SpatialResources) getScape().getScape();
 	}
 
 	/**

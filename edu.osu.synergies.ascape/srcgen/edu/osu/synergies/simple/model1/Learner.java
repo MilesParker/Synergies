@@ -37,46 +37,53 @@ public class Learner extends CellOccupant {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * 
+	 * How engaged is the learner but the process of learning itelf?
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private double learningInterest = 0.0;
 	/**
 	 * <!-- begin-user-doc -->
-	 * 
+	 * A unique identifier for the learner.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private int learnerID = 0;
 	/**
 	 * <!-- begin-user-doc -->
-	 * 
+	 * (Internal Use.)
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private double learnerIndex = 0.0;
 	/**
 	 * <!-- begin-user-doc -->
-	 * 
+	 * The total number of encounters a learner has had with any resource during the model period.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private int resourceEngagements = 0;
 	/**
 	 * <!-- begin-user-doc -->
-	 * 
+	 * What is the learner currently doing? He or she is either at home or wandering, in which case they might activly be looking for a resource, wandering aimlessly, or returning home after the wandering period ends.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EngagementEnum engagement = EngagementEnum.notInterested;
+	private BehaviorEnum behavior = BehaviorEnum.notInterested;
 	/**
 	 * <!-- begin-user-doc -->
-	 * 
+	 * A target resource that the learner may be seeking. Once a learner has identified a resource, the learner will seek this same resource out in the future unless they happen upon another resource. This id could be 0 in which case the learner hasn't identified a target learning resource.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private int targetResourceID = 0;
+	/**
+	 * <!-- begin-user-doc -->
+	 * The identifier for this learners home.
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private int homeID = 0;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -147,18 +154,8 @@ public class Learner extends CellOccupant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SimpleResources getSimpleResources() {
-		return (SimpleResources) getScape().getScape();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * 
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public List getNetwork() {
-		return Collections.emptyList();
+	public SpatialResources getSpatialResources() {
+		return (SpatialResources) getScape().getScape();
 	}
 
 	/**
@@ -177,12 +174,12 @@ public class Learner extends CellOccupant {
 	 * @generated
 	 */
 	public void initializeLocation() {
-		final Object learner = (Object) ((org.ascape.model.space.Discrete) getSimpleResources()
+		final Object learner = (Object) ((org.ascape.model.space.Discrete) getSpatialResources()
 				.getDistrict().getSpace()).findRandomAvailable();
 		if (learner != null) {
 			if (getHostScape() != ((Agent) learner).getScape()) {
 				die();
-				getSimpleResources().getLearnerScape().add(this);
+				getSpatialResources().getLearnerScape().add(this);
 			}
 			moveTo(((HostCell) learner));
 		}
@@ -194,12 +191,12 @@ public class Learner extends CellOccupant {
 	 * @generated
 	 */
 	public void initializeState() {
-		setLearnerID(getSimpleResources().getNextLearnerID());
+		setLearnerID(getSpatialResources().getNextLearnerID());
 		double initialInterest = initialInterest();
 
-		int incrementNextLearnerID = getSimpleResources().getNextLearnerID() + 1;
+		int incrementNextLearnerID = getSpatialResources().getNextLearnerID() + 1;
 
-		getSimpleResources().setNextLearnerID(incrementNextLearnerID);
+		getSpatialResources().setNextLearnerID(incrementNextLearnerID);
 		setLearningInterest(initialInterest);
 	}
 	/**
@@ -209,105 +206,118 @@ public class Learner extends CellOccupant {
 	 * @generated
 	 */
 	public double initialInterest() {
-		double initialInterestMinimum = getSimpleResources()
+		double initialInterestMinimum = getSpatialResources()
 				.getInitialInterestMinimum();
-		double initialInterestMaximum = getSimpleResources()
+		double initialInterestMaximum = getSpatialResources()
 				.getInitialInterestMaximum();
 		return randomInRange(initialInterestMinimum, initialInterestMaximum);
 	}
 	/**
 	 * <!-- begin-user-doc -->
-	 * Find Home Rule. Executed every period.
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void findHome() {
-		final Home learnerCopy = (Home) ((org.ascape.model.space.Discrete) getSimpleResources()
-				.getHomes().getSpace()).findRandomNeighbor(this);
-		if (learnerCopy != null) {
-		} else {
-			Conditional learnerCopyCopyCondition = new Conditional() {
-				private static final long serialVersionUID = 1L;
-				public boolean meetsCondition(Object learnerCopyCopyCell) {
-					learnerCopyCopyCell = ((org.ascape.model.HostCell) learnerCopyCopyCell)
-							.getOccupant();
-					if (learnerCopyCopyCell instanceof Home) {
-						return true;
-					} else {
-						return false;
-					}
-				}
-			};
-			final Location learnerCopyCopyLocation = ((org.ascape.model.space.Discrete) getSimpleResources()
-					.getDistrict().getSpace()).findNearest(
-					((org.ascape.model.CellOccupant) this).getHostCell(),
-					learnerCopyCopyCondition, false, Double.MAX_VALUE);
-			if (learnerCopyCopyLocation != null) {
-				final Home learnerCopyCopy = (Home) ((org.ascape.model.HostCell) learnerCopyCopyLocation)
-						.getOccupant();
-				if (learnerCopyCopy != null) {
-					((org.ascape.model.space.Graph) getSimpleResources()
-							.getHomes().getSpace()).addNeighborSafe(this,
-							learnerCopyCopy, true);
-				}
-			}
-		}
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * Movement Rule. Executed every period.
+	 * A learner may be at home, in which case they are not wandering, or engaged in another movement behavior. See the Behavior attribute for more details.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void movement() {
-		if (getEngagement() == EngagementEnum.seekingResource
-				&& getSimpleResources().isWandering()) {
-			Conditional soughtResourceCondition = new Conditional() {
+		if (getBehavior() == BehaviorEnum.seekingResource
+				&& getSpatialResources().isWandering()) {
+			Conditional targetLearningResourceCondition = new Conditional() {
 				private static final long serialVersionUID = 1L;
-				public boolean meetsCondition(Object soughtResourceCell) {
-					soughtResourceCell = ((org.ascape.model.HostCell) soughtResourceCell)
+				public boolean meetsCondition(Object targetLearningResourceCell) {
+					targetLearningResourceCell = ((org.ascape.model.HostCell) targetLearningResourceCell)
 							.getOccupant();
-					if (soughtResourceCell instanceof LearningResource) {
-						LearningResource soughtResource = (LearningResource) soughtResourceCell;
-						return (soughtResource.getResourceID() == getTargetResourceID());
+					if (targetLearningResourceCell instanceof LearningResource) {
+						LearningResource targetLearningResource = (LearningResource) targetLearningResourceCell;
+						return (targetLearningResource.getResourceID() == getTargetResourceID());
 					} else {
 						return false;
 					}
 				}
 			};
-			final Location soughtResourceLocation = ((org.ascape.model.space.Discrete) getSimpleResources()
+			final Location targetLearningResourceLocation = ((org.ascape.model.space.Discrete) getSpatialResources()
 					.getDistrict().getSpace()).findNearest(
 					((org.ascape.model.CellOccupant) this).getHostCell(),
-					soughtResourceCondition, false, Double.MAX_VALUE);
-			if (soughtResourceLocation != null) {
-				final LearningResource soughtResource = (LearningResource) ((org.ascape.model.HostCell) soughtResourceLocation)
+					targetLearningResourceCondition, false, Double.MAX_VALUE);
+			if (targetLearningResourceLocation != null) {
+				final LearningResource targetLearningResource = (LearningResource) ((org.ascape.model.HostCell) targetLearningResourceLocation)
 						.getOccupant();
-				if (soughtResource != null) {
-					moveToward(((org.ascape.model.CellOccupant) soughtResource)
+				if (targetLearningResource != null) {
+					moveToward(((org.ascape.model.CellOccupant) targetLearningResource)
 							.getHostCell());
 				}
 			}
 		}
-		if (getEngagement() == EngagementEnum.notInterested
-				&& getSimpleResources().isWandering()) {
-			final Object learnerCopyCopyCopy = (Object) ((org.ascape.model.space.Discrete) getSimpleResources()
+		if (getBehavior() == BehaviorEnum.notInterested
+				&& getSpatialResources().isWandering()) {
+			final Object randomNeighboringLocation = (Object) ((org.ascape.model.space.Discrete) getSpatialResources()
 					.getDistrict().getSpace())
 					.findRandomAvailableNeighbor(((org.ascape.model.CellOccupant) this)
 							.getHostCell());
-			if (learnerCopyCopyCopy != null) {
-				if (getHostScape() != ((Agent) learnerCopyCopyCopy).getScape()) {
+			if (randomNeighboringLocation != null) {
+				if (getHostScape() != ((Agent) randomNeighboringLocation)
+						.getScape()) {
 					die();
-					getSimpleResources().getLearnerScape().add(this);
+					getSpatialResources().getLearnerScape().add(this);
 				}
-				moveTo(((HostCell) learnerCopyCopyCopy));
+				moveTo(((HostCell) randomNeighboringLocation));
 			}
 		}
-		if (!getSimpleResources().isWandering()) {
-			final Home learnerHome = (Home) ((org.ascape.model.space.Discrete) getSimpleResources()
-					.getHomes().getSpace()).findRandomNeighbor(this);
-			if (learnerHome != null) {
-				moveToward(((org.ascape.model.CellOccupant) learnerHome)
-						.getHostCell());
+		if ((getBehavior() != BehaviorEnum.atHome && !getSpatialResources()
+				.isWandering())) {
+			Conditional returnedHomeCondition = new Conditional() {
+				private static final long serialVersionUID = 1L;
+				public boolean meetsCondition(Object returnedHomeCell) {
+					if (returnedHomeCell instanceof Home) {
+						Home returnedHome = (Home) returnedHomeCell;
+						return (returnedHome.getHomeID() == getHomeID());
+					} else {
+						return false;
+					}
+				}
+			};
+			final Home returnedHome = (Home) ((org.ascape.model.space.Discrete) getSpatialResources()
+					.getDistrict().getSpace()).findRandomNeighbor(this,
+					returnedHomeCondition);
+			if (returnedHome != null) {
+				setBehavior(BehaviorEnum.atHome);
+			}
+			Conditional learnerHomeCondition = new Conditional() {
+				private static final long serialVersionUID = 1L;
+				public boolean meetsCondition(Object learnerHomeCell) {
+					learnerHomeCell = ((org.ascape.model.HostCell) learnerHomeCell)
+							.getOccupant();
+					if (learnerHomeCell instanceof Home) {
+						Home learnerHome = (Home) learnerHomeCell;
+						return (learnerHome.getHomeID() == getHomeID());
+					} else {
+						return false;
+					}
+				}
+			};
+			final Location learnerHomeLocation = ((org.ascape.model.space.Discrete) getSpatialResources()
+					.getDistrict().getSpace()).findNearest(
+					((org.ascape.model.CellOccupant) this).getHostCell(),
+					learnerHomeCondition, false, Double.MAX_VALUE);
+			if (learnerHomeLocation != null) {
+				final Home learnerHome = (Home) ((org.ascape.model.HostCell) learnerHomeLocation)
+						.getOccupant();
+				if (learnerHome != null) {
+					moveToward(((org.ascape.model.CellOccupant) learnerHome)
+							.getHostCell());
+				}
+			}
+		}
+		if ((getBehavior() != BehaviorEnum.atHome && getBehavior() != BehaviorEnum.atHome)) {
+			final Object learnerCopy = (Object) ((org.ascape.model.space.Discrete) getSpatialResources()
+					.getDistrict().getSpace())
+					.findRandomAvailableNeighbor(((org.ascape.model.CellOccupant) this)
+							.getHostCell());
+			if (learnerCopy != null) {
+				if (getHostScape() != ((Agent) learnerCopy).getScape()) {
+					die();
+					getSpatialResources().getLearnerScape().add(this);
+				}
+				moveTo(((HostCell) learnerCopy));
 			}
 		}
 	}
@@ -318,7 +328,7 @@ public class Learner extends CellOccupant {
 	 * @generated
 	 */
 	public void resourceEngagement() {
-		if (getEngagement() != EngagementEnum.foundResource) {
+		if ((getBehavior() == BehaviorEnum.notInterested || getBehavior() == BehaviorEnum.seekingResource)) {
 			Conditional encounteredResourceCondition = new Conditional() {
 				private static final long serialVersionUID = 1L;
 				public boolean meetsCondition(Object encounteredResourceCell) {
@@ -329,7 +339,7 @@ public class Learner extends CellOccupant {
 					}
 				}
 			};
-			final LearningResource encounteredResource = (LearningResource) ((org.ascape.model.space.Discrete) getSimpleResources()
+			final LearningResource encounteredResource = (LearningResource) ((org.ascape.model.space.Discrete) getSpatialResources()
 					.getDistrict().getSpace()).findRandomNeighbor(this,
 					encounteredResourceCondition);
 			if (encounteredResource != null) {
@@ -342,21 +352,21 @@ public class Learner extends CellOccupant {
 							Object allLearnerInteractionsCell) {
 						if (allLearnerInteractionsCell instanceof ResourceInteraction) {
 							ResourceInteraction allLearnerInteractions = (ResourceInteraction) allLearnerInteractionsCell;
-							return (encounteredResource.getResourceID() == allLearnerInteractions
-									.getResourceID() && getLearnerID() == allLearnerInteractions
-									.getLearnerID());
+							return (allLearnerInteractions.getResourceID() == encounteredResource
+									.getResourceID() && allLearnerInteractions
+									.getLearnerID() == getLearnerID());
 						} else {
 							return false;
 						}
 					}
 				};
-				final ResourceInteraction allLearnerInteractions = (ResourceInteraction) getSimpleResources()
+				final ResourceInteraction allLearnerInteractions = (ResourceInteraction) getSpatialResources()
 						.getResourceInteractionScape().findRandom(
 								allLearnerInteractionsCondition);
 				if (allLearnerInteractions != null) {
-					if ((encounteredResource.getResourceID() == allLearnerInteractions
-							.getResourceID() && getLearnerID() == allLearnerInteractions
-							.getLearnerID())) {
+					if ((allLearnerInteractions.getResourceID() == encounteredResource
+							.getResourceID() && allLearnerInteractions
+							.getLearnerID() == getLearnerID())) {
 						double newStrength = allLearnerInteractions
 								.getStrength() + 1;
 
@@ -364,11 +374,11 @@ public class Learner extends CellOccupant {
 
 						allLearnerInteractions.setStrength(newStrength);
 						setResourceEngagements(incrementResourceEngagements);
-						setEngagement(EngagementEnum.foundResource);
+						setBehavior(BehaviorEnum.foundResource);
 					}
 				} else {
 
-					ResourceInteraction createAgents = (ResourceInteraction) getSimpleResources()
+					ResourceInteraction createAgents = (ResourceInteraction) getSpatialResources()
 							.getResourceInteractionScape().getSpace()
 							.newLocation(false);
 					createAgents.setLearnerID(getLearnerID());
@@ -402,8 +412,8 @@ public class Learner extends CellOccupant {
 	 * @generated
 	 */
 	public void startDay() {
-		if (getSimpleResources().getTimeSegment() == 0) {
-			setEngagement(EngagementEnum.notInterested);
+		if (getSpatialResources().getTimeSegment() == 0) {
+			setBehavior(BehaviorEnum.notInterested);
 			setTargetResourceID(0);
 			Conditional targetResourceCondition = new Conditional() {
 				private static final long serialVersionUID = 1L;
@@ -416,20 +426,20 @@ public class Learner extends CellOccupant {
 					}
 				}
 			};
-			final ResourceInteraction targetResource = (ResourceInteraction) getSimpleResources()
+			final ResourceInteraction targetResource = (ResourceInteraction) getSpatialResources()
 					.getResourceInteractionScape().findRandom(
 							targetResourceCondition);
 			if (targetResource != null) {
 				if (getLearnerID() == targetResource.getLearnerID()) {
 					double strengthMultiplySubsequentEngagementFactor = targetResource
 							.getStrength()
-							* targetResource.getSimpleResources()
+							* targetResource.getSpatialResources()
 									.getSubsequentEngagementFactor();
 
 					double randomUnit = getRandom().nextDouble();
 
 					if (randomUnit < strengthMultiplySubsequentEngagementFactor) {
-						setEngagement(EngagementEnum.seekingResource);
+						setBehavior(BehaviorEnum.seekingResource);
 						int resourceIDAddZeroCopy = targetResource
 								.getResourceID() + 0;
 
@@ -441,8 +451,41 @@ public class Learner extends CellOccupant {
 	}
 	/**
 	 * <!-- begin-user-doc -->
+	 * Find Home Initialization. Executed once at the beginning of each model run.
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void findHome() {
+		Conditional homeLocationCondition = new Conditional() {
+			private static final long serialVersionUID = 1L;
+			public boolean meetsCondition(Object homeLocationCell) {
+				homeLocationCell = ((org.ascape.model.HostCell) homeLocationCell)
+						.getOccupant();
+				if (homeLocationCell instanceof Home) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		};
+		final Location homeLocationLocation = ((org.ascape.model.space.Discrete) getSpatialResources()
+				.getDistrict().getSpace()).findNearest(
+				((org.ascape.model.CellOccupant) this).getHostCell(),
+				homeLocationCondition, false, Double.MAX_VALUE);
+		if (homeLocationLocation != null) {
+			final Home homeLocation = (Home) ((org.ascape.model.HostCell) homeLocationLocation)
+					.getOccupant();
+			if (homeLocation != null) {
+				int homeIDAddZero = homeLocation.getHomeID() + 0;
+
+				setHomeID(homeIDAddZero);
+			}
+		}
+	}
+	/**
+	 * <!-- begin-user-doc -->
 	 * Gets the Learning Interest property for Learner.
-	 * @return 
+	 * @return How engaged is the learner but the process of learning itelf?
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -453,7 +496,7 @@ public class Learner extends CellOccupant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * Sets the Learning Interest property for Learner.
-	 * 
+	 * How engaged is the learner but the process of learning itelf?
 	 * @param _learningInterest the new Learning Interest value
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -465,7 +508,7 @@ public class Learner extends CellOccupant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * Gets the Learner ID property for Learner.
-	 * @return 
+	 * @return A unique identifier for the learner.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -476,7 +519,7 @@ public class Learner extends CellOccupant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * Sets the Learner ID property for Learner.
-	 * 
+	 * A unique identifier for the learner.
 	 * @param _learnerID the new Learner ID value
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -488,7 +531,7 @@ public class Learner extends CellOccupant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * Gets the Resource Engagements property for Learner.
-	 * @return 
+	 * @return The total number of encounters a learner has had with any resource during the model period.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -499,7 +542,7 @@ public class Learner extends CellOccupant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * Sets the Resource Engagements property for Learner.
-	 * 
+	 * The total number of encounters a learner has had with any resource during the model period.
 	 * @param _resourceEngagements the new Resource Engagements value
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -510,31 +553,31 @@ public class Learner extends CellOccupant {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * Gets the Engagement property for Learner.
-	 * @return 
+	 * Gets the Behavior property for Learner.
+	 * @return What is the learner currently doing? He or she is either at home or wandering, in which case they might activly be looking for a resource, wandering aimlessly, or returning home after the wandering period ends.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EngagementEnum getEngagement() {
-		return engagement;
+	public BehaviorEnum getBehavior() {
+		return behavior;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * Sets the Engagement property for Learner.
-	 * 
-	 * @param _engagement the new Engagement value
+	 * Sets the Behavior property for Learner.
+	 * What is the learner currently doing? He or she is either at home or wandering, in which case they might activly be looking for a resource, wandering aimlessly, or returning home after the wandering period ends.
+	 * @param _behavior the new Behavior value
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEngagement(EngagementEnum _engagement) {
-		engagement = _engagement;
+	public void setBehavior(BehaviorEnum _behavior) {
+		behavior = _behavior;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * Gets the Target Resource ID property for Learner.
-	 * @return 
+	 * @return A target resource that the learner may be seeking. Once a learner has identified a resource, the learner will seek this same resource out in the future unless they happen upon another resource. This id could be 0 in which case the learner hasn't identified a target learning resource.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -545,13 +588,36 @@ public class Learner extends CellOccupant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * Sets the Target Resource ID property for Learner.
-	 * 
+	 * A target resource that the learner may be seeking. Once a learner has identified a resource, the learner will seek this same resource out in the future unless they happen upon another resource. This id could be 0 in which case the learner hasn't identified a target learning resource.
 	 * @param _targetResourceID the new Target Resource ID value
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setTargetResourceID(int _targetResourceID) {
 		targetResourceID = _targetResourceID;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * Gets the Home ID property for Learner.
+	 * @return The identifier for this learners home.
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getHomeID() {
+		return homeID;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * Sets the Home ID property for Learner.
+	 * The identifier for this learners home.
+	 * @param _homeID the new Home ID value
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHomeID(int _homeID) {
+		homeID = _homeID;
 	}
 
 	/**

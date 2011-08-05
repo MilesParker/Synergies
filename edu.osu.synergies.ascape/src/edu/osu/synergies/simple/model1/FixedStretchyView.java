@@ -28,7 +28,8 @@ public class FixedStretchyView extends StretchyView {
     /**
      * The agent view.
      */
-    private Agent[] agentView;
+    private Agent[] agentView = new Agent[0];
+;
 
     /**
      * The agent found at.

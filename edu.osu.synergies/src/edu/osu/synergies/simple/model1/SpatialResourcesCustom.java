@@ -7,13 +7,14 @@ import org.ascape.util.vis.ColorFeature;
 import org.ascape.util.vis.ColorFeatureConcrete;
 import org.ascape.util.vis.ColorFeatureGradiated;
 import org.ascape.util.vis.ColorFeatureGradiatedIndex;
+import org.ascape.view.vis.ChartView;
 import org.ascape.view.vis.GEFView;
 import org.eclipse.amp.agf.IGraphicsAdapted;
 import org.eclipse.amp.agf.IGraphicsAdapter;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.swt.graphics.Color;
 
-public class SpatialResourcesCustom extends SimpleResources implements
+public class SpatialResourcesCustom extends SpatialResources implements
 IGraphicsAdapted {
 
 	static ColorFeature SIMPLE = new ColorFeatureConcrete("Simple") {
@@ -30,9 +31,17 @@ IGraphicsAdapted {
 	
 	@Override
 	public void createGraphicViews() {
-		createChartViews();
+		ChartView chart = new ChartView();
+		chart.addSeries("Count Learner Not Interested Behavior", ColorFeature.RED);
+		chart.addSeries("Count Learner Seeking Resource Behavior", ColorFeature.GREEN);
+		chart.addSeries("Count Learner Found Resource Behavior", ColorFeature.BLACK);
+		chart.addSeries("Sum Learner Learning Interest", ColorFeature.BLUE);
+
+		addView(chart);
 
 		GEFView view = new GEFView();
+		
+		addView(view);
 		
 		FixedStretchyView learnerView = new FixedStretchyView(name,
 				200, getLearnerScape().size()) {
@@ -50,8 +59,6 @@ IGraphicsAdapted {
 		learnerView.setCellColorFeature(SIMPLE);
 		learnerView.setRemoveGaps(false);
 		learnerView.setCellSize(4);
-		
-		addView(view);
 
 		getLearnerScape().addView(learnerView);
 	}
@@ -63,6 +70,6 @@ IGraphicsAdapted {
 	 * @generated
 	 */
 	public IGraphicsAdapter getGraphicsAdapter() {
-		return SpatialResourcesGraphicsAdapter.getDefault();
+		return SpatialResourcesCustomGraphicsAdapter.getDefault();
 	}
 }

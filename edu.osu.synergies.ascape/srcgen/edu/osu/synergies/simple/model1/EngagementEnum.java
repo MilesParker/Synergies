@@ -10,7 +10,7 @@ package edu.osu.synergies.simple.model1;
  */
 public enum EngagementEnum {
 	notInterested("Not Interested"), seekingResource("Seeking Resource"), foundResource(
-			"Found Resource");
+			"Found Resource"), option("Option");
 
 	/**
 	 * <!-- begin-user-doc -->

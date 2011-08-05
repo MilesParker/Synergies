@@ -47,7 +47,7 @@ public class LearnerStyle2DColorProvider implements IColorProvider {
 		Learner defaultSimpleResourcesAgentStyle = actions;
 		double learnerIndexDivideLearnerCount = defaultSimpleResourcesAgentStyle
 				.getLearnerIndex()
-				/ defaultSimpleResourcesAgentStyle.getSimpleResources()
+				/ defaultSimpleResourcesAgentStyle.getSpatialResources()
 						.getLearnerCount();
 
 		fillColor = new Color(Display.getCurrent(), (int) (0.5 * 255),

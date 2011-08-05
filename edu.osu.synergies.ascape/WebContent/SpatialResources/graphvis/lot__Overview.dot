@@ -1,0 +1,29 @@
+digraph lot {
+	compound=true;
+	iteration [fontname=Helvetica,shape=box,fillcolor=lightgray,style="filled,rounded",label="Step"];
+	start [fontname=Helvetica,shape=box,fillcolor=lightgray,style="filled,rounded",label="Start"];
+	subgraph clusterWatch {
+		label="Watch";
+		fontname=Helvetica;
+		style=filled;
+		color=white;
+		fillcolor=ghostwhite;
+		labeljust=l;
+	}
+	subgraph clusterRule {
+		label="Rules";
+		fontname=Helvetica;
+		style=filled;
+		color=white;
+		fillcolor=ghostwhite;
+		labeljust=l;
+	}
+	subgraph clusterInit {
+		label="Initialize";
+		fontname=Helvetica;
+		style=filled;
+		color=white;
+		fillcolor=ghostwhite;
+		labeljust=l;
+	}
+}

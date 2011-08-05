@@ -1,0 +1,38 @@
+digraph initializeLocation {
+
+	subgraph clustercontextKey {
+		fontname=Helvetica;
+		label="Parameters";
+		style="filled";
+		fillcolor=ghostwhite;
+		color=white;
+		labeljust=l;
+		contextOverview [style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="black",label=""];
+	}
+	subgraph clusterlearningResourceKey {
+		fontname=Helvetica;
+		nodesep=0.1;
+		style="filled";
+		fillcolor=ghostwhite;
+		label="Learning Resource";
+		color=white;
+		labeljust=l;
+		initializeLocationOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.25, 0.9 , 0.8",label="",URL="learningResource__Overview.svg"];
+
+	}
+
+//subgraph clusterinitializeLocation {
+	//style=filled;
+	//color=white;
+	//fillcolor="0.0, 0.0, 0.98";
+		initializeLocation [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.25, 0.2, 1.0",label="Initialize Location",URL="learningResource_initializeLocation.svg"];
+	initializeLocation ->  learningResource [color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		availableQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.324, 0.2, 1.0",label="Available"];
+	availableQuery ->  moveLearningResource [color="0.324, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		learningResource [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.324, 0.2, 1.0",label="Learning Resource"];
+	learningResource ->  availableQuery [color="0.324, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		moveLearningResource [shape=none,style="rounded,filled",fontname=Helvetica,color="0.25, 0.2, 1.0",label="Move"];
+	initializeLocation ->  moveLearningResource:nw [style=dashed,color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	learningResource -> moveLearningResource:ne [style=dashed,color="0.324, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+//}
+}

@@ -1,0 +1,32 @@
+digraph home {
+	compound=true;
+	iteration [fontname=Helvetica,shape=box,fillcolor=lightgray,style="filled,rounded",label="Step"];
+	start [fontname=Helvetica,shape=box,fillcolor=lightgray,style="filled,rounded",label="Start"];
+	subgraph clusterWatch {
+		label="Watch";
+		fontname=Helvetica;
+		style=filled;
+		color=white;
+		fillcolor=ghostwhite;
+		labeljust=l;
+	}
+	subgraph clusterRule {
+		label="Rules";
+		fontname=Helvetica;
+		style=filled;
+		color=white;
+		fillcolor=ghostwhite;
+		labeljust=l;
+	}
+	subgraph clusterInit {
+		label="Initialize";
+		fontname=Helvetica;
+		style=filled;
+		color=white;
+		fillcolor=ghostwhite;
+		labeljust=l;
+		initializeLocation [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.333, 0.2, 1.0",label="Initialize Location",URL="home_initializeLocation.svg"];
+		initializeID [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.0, 0.2, 1.0",label="Initialize ID",URL="home_initializeID.svg"];
+		start -> initializeLocation->initializeID -> iteration [color=darkslategray,penwidth=3.0];
+	}
+}

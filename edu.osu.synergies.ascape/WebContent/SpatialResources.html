@@ -1,0 +1,398 @@
+		<HTML>
+			<HEAD>
+				<TITLE>Spatial Resources</TITLE>
+				<STYLE TYPE="text/css">
+					body,
+					html {
+    					margin:0;
+    					padding:0;
+    					
+    					color:#000;
+    				}
+    				body {
+    					min-width:750px;
+    				}
+					#wrap {
+    					
+    					margin:0 auto;
+    					width:1024px;
+    				}
+    				#header {
+    					border-bottom: solid 1px #BEBFAA;   						
+    					left: 220px;
+    				}
+					#nav {
+    					
+    				}
+					#nav ul{
+   						margin:0;
+    					padding:0;
+    					list-style:none;
+    				}
+					#nav li{
+    					display:inline;
+    					margin:0;
+    					padding:0;
+    				}
+    				#main {
+    					border-left: solid 1px #BEBFAA;   						
+    					
+    					float:left;
+    					width:800px;
+    				}
+					#sidebarfake {
+      					float:left;
+    					width:200px;
+    				}
+					#sidebar {
+  						position: fixed;
+      					float:left;
+    					width:200px;
+    				}
+					#footer {
+    					border-top: solid 1px #BEBFAA;   						
+    					
+    					clear:both;
+    				}
+    				
+					#section {
+  						background: #FFFFDC;
+   						border-bottom: solid 1px black;
+   						border-left: solid 1px #BEBFAA;
+   						border-right: solid 1px black;
+   						border-top: solid 1px #BEBFAA;
+   						margin: 2em 1em 1em 2em;
+   						padding: 0.5em 2em 2em 2em;
+   						text-align: justify;
+					}
+					#section h1 {
+   						text-align: left;
+   						font-family: sans-serif;
+					}
+					#section p {
+   						text-indent: 2em;
+					}
+					#section p.noindent {
+   						text-indent: 0;
+					}
+					
+					#agent {
+  						border-bottom: solid 1px black;
+   						border-left: solid 1px #BEBFAA;
+   						border-right: solid 1px black;
+   						border-top: solid 1px #BEBFAA;
+   						margin: 2em 1em 1em 2em;
+   						padding: 0.5em 2em 2em 2em;
+   						text-align: justify;
+					}
+
+					#agents {
+						border-bottom: solid 1px black;
+						border-left: solid 1px #BEBFAA;
+						border-right: solid 1px black;
+						border-top: solid 1px #BEBFAA;
+						margin: 2em 1em 1em 2em;
+						padding: 0.5em 2em 2em 2em;
+						text-align: justify;
+					}
+				</STYLE>
+			</HEAD>
+			<BODY>
+			<div id="wrap">
+    			<div id="header">
+    				<H1>Spatial Resources</H1>
+					<P>Model I of the Synergies project demonstration models. The purpose of this model is to explore the interation effects of learners and learning resources across space.
+The closer you are to a resource, the more likely you are to engage with it. The more you know a resource the more likely you are to engage with it in the future.
+How might these basic assumptions effect the distribution of learning interest across a diverse community?
+
+Synergies Project: John Falk, Lynn Direking, Bill Penuel, Miles Parker
+Model Development: Miles Parker</P>
+    			</div>
+    			<div id="sidebarfake">
+    				<H1>   </H1>
+    			</div>
+    			<div id="sidebar">
+			    <ul>
+    					<li><a href="#parlink">Parameters</a></li>
+    					<li><a href="#behaviorlink">Behaviors</a></li>
+    					<li><a href="#agentslink">Agents</a>
+    					<ul>
+    					<li><a href="#homelink">Home</a></li>
+    					<li><a href="#learnerlink">Learner</a></li>
+    					<li><a href="#learningResourcelink">Learning Resource</a></li>
+    					<li><a href="#resourceInteractionlink">Resource Interaction</a></li>
+    					<li><a href="#lotlink">Lot</a></li>
+    					</ul></li>
+    					<li><a href="#projlink">Projections</a></li>
+    				</ul>    				
+    			</div>
+    			<div id="main">
+    					<div id="agent">
+
+    					<h3><a name="parlink">Parameters</a></h3>
+		<table CELLPADDING="10px" rules="groups">
+			<thead align="left"><tr><th>Name</th><th>Type</th><th>Default Value</th></tr></thead>
+					<tbody ><tr><td>Learner Count</td>
+						<td>Integer</td>
+						<td>100</td></tr>
+					<tr><td colspan="3"><i>The number of learners to create.</i></td></tr></tbody>
+					<tbody ><tr><td>Learning Resource Count</td>
+						<td>Integer</td>
+						<td>10</td></tr>
+					<tr><td colspan="3"><i>The number of learning resources to create.</i></td></tr></tbody>
+					<tbody ><tr><td>Initial Interest Minimum</td>
+						<td>Real</td>
+						<td>0.05</td></tr>
+					<tr><td colspan="3"><i>The minimum level of interest that a learner will have at the beginning of the model. Initial interest is distributed uniformally between the minimum and maximum value.</i></td></tr></tbody>
+					<tbody ><tr><td>Initial Interest Maximum</td>
+						<td>Real</td>
+						<td>0.35</td></tr>
+					<tr><td colspan="3"><i>The maximum level of interest that a learner will have at the beginning of the model. Initial interest is distributed uniformally between the minimum and maximum value.</i></td></tr></tbody>
+					<tbody ><tr><td>Resource Efficacy Minimum</td>
+						<td>Real</td>
+						<td>0.02</td></tr>
+					<tr><td colspan="3"><i>The minimum efficacy that a given resource will make for learner interest in a given encounter. Efficacy is constant for a resource and affects all learners in the same way. It is distributed uniformally between the minimum and maximum value.</i></td></tr></tbody>
+					<tbody ><tr><td>Resource Efficacy Maximum</td>
+						<td>Real</td>
+						<td>0.09</td></tr>
+					<tr><td colspan="3"><i>The maximum efficacy that a given resource will make for learner interest in a given encounter. Efficacy is constant for a resource and affects all learners in the same way. It is distributed uniformally between the minimum and maximum value.</i></td></tr></tbody>
+					<tbody ><tr><td>Home Count</td>
+						<td>Integer</td>
+						<td>150</td></tr>
+					<tr><td colspan="3"><i>The number of homes to create.</i></td></tr></tbody>
+					<tbody ><tr><td>Time Segment</td>
+						<td>Integer</td>
+						<td></td></tr>
+					<tr><td colspan="3"><i>The current time segment in the day. This could represent a slice of time, such as 15 minutes or an hour as defined by Time Segments in Day and is a value between 0 (inclusive) and Time Segments in Day (exclusive).</i></td></tr></tbody>
+					<tbody ><tr><td>Time Segments in Day</td>
+						<td>Integer</td>
+						<td>96</td></tr>
+					<tr><td colspan="3"><i>The number of time segments in the day. The default value is 96, representing time slices of 15 minute increments [24 * (60 / 15) = 96].</i></td></tr></tbody>
+					<tbody ><tr><td>Time Segments Wandering</td>
+						<td>Integer</td>
+						<td>24</td></tr>
+					<tr><td colspan="3"><i>The time a learner spends "wandering", that is not engaged in activities at home. (In this intentionally simplified model, school locations are not represented.) The default value is 24, representing 6 hours (24 / (60 / 15) = 6).</i></td></tr></tbody>
+					<tbody ><tr><td>Wandering</td>
+						<td>Boolean</td>
+						<td></td></tr>
+					<tr><td colspan="3"><i>Are the learners currently wandering? In this model, all learners wanred at the same time, representing for example time after normal school hours.</i></td></tr></tbody>
+					<tbody ><tr><td>Next Learner ID</td>
+						<td>Integer</td>
+						<td></td></tr>
+					<tr><td colspan="3"><i>(Supports unique IDs for learners.)</i></td></tr></tbody>
+					<tbody ><tr><td>Next Resource ID</td>
+						<td>Integer</td>
+						<td></td></tr>
+					<tr><td colspan="3"><i>(Supports unique IDs for resources.)</i></td></tr></tbody>
+					<tbody ><tr><td>Next Home ID</td>
+						<td>Integer</td>
+						<td></td></tr>
+					<tr><td colspan="3"><i>(Supports unique IDs for homes.)</i></td></tr></tbody>
+					<tbody ><tr><td>Subsequent Engagement Factor </td>
+						<td>Real</td>
+						<td>.05</td></tr>
+					<tr><td colspan="3"><i>The increasing effect that each subsequent encounter with a learning resource will have on learner interest. This represents the notion that as learners become more familiar with a learning resource the learner is able to get more out of that resource. For example, once a learner knows how to find the books she's interested in at the library, the easier it will be for her to discover books that she might be interested in.</i></td></tr></tbody>
+					<tbody ><tr><td>Lot Count</td>
+						<td>Integer</td>
+						<td></td></tr>
+					<tr><td colspan="3"><i>The number of lots to create.</i></td></tr></tbody>
+		</table>
+    					<h3><a name="behaviorlink">Behaviors</a></h3>
+		<table CELLPADDING="10px">
+			<thead align="left"><tr><th>Act</th><th>Description</th></tr></thead>
+					<tr>
+						<td><i>Build SimpleResources</i></td>
+						<td>Build the Spatial Resources.</td>
+					</tr>
+					<tr>
+						<td><i>Derive Time Segment</i></td>
+						<td>Derive Time Segment.</td>
+					</tr>
+					<tr>
+						<td><i>Derive Wandering</i></td>
+						<td>Derive Wandering.</td>
+					</tr>
+					<tr>
+						<td><i>Initialize</i></td>
+						<td>Initialize Initialization. Executed once at the beginning of each model run.</td>
+					</tr>
+		</table>
+						</div>
+    					<div id="agents">
+    					<h1><a name="agentslink">Agents</a></h1>
+								<div id="agent">
+									<H2><a name="homelink"/>Home</a></H2>
+									<H3>Attributes</H3>
+		<table CELLPADDING="10px" rules="groups">
+			<thead align="left"><tr><th>Name</th><th>Type</th><th>Default Value</th></tr></thead>
+					<tbody ><tr><td>Home ID</td>
+						<td>Integer</td>
+						<td></td></tr>
+					<tr><td colspan="3"><i></i></td></tr></tbody>
+		</table>
+									<H3>Behaviors</H3>
+		<table CELLPADDING="10px">
+			<thead align="left"><tr><th>Act</th><th>Description</th></tr></thead>
+					<tr>
+						<td><i>Initialize Location</i></td>
+						<td>Initialize Location Initialization. Executed once at the beginning of each model run.</td>
+					</tr>
+					<tr>
+						<td><i>Initialize ID</i></td>
+						<td>Initialize ID Initialization. Executed once at the beginning of each model run.</td>
+					</tr>
+		</table>
+								</div>
+								<div id="agent">
+									<H2><a name="learnerlink"/>Learner</a></H2>
+									<H3>Attributes</H3>
+		<table CELLPADDING="10px" rules="groups">
+			<thead align="left"><tr><th>Name</th><th>Type</th><th>Default Value</th></tr></thead>
+					<tbody ><tr><td>Learning Interest</td>
+						<td>Real</td>
+						<td></td></tr>
+					<tr><td colspan="3"><i>How engaged is the learner but the process of learning itelf?</i></td></tr></tbody>
+					<tbody ><tr><td>Learner ID</td>
+						<td>Integer</td>
+						<td></td></tr>
+					<tr><td colspan="3"><i>A unique identifier for the learner.</i></td></tr></tbody>
+					<tbody ><tr><td>Learner Index</td>
+						<td>Real</td>
+						<td></td></tr>
+					<tr><td colspan="3"><i>(Internal Use.)</i></td></tr></tbody>
+					<tbody ><tr><td>Resource Engagements</td>
+						<td>Integer</td>
+						<td></td></tr>
+					<tr><td colspan="3"><i>The total number of encounters a learner has had with any resource during the model period.</i></td></tr></tbody>
+					<tbody ><tr><td>Behavior</td>
+						<td>Symbol</td>
+						<td>Not Interested</td></tr>
+					<tr><td colspan="3"><i>What is the learner currently doing? He or she is either at home or wandering, in which case they might activly be looking for a resource, wandering aimlessly, or returning home after the wandering period ends.</i></td></tr></tbody>
+					<tbody ><tr><td>Target Resource ID</td>
+						<td>Integer</td>
+						<td></td></tr>
+					<tr><td colspan="3"><i>A target resource that the learner may be seeking. Once a learner has identified a resource, the learner will seek this same resource out in the future unless they happen upon another resource. This id could be 0 in which case the learner hasn't identified a target learning resource.</i></td></tr></tbody>
+					<tbody ><tr><td>Home ID</td>
+						<td>Integer</td>
+						<td></td></tr>
+					<tr><td colspan="3"><i>The identifier for this learners home.</i></td></tr></tbody>
+		</table>
+									<H3>Behaviors</H3>
+		<table CELLPADDING="10px">
+			<thead align="left"><tr><th>Act</th><th>Description</th></tr></thead>
+					<tr>
+						<td><i>Initialize Location</i></td>
+						<td>Initialize Location Initialization. Executed once at the beginning of each model run.</td>
+					</tr>
+					<tr>
+						<td><i>Initialize State</i></td>
+						<td>Initialize State Initialization. Executed once at the beginning of each model run.</td>
+					</tr>
+					<tr>
+						<td><i>Movement</i></td>
+						<td>A learner may be at home, in which case they are not wandering, or engaged in another movement behavior. See the Behavior attribute for more details.</td>
+					</tr>
+					<tr>
+						<td><i>Resource Engagement</i></td>
+						<td>Resource Engagement Rule. Executed every period.</td>
+					</tr>
+					<tr>
+						<td><i>Derive Learner Index</i></td>
+						<td>Derive Learner Index.</td>
+					</tr>
+					<tr>
+						<td><i>Start Day</i></td>
+						<td>Start Day Rule. Executed every period.</td>
+					</tr>
+					<tr>
+						<td><i>Find Home</i></td>
+						<td>Find Home Initialization. Executed once at the beginning of each model run.</td>
+					</tr>
+		</table>
+								</div>
+								<div id="agent">
+									<H2><a name="learningResourcelink"/>Learning Resource</a></H2>
+									<H3>Attributes</H3>
+		<table CELLPADDING="10px" rules="groups">
+			<thead align="left"><tr><th>Name</th><th>Type</th><th>Default Value</th></tr></thead>
+					<tbody ><tr><td>Efficacy</td>
+						<td>Real</td>
+						<td></td></tr>
+					<tr><td colspan="3"><i></i></td></tr></tbody>
+					<tbody ><tr><td>Resource ID</td>
+						<td>Integer</td>
+						<td></td></tr>
+					<tr><td colspan="3"><i>A unique identifier for the resource.</i></td></tr></tbody>
+		</table>
+									<H3>Behaviors</H3>
+		<table CELLPADDING="10px">
+			<thead align="left"><tr><th>Act</th><th>Description</th></tr></thead>
+					<tr>
+						<td><i>Initialize Location</i></td>
+						<td>Initialize Location Initialization. Executed once at the beginning of each model run.</td>
+					</tr>
+					<tr>
+						<td><i>Initialize State</i></td>
+						<td>Initialize State Initialization. Executed once at the beginning of each model run.</td>
+					</tr>
+					<tr>
+						<td><i>Initialize ID</i></td>
+						<td>Initialize ID Initialization. Executed once at the beginning of each model run.</td>
+					</tr>
+		</table>
+								</div>
+								<div id="agent">
+									<H2><a name="resourceInteractionlink"/>Resource Interaction</a></H2>
+									<H3>Attributes</H3>
+		<table CELLPADDING="10px" rules="groups">
+			<thead align="left"><tr><th>Name</th><th>Type</th><th>Default Value</th></tr></thead>
+					<tbody ><tr><td>Strength</td>
+						<td>Real</td>
+						<td></td></tr>
+					<tr><td colspan="3"><i></i></td></tr></tbody>
+					<tbody ><tr><td>Resource ID</td>
+						<td>Integer</td>
+						<td></td></tr>
+					<tr><td colspan="3"><i></i></td></tr></tbody>
+					<tbody ><tr><td>Learner ID</td>
+						<td>Integer</td>
+						<td></td></tr>
+					<tr><td colspan="3"><i></i></td></tr></tbody>
+		</table>
+									<H3>Behaviors</H3>
+		<table CELLPADDING="10px">
+			<thead align="left"><tr><th>Act</th><th>Description</th></tr></thead>
+		</table>
+								</div>
+								<div id="agent">
+									<H2><a name="lotlink"/>Lot</a></H2>
+									<H3>Attributes</H3>
+		<table CELLPADDING="10px" rules="groups">
+			<thead align="left"><tr><th>Name</th><th>Type</th><th>Default Value</th></tr></thead>
+		</table>
+									<H3>Behaviors</H3>
+		<table CELLPADDING="10px">
+			<thead align="left"><tr><th>Act</th><th>Description</th></tr></thead>
+		</table>
+								</div>
+						</div>
+					<div id="section">
+						<H2><a name="projlink"/>Projections:</a></H2>
+		<table CELLPADDING="10px">
+			<thead align="left"><tr><th>Name</th><th>Description</th><th>Type</th></tr></thead>
+					<tr>
+						<td><i>District</i></td>
+						<td></td>
+						<td>2-Dimensional Grid</td>
+					</tr>
+		</table>
+					</div>			    			
+    			</div>
+			    
+    			<div id="footer">
+					<P>Generated by AMF.</P>
+    			</div>
+			</div>
+			</BODY>
+		</HTML>
+	

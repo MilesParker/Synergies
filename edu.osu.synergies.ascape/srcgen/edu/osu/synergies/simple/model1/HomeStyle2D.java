@@ -32,7 +32,7 @@ public class HomeStyle2D extends DrawFeature {
 		if (actionsCell.getOccupant() instanceof Home) {
 			Home actions = (Home) actionsCell.getOccupant();
 			Home defaultSimpleResourcesAgentStyle = actions;
-			java.awt.Color defaultSimpleResourcesAgentColor = java.awt.Color.WHITE
+			java.awt.Color defaultSimpleResourcesAgentColor = java.awt.Color.BLUE
 
 			;
 

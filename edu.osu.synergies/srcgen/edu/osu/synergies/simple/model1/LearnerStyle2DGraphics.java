@@ -53,7 +53,7 @@ public class LearnerStyle2DGraphics extends DrawFeature {
 			Learner defaultSimpleResourcesAgentStyle = actions;
 			double learnerIndexDivideLearnerCount = defaultSimpleResourcesAgentStyle
 					.getLearnerIndex()
-					/ defaultSimpleResourcesAgentStyle.getSimpleResources()
+					/ defaultSimpleResourcesAgentStyle.getSpatialResources()
 							.getLearnerCount();
 
 			Color defaultSimpleResourcesAgentColor = new Color(

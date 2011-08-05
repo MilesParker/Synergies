@@ -34,7 +34,7 @@ public class LearnerStyle2D extends DrawFeature {
 			Learner defaultSimpleResourcesAgentStyle = actions;
 			double learnerIndexDivideLearnerCount = defaultSimpleResourcesAgentStyle
 					.getLearnerIndex()
-					/ defaultSimpleResourcesAgentStyle.getSimpleResources()
+					/ defaultSimpleResourcesAgentStyle.getSpatialResources()
 							.getLearnerCount();
 
 			java.awt.Color defaultSimpleResourcesAgentColor = new java.awt.Color(

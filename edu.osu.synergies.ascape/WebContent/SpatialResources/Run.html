@@ -1,0 +1,295 @@
+		<HTML>
+			<HEAD>
+				<TITLE>Run Spatial Resources</TITLE>
+
+				<STYLE TYPE="text/css">
+					body,
+					html {
+    					margin:10;
+    					padding:0;
+						background-color: rgb(244,242,238);
+	    				color:#000;
+    					font-family: sans-serif;
+    				}
+    				body {
+    				}
+					wrap {
+    					
+    					margin:0 auto;
+    					width:100%;
+    				}
+    				#header {
+    					border-bottom: solid 1px #BEBFAA;   						
+    					left: 20%;
+    				}
+					#nav {
+    					
+    				}
+					#nav ul{
+   						margin:0;
+    					padding:0;
+    					list-style:none;
+    				}
+					#nav li{
+    					display:inline;
+    					margin:0;
+    					padding:0;
+    				}
+    				#main {
+    					border-left: solid 1px #BEBFAA;   						
+						background-color: white;
+    					float:left;
+    					width:80%;
+    				}
+					#sidebarfake {
+      					float:left;
+    					width:20%;
+    				}
+					#sidebar {
+  						position: fixed;
+      					float:left;
+    					width:20%;
+						font-size: 9pt;
+						link: orange;
+						vlink: orange;
+						alink: orange;
+    				}
+					#footer {
+    					border-top: solid 1px #BEBFAA;   						
+    					
+    					clear:both;
+    				}
+    				
+					#section {
+  						background: #FFFFDC;
+   						border-bottom: solid 1px black;
+   						border-left: solid 1px #BEBFAA;
+   						border-right: solid 1px black;
+   						border-top: solid 1px #BEBFAA;
+   						margin: 2em 1em 1em 2em;
+   						padding: 0.5em 2em 2em 2em;
+   						text-align: justify;
+					}
+					#section h1 {
+   						text-align: left;
+   						font-family: sans-serif;
+					}
+					#section p {
+   						text-indent: 2em;
+					}
+					#section p.noindent {
+   						text-indent: 0;
+					}
+					
+					#agent {
+  						border-bottom: solid 1px black;
+   						border-left: solid 1px #BEBFAA;
+   						border-right: solid 1px black;
+   						border-top: solid 1px #BEBFAA;
+   						margin: 2em 1em 1em 2em;
+   						padding: 0.5em 2em 2em 2em;
+   						text-align: justify;
+					}
+
+					#agents {
+						border-bottom: solid 1px black;
+						border-left: solid 1px #BEBFAA;
+						border-right: solid 1px black;
+						border-top: solid 1px #BEBFAA;
+						margin: 2em 1em 1em 2em;
+						padding: 0.5em 2em 2em 2em;
+						text-align: justify;
+						background-color: rgb(244, 242, 238);
+					}
+					a:link{color: green;}
+					a:visited{color: darkGreen;}
+					
+				</STYLE>
+
+			</HEAD>
+			<BODY>
+			<div id="wrap">
+    			<div id="header">
+				<table>
+				<tr>
+					<td width="100%"><H1>Spatial Resources</H1>
+					<P>Model I of the Synergies project demonstration models. The purpose of this model is to explore the interation effects of learners and learning resources across space.
+<BR/>The closer you are to a resource, the more likely you are to engage with it. The more you know a resource the more likely you are to engage with it in the future.
+<BR/>How might these basic assumptions effect the distribution of learning interest across a diverse community?
+<BR/>
+<BR/>Synergies Project: John Falk, Lynn Direking, Bill Penuel, Miles Parker
+<BR/>Model Development: Miles Parker</P>
+					</td>
+					<td>Powered by<BR />
+					<img src="../images/MetascapeVertLogo.png" style="border: 0;" width="180"
+						alt="" id="logo" />
+					</td>
+				</tr>
+				</table>
+    			</div>
+    			<div id="sidebarfake">
+    				<H1>   </H1>
+    			</div>
+    			<div id="sidebar">
+			    <ul>
+    					<li><a href="#parlink">Parameters</a></li>
+    					<li><a href="#behaviorlink">Actions</a></li>
+    					<li><a href="#agentslink">Agents</a>
+    					<ul>
+    					<li><a href="index.html#homelink">Home</a><ul>
+    					<li><a href="index.html#home_Attributes">Attributes</a></li>
+    					<li><a href="index.html#home_Actions">Actions List</a></li>
+    					<li><a href="home__Overview.html">Graph Overview</a></li>
+    					<li><a href="home__Initial.html">&nbsp;&nbsp;Initialization</a></li>
+    					<li><a href="home__Rules.html">&nbsp;&nbsp;Rules</a></li>
+    					</ul></li>
+    					<li><a href="index.html#learnerlink">Learner</a><ul>
+    					<li><a href="index.html#learner_Attributes">Attributes</a></li>
+    					<li><a href="index.html#learner_Actions">Actions List</a></li>
+    					<li><a href="learner__Overview.html">Graph Overview</a></li>
+    					<li><a href="learner__Initial.html">&nbsp;&nbsp;Initialization</a></li>
+    					<li><a href="learner__Rules.html">&nbsp;&nbsp;Rules</a></li>
+    					</ul></li>
+    					<li><a href="index.html#learningResourcelink">Learning Resource</a><ul>
+    					<li><a href="index.html#learningResource_Attributes">Attributes</a></li>
+    					<li><a href="index.html#learningResource_Actions">Actions List</a></li>
+    					<li><a href="learningResource__Overview.html">Graph Overview</a></li>
+    					<li><a href="learningResource__Initial.html">&nbsp;&nbsp;Initialization</a></li>
+    					<li><a href="learningResource__Rules.html">&nbsp;&nbsp;Rules</a></li>
+    					</ul></li>
+    					<li><a href="index.html#resourceInteractionlink">Resource Interaction</a><ul>
+    					<li><a href="index.html#resourceInteraction_Attributes">Attributes</a></li>
+    					<li><a href="index.html#resourceInteraction_Actions">Actions List</a></li>
+    					<li><a href="resourceInteraction__Overview.html">Graph Overview</a></li>
+    					<li><a href="resourceInteraction__Initial.html">&nbsp;&nbsp;Initialization</a></li>
+    					<li><a href="resourceInteraction__Rules.html">&nbsp;&nbsp;Rules</a></li>
+    					</ul></li>
+    					<li><a href="index.html#lotlink">Lot</a><ul>
+    					<li><a href="index.html#lot_Attributes">Attributes</a></li>
+    					<li><a href="index.html#lot_Actions">Actions List</a></li>
+    					<li><a href="lot__Overview.html">Graph Overview</a></li>
+    					<li><a href="lot__Initial.html">&nbsp;&nbsp;Initialization</a></li>
+    					<li><a href="lot__Rules.html">&nbsp;&nbsp;Rules</a></li>
+    					</ul></li>
+    					</ul></li>
+    					<li><a href="#projlink">Projections</a></li>
+    					<li style="color: red;"><a href="Run.html">Run Model</a></li>
+    				</ul>    				
+    			</div>
+
+		<div id="main" style="background-color: lightgray">
+			<applet
+				archive='SpatialResourcesApp.jar'
+				code='org.ascape.runtime.applet.SwingApplet.class' width=100%
+				height=800>
+				<br />
+				<param name="Model" value="edu.osu.synergies.simple.model1.SpatialResourcesCustom" />
+				<br />
+				<param name="background-color" value="darkgray">
+				<br />
+			</applet>
+			<div style="margin:30px; padding: 5px 0px 10px 10px; background-color: rgb(226,138,76);">
+			<h4>Help</h4>
+
+Buttons:
+<ul>
+	<li><img src="../images/ClockGo.gif" />Starts
+		the model, or if the model is already running, restarts it to time 0.</li>
+
+	<li><img src="../images/RedFlag.gif" />Pauses
+		or resumes the model.</li>
+
+	<li><img src="../images/Enter.gif" />Steps
+		the model forward one period.</li>
+
+	<li><img src="../images/ClockStop.gif" />Stops
+		the model.</li>
+
+	<li><img src="http://metaabm.org/models/icons/World.gif" />Displays
+		or hides model settings. These appear on the right side of the applet.</li>
+</ul>
+
+You can change the relative size of the agent and chart view by dragging
+the splitter between the two panels.
+</div>
+			<div style="margin:30px; padding: 5px 0px 10px 10px; background-color: lightgray;">
+<h4>Parameters</h4>
+
+<p>You can change any of the model parameters in the settings dialog. Some
+of them are only used when the model starts up so to see any effect --
+those you'll need to restart the model. For example, in an Epidemiology model, changes to Initial Infection Probability
+would not have any effect during a model run, but
+changes to Movement Probability would. The settings are explained below:</p>
+		<table CELLPADDING="5px" rules="groups" width="100%">
+			<thead align="left"><tr><th>Name</th><th>Type</th><th style="text-align: right;">Default Value</th></tr></thead>
+					<a name="spatialResourceslearnerCountlink"/><tbody  bgcolor="#E1E1FF"><tr><td>Learner Count</td>
+						<td>Integer</td>
+						<td style="text-align: right;">100</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The number of learners to create.</i></td></tr></tbody>
+					<a name="spatialResourceslearningResourceCountlink"/><tbody ><tr><td>Learning Resource Count</td>
+						<td>Integer</td>
+						<td style="text-align: right;">10</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The number of learning resources to create.</i></td></tr></tbody>
+					<a name="spatialResourcesinitialInterestMinimumlink"/><tbody  bgcolor="#E1E1FF"><tr><td>Initial Interest Minimum</td>
+						<td>Real</td>
+						<td style="text-align: right;">0.05</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The minimum level of interest that a learner will have at the beginning of the model. Initial interest is distributed uniformally between the minimum and maximum value.</i></td></tr></tbody>
+					<a name="spatialResourcesinitialInterestMaximumlink"/><tbody ><tr><td>Initial Interest Maximum</td>
+						<td>Real</td>
+						<td style="text-align: right;">0.35</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The maximum level of interest that a learner will have at the beginning of the model. Initial interest is distributed uniformally between the minimum and maximum value.</i></td></tr></tbody>
+					<a name="spatialResourcesresourceEfficacyMinimumlink"/><tbody  bgcolor="#E1E1FF"><tr><td>Resource Efficacy Minimum</td>
+						<td>Real</td>
+						<td style="text-align: right;">0.02</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The minimum efficacy that a given resource will make for learner interest in a given encounter. Efficacy is constant for a resource and affects all learners in the same way. It is distributed uniformally between the minimum and maximum value.</i></td></tr></tbody>
+					<a name="spatialResourcesresourceEfficacyMaximumlink"/><tbody ><tr><td>Resource Efficacy Maximum</td>
+						<td>Real</td>
+						<td style="text-align: right;">0.09</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The maximum efficacy that a given resource will make for learner interest in a given encounter. Efficacy is constant for a resource and affects all learners in the same way. It is distributed uniformally between the minimum and maximum value.</i></td></tr></tbody>
+					<a name="spatialResourceshomeCountlink"/><tbody  bgcolor="#E1E1FF"><tr><td>Home Count</td>
+						<td>Integer</td>
+						<td style="text-align: right;">150</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The number of homes to create.</i></td></tr></tbody>
+					<a name="spatialResourcestimeSegmentlink"/><tbody ><tr><td>Time Segment</td>
+						<td>Integer</td>
+						<td style="text-align: right;"></td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The current time segment in the day. This could represent a slice of time, such as 15 minutes or an hour as defined by Time Segments in Day and is a value between 0 (inclusive) and Time Segments in Day (exclusive).</i></td></tr></tbody>
+					<a name="spatialResourcestimeSegmentsinDaylink"/><tbody  bgcolor="#E1E1FF"><tr><td>Time Segments in Day</td>
+						<td>Integer</td>
+						<td style="text-align: right;">96</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The number of time segments in the day. The default value is 96, representing time slices of 15 minute increments [24 * (60 / 15) = 96].</i></td></tr></tbody>
+					<a name="spatialResourcestimeSegmentsWanderinglink"/><tbody ><tr><td>Time Segments Wandering</td>
+						<td>Integer</td>
+						<td style="text-align: right;">24</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The time a learner spends "wandering", that is not engaged in activities at home. (In this intentionally simplified model, school locations are not represented.) The default value is 24, representing 6 hours (24 / (60 / 15) = 6).</i></td></tr></tbody>
+					<a name="spatialResourceswanderingRecordlink"/><tbody  bgcolor="#E1E1FF"><tr><td>Wandering</td>
+						<td>Boolean</td>
+						<td style="text-align: right;"></td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>Are the learners currently wandering? In this model, all learners wanred at the same time, representing for example time after normal school hours.</i></td></tr></tbody>
+					<a name="spatialResourcesnextLearnerIDlink"/><tbody ><tr><td>Next Learner ID</td>
+						<td>Integer</td>
+						<td style="text-align: right;"></td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>(Supports unique IDs for learners.)</i></td></tr></tbody>
+					<a name="spatialResourcesnextResourceIDlink"/><tbody  bgcolor="#E1E1FF"><tr><td>Next Resource ID</td>
+						<td>Integer</td>
+						<td style="text-align: right;"></td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>(Supports unique IDs for resources.)</i></td></tr></tbody>
+					<a name="spatialResourcesnextHomeIDlink"/><tbody ><tr><td>Next Home ID</td>
+						<td>Integer</td>
+						<td style="text-align: right;"></td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>(Supports unique IDs for homes.)</i></td></tr></tbody>
+					<a name="spatialResourcessubsequentEngagementFactorlink"/><tbody  bgcolor="#E1E1FF"><tr><td>Subsequent Engagement Factor </td>
+						<td>Real</td>
+						<td style="text-align: right;">.05</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The increasing effect that each subsequent encounter with a learning resource will have on learner interest. This represents the notion that as learners become more familiar with a learning resource the learner is able to get more out of that resource. For example, once a learner knows how to find the books she's interested in at the library, the easier it will be for her to discover books that she might be interested in.</i></td></tr></tbody>
+					<a name="spatialResourceslotCountlink"/><tbody ><tr><td>Lot Count</td>
+						<td>Integer</td>
+						<td style="text-align: right;"></td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The number of lots to create.</i></td></tr></tbody>
+		</table>
+			</div>
+		</div>
+			</div>
+			</BODY>
+		</HTML>
+	

@@ -45,7 +45,7 @@ public class LearnerStyle2DFigureProvider extends DefaultFigureProvider {
 		Learner defaultSimpleResourcesAgentStyle = actions;
 		double learnerIndexDivideLearnerCount = defaultSimpleResourcesAgentStyle
 				.getLearnerIndex()
-				/ defaultSimpleResourcesAgentStyle.getSimpleResources()
+				/ defaultSimpleResourcesAgentStyle.getSpatialResources()
 						.getLearnerCount();
 
 		if (figure == null) {

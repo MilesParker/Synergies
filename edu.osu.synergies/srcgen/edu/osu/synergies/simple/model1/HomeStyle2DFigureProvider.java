@@ -46,7 +46,7 @@ public class HomeStyle2DFigureProvider extends DefaultFigureProvider {
 		if (figure == null) {
 			figure = Shapes.createRectangle();
 		}
-		color = ColorConstants.white;
+		color = ColorConstants.blue;
 
 		figure.setBackgroundColor(color);
 		((Shape) figure).setFill(true);

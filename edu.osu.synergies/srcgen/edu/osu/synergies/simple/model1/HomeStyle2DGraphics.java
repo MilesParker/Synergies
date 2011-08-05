@@ -51,7 +51,7 @@ public class HomeStyle2DGraphics extends DrawFeature {
 		if (actionsCell.getOccupant() instanceof Home) {
 			Home actions = (Home) actionsCell.getOccupant();
 			Home defaultSimpleResourcesAgentStyle = actions;
-			Color defaultSimpleResourcesAgentColor = ColorConstants.white;
+			Color defaultSimpleResourcesAgentColor = ColorConstants.blue;
 
 			g.setForegroundColor(defaultSimpleResourcesAgentColor);
 			g.setBackgroundColor(defaultSimpleResourcesAgentColor);

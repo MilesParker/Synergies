@@ -44,7 +44,7 @@ public class LearningResource extends CellOccupant {
 	private double efficacy = 0.0;
 	/**
 	 * <!-- begin-user-doc -->
-	 * 
+	 * A unique identifier for the resource.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -119,18 +119,8 @@ public class LearningResource extends CellOccupant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SimpleResources getSimpleResources() {
-		return (SimpleResources) getScape().getScape();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * 
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public List getNetwork() {
-		return Collections.emptyList();
+	public SpatialResources getSpatialResources() {
+		return (SpatialResources) getScape().getScape();
 	}
 
 	/**
@@ -144,17 +134,17 @@ public class LearningResource extends CellOccupant {
 	}
 	/**
 	 * <!-- begin-user-doc -->
-	 * Initialize Initialization. Executed once at the beginning of each model run.
+	 * Initialize Location Initialization. Executed once at the beginning of each model run.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void intializeNonFramework() {
-		final Object learningResource = (Object) ((org.ascape.model.space.Discrete) getSimpleResources()
+	public void initializeLocation() {
+		final Object learningResource = (Object) ((org.ascape.model.space.Discrete) getSpatialResources()
 				.getDistrict().getSpace()).findRandomAvailable();
 		if (learningResource != null) {
 			if (getHostScape() != ((Agent) learningResource).getScape()) {
 				die();
-				getSimpleResources().getLearningResourceScape().add(this);
+				getSpatialResources().getLearningResourceScape().add(this);
 			}
 			moveTo(((HostCell) learningResource));
 		}
@@ -177,9 +167,9 @@ public class LearningResource extends CellOccupant {
 	 * @generated
 	 */
 	public double resourceEfficacy() {
-		double resourceEfficacyMinimum = getSimpleResources()
+		double resourceEfficacyMinimum = getSpatialResources()
 				.getResourceEfficacyMinimum();
-		double resourceEfficacyMaximum = getSimpleResources()
+		double resourceEfficacyMaximum = getSpatialResources()
 				.getResourceEfficacyMaximum();
 		return randomInRange(resourceEfficacyMinimum, resourceEfficacyMaximum);
 	}
@@ -190,10 +180,10 @@ public class LearningResource extends CellOccupant {
 	 * @generated
 	 */
 	public void initializeID() {
-		setResourceID(getSimpleResources().getNextResourceID());
+		setResourceID(getSpatialResources().getNextResourceID());
 		int incrementResourceID = getResourceID() + 1;
 
-		getSimpleResources().setNextResourceID(incrementResourceID);
+		getSpatialResources().setNextResourceID(incrementResourceID);
 	}
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +211,7 @@ public class LearningResource extends CellOccupant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * Gets the Resource ID property for Learning Resource.
-	 * @return 
+	 * @return A unique identifier for the resource.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -232,7 +222,7 @@ public class LearningResource extends CellOccupant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * Sets the Resource ID property for Learning Resource.
-	 * 
+	 * A unique identifier for the resource.
 	 * @param _resourceID the new Resource ID value
 	 * <!-- end-user-doc -->
 	 * @generated

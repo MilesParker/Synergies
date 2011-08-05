@@ -37,6 +37,14 @@ public class Home extends CellOccupant {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * 
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private int homeID = 0;
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * Constructs a new Home.
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -104,18 +112,8 @@ public class Home extends CellOccupant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SimpleResources getSimpleResources() {
-		return (SimpleResources) getScape().getScape();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * 
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public List getNetwork() {
-		return Collections.emptyList();
+	public SpatialResources getSpatialResources() {
+		return (SpatialResources) getScape().getScape();
 	}
 
 	/**
@@ -129,20 +127,54 @@ public class Home extends CellOccupant {
 	}
 	/**
 	 * <!-- begin-user-doc -->
-	 * Initialize Initialization. Executed once at the beginning of each model run.
+	 * Initialize Location Initialization. Executed once at the beginning of each model run.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void intializeNonFramework() {
-		final Object home = (Object) ((org.ascape.model.space.Discrete) getSimpleResources()
+	public void initializeLocation() {
+		final Object home = (Object) ((org.ascape.model.space.Discrete) getSpatialResources()
 				.getDistrict().getSpace()).findRandomAvailable();
 		if (home != null) {
 			if (getHostScape() != ((Agent) home).getScape()) {
 				die();
-				getSimpleResources().getHomeScape().add(this);
+				getSpatialResources().getHomeScape().add(this);
 			}
 			moveTo(((HostCell) home));
 		}
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * Initialize ID Initialization. Executed once at the beginning of each model run.
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void initializeID() {
+		setHomeID(getSpatialResources().getNextHomeID());
+		int incrementNextHomeID = getSpatialResources().getNextHomeID() + 1;
+
+		getSpatialResources().setNextHomeID(incrementNextHomeID);
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * Gets the Home ID property for Home.
+	 * @return 
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getHomeID() {
+		return homeID;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * Sets the Home ID property for Home.
+	 * 
+	 * @param _homeID the new Home ID value
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHomeID(int _homeID) {
+		homeID = _homeID;
 	}
 
 	/**

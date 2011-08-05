@@ -45,7 +45,7 @@ public class HomeStyle2DColorProvider implements IColorProvider {
 
 		Home actions = (Home) object;
 		Home defaultSimpleResourcesAgentStyle = actions;
-		fillColor = ColorConstants.white;
+		fillColor = ColorConstants.blue;
 		if (fill) {
 			return fillColor;
 		} else {

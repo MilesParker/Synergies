@@ -8,6 +8,7 @@
 package edu.osu.synergies.simple.model1;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.util.Iterator;
 
@@ -46,24 +47,24 @@ public class FixedStretchyView extends StretchyView {
      * @param maxDisplayElements
      *            the max display elements
      */
-    public FixedStretchyView(String name, int maxElements, int maxDisplayElements) {
-        super(maxElements, maxDisplayElements);
-        agentView = new Agent[maxAgents];
+    public FixedStretchyView(String name, int maxHeight, int maxDisplayElements) {
+        super(maxHeight, maxDisplayElements);
+        agentView = new Agent[maxDisplayElements];
     }
 
     /* (non-Javadoc)
      * @see org.ascape.view.vis.PanelView#scapeSetup(org.ascape.model.event.ScapeEvent)
      */
     public void scapeInitialized(ScapeEvent scapeEvent) {
-        agentView = new Agent[maxAgents];
-        agentFoundAt = new boolean[maxAgents];
+        agentView = new Agent[maxDisplayAgents];
+        agentFoundAt = new boolean[maxDisplayAgents];
     }
 
     /* (non-Javadoc)
      * @see org.ascape.view.vis.AgentView#updateScapeGraphics()
      */
     public void updateScapeGraphics() {
-        if (scape != null && scape.isInitialized()) {
+        if (scape != null && scape.isInitialized() && agentView != null && agentFoundAt != null) {
             bufferedGraphics.setColor(getBackground());
             bufferedGraphics.fillRect(0, 0, bufferedImage.getWidth(null), bufferedImage.getHeight(null));
             bufferedGraphics.setColor(getForeground());
@@ -120,7 +121,7 @@ public class FixedStretchyView extends StretchyView {
         int position = x / agentSize;
         return agentView != null ? agentView[position] : null;
     }
-
+    
     /* (non-Javadoc)
      * @see org.ascape.view.vis.AgentView#drawSelectedAgent(java.awt.Graphics, org.ascape.model.LocatedAgent)
      */
@@ -162,7 +163,7 @@ public class FixedStretchyView extends StretchyView {
      */
     public void drawAgentAt(Agent agent, int position) {
         if (agent != null) {
-            int s = getAgentHeight(agent) * agentSize;
+            int s = (int) (((double) getAgentHeight(agent) / (double) maxHeight) * getSize().height);
             bufferedGraphics.setColor(Color.black);
             bufferedGraphics.drawRect(position * agentSize - 1, getHeight() - s - 1, agentSize, s);
             bufferedGraphics.setColor(agentColorFeature.getColor(agent));

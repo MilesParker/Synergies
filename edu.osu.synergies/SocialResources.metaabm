@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metaabm:SContext xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:act="http://metaabm.org/act" xmlns:function="http://metaabm.org/function" xmlns:metaabm="http://metaabm.org/structure" label="Social Resources" ID="socialResources" pluralLabel="Social Resourcess" description="&lt;h3>Model II of the Synergies project demonstration models&lt;/h3> The purpose of this model is to explore the interaction effects of learners and guides, e.g. club mentors, librarians and museum docents.&#xA;The model shows how two dynamics work together. &#xA;&lt;ul>&lt;li>First, guides have an impact on learners by encouraging their interest in learning itself. Not all guides are created equal -- some guides are much more effective at increasing learning interest over time. But no matter how effective a guide is, there are limits to how much effect they can have on a given learner.&lt;/li>&lt;li>Second, a learner's learning interest grows by itself over time. This effect is self-reinforcing, the more a learner becomes engaged in learning, the more their learning interest will grow. There is a minimum level below which some learners will not be able to grow their own learning interest at all, and this is where a guide's influence could be most crucial.&lt;/li>&lt;/ul>&#xA;&lt;i>Synergies Project: John Falk, Lynn Direking, Bill Penuel, Miles Parker&#xA;Model Development: Miles Parker&lt;/i>">
+  <attributes label="Learner Count" ID="learnerCount" pluralLabel="Learner Counts" description="The number of learners to create." defaultValue="100"/>
+  <attributes label="Guide Count" ID="guideCount" pluralLabel="Guide Counts" description="The number of guides to create." defaultValue="10"/>
+  <attributes label="Initial Interest Minimum" ID="initialInterestMinimum" pluralLabel="Initial Interest Minimums" description="The minimum level of interest that a learner will have at the beginning of the model. Initial interest is distributed uniformally between the minimum and maximum value." sType="REAL" defaultValue="0.05"/>
+  <attributes label="Initial Interest Maximum" ID="initialInterestMaximum" pluralLabel="Initial Interest Maximums" description="The maximum level of interest that a learner will have at the beginning of the model. Initial interest is distributed uniformally between the minimum and maximum value." sType="REAL" defaultValue="0.35"/>
+  <attributes label="Guide Efficacy Minimum" ID="guideEfficacyMinimum" pluralLabel="Guide Efficacy Minimums" description="The minimum efficacy that a given resource will make for learner interest in a given encounter. Efficacy is constant for a resource and affects all learners in the same way. It is distributed uniformally between the minimum and maximum value." sType="REAL" defaultValue=".2"/>
+  <attributes label="Guide Efficacy Maximum" ID="guideEfficacyMaximum" pluralLabel="Guide Efficacy Maximums" description="The maximum efficacy that a given resource will make for learner interest in a given encounter. Efficacy is constant for a resource and affects all learners in the same way. It is distributed uniformally between the minimum and maximum value." sType="REAL" defaultValue=".8"/>
+  <attributes label="Next Learner ID" ID="nextLearnerID" pluralLabel="Next Learner IDs" description="(Supports unique IDs for learners.)"/>
+  <attributes label="Next Guide ID" ID="nextGuideID" pluralLabel="Next Guide IDs" description="(Supports unique IDs for resources.)"/>
+  <attributes label="Guide Contribution Rate" ID="guideContributionRate" pluralLabel="Guide Contribution Rates" description="Determines the relative level of influence a guide can have on a learner within one model period. See the learning related actions for more details." sType="REAL" defaultValue=".01"/>
+  <attributes label="Self Contribution Rate" ID="selfContributionRate" pluralLabel="Self Contribution Rates" description="Determines the relative level of influence a learner can have on their own learning interest within one model period. See the learning related actions for more details." sType="REAL" defaultValue=".01"/>
+  <attributes label="Self Contribution Threshold" ID="selfContributionThreshold" pluralLabel="Self Contribution Thresholds" description="This is the point below which learners are not able to contribute to the growth of their own learning at all. Of course, all people at all ages have some self-motivation to learn but this represents the line below which this interest might not become self-reinforcing." sType="REAL" defaultValue=".2"/>
+  <rootActivity xsi:type="act:AGroup" label="Actions" ID="actions" pluralLabel="Actionss">
+    <members xsi:type="act:ABuild" label="Build SimpleResources" ID="buildSimpleResources" targets="//@rootActivity/@members[ID='createLearners'] //@rootActivity/@members[ID='createGuides'] //@rootActivity/@members[ID='buildNetworks']" selected="//@rootActivity/@members[ID='buildSimpleResources']" agent="/" pluralLabel="Build SimpleResourcess"/>
+    <members xsi:type="act:ACreateAgents" label="Create Learners" ID="createLearners" sources="//@rootActivity/@members[ID='buildSimpleResources']" selected="//@rootActivity/@members[ID='buildSimpleResources']" agent="//@agents[ID='learner']" agentCount="//@attributes[ID='learnerCount']"/>
+    <members xsi:type="act:ACreateAgents" label="Create Guides" ID="createGuides" sources="//@rootActivity/@members[ID='buildSimpleResources']" selected="//@rootActivity/@members[ID='buildSimpleResources']" agent="//@agents[ID='guide']" agentCount="//@attributes[ID='guideCount']"/>
+    <members xsi:type="act:AInitialize" label="Initialize" ID="initialize" targets="//@rootActivity/@members[ID='setNextLearnerIDToZero'] //@rootActivity/@members[ID='setNextGuideIDToZero']" selected="//@rootActivity/@members[ID='initialize']" agent="/" pluralLabel="Initializes"/>
+    <members xsi:type="act:ASet" label="Set Next Learner ID To Zero" ID="setNextLearnerIDToZero" sources="//@rootActivity/@members[ID='initialize']" selected="//@rootActivity/@members[ID='initialize']" attribute="//@attributes[ID='nextLearnerID']">
+      <parameter xsi:type="metaabm:SAttribute" href="http://metaabm.org/core_library.metaabm#//@attributes[ID='zero']"/>
+    </members>
+    <members xsi:type="act:ASet" label="Set Next Guide ID To Zero" ID="setNextGuideIDToZero" sources="//@rootActivity/@members[ID='initialize']" selected="//@rootActivity/@members[ID='initialize']" attribute="//@attributes[ID='nextGuideID']">
+      <parameter xsi:type="metaabm:SAttribute" href="http://metaabm.org/core_library.metaabm#//@attributes[ID='zero']"/>
+    </members>
+    <members xsi:type="act:ABuildNetwork" label="Build Networks" ID="buildNetworks" sources="//@rootActivity/@members[ID='buildSimpleResources']" selected="//@rootActivity/@members[ID='buildSimpleResources']" pluralLabel="Build Networkss" agents="//@agents[ID='guide'] //@agents[ID='learner']" projection="//@projections[ID='guideRelationships']"/>
+  </rootActivity>
+  <implementation package="edu.osu.synergies.simple.model2" className="SocialResources" basePath=""/>
+  <agents label="Guide" ID="guide" pluralLabel="Guides">
+    <attributes label="Efficacy" ID="efficacy" pluralLabel="Efficacys" description="How effective is this guide at instilling an interest in learning to the learners he or she encounters?" sType="REAL" gatherData="true"/>
+    <attributes label="Guide ID" ID="guideID" pluralLabel="Guide IDs" description="A unique identifier for the resource."/>
+    <attributes label="Contribution Total" ID="contributionTotal" pluralLabel="Contribution Totals" description="How much has this guide contributed to growing learning interest for all learners he or she has encountered?" sType="REAL" gatherData="true"/>
+    <attributes label="Learner Count" ID="learnerCount" pluralLabel="Learner Counts" description="The number of learners with whom this guide interacts."/>
+    <attributes label="Contribution Per Learner" ID="contributionPerLearner" pluralLabel="Contribution Per Learners" description="Contribution Total divided by Learner Count. This measures the effectiveness of the guide on average given the number of learners he or she is working with." sType="REAL" gatherData="true" derived="true"/>
+    <rootActivity xsi:type="act:AGroup" label="Actions" ID="actions" pluralLabel="Actionss">
+      <members xsi:type="act:AInitialize" label="Initialize State" ID="initializeState" targets="//@agents[ID='guide']/@rootActivity/@members[ID='guideEfficacy']" selected="//@agents[ID='guide']/@rootActivity/@members[ID='initializeState']" agent="//@agents[ID='guide']" pluralLabel="Initialize States"/>
+      <members xsi:type="act:AEvaluate" label="Guide Efficacy" ID="guideEfficacy" sources="//@agents[ID='guide']/@rootActivity/@members[ID='initializeState']" targets="//@agents[ID='guide']/@rootActivity/@members[ID='setEfficacyToGuideEfficacy']" selected="//@agents[ID='guide']/@rootActivity/@members[ID='initializeState']">
+        <inputs selected="//@agents[ID='guide']/@rootActivity/@members[ID='initializeState']" value="//@agents[ID='guide']/@rootActivity/@members[ID='guideEfficacy']/@inputs.0/@literal">
+          <literal xsi:type="act:AMultiValue" label="Resource Efficacy States" ID="resourceEfficacyStates"/>
+        </inputs>
+        <inputs selected="//@agents[ID='guide']/@rootActivity/@members[ID='initializeState']" value="//@agents[ID='guide']/@rootActivity/@members[ID='guideEfficacy']/@inputs.1/@literal">
+          <literal xsi:type="act:AMultiValue" label="Guide Efficacy Minimum" ID="guideEfficacyMinimum" values="//@attributes[ID='guideEfficacyMinimum']"/>
+        </inputs>
+        <inputs selected="//@agents[ID='guide']/@rootActivity/@members[ID='initializeState']" value="//@agents[ID='guide']/@rootActivity/@members[ID='guideEfficacy']/@inputs.2/@literal">
+          <literal xsi:type="act:AMultiValue" label="Guide Efficacy Maximum" ID="guideEfficacyMaximum" values="//@attributes[ID='guideEfficacyMaximum']"/>
+        </inputs>
+        <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='distribution']/@functions[ID='uniformAdditiveDistribution']"/>
+      </members>
+      <members xsi:type="act:ASet" label="Set Efficacy To Guide Efficacy" ID="setEfficacyToGuideEfficacy" sources="//@agents[ID='guide']/@rootActivity/@members[ID='guideEfficacy']" selected="//@agents[ID='guide']/@rootActivity/@members[ID='initializeState']" attribute="//@agents[ID='guide']/@attributes[ID='efficacy']" parameter="//@agents[ID='guide']/@rootActivity/@members[ID='guideEfficacy']"/>
+      <members xsi:type="act:AInitialize" label="Initialize ID" ID="initializeID" targets="//@agents[ID='guide']/@rootActivity/@members[ID='setGuideIDToNextGuideID']" selected="//@agents[ID='guide']/@rootActivity/@members[ID='initializeID']" agent="//@agents[ID='guide']" pluralLabel="Initialize IDs"/>
+      <members xsi:type="act:ASet" label="Set Guide ID To Next Guide ID" ID="setGuideIDToNextGuideID" sources="//@agents[ID='guide']/@rootActivity/@members[ID='initializeID']" targets="//@agents[ID='guide']/@rootActivity/@members[ID='incrementGuideID']" selected="//@agents[ID='guide']/@rootActivity/@members[ID='initializeID']" attribute="//@agents[ID='guide']/@attributes[ID='guideID']" parameter="//@attributes[ID='nextGuideID']"/>
+      <members xsi:type="act:AEvaluate" label="Increment Guide ID" ID="incrementGuideID" sources="//@agents[ID='guide']/@rootActivity/@members[ID='setGuideIDToNextGuideID']" targets="//@agents[ID='guide']/@rootActivity/@members[ID='setNextGuideIDToIncrementGuideID']" selected="//@agents[ID='guide']/@rootActivity/@members[ID='initializeID']">
+        <inputs selected="//@agents[ID='guide']/@rootActivity/@members[ID='initializeID']" value="//@agents[ID='guide']/@attributes[ID='guideID']"/>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='increment']"/>
+      </members>
+      <members xsi:type="act:ASet" label="Set Next Guide ID To Increment Guide ID" ID="setNextGuideIDToIncrementGuideID" sources="//@agents[ID='guide']/@rootActivity/@members[ID='incrementGuideID']" selected="//@agents[ID='guide']/@rootActivity/@members[ID='initializeID']" attribute="//@attributes[ID='nextGuideID']" parameter="//@agents[ID='guide']/@rootActivity/@members[ID='incrementGuideID']"/>
+      <members xsi:type="act:ADerive" label="Derive Contribution Per Learner" ID="deriveContributionPerLearner" targets="//@agents[ID='guide']/@rootActivity/@members[ID='learnerCountGreaterZeroQuery'] //@agents[ID='guide']/@rootActivity/@members[ID='learnerCountIdenticalZeroQuery']" selected="//@agents[ID='guide']/@rootActivity/@members[ID='deriveContributionPerLearner']" attribute="//@agents[ID='guide']/@attributes[ID='contributionPerLearner']" agent="//@agents[ID='guide']" space="//@projections[ID='guideRelationships']"/>
+      <members xsi:type="act:AEvaluate" label="Contribution Total Divide Learner Count" ID="contributionTotalDivideLearnerCount" sources="//@agents[ID='guide']/@rootActivity/@members[ID='learnerCountGreaterZeroQuery']" selected="//@agents[ID='guide']/@rootActivity/@members[ID='deriveContributionPerLearner']">
+        <inputs selected="//@agents[ID='guide']/@rootActivity/@members[ID='deriveContributionPerLearner']" value="//@agents[ID='guide']/@attributes[ID='contributionTotal']"/>
+        <inputs selected="//@agents[ID='guide']/@rootActivity/@members[ID='deriveContributionPerLearner']" value="//@agents[ID='guide']/@attributes[ID='learnerCount']"/>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='div']"/>
+      </members>
+      <members xsi:type="act:AQuery" label="Learner Count Greater Zero Query" ID="learnerCountGreaterZeroQuery" sources="//@agents[ID='guide']/@rootActivity/@members[ID='deriveContributionPerLearner']" targets="//@agents[ID='guide']/@rootActivity/@members[ID='contributionTotalDivideLearnerCount']" selected="//@agents[ID='guide']/@rootActivity/@members[ID='deriveContributionPerLearner']">
+        <inputs selected="//@agents[ID='guide']/@rootActivity/@members[ID='deriveContributionPerLearner']" value="//@attributes[ID='learnerCount']"/>
+        <inputs selected="//@agents[ID='guide']/@rootActivity/@members[ID='deriveContributionPerLearner']">
+          <value xsi:type="metaabm:SAttribute" href="http://metaabm.org/core_library.metaabm#//@attributes[ID='zero']"/>
+        </inputs>
+        <function xsi:type="function:FLogicalOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='logicalOperators']/@functions[ID='greater']"/>
+      </members>
+      <members xsi:type="act:AQuery" label="Learner Count Identical Zero Query" ID="learnerCountIdenticalZeroQuery" sources="//@agents[ID='guide']/@rootActivity/@members[ID='deriveContributionPerLearner']" targets="//@agents[ID='guide']/@rootActivity/@members[ID='originalValueZero']" selected="//@agents[ID='guide']/@rootActivity/@members[ID='deriveContributionPerLearner']">
+        <inputs selected="//@agents[ID='guide']/@rootActivity/@members[ID='deriveContributionPerLearner']" value="//@agents[ID='guide']/@attributes[ID='learnerCount']"/>
+        <inputs selected="//@agents[ID='guide']/@rootActivity/@members[ID='deriveContributionPerLearner']">
+          <value xsi:type="metaabm:SAttribute" href="http://metaabm.org/core_library.metaabm#//@attributes[ID='zero']"/>
+        </inputs>
+        <function xsi:type="function:FLogicalOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='logicalOperators']/@functions[ID='identical']"/>
+      </members>
+      <members xsi:type="act:AEvaluate" label="Original Value Zero" ID="originalValueZero" sources="//@agents[ID='guide']/@rootActivity/@members[ID='learnerCountIdenticalZeroQuery']" selected="//@agents[ID='guide']/@rootActivity/@members[ID='deriveContributionPerLearner']">
+        <inputs selected="//@agents[ID='guide']/@rootActivity/@members[ID='deriveContributionPerLearner']">
+          <value xsi:type="metaabm:SAttribute" href="http://metaabm.org/core_library.metaabm#//@attributes[ID='zero']"/>
+        </inputs>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='original']"/>
+      </members>
+    </rootActivity>
+    <implementation className="Guide"/>
+    <styles xsi:type="metaabm:SStyle2D" label="Guide Style 2D" ID="guideStyle2D" pluralLabel="Guide Style 2Ds">
+      <rootActivity xsi:type="act:AGroup" label="Actions" ID="actions" pluralLabel="Actionss">
+        <members xsi:type="act:ARule" label="Default SimpleResources Agent Style" ID="defaultSimpleResourcesAgentStyle" targets="//@agents[ID='guide']/@styles[ID='guideStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentColor']" selected="//@agents[ID='guide']/@styles[ID='guideStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']" agent="//@agents[ID='guide']" pluralLabel="Default SimpleResources Agent Styles"/>
+        <members xsi:type="act:AEvaluate" label="Default SimpleResources Agent Color" ID="defaultSimpleResourcesAgentColor" sources="//@agents[ID='guide']/@styles[ID='guideStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']" targets="//@agents[ID='guide']/@styles[ID='guideStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentShape']" selected="//@agents[ID='guide']/@styles[ID='guideStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']">
+          <inputs selected="//@agents[ID='guide']/@styles[ID='guideStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']" value="//@agents[ID='guide']/@styles[ID='guideStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentColor']/@inputs.0/@literal">
+            <literal label="Literal 0.0" ID="literal0pt0" valueLiteral="0.0"/>
+          </inputs>
+          <inputs selected="//@agents[ID='guide']/@styles[ID='guideStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']" value="//@agents[ID='guide']/@attributes[ID='efficacy']"/>
+          <inputs selected="//@agents[ID='guide']/@styles[ID='guideStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']" value="//@agents[ID='guide']/@styles[ID='guideStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentColor']/@inputs.2/@literal">
+            <literal label="Literal 0.0" ID="literal0pt0" valueLiteral="0.0"/>
+          </inputs>
+          <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='graphic']/@functions[ID='colorRGB']"/>
+        </members>
+        <members xsi:type="act:AEvaluate" label="Default SimpleResources Agent Shape" ID="defaultSimpleResourcesAgentShape" sources="//@agents[ID='guide']/@styles[ID='guideStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentColor']" targets="//@agents[ID='guide']/@styles[ID='guideStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentPaint']" selected="//@agents[ID='guide']/@styles[ID='guideStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']">
+          <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='graphic']/@functions[ID='shapeRectangle']"/>
+        </members>
+        <members xsi:type="act:AEvaluate" label="Default SimpleResources Agent Paint" ID="defaultSimpleResourcesAgentPaint" sources="//@agents[ID='guide']/@styles[ID='guideStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentShape']" selected="//@agents[ID='guide']/@styles[ID='guideStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentStyle']">
+          <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='graphic']/@functions[ID='graphicFill']"/>
+        </members>
+      </rootActivity>
+      <implementation className="GuideStyle2D"/>
+    </styles>
+  </agents>
+  <agents label="Learner" ID="learner" pluralLabel="Learners">
+    <attributes label="Learning Interest" ID="learningInterest" pluralLabel="Learning Interests" description="How engaged is the learner but the process of learning itelf?" sType="REAL" gatherData="true"/>
+    <attributes label="Learner ID" ID="learnerID" pluralLabel="Learner IDs" description="A unique identifier for the learner."/>
+    <attributes label="Learner Index" ID="learnerIndex" pluralLabel="Learner Indexs" description="(Internal Use.)" sType="REAL" units="" derived="true"/>
+    <attributes label="Guide ID" ID="guideID" pluralLabel="Guide IDs" description="A target resource that the learner may be seeking. Once a learner has identified a resource, the learner will seek this same resource out in the future unless they happen upon another resource. This id could be 0 in which case the learner hasn't identified a target learning resource."/>
+    <attributes label="Self Contribution" ID="selfContribution" pluralLabel="Self Contributions" description="To what extent has the learner contributed to the growth of their own learning interest, excluding the impact of guide influence?" sType="REAL" gatherData="true"/>
+    <rootActivity xsi:type="act:AGroup" label="Actions" ID="actions" pluralLabel="Actionss">
+      <members xsi:type="act:AInitialize" label="Initialize State" ID="initializeState" targets="//@agents[ID='learner']/@rootActivity/@members[ID='initialInterest'] //@agents[ID='learner']/@rootActivity/@members[ID='setLearnerIDToNextLearnerID']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']" agent="//@agents[ID='learner']" pluralLabel="Initialize States"/>
+      <members xsi:type="act:AEvaluate" label="Initial Interest" ID="initialInterest" sources="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='setLearningInterestToInitialInterest']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']" value="//@agents[ID='learner']/@rootActivity/@members[ID='initialInterest']/@inputs.0/@literal">
+          <literal xsi:type="act:AMultiValue" label="Initial Interest States" ID="initialInterestStates"/>
+        </inputs>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']" value="//@agents[ID='learner']/@rootActivity/@members[ID='initialInterest']/@inputs.1/@literal">
+          <literal xsi:type="act:AMultiValue" label="Initial Interest Minimum" ID="initialInterestMinimum" values="//@attributes[ID='initialInterestMinimum']"/>
+        </inputs>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']" value="//@agents[ID='learner']/@rootActivity/@members[ID='initialInterest']/@inputs.2/@literal">
+          <literal xsi:type="act:AMultiValue" label="Initial Interest Maximum" ID="initialInterestMaximum" values="//@attributes[ID='initialInterestMaximum']"/>
+        </inputs>
+        <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='distribution']/@functions[ID='uniformAdditiveDistribution']"/>
+      </members>
+      <members xsi:type="act:ASet" label="Set Learning Interest To Initial Interest" ID="setLearningInterestToInitialInterest" sources="//@agents[ID='learner']/@rootActivity/@members[ID='initialInterest']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']" attribute="//@agents[ID='learner']/@attributes[ID='learningInterest']" parameter="//@agents[ID='learner']/@rootActivity/@members[ID='initialInterest']"/>
+      <members xsi:type="act:ASelect" label="New Guide" ID="newGuide" sources="//@agents[ID='learner']/@rootActivity/@members[ID='pickGuide']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='connectLearner'] //@agents[ID='learner']/@rootActivity/@members[ID='guideIDAddZero'] //@agents[ID='learner']/@rootActivity/@members[ID='incrementLearnerCount']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='pickGuide']" agent="//@agents[ID='guide']"/>
+      <members xsi:type="act:ARule" label="Guided Growth" ID="guidedGrowth" targets="//@agents[ID='learner']/@rootActivity/@members[ID='guide']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='guidedGrowth']" agent="//@agents[ID='learner']" pluralLabel="Guided Growths" description="Defines the effect guides might have on a learner's growth in learning interest. Every period, the guide efficacy is compared to the learners interest. If the learner's interest is already at or above the guide's efficacy, then there is no effect. Otherwise, we look at the gap between the guide's efficacy and the learner's interest. The greater the gap, the more potential the guide has to affect learning interest. This value is then factored down by the guide contribution rate.&#xA;"/>
+      <members xsi:type="act:ASelect" label="Guide" ID="guide" sources="//@agents[ID='learner']/@rootActivity/@members[ID='guidedGrowth']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='neighborQuery']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='guidedGrowth']" agent="//@agents[ID='guide']" space="//@projections[ID='guideRelationships']"/>
+      <members xsi:type="act:ASet" label="Set Learner ID To Next Learner ID" ID="setLearnerIDToNextLearnerID" sources="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='incrementNextLearnerID']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']" attribute="//@agents[ID='learner']/@attributes[ID='learnerID']" parameter="//@attributes[ID='nextLearnerID']"/>
+      <members xsi:type="act:AEvaluate" label="Increment Next Learner ID" ID="incrementNextLearnerID" sources="//@agents[ID='learner']/@rootActivity/@members[ID='setLearnerIDToNextLearnerID']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='setNextLearnerIDToIncrementNextLearnerID']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']" value="//@attributes[ID='nextLearnerID']"/>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='increment']"/>
+      </members>
+      <members xsi:type="act:ASet" label="Set Next Learner ID To Increment Next Learner ID" ID="setNextLearnerIDToIncrementNextLearnerID" sources="//@agents[ID='learner']/@rootActivity/@members[ID='incrementNextLearnerID']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='initializeState']" attribute="//@attributes[ID='nextLearnerID']" parameter="//@agents[ID='learner']/@rootActivity/@members[ID='incrementNextLearnerID']"/>
+      <members xsi:type="act:ADerive" label="Derive Learner Index" ID="deriveLearnerIndex" targets="//@agents[ID='learner']/@rootActivity/@members[ID='identityLearnerID']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='deriveLearnerIndex']" attribute="//@agents[ID='learner']/@attributes[ID='learnerIndex']" agent="//@agents[ID='learner']"/>
+      <members xsi:type="act:AEvaluate" label="Identity Learner ID" ID="identityLearnerID" sources="//@agents[ID='learner']/@rootActivity/@members[ID='deriveLearnerIndex']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='deriveLearnerIndex']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='deriveLearnerIndex']" value="//@agents[ID='learner']/@attributes[ID='learnerID']"/>
+        <function xsi:type="function:FLogicalOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='logicalOperators']/@functions[ID='identity']"/>
+      </members>
+      <members xsi:type="act:AInitialize" label="Pick Guide" ID="pickGuide" targets="//@agents[ID='learner']/@rootActivity/@members[ID='newGuide']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='pickGuide']" agent="//@agents[ID='learner']" pluralLabel="Pick Guides" description="Defines how learners and guides are connected with one another. In this model, a learner simply picks a random guide from all the guides that are available."/>
+      <members xsi:type="act:AConnect" label="Connect Learner" ID="connectLearner" sources="//@agents[ID='learner']/@rootActivity/@members[ID='newGuide']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='pickGuide']" destination="//@agents[ID='learner']/@rootActivity/@members[ID='newGuide']" within="//@projections[ID='guideRelationships']"/>
+      <members xsi:type="act:ASet" label="Set Guide ID To Guide ID Add Zero" ID="setGuideIDToGuideIDAddZero" sources="//@agents[ID='learner']/@rootActivity/@members[ID='guideIDAddZero']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='pickGuide']" attribute="//@agents[ID='learner']/@attributes[ID='guideID']" parameter="//@agents[ID='learner']/@rootActivity/@members[ID='guideIDAddZero']"/>
+      <members xsi:type="act:AEvaluate" label="Guide ID Add Zero" ID="guideIDAddZero" sources="//@agents[ID='learner']/@rootActivity/@members[ID='newGuide']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='setGuideIDToGuideIDAddZero']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='pickGuide']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='newGuide']" value="//@agents[ID='guide']/@attributes[ID='guideID']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='pickGuide']">
+          <value xsi:type="metaabm:SAttribute" href="http://metaabm.org/core_library.metaabm#//@attributes[ID='zero']"/>
+        </inputs>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='add']"/>
+      </members>
+      <members xsi:type="act:AEvaluate" label="Potential Influence" ID="potentialInfluence" sources="//@agents[ID='learner']/@rootActivity/@members[ID='neighborQuery']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='potentialInfluenceGreaterZeroQuery']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='guidedGrowth']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='guide']" value="//@agents[ID='guide']/@attributes[ID='efficacy']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='guidedGrowth']" value="//@agents[ID='learner']/@attributes[ID='learningInterest']"/>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='sub']"/>
+      </members>
+      <members xsi:type="act:AQuery" label="Potential Influence Greater Zero Query" ID="potentialInfluenceGreaterZeroQuery" sources="//@agents[ID='learner']/@rootActivity/@members[ID='potentialInfluence']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='guideInfluence']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='guidedGrowth']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='guidedGrowth']" value="//@agents[ID='learner']/@rootActivity/@members[ID='potentialInfluence']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='guidedGrowth']">
+          <value xsi:type="metaabm:SAttribute" href="http://metaabm.org/core_library.metaabm#//@attributes[ID='zero']"/>
+        </inputs>
+        <function xsi:type="function:FLogicalOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='logicalOperators']/@functions[ID='greater']"/>
+      </members>
+      <members xsi:type="act:AEvaluate" label="Guide Influence" ID="guideInfluence" sources="//@agents[ID='learner']/@rootActivity/@members[ID='potentialInfluenceGreaterZeroQuery']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='performanceAddGuideInfluence'] //@agents[ID='learner']/@rootActivity/@members[ID='newInterestLevel']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='guidedGrowth']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='guidedGrowth']" value="//@agents[ID='learner']/@rootActivity/@members[ID='potentialInfluence']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='guide']" value="//@attributes[ID='guideContributionRate']"/>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='mul']"/>
+      </members>
+      <members xsi:type="act:AEvaluate" label="New Interest Level" ID="newInterestLevel" sources="//@agents[ID='learner']/@rootActivity/@members[ID='guideInfluence']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='setLearningInterestToNewInterestLevel']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='guidedGrowth']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='guidedGrowth']" value="//@agents[ID='learner']/@attributes[ID='learningInterest']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='guidedGrowth']" value="//@agents[ID='learner']/@rootActivity/@members[ID='guideInfluence']"/>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='add']"/>
+      </members>
+      <members xsi:type="act:ASet" label="Set Learning Interest To New Interest Level" ID="setLearningInterestToNewInterestLevel" sources="//@agents[ID='learner']/@rootActivity/@members[ID='newInterestLevel']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='guidedGrowth']" attribute="//@agents[ID='learner']/@attributes[ID='learningInterest']" parameter="//@agents[ID='learner']/@rootActivity/@members[ID='newInterestLevel']"/>
+      <members xsi:type="act:AEvaluate" label="Performance Add Guide Influence" ID="performanceAddGuideInfluence" sources="//@agents[ID='learner']/@rootActivity/@members[ID='guideInfluence']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='setPerformanceToPerformanceAddGuideInfluence']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='guide']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='guide']" value="//@agents[ID='guide']/@attributes[ID='contributionTotal']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='guidedGrowth']" value="//@agents[ID='learner']/@rootActivity/@members[ID='guideInfluence']"/>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='add']"/>
+      </members>
+      <members xsi:type="act:ASet" label="Set Performance To Performance Add Guide Influence" ID="setPerformanceToPerformanceAddGuideInfluence" sources="//@agents[ID='learner']/@rootActivity/@members[ID='performanceAddGuideInfluence']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='guide']" attribute="//@agents[ID='guide']/@attributes[ID='contributionTotal']" parameter="//@agents[ID='learner']/@rootActivity/@members[ID='performanceAddGuideInfluence']"/>
+      <members xsi:type="act:AQuery" label="Neighbor() Query" ID="neighborQuery" sources="//@agents[ID='learner']/@rootActivity/@members[ID='guide']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='potentialInfluence']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='guide']">
+        <function xsi:type="function:FGenericLogical" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='spatial']/@functions[ID='neighbor']"/>
+      </members>
+      <members xsi:type="act:ARule" label="Self Directed Growth" ID="selfDirectedGrowth" targets="//@agents[ID='learner']/@rootActivity/@members[ID='potentialInterestGrowth']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']" agent="//@agents[ID='learner']" space="//@projections[ID='guideRelationships']" pluralLabel="Self Directed Growths" description="Defines the effect learners can have on their own interest in learning. Every period, we take the learner's current learning interest and subtract the Self Contribution Threshold from that. The remaining value reprersents how strongly the learner is currently engaged in learning. We take this number and multiply it by the Self Contribution Rate and increase the learner's interest by that amount."/>
+      <members xsi:type="act:AEvaluate" label="Potential Interest Growth" ID="potentialInterestGrowth" sources="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='potentialInterestGrowthGreaterZeroQuery']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']" value="//@agents[ID='learner']/@attributes[ID='learningInterest']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']" value="//@attributes[ID='selfContributionThreshold']"/>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='sub']"/>
+      </members>
+      <members xsi:type="act:AQuery" label="Potential Interest Growth Greater Zero Query" ID="potentialInterestGrowthGreaterZeroQuery" sources="//@agents[ID='learner']/@rootActivity/@members[ID='potentialInterestGrowth']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='selfInfluence']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']" value="//@agents[ID='learner']/@rootActivity/@members[ID='potentialInterestGrowth']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']">
+          <value xsi:type="metaabm:SAttribute" href="http://metaabm.org/core_library.metaabm#//@attributes[ID='zero']"/>
+        </inputs>
+        <function xsi:type="function:FLogicalOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='logicalOperators']/@functions[ID='greater']"/>
+      </members>
+      <members xsi:type="act:AEvaluate" label="Self Influence" ID="selfInfluence" sources="//@agents[ID='learner']/@rootActivity/@members[ID='potentialInterestGrowthGreaterZeroQuery']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='learningInterestAddSelfInfluence']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']" value="//@agents[ID='learner']/@rootActivity/@members[ID='potentialInterestGrowth']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']" value="//@attributes[ID='selfContributionRate']"/>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='mul']"/>
+      </members>
+      <members xsi:type="act:AEvaluate" label="Learning Interest Add Self Influence" ID="learningInterestAddSelfInfluence" sources="//@agents[ID='learner']/@rootActivity/@members[ID='selfInfluence']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='minimum_LearningInterestAddSelfInfluenceUnit_']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']" value="//@agents[ID='learner']/@attributes[ID='learningInterest']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']" value="//@agents[ID='learner']/@rootActivity/@members[ID='selfInfluence']"/>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='add']"/>
+      </members>
+      <members xsi:type="act:ASet" label="Set Learning Interest To Minimum(Learning Interest Add Self Influence, Unit)" ID="setLearningInterestToMinimum_LearningInterestAddSelfInfluenceUnit_" sources="//@agents[ID='learner']/@rootActivity/@members[ID='actualGrowth']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']" attribute="//@agents[ID='learner']/@attributes[ID='learningInterest']" parameter="//@agents[ID='learner']/@rootActivity/@members[ID='minimum_LearningInterestAddSelfInfluenceUnit_']"/>
+      <members xsi:type="act:AEvaluate" label="Minimum(Learning Interest Add Self Influence, Unit)" ID="minimum_LearningInterestAddSelfInfluenceUnit_" sources="//@agents[ID='learner']/@rootActivity/@members[ID='learningInterestAddSelfInfluence']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='actualGrowth']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']" value="//@agents[ID='learner']/@rootActivity/@members[ID='learningInterestAddSelfInfluence']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']">
+          <value xsi:type="metaabm:SAttribute" href="http://metaabm.org/core_library.metaabm#//@attributes[ID='unit']"/>
+        </inputs>
+        <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='math']/@functions[ID='min']"/>
+      </members>
+      <members xsi:type="act:AEvaluate" label="Self Contribution Add Actual Growth" ID="selfContributionAddActualGrowth" sources="//@agents[ID='learner']/@rootActivity/@members[ID='actualGrowth']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='setSelfContributionToSelfContributionAddActualGrowth']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']" value="//@agents[ID='learner']/@attributes[ID='selfContribution']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']" value="//@agents[ID='learner']/@rootActivity/@members[ID='actualGrowth']"/>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='add']"/>
+      </members>
+      <members xsi:type="act:AEvaluate" label="Actual Growth" ID="actualGrowth" sources="//@agents[ID='learner']/@rootActivity/@members[ID='minimum_LearningInterestAddSelfInfluenceUnit_']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='selfContributionAddActualGrowth'] //@agents[ID='learner']/@rootActivity/@members[ID='setLearningInterestToMinimum_LearningInterestAddSelfInfluenceUnit_']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']" value="//@agents[ID='learner']/@rootActivity/@members[ID='minimum_LearningInterestAddSelfInfluenceUnit_']"/>
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']" value="//@agents[ID='learner']/@attributes[ID='learningInterest']"/>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='sub']"/>
+      </members>
+      <members xsi:type="act:ASet" label="Set Self Contribution To Self Contribution Add Actual Growth" ID="setSelfContributionToSelfContributionAddActualGrowth" sources="//@agents[ID='learner']/@rootActivity/@members[ID='selfContributionAddActualGrowth']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='selfDirectedGrowth']" attribute="//@agents[ID='learner']/@attributes[ID='selfContribution']" parameter="//@agents[ID='learner']/@rootActivity/@members[ID='selfContributionAddActualGrowth']"/>
+      <members xsi:type="act:AEvaluate" label="Increment Learner Count" ID="incrementLearnerCount" sources="//@agents[ID='learner']/@rootActivity/@members[ID='newGuide']" targets="//@agents[ID='learner']/@rootActivity/@members[ID='setLearnerCountToIncrementLearnerCount']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='newGuide']">
+        <inputs selected="//@agents[ID='learner']/@rootActivity/@members[ID='newGuide']" value="//@agents[ID='guide']/@attributes[ID='learnerCount']"/>
+        <function xsi:type="function:FOperator" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='operators']/@subs[ID='numericOperators']/@functions[ID='increment']"/>
+      </members>
+      <members xsi:type="act:ASet" label="Set Learner Count To Increment Learner Count" ID="setLearnerCountToIncrementLearnerCount" sources="//@agents[ID='learner']/@rootActivity/@members[ID='incrementLearnerCount']" selected="//@agents[ID='learner']/@rootActivity/@members[ID='newGuide']" attribute="//@agents[ID='guide']/@attributes[ID='learnerCount']" parameter="//@agents[ID='learner']/@rootActivity/@members[ID='incrementLearnerCount']"/>
+    </rootActivity>
+    <implementation className="Learner"/>
+    <styles xsi:type="metaabm:SStyle2D" label="Learner Style 2D" ID="learnerStyle2D" pluralLabel="Learner Style 2Ds">
+      <rootActivity xsi:type="act:AGroup" label="Actions" ID="actions" pluralLabel="Actionss">
+        <members xsi:type="act:ARule" label="Default Guide Agent Style" ID="defaultGuideAgentStyle" targets="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentColor']" selected="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultGuideAgentStyle']" agent="//@agents[ID='learner']" pluralLabel="Default Guide Agent Styles"/>
+        <members xsi:type="act:AEvaluate" label="Default SimpleResources Agent Color" ID="defaultSimpleResourcesAgentColor" sources="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultGuideAgentStyle']" targets="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentShape']" selected="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultGuideAgentStyle']">
+          <inputs selected="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultGuideAgentStyle']" value="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentColor']/@inputs.0/@literal">
+            <literal label="Literal 0.0" ID="literal0pt0" valueLiteral="0.0"/>
+          </inputs>
+          <inputs selected="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultGuideAgentStyle']" value="//@agents[ID='learner']/@attributes[ID='learningInterest']"/>
+          <inputs selected="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultGuideAgentStyle']" value="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentColor']/@inputs.2/@literal">
+            <literal label="Literal 0.0" ID="literal0pt0" valueLiteral="0.0"/>
+          </inputs>
+          <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='graphic']/@functions[ID='colorRGB']"/>
+        </members>
+        <members xsi:type="act:AEvaluate" label="Default SimpleResources Agent Shape" ID="defaultSimpleResourcesAgentShape" sources="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentColor']" targets="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentPaint']" selected="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultGuideAgentStyle']">
+          <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='graphic']/@functions[ID='shapeOval']"/>
+        </members>
+        <members xsi:type="act:AEvaluate" label="Default SimpleResources Agent Paint" ID="defaultSimpleResourcesAgentPaint" sources="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultSimpleResourcesAgentShape']" selected="//@agents[ID='learner']/@styles[ID='learnerStyle2D']/@rootActivity/@members[ID='defaultGuideAgentStyle']">
+          <function xsi:type="function:FGenericFunction" href="http://metaabm.org/core_library.metaabm#//@library[ID='coreFunctions']/@subs[ID='graphic']/@functions[ID='graphicFill']"/>
+        </members>
+      </rootActivity>
+      <implementation className="LearnerStyle2D"/>
+    </styles>
+  </agents>
+  <projections xsi:type="metaabm:SNetwork" label="Guide Relationships" ID="guideRelationships" pluralLabel="Guide Relationshipss"/>
+</metaabm:SContext>

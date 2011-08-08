@@ -18,23 +18,10 @@ import com.jrefinery.chart.Legend;
 
 
 public class SpatialResourcesCustom extends SpatialResources {
-	private ColorFeatureGradiated colorForInterest  = new ColorFeatureGradiatedIndex("Avg Output");
 	
-	UnitIntervalDataPoint dataPoint = new UnitIntervalDataPoint() {
-		/**
-         * 
-         */
-		private static final long serialVersionUID = -6033261844239803432L;
-
-		public double getValue(Object object) {
-			Learner learner = (Learner) object;
-			double interest = learner.getLearningInterest();
-			if (interest > 1.0) {
-				return 1.0;
-			}
-			return interest;
-		}
-	};
+	public static UnitIntervalDataPoint dataPoint = new LearnerInterestDataPoint();
+	
+	public static ColorFeatureGradiated colorForInterest  = new ColorFeatureGradiatedIndex("Interest Color", Color.GREEN, Color.RED, dataPoint);
 	
 	public void createScape() {
 		setIterationsPerRedraw(48);
@@ -45,7 +32,7 @@ public class SpatialResourcesCustom extends SpatialResources {
 		super.createScape();
 	};
 	
-	class LearnerStyleInterest2D extends DrawFeature {
+	class LearnerInterestDrawFeature extends DrawFeature {
 
 		/**
 		 * <!-- begin-user-doc -->
@@ -67,11 +54,6 @@ public class SpatialResourcesCustom extends SpatialResources {
 	@Override
 	public void createGraphicViews() {
 
-
-		colorForInterest.setDataPoint(dataPoint);
-		colorForInterest.setMaximumColor(Color.GREEN);
-		colorForInterest.setMinimumColor(Color.RED);
-
 		org.ascape.view.vis.Overhead2DView districtView = new org.ascape.view.vis.Overhead2DView();
 		districtView.setAgentSize(3);
 		getDistrict().addView(districtView);
@@ -88,7 +70,7 @@ public class SpatialResourcesCustom extends SpatialResources {
 		getDistrict().addDrawFeature(homeStyle2D);
 
 		
-		org.ascape.util.vis.DrawFeature learnerStyle2D = new LearnerStyleInterest2D();
+		org.ascape.util.vis.DrawFeature learnerStyle2D = new LearnerInterestDrawFeature();
 		learnerStyle2D.setName("Learner Style 2D");
 		getDistrict().addDrawFeature(learnerStyle2D);
 		districtView.getDrawSelection().setSelected(learningResourceStyle2D,
@@ -103,8 +85,9 @@ public class SpatialResourcesCustom extends SpatialResources {
 				districtView.cells_fill_draw_feature, false);
 		districtView.getDrawSelection().moveToFront(
 				districtView.cells_fill_draw_feature);
+		districtView.setAgentSize(6);
 
-		FixedStretchyView learnerView = new FixedStretchyView(name, 200,
+		FixedStretchyView learnerView = new FixedStretchyView(name, 100,
 				getLearnerScape().size()) {
 			public void update(Graphics graphics) {
 				graphics.setColor(Color.WHITE);
@@ -114,7 +97,7 @@ public class SpatialResourcesCustom extends SpatialResources {
 			@Override
 			protected int getAgentHeight(Agent agent) {
 				Learner learner = (Learner) agent;
-				return learner.getResourceEngagements();
+				return Math.min(100, learner.getResourceEngagements());
 			}
 		};
 		learnerView.setCellColorFeature(colorForInterest);

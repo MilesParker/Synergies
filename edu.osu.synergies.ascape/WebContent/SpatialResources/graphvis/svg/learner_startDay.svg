@@ -46,13 +46,40 @@
 <polyline fill="none" stroke="none" points="494.769,-73.2 494.769,-98 "/>
 <text text-anchor="middle" x="559.969" y="-80" font-family="Helvetica,sans-Serif" font-size="14.00">Seeking Resource</text>
 </g>
+<!-- resourceInteractionresourceID -->
+<g id="node8" class="node"><title>resourceInteractionresourceID</title>
+<polygon fill="white" stroke="white" points="740.356,-196 647.644,-196 647.644,-160 740.356,-160 740.356,-196"/>
+<text text-anchor="middle" x="694" y="-172.4" font-family="Helvetica,sans-Serif" font-size="14.00">Resource ID</text>
+</g>
+<!-- resourceIDAddZeroCopy -->
+<g id="node21" class="node"><title>resourceIDAddZeroCopy</title>
+<polygon fill="#fcccff" stroke="#fcccff" points="755,-116 725,-116 713,-104 713,-92 725,-80 755,-80 767,-92 767,-104 755,-116"/>
+<path fill="#fcccff" stroke="#fcccff" d="M725,-116C719,-116 713,-110 713,-104"/>
+<path fill="#fcccff" stroke="#fcccff" d="M713,-92C713,-86 719,-80 725,-80"/>
+<path fill="#fcccff" stroke="#fcccff" d="M755,-80C761,-80 767,-86 767,-92"/>
+<path fill="#fcccff" stroke="#fcccff" d="M767,-104C767,-110 761,-116 755,-116"/>
+<polyline fill="none" stroke="#fcccff" points="755,-116 725,-116 "/>
+<path fill="none" stroke="#fcccff" d="M725,-116C719,-116 713,-110 713,-104"/>
+<polyline fill="none" stroke="#fcccff" points="713,-104 713,-92 "/>
+<path fill="none" stroke="#fcccff" d="M713,-92C713,-86 719,-80 725,-80"/>
+<polyline fill="none" stroke="#fcccff" points="725,-80 755,-80 "/>
+<path fill="none" stroke="#fcccff" d="M755,-80C761,-80 767,-86 767,-92"/>
+<polyline fill="none" stroke="#fcccff" points="767,-92 767,-104 "/>
+<path fill="none" stroke="#fcccff" d="M767,-104C767,-110 761,-116 755,-116"/>
+<text text-anchor="middle" x="740" y="-92.4" font-family="Helvetica,sans-Serif" font-size="14.00">Add</text>
+</g>
+<!-- resourceInteractionresourceID&#45;&gt;resourceIDAddZeroCopy -->
+<g id="edge29" class="edge"><title>resourceInteractionresourceID&#45;&gt;resourceIDAddZeroCopy:nw</title>
+<path fill="none" stroke="#c114cc" stroke-width="2" stroke-dasharray="1,5" d="M698.493,-159.86C702.005,-148.871 707.779,-134.597 716.511,-123.277"/>
+<ellipse fill="#c114cc" stroke="#c114cc" cx="719.367" cy="-120.011" rx="4.00002" ry="4.00002"/>
+</g>
 <!-- resourceInteractionlearnerID -->
-<g id="node8" class="node"><title>resourceInteractionlearnerID</title>
+<g id="node9" class="node"><title>resourceInteractionlearnerID</title>
 <polygon fill="white" stroke="white" points="777.108,-484 694.892,-484 694.892,-448 777.108,-448 777.108,-484"/>
 <text text-anchor="middle" x="736" y="-460.4" font-family="Helvetica,sans-Serif" font-size="14.00">Learner ID</text>
 </g>
 <!-- learnerIDIdenticalLearnerIDQueryCopy -->
-<g id="node22" class="node"><title>learnerIDIdenticalLearnerIDQueryCopy</title>
+<g id="node20" class="node"><title>learnerIDIdenticalLearnerIDQueryCopy</title>
 <polygon fill="#fcccff" stroke="#fcccff" points="608.448,-412 557.552,-412 545.552,-400 545.552,-388 557.552,-376 608.448,-376 620.448,-388 620.448,-400 608.448,-412"/>
 <path fill="#fcccff" stroke="#fcccff" d="M557.552,-412C551.552,-412 545.552,-406 545.552,-400"/>
 <path fill="#fcccff" stroke="#fcccff" d="M545.552,-388C545.552,-382 551.552,-376 557.552,-376"/>
@@ -74,7 +101,7 @@
 <ellipse fill="#c114cc" stroke="#c114cc" cx="604.37" cy="-414.155" rx="4.00002" ry="4.00002"/>
 </g>
 <!-- learnerlearnerID -->
-<g id="node9" class="node"><title>learnerlearnerID</title>
+<g id="node10" class="node"><title>learnerlearnerID</title>
 <polygon fill="white" stroke="white" points="541.108,-484 458.892,-484 458.892,-448 541.108,-448 541.108,-484"/>
 <text text-anchor="middle" x="500" y="-460.4" font-family="Helvetica,sans-Serif" font-size="14.00">Learner ID</text>
 </g>
@@ -83,77 +110,8 @@
 <path fill="none" stroke="#7014cc" stroke-width="2" stroke-dasharray="1,5" d="M523.226,-447.915C534.171,-439.484 547.361,-428.775 559.046,-417.771"/>
 <ellipse fill="#7014cc" stroke="#7014cc" cx="562.128" cy="-414.784" rx="4.00002" ry="4.00002"/>
 </g>
-<!-- learnertargetResourceID -->
-<g id="node10" class="node"><title>learnertargetResourceID</title>
-<polygon fill="white" stroke="white" points="881.956,-36 746.044,-36 746.044,-0 881.956,-0 881.956,-36"/>
-<text text-anchor="middle" x="814" y="-12.4" font-family="Helvetica,sans-Serif" font-size="14.00">Target Resource ID</text>
-</g>
-<!-- spatialResourcessubsequentEngagementFactor -->
-<g id="node11" class="node"><title>spatialResourcessubsequentEngagementFactor</title>
-<polygon fill="white" stroke="white" points="861,-412 639,-412 639,-376 861,-376 861,-412"/>
-<text text-anchor="start" x="647.5" y="-388.5" font-family="Helvetica,sans-Serif" font-size="14.00">Subsequent Engagement Factor </text>
-</g>
-<!-- strengthMultiplySubsequentEngagementFactor -->
-<g id="node24" class="node"><title>strengthMultiplySubsequentEngagementFactor</title>
-<polygon fill="#e5ccff" stroke="#e5ccff" points="602.59,-340 563.41,-340 551.41,-328 551.41,-316 563.41,-304 602.59,-304 614.59,-316 614.59,-328 602.59,-340"/>
-<path fill="#e5ccff" stroke="#e5ccff" d="M563.41,-340C557.41,-340 551.41,-334 551.41,-328"/>
-<path fill="#e5ccff" stroke="#e5ccff" d="M551.41,-316C551.41,-310 557.41,-304 563.41,-304"/>
-<path fill="#e5ccff" stroke="#e5ccff" d="M602.59,-304C608.59,-304 614.59,-310 614.59,-316"/>
-<path fill="#e5ccff" stroke="#e5ccff" d="M614.59,-328C614.59,-334 608.59,-340 602.59,-340"/>
-<polyline fill="none" stroke="#e5ccff" points="602.59,-340 563.41,-340 "/>
-<path fill="none" stroke="#e5ccff" d="M563.41,-340C557.41,-340 551.41,-334 551.41,-328"/>
-<polyline fill="none" stroke="#e5ccff" points="551.41,-328 551.41,-316 "/>
-<path fill="none" stroke="#e5ccff" d="M551.41,-316C551.41,-310 557.41,-304 563.41,-304"/>
-<polyline fill="none" stroke="#e5ccff" points="563.41,-304 602.59,-304 "/>
-<path fill="none" stroke="#e5ccff" d="M602.59,-304C608.59,-304 614.59,-310 614.59,-316"/>
-<polyline fill="none" stroke="#e5ccff" points="614.59,-316 614.59,-328 "/>
-<path fill="none" stroke="#e5ccff" d="M614.59,-328C614.59,-334 608.59,-340 602.59,-340"/>
-<text text-anchor="middle" x="583" y="-316.4" font-family="Helvetica,sans-Serif" font-size="14.00">Multiply</text>
-</g>
-<!-- spatialResourcessubsequentEngagementFactor&#45;&gt;strengthMultiplySubsequentEngagementFactor -->
-<g id="edge41" class="edge"><title>spatialResourcessubsequentEngagementFactor&#45;&gt;strengthMultiplySubsequentEngagementFactor:ne</title>
-<path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M661.848,-375.876C642.323,-368.943 622.786,-359.227 607.055,-345.625"/>
-<ellipse fill="black" stroke="black" cx="603.931" cy="-342.723" rx="4.00002" ry="4.00002"/>
-</g>
-<!-- resourceInteractionstrength -->
-<g id="node12" class="node"><title>resourceInteractionstrength</title>
-<polygon fill="white" stroke="white" points="527.193,-412 458.807,-412 458.807,-376 527.193,-376 527.193,-412"/>
-<text text-anchor="middle" x="493" y="-388.4" font-family="Helvetica,sans-Serif" font-size="14.00">Strength</text>
-</g>
-<!-- resourceInteractionstrength&#45;&gt;strengthMultiplySubsequentEngagementFactor -->
-<g id="edge39" class="edge"><title>resourceInteractionstrength&#45;&gt;strengthMultiplySubsequentEngagementFactor:nw</title>
-<path fill="none" stroke="#c114cc" stroke-width="2" stroke-dasharray="1,5" d="M520.177,-375.879C532.358,-367.614 546.736,-357.027 559.107,-345.645"/>
-<ellipse fill="#c114cc" stroke="#c114cc" cx="562.111" cy="-342.767" rx="4.00002" ry="4.00002"/>
-</g>
-<!-- resourceInteractionresourceID -->
-<g id="node13" class="node"><title>resourceInteractionresourceID</title>
-<polygon fill="white" stroke="white" points="740.356,-196 647.644,-196 647.644,-160 740.356,-160 740.356,-196"/>
-<text text-anchor="middle" x="694" y="-172.4" font-family="Helvetica,sans-Serif" font-size="14.00">Resource ID</text>
-</g>
-<!-- resourceIDAddZeroCopy -->
-<g id="node20" class="node"><title>resourceIDAddZeroCopy</title>
-<polygon fill="#fcccff" stroke="#fcccff" points="755,-116 725,-116 713,-104 713,-92 725,-80 755,-80 767,-92 767,-104 755,-116"/>
-<path fill="#fcccff" stroke="#fcccff" d="M725,-116C719,-116 713,-110 713,-104"/>
-<path fill="#fcccff" stroke="#fcccff" d="M713,-92C713,-86 719,-80 725,-80"/>
-<path fill="#fcccff" stroke="#fcccff" d="M755,-80C761,-80 767,-86 767,-92"/>
-<path fill="#fcccff" stroke="#fcccff" d="M767,-104C767,-110 761,-116 755,-116"/>
-<polyline fill="none" stroke="#fcccff" points="755,-116 725,-116 "/>
-<path fill="none" stroke="#fcccff" d="M725,-116C719,-116 713,-110 713,-104"/>
-<polyline fill="none" stroke="#fcccff" points="713,-104 713,-92 "/>
-<path fill="none" stroke="#fcccff" d="M713,-92C713,-86 719,-80 725,-80"/>
-<polyline fill="none" stroke="#fcccff" points="725,-80 755,-80 "/>
-<path fill="none" stroke="#fcccff" d="M755,-80C761,-80 767,-86 767,-92"/>
-<polyline fill="none" stroke="#fcccff" points="767,-92 767,-104 "/>
-<path fill="none" stroke="#fcccff" d="M767,-104C767,-110 761,-116 755,-116"/>
-<text text-anchor="middle" x="740" y="-92.4" font-family="Helvetica,sans-Serif" font-size="14.00">Add</text>
-</g>
-<!-- resourceInteractionresourceID&#45;&gt;resourceIDAddZeroCopy -->
-<g id="edge43" class="edge"><title>resourceInteractionresourceID&#45;&gt;resourceIDAddZeroCopy:nw</title>
-<path fill="none" stroke="#c114cc" stroke-width="2" stroke-dasharray="1,5" d="M698.493,-159.86C702.005,-148.871 707.779,-134.597 716.511,-123.277"/>
-<ellipse fill="#c114cc" stroke="#c114cc" cx="719.367" cy="-120.011" rx="4.00002" ry="4.00002"/>
-</g>
 <!-- spatialResourcestimeSegment -->
-<g id="node14" class="node"><title>spatialResourcestimeSegment</title>
+<g id="node11" class="node"><title>spatialResourcestimeSegment</title>
 <polygon fill="white" stroke="white" points="436.25,-700 329.75,-700 329.75,-664 436.25,-664 436.25,-700"/>
 <text text-anchor="start" x="338" y="-676.5" font-family="Helvetica,sans-Serif" font-size="14.00">Time Segment</text>
 </g>
@@ -175,9 +133,51 @@
 <text text-anchor="middle" x="492" y="-604.4" font-family="Helvetica,sans-Serif" font-size="14.00">Identical?</text>
 </g>
 <!-- spatialResourcestimeSegment&#45;&gt;timeSegmentIdenticalZeroQuery -->
-<g id="edge47" class="edge"><title>spatialResourcestimeSegment&#45;&gt;timeSegmentIdenticalZeroQuery:nw</title>
+<g id="edge37" class="edge"><title>spatialResourcestimeSegment&#45;&gt;timeSegmentIdenticalZeroQuery:nw</title>
 <path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M422.332,-663.773C437.311,-656.044 454.083,-645.901 467.885,-633.732"/>
 <ellipse fill="black" stroke="black" cx="471.082" cy="-630.736" rx="4.00002" ry="4.00002"/>
+</g>
+<!-- learnertargetResourceID -->
+<g id="node12" class="node"><title>learnertargetResourceID</title>
+<polygon fill="white" stroke="white" points="881.956,-36 746.044,-36 746.044,-0 881.956,-0 881.956,-36"/>
+<text text-anchor="middle" x="814" y="-12.4" font-family="Helvetica,sans-Serif" font-size="14.00">Target Resource ID</text>
+</g>
+<!-- spatialResourcessubsequentEngagementFactor -->
+<g id="node13" class="node"><title>spatialResourcessubsequentEngagementFactor</title>
+<polygon fill="white" stroke="white" points="861,-412 639,-412 639,-376 861,-376 861,-412"/>
+<text text-anchor="start" x="647.5" y="-388.5" font-family="Helvetica,sans-Serif" font-size="14.00">Subsequent Engagement Factor </text>
+</g>
+<!-- strengthMultiplySubsequentEngagementFactor -->
+<g id="node24" class="node"><title>strengthMultiplySubsequentEngagementFactor</title>
+<polygon fill="#e5ccff" stroke="#e5ccff" points="602.59,-340 563.41,-340 551.41,-328 551.41,-316 563.41,-304 602.59,-304 614.59,-316 614.59,-328 602.59,-340"/>
+<path fill="#e5ccff" stroke="#e5ccff" d="M563.41,-340C557.41,-340 551.41,-334 551.41,-328"/>
+<path fill="#e5ccff" stroke="#e5ccff" d="M551.41,-316C551.41,-310 557.41,-304 563.41,-304"/>
+<path fill="#e5ccff" stroke="#e5ccff" d="M602.59,-304C608.59,-304 614.59,-310 614.59,-316"/>
+<path fill="#e5ccff" stroke="#e5ccff" d="M614.59,-328C614.59,-334 608.59,-340 602.59,-340"/>
+<polyline fill="none" stroke="#e5ccff" points="602.59,-340 563.41,-340 "/>
+<path fill="none" stroke="#e5ccff" d="M563.41,-340C557.41,-340 551.41,-334 551.41,-328"/>
+<polyline fill="none" stroke="#e5ccff" points="551.41,-328 551.41,-316 "/>
+<path fill="none" stroke="#e5ccff" d="M551.41,-316C551.41,-310 557.41,-304 563.41,-304"/>
+<polyline fill="none" stroke="#e5ccff" points="563.41,-304 602.59,-304 "/>
+<path fill="none" stroke="#e5ccff" d="M602.59,-304C608.59,-304 614.59,-310 614.59,-316"/>
+<polyline fill="none" stroke="#e5ccff" points="614.59,-316 614.59,-328 "/>
+<path fill="none" stroke="#e5ccff" d="M614.59,-328C614.59,-334 608.59,-340 602.59,-340"/>
+<text text-anchor="middle" x="583" y="-316.4" font-family="Helvetica,sans-Serif" font-size="14.00">Multiply</text>
+</g>
+<!-- spatialResourcessubsequentEngagementFactor&#45;&gt;strengthMultiplySubsequentEngagementFactor -->
+<g id="edge43" class="edge"><title>spatialResourcessubsequentEngagementFactor&#45;&gt;strengthMultiplySubsequentEngagementFactor:ne</title>
+<path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M661.848,-375.876C642.323,-368.943 622.786,-359.227 607.055,-345.625"/>
+<ellipse fill="black" stroke="black" cx="603.931" cy="-342.723" rx="4.00002" ry="4.00002"/>
+</g>
+<!-- resourceInteractionstrength -->
+<g id="node14" class="node"><title>resourceInteractionstrength</title>
+<polygon fill="white" stroke="white" points="527.193,-412 458.807,-412 458.807,-376 527.193,-376 527.193,-412"/>
+<text text-anchor="middle" x="493" y="-388.4" font-family="Helvetica,sans-Serif" font-size="14.00">Strength</text>
+</g>
+<!-- resourceInteractionstrength&#45;&gt;strengthMultiplySubsequentEngagementFactor -->
+<g id="edge41" class="edge"><title>resourceInteractionstrength&#45;&gt;strengthMultiplySubsequentEngagementFactor:nw</title>
+<path fill="none" stroke="#c114cc" stroke-width="2" stroke-dasharray="1,5" d="M520.177,-375.879C532.358,-367.614 546.736,-357.027 559.107,-345.645"/>
+<ellipse fill="#c114cc" stroke="#c114cc" cx="562.111" cy="-342.767" rx="4.00002" ry="4.00002"/>
 </g>
 <!-- startDay -->
 <g id="node15" class="node"><title>startDay</title>
@@ -204,12 +204,12 @@
 <polygon fill="#7014cc" stroke="#7014cc" points="499,-648.104 492,-628.104 485,-648.104 499,-648.104"/>
 </g>
 <!-- timeSegmentIdenticalZeroQuery&#45;&gt;learnerbehaviorRecord -->
-<g id="edge27" class="edge"><title>timeSegmentIdenticalZeroQuery&#45;&gt;learnerbehaviorRecord:learnerbehaviornotInterested</title>
+<g id="edge17" class="edge"><title>timeSegmentIdenticalZeroQuery&#45;&gt;learnerbehaviorRecord:learnerbehaviornotInterested</title>
 <path fill="none" stroke="#7014cc" stroke-width="3" d="M479.063,-591.655C461.157,-565.878 431,-515.296 431,-467 431,-467 431,-467 431,-249 431,-183.637 342.416,-107.862 370.314,-89.94"/>
 <polygon fill="#7014cc" stroke="#7014cc" points="371.763,-96.789 390,-86 369.015,-83.0613 371.763,-96.789"/>
 </g>
 <!-- setTargetResourceIDToZero -->
-<g id="node25" class="node"><title>setTargetResourceIDToZero</title>
+<g id="node26" class="node"><title>setTargetResourceIDToZero</title>
 <polygon fill="#e5ccff" stroke="#e5ccff" points="633,-556 603,-556 591,-544 591,-532 603,-520 633,-520 645,-532 645,-544 633,-556"/>
 <path fill="#e5ccff" stroke="#e5ccff" d="M603,-556C597,-556 591,-550 591,-544"/>
 <path fill="#e5ccff" stroke="#e5ccff" d="M591,-532C591,-526 597,-520 603,-520"/>
@@ -226,51 +226,41 @@
 <text text-anchor="middle" x="618" y="-532.4" font-family="Helvetica,sans-Serif" font-size="14.00">Set</text>
 </g>
 <!-- timeSegmentIdenticalZeroQuery&#45;&gt;setTargetResourceIDToZero -->
-<g id="edge23" class="edge"><title>timeSegmentIdenticalZeroQuery&#45;&gt;setTargetResourceIDToZero</title>
+<g id="edge13" class="edge"><title>timeSegmentIdenticalZeroQuery&#45;&gt;setTargetResourceIDToZero</title>
 <path fill="none" stroke="#7014cc" stroke-width="3" d="M522.823,-591.876C538.044,-583.42 556.689,-573.061 573.431,-563.76"/>
 <polygon fill="#7014cc" stroke="#7014cc" points="576.834,-569.878 590.918,-554.046 570.035,-557.639 576.834,-569.878"/>
 </g>
-<!-- randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery -->
-<g id="node18" class="node"><title>randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery</title>
-<polygon fill="#e5ccff" stroke="#e5ccff" points="604.357,-196 563.643,-196 551.643,-184 551.643,-172 563.643,-160 604.357,-160 616.357,-172 616.357,-184 604.357,-196"/>
-<path fill="#e5ccff" stroke="#e5ccff" d="M563.643,-196C557.643,-196 551.643,-190 551.643,-184"/>
-<path fill="#e5ccff" stroke="#e5ccff" d="M551.643,-172C551.643,-166 557.643,-160 563.643,-160"/>
-<path fill="#e5ccff" stroke="#e5ccff" d="M604.357,-160C610.357,-160 616.357,-166 616.357,-172"/>
-<path fill="#e5ccff" stroke="#e5ccff" d="M616.357,-184C616.357,-190 610.357,-196 604.357,-196"/>
-<polyline fill="none" stroke="#e5ccff" points="604.357,-196 563.643,-196 "/>
-<path fill="none" stroke="#e5ccff" d="M563.643,-196C557.643,-196 551.643,-190 551.643,-184"/>
-<polyline fill="none" stroke="#e5ccff" points="551.643,-184 551.643,-172 "/>
-<path fill="none" stroke="#e5ccff" d="M551.643,-172C551.643,-166 557.643,-160 563.643,-160"/>
-<polyline fill="none" stroke="#e5ccff" points="563.643,-160 604.357,-160 "/>
-<path fill="none" stroke="#e5ccff" d="M604.357,-160C610.357,-160 616.357,-166 616.357,-172"/>
-<polyline fill="none" stroke="#e5ccff" points="616.357,-172 616.357,-184 "/>
-<path fill="none" stroke="#e5ccff" d="M616.357,-184C616.357,-190 610.357,-196 604.357,-196"/>
-<text text-anchor="middle" x="584" y="-172.4" font-family="Helvetica,sans-Serif" font-size="14.00">Lesser?</text>
+<!-- targetResource -->
+<g id="node18" class="node"><title>targetResource</title>
+<polygon fill="#fcccff" stroke="#fcccff" points="665.038,-484 570.962,-484 558.962,-472 558.962,-460 570.962,-448 665.038,-448 677.038,-460 677.038,-472 665.038,-484"/>
+<path fill="#fcccff" stroke="#fcccff" d="M570.962,-484C564.962,-484 558.962,-478 558.962,-472"/>
+<path fill="#fcccff" stroke="#fcccff" d="M558.962,-460C558.962,-454 564.962,-448 570.962,-448"/>
+<path fill="#fcccff" stroke="#fcccff" d="M665.038,-448C671.038,-448 677.038,-454 677.038,-460"/>
+<path fill="#fcccff" stroke="#fcccff" d="M677.038,-472C677.038,-478 671.038,-484 665.038,-484"/>
+<polyline fill="none" stroke="gray" points="665.038,-484 570.962,-484 "/>
+<path fill="none" stroke="gray" d="M570.962,-484C564.962,-484 558.962,-478 558.962,-472"/>
+<polyline fill="none" stroke="gray" points="558.962,-472 558.962,-460 "/>
+<path fill="none" stroke="gray" d="M558.962,-460C558.962,-454 564.962,-448 570.962,-448"/>
+<polyline fill="none" stroke="gray" points="570.962,-448 665.038,-448 "/>
+<path fill="none" stroke="gray" d="M665.038,-448C671.038,-448 677.038,-454 677.038,-460"/>
+<polyline fill="none" stroke="gray" points="677.038,-460 677.038,-472 "/>
+<path fill="none" stroke="gray" d="M677.038,-472C677.038,-478 671.038,-484 665.038,-484"/>
+<text text-anchor="middle" x="618" y="-460.4" font-family="Helvetica,sans-Serif" font-size="14.00">Target Resource</text>
 </g>
-<!-- randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery&#45;&gt;learnerbehaviorRecord -->
-<g id="edge9" class="edge"><title>randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery&#45;&gt;learnerbehaviorRecord:learnerbehaviorseekingResource</title>
-<path fill="none" stroke="#7014cc" stroke-width="3" d="M599.328,-159.884C613.449,-143.408 632.912,-118.666 637.664,-102.427"/>
-<polygon fill="#7014cc" stroke="#7014cc" points="643.287,-98.2543 626,-86 631.872,-106.36 643.287,-98.2543"/>
-</g>
-<!-- randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery&#45;&gt;resourceIDAddZeroCopy -->
-<g id="edge7" class="edge"><title>randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery&#45;&gt;resourceIDAddZeroCopy</title>
-<path fill="none" stroke="#7014cc" stroke-width="3" d="M616.703,-160.649C639.303,-149.349 669.667,-134.166 694.608,-121.696"/>
-<polygon fill="#7014cc" stroke="#7014cc" points="698.04,-127.806 712.798,-112.601 691.779,-115.284 698.04,-127.806"/>
-</g>
-<!-- resourceIDAddZeroCopy&#45;&gt;learnertargetResourceID -->
-<g id="edge17" class="edge"><title>resourceIDAddZeroCopy&#45;&gt;learnertargetResourceID</title>
-<path fill="none" stroke="#7014cc" stroke-width="3" d="M756.423,-79.6893C764.471,-71.2066 774.423,-60.7168 783.776,-50.8574"/>
-<polygon fill="#7014cc" stroke="#7014cc" points="788.936,-55.5895 797.623,-36.2623 778.779,-45.9538 788.936,-55.5895"/>
+<!-- targetResource&#45;&gt;learnerIDIdenticalLearnerIDQueryCopy -->
+<g id="edge7" class="edge"><title>targetResource&#45;&gt;learnerIDIdenticalLearnerIDQueryCopy</title>
+<path fill="none" stroke="#c114cc" stroke-width="3" d="M609.348,-447.697C606.678,-442.356 603.635,-436.27 600.588,-430.176"/>
+<polygon fill="#c114cc" stroke="#c114cc" points="606.757,-426.862 591.552,-412.104 594.235,-433.123 606.757,-426.862"/>
 </g>
 <!-- learnerIDIdenticalLearnerIDQueryCopy&#45;&gt;strengthMultiplySubsequentEngagementFactor -->
 <g id="edge11" class="edge"><title>learnerIDIdenticalLearnerIDQueryCopy&#45;&gt;strengthMultiplySubsequentEngagementFactor</title>
 <path fill="none" stroke="#c114cc" stroke-width="3" d="M583,-375.697C583,-370.95 583,-365.613 583,-360.206"/>
 <polygon fill="#c114cc" stroke="#c114cc" points="590,-360.104 583,-340.104 576,-360.104 590,-360.104"/>
 </g>
-<!-- strengthMultiplySubsequentEngagementFactor&#45;&gt;randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery -->
-<g id="edge29" class="edge"><title>strengthMultiplySubsequentEngagementFactor&#45;&gt;randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery:ne</title>
-<path fill="none" stroke="blue" stroke-width="2" stroke-dasharray="1,5" d="M600.733,-303.599C609.239,-293.998 618.532,-281.336 623,-268 632.679,-239.109 626.811,-222.571 607.73,-201.941"/>
-<ellipse fill="blue" stroke="blue" cx="604.777" cy="-198.879" rx="4.00002" ry="4.00002"/>
+<!-- resourceIDAddZeroCopy&#45;&gt;learnertargetResourceID -->
+<g id="edge9" class="edge"><title>resourceIDAddZeroCopy&#45;&gt;learnertargetResourceID</title>
+<path fill="none" stroke="#7014cc" stroke-width="3" d="M756.423,-79.6893C764.471,-71.2066 774.423,-60.7168 783.776,-50.8574"/>
+<polygon fill="#7014cc" stroke="#7014cc" points="788.936,-55.5895 797.623,-36.2623 778.779,-45.9538 788.936,-55.5895"/>
 </g>
 <!-- randomUnit -->
 <g id="node29" class="node"><title>randomUnit</title>
@@ -290,44 +280,44 @@
 <text text-anchor="middle" x="566" y="-244.4" font-family="Helvetica,sans-Serif" font-size="14.00">Random Unit</text>
 </g>
 <!-- strengthMultiplySubsequentEngagementFactor&#45;&gt;randomUnit -->
-<g id="edge15" class="edge"><title>strengthMultiplySubsequentEngagementFactor&#45;&gt;randomUnit</title>
+<g id="edge21" class="edge"><title>strengthMultiplySubsequentEngagementFactor&#45;&gt;randomUnit</title>
 <path fill="none" stroke="#7014cc" stroke-width="3" d="M578.798,-303.697C577.604,-298.78 576.256,-293.231 574.895,-287.627"/>
 <polygon fill="#7014cc" stroke="#7014cc" points="581.676,-285.887 570.154,-268.104 568.072,-289.191 581.676,-285.887"/>
 </g>
+<!-- randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery -->
+<g id="node31" class="node"><title>randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery</title>
+<polygon fill="#e5ccff" stroke="#e5ccff" points="604.357,-196 563.643,-196 551.643,-184 551.643,-172 563.643,-160 604.357,-160 616.357,-172 616.357,-184 604.357,-196"/>
+<path fill="#e5ccff" stroke="#e5ccff" d="M563.643,-196C557.643,-196 551.643,-190 551.643,-184"/>
+<path fill="#e5ccff" stroke="#e5ccff" d="M551.643,-172C551.643,-166 557.643,-160 563.643,-160"/>
+<path fill="#e5ccff" stroke="#e5ccff" d="M604.357,-160C610.357,-160 616.357,-166 616.357,-172"/>
+<path fill="#e5ccff" stroke="#e5ccff" d="M616.357,-184C616.357,-190 610.357,-196 604.357,-196"/>
+<polyline fill="none" stroke="#e5ccff" points="604.357,-196 563.643,-196 "/>
+<path fill="none" stroke="#e5ccff" d="M563.643,-196C557.643,-196 551.643,-190 551.643,-184"/>
+<polyline fill="none" stroke="#e5ccff" points="551.643,-184 551.643,-172 "/>
+<path fill="none" stroke="#e5ccff" d="M551.643,-172C551.643,-166 557.643,-160 563.643,-160"/>
+<polyline fill="none" stroke="#e5ccff" points="563.643,-160 604.357,-160 "/>
+<path fill="none" stroke="#e5ccff" d="M604.357,-160C610.357,-160 616.357,-166 616.357,-172"/>
+<polyline fill="none" stroke="#e5ccff" points="616.357,-172 616.357,-184 "/>
+<path fill="none" stroke="#e5ccff" d="M616.357,-184C616.357,-190 610.357,-196 604.357,-196"/>
+<text text-anchor="middle" x="584" y="-172.4" font-family="Helvetica,sans-Serif" font-size="14.00">Lesser?</text>
+</g>
+<!-- strengthMultiplySubsequentEngagementFactor&#45;&gt;randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery -->
+<g id="edge47" class="edge"><title>strengthMultiplySubsequentEngagementFactor&#45;&gt;randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery:ne</title>
+<path fill="none" stroke="blue" stroke-width="2" stroke-dasharray="1,5" d="M600.733,-303.599C609.239,-293.998 618.532,-281.336 623,-268 632.679,-239.109 626.811,-222.571 607.73,-201.941"/>
+<ellipse fill="blue" stroke="blue" cx="604.777" cy="-198.879" rx="4.00002" ry="4.00002"/>
+</g>
 <!-- setTargetResourceIDToZero&#45;&gt;learnertargetResourceID -->
-<g id="edge25" class="edge"><title>setTargetResourceIDToZero&#45;&gt;learnertargetResourceID</title>
+<g id="edge15" class="edge"><title>setTargetResourceIDToZero&#45;&gt;learnertargetResourceID</title>
 <path fill="none" stroke="#7014cc" stroke-width="3" d="M645.225,-535.367C713.947,-529.629 889,-504.287 889,-395 889,-395 889,-395 889,-177 889,-130.514 862.178,-83.1221 840.614,-52.5321"/>
 <polygon fill="#7014cc" stroke="#7014cc" points="846.018,-48.0692 828.461,-36.2058 834.788,-56.4288 846.018,-48.0692"/>
 </g>
-<!-- targetResource -->
-<g id="node27" class="node"><title>targetResource</title>
-<polygon fill="#fcccff" stroke="#fcccff" points="665.038,-484 570.962,-484 558.962,-472 558.962,-460 570.962,-448 665.038,-448 677.038,-460 677.038,-472 665.038,-484"/>
-<path fill="#fcccff" stroke="#fcccff" d="M570.962,-484C564.962,-484 558.962,-478 558.962,-472"/>
-<path fill="#fcccff" stroke="#fcccff" d="M558.962,-460C558.962,-454 564.962,-448 570.962,-448"/>
-<path fill="#fcccff" stroke="#fcccff" d="M665.038,-448C671.038,-448 677.038,-454 677.038,-460"/>
-<path fill="#fcccff" stroke="#fcccff" d="M677.038,-472C677.038,-478 671.038,-484 665.038,-484"/>
-<polyline fill="none" stroke="gray" points="665.038,-484 570.962,-484 "/>
-<path fill="none" stroke="gray" d="M570.962,-484C564.962,-484 558.962,-478 558.962,-472"/>
-<polyline fill="none" stroke="gray" points="558.962,-472 558.962,-460 "/>
-<path fill="none" stroke="gray" d="M558.962,-460C558.962,-454 564.962,-448 570.962,-448"/>
-<polyline fill="none" stroke="gray" points="570.962,-448 665.038,-448 "/>
-<path fill="none" stroke="gray" d="M665.038,-448C671.038,-448 677.038,-454 677.038,-460"/>
-<polyline fill="none" stroke="gray" points="677.038,-460 677.038,-472 "/>
-<path fill="none" stroke="gray" d="M677.038,-472C677.038,-478 671.038,-484 665.038,-484"/>
-<text text-anchor="middle" x="618" y="-460.4" font-family="Helvetica,sans-Serif" font-size="14.00">Target Resource</text>
-</g>
 <!-- setTargetResourceIDToZero&#45;&gt;targetResource -->
-<g id="edge13" class="edge"><title>setTargetResourceIDToZero&#45;&gt;targetResource</title>
+<g id="edge27" class="edge"><title>setTargetResourceIDToZero&#45;&gt;targetResource</title>
 <path fill="none" stroke="#7014cc" stroke-width="3" d="M618,-519.697C618,-514.95 618,-509.613 618,-504.206"/>
 <polygon fill="#7014cc" stroke="#7014cc" points="625,-504.104 618,-484.104 611,-504.104 625,-504.104"/>
 </g>
-<!-- targetResource&#45;&gt;learnerIDIdenticalLearnerIDQueryCopy -->
-<g id="edge21" class="edge"><title>targetResource&#45;&gt;learnerIDIdenticalLearnerIDQueryCopy</title>
-<path fill="none" stroke="#c114cc" stroke-width="3" d="M609.348,-447.697C606.678,-442.356 603.635,-436.27 600.588,-430.176"/>
-<polygon fill="#c114cc" stroke="#c114cc" points="606.757,-426.862 591.552,-412.104 594.235,-433.123 606.757,-426.862"/>
-</g>
 <!-- randomUnit&#45;&gt;randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery -->
-<g id="edge31" class="edge"><title>randomUnit&#45;&gt;randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery:nw</title>
+<g id="edge45" class="edge"><title>randomUnit&#45;&gt;randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery:nw</title>
 <path fill="none" stroke="blue" stroke-width="2" stroke-dasharray="1,5" d="M560.389,-231.826C558.323,-222.67 557.35,-211.513 561.367,-202.727"/>
 <ellipse fill="blue" stroke="blue" cx="563.731" cy="-199.294" rx="4.00002" ry="4.00002"/>
 </g>
@@ -336,32 +326,42 @@
 <path fill="none" stroke="#7014cc" stroke-width="3" d="M570.449,-231.697C571.714,-226.78 573.141,-221.231 574.582,-215.627"/>
 <polygon fill="#7014cc" stroke="#7014cc" points="581.4,-217.218 579.602,-196.104 567.841,-213.731 581.4,-217.218"/>
 </g>
-<!-- importabcsetTargetResourceIDToZerofunctionszero -->
-<g id="node40" class="node"><title>importabcsetTargetResourceIDToZerofunctionszero</title>
-<text text-anchor="middle" x="636" y="-604.4" font-family="Helvetica,sans-Serif" font-size="14.00">0</text>
+<!-- randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery&#45;&gt;learnerbehaviorRecord -->
+<g id="edge25" class="edge"><title>randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery&#45;&gt;learnerbehaviorRecord:learnerbehaviorseekingResource</title>
+<path fill="none" stroke="#7014cc" stroke-width="3" d="M599.328,-159.884C613.449,-143.408 632.912,-118.666 637.664,-102.427"/>
+<polygon fill="#7014cc" stroke="#7014cc" points="643.287,-98.2543 626,-86 631.872,-106.36 643.287,-98.2543"/>
 </g>
-<!-- importabcsetTargetResourceIDToZerofunctionszero&#45;&gt;setTargetResourceIDToZero -->
-<g id="edge37" class="edge"><title>importabcsetTargetResourceIDToZerofunctionszero&#45;&gt;setTargetResourceIDToZero:ne</title>
-<path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M641.611,-591.826C643.677,-582.67 644.65,-571.513 640.633,-562.727"/>
-<ellipse fill="black" stroke="black" cx="638.269" cy="-559.294" rx="4.00002" ry="4.00002"/>
+<!-- randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery&#45;&gt;resourceIDAddZeroCopy -->
+<g id="edge23" class="edge"><title>randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery&#45;&gt;resourceIDAddZeroCopy</title>
+<path fill="none" stroke="#7014cc" stroke-width="3" d="M616.703,-160.649C639.303,-149.349 669.667,-134.166 694.608,-121.696"/>
+<polygon fill="#7014cc" stroke="#7014cc" points="698.04,-127.806 712.798,-112.601 691.779,-115.284 698.04,-127.806"/>
 </g>
 <!-- importxyxresourceIDAddZeroCopyfunctionszero0 -->
-<g id="node45" class="node"><title>importxyxresourceIDAddZeroCopyfunctionszero0</title>
+<g id="node37" class="node"><title>importxyxresourceIDAddZeroCopyfunctionszero0</title>
 <text text-anchor="middle" x="786" y="-172.4" font-family="Helvetica,sans-Serif" font-size="14.00">0</text>
 </g>
 <!-- importxyxresourceIDAddZeroCopyfunctionszero0&#45;&gt;resourceIDAddZeroCopy -->
-<g id="edge45" class="edge"><title>importxyxresourceIDAddZeroCopyfunctionszero0&#45;&gt;resourceIDAddZeroCopy:ne</title>
+<g id="edge31" class="edge"><title>importxyxresourceIDAddZeroCopyfunctionszero0&#45;&gt;resourceIDAddZeroCopy:ne</title>
 <path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M781.507,-159.86C777.995,-148.871 772.221,-134.597 763.489,-123.277"/>
 <ellipse fill="black" stroke="black" cx="760.633" cy="-120.011" rx="4.00002" ry="4.00002"/>
 </g>
 <!-- importxyxtimeSegmentIdenticalZeroQueryfunctionszero0 -->
-<g id="node48" class="node"><title>importxyxtimeSegmentIdenticalZeroQueryfunctionszero0</title>
+<g id="node42" class="node"><title>importxyxtimeSegmentIdenticalZeroQueryfunctionszero0</title>
 <text text-anchor="middle" x="574" y="-676.4" font-family="Helvetica,sans-Serif" font-size="14.00">0</text>
 </g>
 <!-- importxyxtimeSegmentIdenticalZeroQueryfunctionszero0&#45;&gt;timeSegmentIdenticalZeroQuery -->
-<g id="edge49" class="edge"><title>importxyxtimeSegmentIdenticalZeroQueryfunctionszero0&#45;&gt;timeSegmentIdenticalZeroQuery:ne</title>
+<g id="edge39" class="edge"><title>importxyxtimeSegmentIdenticalZeroQueryfunctionszero0&#45;&gt;timeSegmentIdenticalZeroQuery:ne</title>
 <path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M551.194,-663.823C540.434,-655.367 527.448,-644.656 515.893,-633.725"/>
 <ellipse fill="black" stroke="black" cx="512.869" cy="-630.787" rx="4.00002" ry="4.00002"/>
+</g>
+<!-- importabcsetTargetResourceIDToZerofunctionszero -->
+<g id="node48" class="node"><title>importabcsetTargetResourceIDToZerofunctionszero</title>
+<text text-anchor="middle" x="636" y="-604.4" font-family="Helvetica,sans-Serif" font-size="14.00">0</text>
+</g>
+<!-- importabcsetTargetResourceIDToZerofunctionszero&#45;&gt;setTargetResourceIDToZero -->
+<g id="edge49" class="edge"><title>importabcsetTargetResourceIDToZerofunctionszero&#45;&gt;setTargetResourceIDToZero:ne</title>
+<path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M641.611,-591.826C643.677,-582.67 644.65,-571.513 640.633,-562.727"/>
+<ellipse fill="black" stroke="black" cx="638.269" cy="-559.294" rx="4.00002" ry="4.00002"/>
 </g>
 </g>
 </svg>

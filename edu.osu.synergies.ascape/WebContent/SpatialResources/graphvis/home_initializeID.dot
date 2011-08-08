@@ -20,8 +20,8 @@ digraph initializeID {
 		initializeIDOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.0, 0.9 , 0.8",label="",URL="home__Overview.svg"];
 
 	}
-		homehomeID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Home ID"];
 		spatialResourcesnextHomeID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label=<<i>Next Home ID</i>>];
+		homehomeID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Home ID"];
 
 //subgraph clusterinitializeID {
 	//style=filled;

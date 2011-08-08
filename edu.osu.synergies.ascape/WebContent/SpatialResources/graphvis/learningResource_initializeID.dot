@@ -30,14 +30,14 @@ digraph initializeID {
 		initializeID [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.0, 0.2, 1.0",label="Initialize ID",URL="learningResource_initializeID.svg"];
 	initializeID ->  setResourceIDToNextResourceID [color="0.0, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 	setResourceIDToNextResourceID ->  learningResourceresourceID [color="0.0, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-		incrementResourceID [shape=none,style="rounded,filled",fontname=Helvetica,color="0.0, 0.2, 1.0",label="Increment"];
-			incrementResourceID ->  spatialResourcesnextResourceID [color="0.0, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 
 		setResourceIDToNextResourceID [shape=none,style="rounded,filled",fontname=Helvetica,color="0.0, 0.2, 1.0",label="Set"];
 	setResourceIDToNextResourceID ->  incrementResourceID [color="0.0, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		incrementResourceID [shape=none,style="rounded,filled",fontname=Helvetica,color="0.0, 0.2, 1.0",label="Increment"];
+			incrementResourceID ->  spatialResourcesnextResourceID [color="0.0, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 //}
-		learningResourceresourceID -> incrementResourceID:nw [style=dotted,arrowhead=dot,color="0.0, 0.9 , 0.8",penwidth=2.0];
 
 		importabcsetResourceIDToNextResourceIDspatialResourcesnextResourceID [fontname=Helvetica,shape=none,label="Next Resource ID"];
 		importabcsetResourceIDToNextResourceIDspatialResourcesnextResourceID -> setResourceIDToNextResourceID:"ne" [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+		learningResourceresourceID -> incrementResourceID:nw [style=dotted,arrowhead=dot,color="0.0, 0.9 , 0.8",penwidth=2.0];
 }

@@ -31,14 +31,14 @@ initializeLocationOverview -> initializeIDOverview [style=invis];
 	initializeLocation ->  home [color="0.333, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 		availableQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.407, 0.2, 1.0",label="Available"];
 	availableQuery ->  moveHome [color="0.407, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		home [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.407, 0.2, 1.0",label="Home"];
+	home ->  availableQuery [color="0.407, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 		moveHome [shape=none,style="rounded,filled",fontname=Helvetica,color="0.333, 0.2, 1.0",label="Move"];
 	initializeLocation ->  moveHome:nw [style=dashed,color="0.333, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 	home -> moveHome:ne [style=dashed,color="0.407, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-		home [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.407, 0.2, 1.0",label="Home"];
-	home ->  availableQuery [color="0.407, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 //}
-		homehomeID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Home ID"];
 		spatialResourcesnextHomeID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label=<<i>Next Home ID</i>>];
+		homehomeID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Home ID"];
 
 //subgraph clusterinitializeID {
 	//style=filled;

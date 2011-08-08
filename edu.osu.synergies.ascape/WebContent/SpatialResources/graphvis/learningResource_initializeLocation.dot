@@ -27,12 +27,12 @@ digraph initializeLocation {
 	//fillcolor="0.0, 0.0, 0.98";
 		initializeLocation [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.25, 0.2, 1.0",label="Initialize Location",URL="learningResource_initializeLocation.svg"];
 	initializeLocation ->  learningResource [color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-		availableQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.324, 0.2, 1.0",label="Available"];
-	availableQuery ->  moveLearningResource [color="0.324, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 		learningResource [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.324, 0.2, 1.0",label="Learning Resource"];
 	learningResource ->  availableQuery [color="0.324, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 		moveLearningResource [shape=none,style="rounded,filled",fontname=Helvetica,color="0.25, 0.2, 1.0",label="Move"];
 	initializeLocation ->  moveLearningResource:nw [style=dashed,color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 	learningResource -> moveLearningResource:ne [style=dashed,color="0.324, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		availableQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.324, 0.2, 1.0",label="Available"];
+	availableQuery ->  moveLearningResource [color="0.324, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 //}
 }

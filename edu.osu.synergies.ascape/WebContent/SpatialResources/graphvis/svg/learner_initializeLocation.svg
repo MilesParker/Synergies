@@ -69,7 +69,7 @@
 <polygon fill="#70cc14" stroke="#70cc14" points="260.232,-201.204 262.181,-180.104 247.499,-195.383 260.232,-201.204"/>
 </g>
 <!-- moveLearner -->
-<g id="node10" class="node"><title>moveLearner</title>
+<g id="node11" class="node"><title>moveLearner</title>
 <polygon fill="#e5ffcc" stroke="#e5ffcc" points="285,-36 255,-36 243,-24 243,-12 255,-0 285,-0 297,-12 297,-24 285,-36"/>
 <path fill="#e5ffcc" stroke="#e5ffcc" d="M255,-36C249,-36 243,-30 243,-24"/>
 <path fill="#e5ffcc" stroke="#e5ffcc" d="M243,-12C243,-6 249,-0 255,-0"/>
@@ -91,7 +91,7 @@
 <polygon fill="#70cc14" stroke="#70cc14" points="242.505,-54.9433 252,-36 232.764,-44.8876 242.505,-54.9433"/>
 </g>
 <!-- availableQuery -->
-<g id="node8" class="node"><title>availableQuery</title>
+<g id="node9" class="node"><title>availableQuery</title>
 <polygon fill="#ceffcc" stroke="#ceffcc" points="293.928,-108 246.072,-108 234.072,-96 234.072,-84 246.072,-72 293.928,-72 305.928,-84 305.928,-96 293.928,-108"/>
 <path fill="#ceffcc" stroke="#ceffcc" d="M246.072,-108C240.072,-108 234.072,-102 234.072,-96"/>
 <path fill="#ceffcc" stroke="#ceffcc" d="M234.072,-84C234.072,-78 240.072,-72 246.072,-72"/>
@@ -108,7 +108,7 @@
 <text text-anchor="middle" x="270" y="-84.4" font-family="Helvetica,sans-Serif" font-size="14.00">Available</text>
 </g>
 <!-- learner&#45;&gt;availableQuery -->
-<g id="edge8" class="edge"><title>learner&#45;&gt;availableQuery</title>
+<g id="edge6" class="edge"><title>learner&#45;&gt;availableQuery</title>
 <path fill="none" stroke="#1ecc14" stroke-width="3" d="M270,-143.697C270,-138.95 270,-133.613 270,-128.206"/>
 <polygon fill="#1ecc14" stroke="#1ecc14" points="277,-128.104 270,-108.104 263,-128.104 277,-128.104"/>
 </g>
@@ -118,7 +118,7 @@
 <polygon fill="#1ecc14" stroke="#1ecc14" points="306.906,-45.5691 288,-36 296.812,-55.2704 306.906,-45.5691"/>
 </g>
 <!-- availableQuery&#45;&gt;moveLearner -->
-<g id="edge6" class="edge"><title>availableQuery&#45;&gt;moveLearner</title>
+<g id="edge8" class="edge"><title>availableQuery&#45;&gt;moveLearner</title>
 <path fill="none" stroke="#1ecc14" stroke-width="3" d="M270,-71.6966C270,-66.9496 270,-61.6132 270,-56.2063"/>
 <polygon fill="#1ecc14" stroke="#1ecc14" points="277,-56.1043 270,-36.1043 263,-56.1044 277,-56.1043"/>
 </g>

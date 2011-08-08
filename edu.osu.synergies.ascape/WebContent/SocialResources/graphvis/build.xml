@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project" default="export_All">
+    <description>
+            Export GraphVis Output
+    </description>
+
+    <target name="export_guide_svg" description="description">
+    	<mkdir dir="svg"/>
+    	<exec executable="dot">
+    	    <arg line="-Tsvg guide__Rules.dot -o svg/guide__Rules.svg"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tsvg guide__Initial.dot -o svg/guide__Initial.svg"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tsvg guide__Overview.dot -o svg/guide__Overview.svg"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tsvg guide_initializeState.dot -o svg/guide_initializeState.svg"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tsvg guide_initializeID.dot -o svg/guide_initializeID.svg"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tsvg guide_deriveContributionPerLearner.dot -o svg/guide_deriveContributionPerLearner.svg"/>
+    	</exec>
+    </target>
+
+    <target name="export_guide_png" description="description">
+    	<mkdir dir="png"/>
+    	<exec executable="dot">
+    	    <arg line="-Tpng guide__Rules.dot -o png/guide__Rules.png"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpng guide__Initial.dot -o png/guide__Initial.png"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpng guide__Overview.dot -o png/guide__Overview.png"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpng guide_initializeState.dot -o png/guide_initializeState.png"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpng guide_initializeID.dot -o png/guide_initializeID.png"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpng guide_deriveContributionPerLearner.dot -o png/guide_deriveContributionPerLearner.png"/>
+    	</exec>
+    </target>
+
+    <target name="export_guide_pdf" description="description">
+    	<mkdir dir="pdf"/>
+    	<exec executable="dot">
+    	    <arg line="-Tpdf guide__Rules.dot -o pdf/guide__Rules.pdf"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpdf guide__Initial.dot -o pdf/guide__Initial.pdf"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpdf guide__Overview.dot -o pdf/guide__Overview.pdf"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpdf guide_initializeState.dot -o pdf/guide_initializeState.pdf"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpdf guide_initializeID.dot -o pdf/guide_initializeID.pdf"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpdf guide_deriveContributionPerLearner.dot -o pdf/guide_deriveContributionPerLearner.pdf"/>
+    	</exec>
+    </target>
+
+    
+    <target name="export_guide_All" depends="export_guide_png,export_guide_pdf,export_guide_svg"/>
+    <target name="export_learner_svg" description="description">
+    	<mkdir dir="svg"/>
+    	<exec executable="dot">
+    	    <arg line="-Tsvg learner__Rules.dot -o svg/learner__Rules.svg"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tsvg learner__Initial.dot -o svg/learner__Initial.svg"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tsvg learner__Overview.dot -o svg/learner__Overview.svg"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tsvg learner_initializeState.dot -o svg/learner_initializeState.svg"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tsvg learner_guidedGrowth.dot -o svg/learner_guidedGrowth.svg"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tsvg learner_deriveLearnerIndex.dot -o svg/learner_deriveLearnerIndex.svg"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tsvg learner_pickGuide.dot -o svg/learner_pickGuide.svg"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tsvg learner_selfDirectedGrowth.dot -o svg/learner_selfDirectedGrowth.svg"/>
+    	</exec>
+    </target>
+
+    <target name="export_learner_png" description="description">
+    	<mkdir dir="png"/>
+    	<exec executable="dot">
+    	    <arg line="-Tpng learner__Rules.dot -o png/learner__Rules.png"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpng learner__Initial.dot -o png/learner__Initial.png"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpng learner__Overview.dot -o png/learner__Overview.png"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpng learner_initializeState.dot -o png/learner_initializeState.png"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpng learner_guidedGrowth.dot -o png/learner_guidedGrowth.png"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpng learner_deriveLearnerIndex.dot -o png/learner_deriveLearnerIndex.png"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpng learner_pickGuide.dot -o png/learner_pickGuide.png"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpng learner_selfDirectedGrowth.dot -o png/learner_selfDirectedGrowth.png"/>
+    	</exec>
+    </target>
+
+    <target name="export_learner_pdf" description="description">
+    	<mkdir dir="pdf"/>
+    	<exec executable="dot">
+    	    <arg line="-Tpdf learner__Rules.dot -o pdf/learner__Rules.pdf"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpdf learner__Initial.dot -o pdf/learner__Initial.pdf"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpdf learner__Overview.dot -o pdf/learner__Overview.pdf"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpdf learner_initializeState.dot -o pdf/learner_initializeState.pdf"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpdf learner_guidedGrowth.dot -o pdf/learner_guidedGrowth.pdf"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpdf learner_deriveLearnerIndex.dot -o pdf/learner_deriveLearnerIndex.pdf"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpdf learner_pickGuide.dot -o pdf/learner_pickGuide.pdf"/>
+    	</exec>
+    	<exec executable="dot">
+    	    <arg line="-Tpdf learner_selfDirectedGrowth.dot -o pdf/learner_selfDirectedGrowth.pdf"/>
+    	</exec>
+    </target>
+
+    
+    <target name="export_learner_All" depends="export_learner_png,export_learner_pdf,export_learner_svg"/>
+
+    
+    <target name="export_All" depends="export_guide_All,export_learner_All"/>
+</project>

@@ -1,0 +1,253 @@
+		<HTML>
+			<HEAD>
+				<TITLE>Run Social Resources</TITLE>
+
+				<STYLE TYPE="text/css">
+					body,
+					html {
+    					margin:10;
+    					padding:0;
+						background-color: rgb(244,242,238);
+	    				color:#000;
+    					font-family: sans-serif;
+    				}
+    				body {
+    				}
+					wrap {
+    					
+    					margin:0 auto;
+    					width:100%;
+    				}
+    				#header {
+    					border-bottom: solid 1px #BEBFAA;   						
+    					left: 20%;
+    				}
+					#nav {
+    					
+    				}
+					#nav ul{
+   						margin:0;
+    					padding:0;
+    					list-style:none;
+    				}
+					#nav li{
+    					display:inline;
+    					margin:0;
+    					padding:0;
+    				}
+    				#main {
+    					border-left: solid 1px #BEBFAA;   						
+						background-color: white;
+    					float:left;
+    					width:80%;
+    				}
+					#sidebarfake {
+      					float:left;
+    					width:20%;
+    				}
+					#sidebar {
+  						position: fixed;
+      					float:left;
+    					width:20%;
+						font-size: 9pt;
+						link: orange;
+						vlink: orange;
+						alink: orange;
+    				}
+					#footer {
+    					border-top: solid 1px #BEBFAA;   						
+    					
+    					clear:both;
+    				}
+    				
+					#section {
+  						background: #FFFFDC;
+   						border-bottom: solid 1px black;
+   						border-left: solid 1px #BEBFAA;
+   						border-right: solid 1px black;
+   						border-top: solid 1px #BEBFAA;
+   						margin: 2em 1em 1em 2em;
+   						padding: 0.5em 2em 2em 2em;
+   						text-align: justify;
+					}
+					#section h1 {
+   						text-align: left;
+   						font-family: sans-serif;
+					}
+					#section p {
+   						text-indent: 2em;
+					}
+					#section p.noindent {
+   						text-indent: 0;
+					}
+					
+					#agent {
+  						border-bottom: solid 1px black;
+   						border-left: solid 1px #BEBFAA;
+   						border-right: solid 1px black;
+   						border-top: solid 1px #BEBFAA;
+   						margin: 2em 1em 1em 2em;
+   						padding: 0.5em 2em 2em 2em;
+   						text-align: justify;
+					}
+
+					#agents {
+						border-bottom: solid 1px black;
+						border-left: solid 1px #BEBFAA;
+						border-right: solid 1px black;
+						border-top: solid 1px #BEBFAA;
+						margin: 2em 1em 1em 2em;
+						padding: 0.5em 2em 2em 2em;
+						text-align: justify;
+						background-color: rgb(244, 242, 238);
+					}
+					a:link{color: green;}
+					a:visited{color: darkGreen;}
+					
+				</STYLE>
+
+			</HEAD>
+			<BODY>
+			<div id="wrap">
+    			<div id="header">
+				<table>
+				<tr>
+					<td width="100%"><H1>Social Resources</H1>
+					<P><h3>Model II of the Synergies project demonstration models</h3> The purpose of this model is to explore the interaction effects of learners and guides, e.g. club mentors, librarians and museum docents.
+<BR/>The model shows how two dynamics work together. 
+<BR/><ul><li>First, guides have an impact on learners by encouraging their interest in learning itself. Not all guides are created equal -- some guides are much more effective at increasing learning interest over time. But no matter how effective a guide is, there are limits to how much effect they can have on a given learner.</li><li>Second, a learner's learning interest grows by itself over time. This effect is self-reinforcing, the more a learner becomes engaged in learning, the more their learning interest will grow. There is a minimum level below which some learners will not be able to grow their own learning interest at all, and this is where a guide's influence could be most crucial.</li></ul>
+<BR/><i>Synergies Project: John Falk, Lynn Direking, Bill Penuel, Miles Parker
+<BR/>Model Development: Miles Parker</i></P>
+					</td>
+					<td>Powered by<BR />
+					<img src="../images/MetascapeVertLogo.png" style="border: 0;" width="180"
+						alt="" id="logo" />
+					</td>
+				</tr>
+				</table>
+    			</div>
+    			<div id="sidebarfake">
+    				<H1>   </H1>
+    			</div>
+    			<div id="sidebar">
+			    <ul>
+    					<li><a href="#parlink">Parameters</a></li>
+    					<li><a href="#behaviorlink">Actions</a></li>
+    					<li><a href="#agentslink">Agents</a>
+    					<ul>
+    					<li><a href="index.html#guidelink">Guide</a><ul>
+    					<li><a href="index.html#guide_Attributes">Attributes</a></li>
+    					<li><a href="index.html#guide_Actions">Actions List</a></li>
+    					<li><a href="guide__Overview.html">Graph Overview</a></li>
+    					<li><a href="guide__Initial.html">&nbsp;&nbsp;Initialization</a></li>
+    					<li><a href="guide__Rules.html">&nbsp;&nbsp;Rules</a></li>
+    					</ul></li>
+    					<li><a href="index.html#learnerlink">Learner</a><ul>
+    					<li><a href="index.html#learner_Attributes">Attributes</a></li>
+    					<li><a href="index.html#learner_Actions">Actions List</a></li>
+    					<li><a href="learner__Overview.html">Graph Overview</a></li>
+    					<li><a href="learner__Initial.html">&nbsp;&nbsp;Initialization</a></li>
+    					<li><a href="learner__Rules.html">&nbsp;&nbsp;Rules</a></li>
+    					</ul></li>
+    					</ul></li>
+    					<li><a href="#projlink">Projections</a></li>
+    					<li style="color: red;"><a href="Run.html">Run Model</a></li>
+    				</ul>    				
+    			</div>
+
+		<div id="main" style="background-color: lightgray">
+			<applet
+				archive='SocialResourcesApp.jar'
+				code='org.ascape.runtime.applet.SwingApplet.class' width=100%
+				height=800>
+				<br />
+				<param name="Model" value="edu.osu.synergies.simple.model2.SocialResourcesCustom" />
+				<br />
+				<param name="background-color" value="darkgray">
+				<br />
+			</applet>
+			<div style="margin:30px; padding: 5px 0px 10px 10px; background-color: rgb(226,138,76);">
+			<h4>Help</h4>
+
+Buttons:
+<ul>
+	<li><img src="../images/ClockGo.gif" />Starts
+		the model, or if the model is already running, restarts it to time 0.</li>
+
+	<li><img src="../images/RedFlag.gif" />Pauses
+		or resumes the model.</li>
+
+	<li><img src="../images/Enter.gif" />Steps
+		the model forward one period.</li>
+
+	<li><img src="../images/ClockStop.gif" />Stops
+		the model.</li>
+
+	<li><img src="http://metaabm.org/models/icons/World.gif" />Displays
+		or hides model settings. These appear on the right side of the applet.</li>
+</ul>
+
+You can change the relative size of the agent and chart view by dragging
+the splitter between the two panels.
+</div>
+			<div style="margin:30px; padding: 5px 0px 10px 10px; background-color: lightgray;">
+<h4>Parameters</h4>
+
+<p>You can change any of the model parameters in the settings dialog. Some
+of them are only used when the model starts up so to see any effect --
+those you'll need to restart the model. For example, in an Epidemiology model, changes to Initial Infection Probability
+would not have any effect during a model run, but
+changes to Movement Probability would. The settings are explained below:</p>
+		<table CELLPADDING="5px" rules="groups" width="100%">
+			<thead align="left"><tr><th>Name</th><th>Type</th><th style="text-align: right;">Default Value</th></tr></thead>
+					<a name="socialResourceslearnerCountlink"/><tbody  bgcolor="#E1E1FF"><tr><td>Learner Count</td>
+						<td>Integer</td>
+						<td style="text-align: right;">100</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The number of learners to create.</i></td></tr></tbody>
+					<a name="socialResourcesguideCountlink"/><tbody ><tr><td>Guide Count</td>
+						<td>Integer</td>
+						<td style="text-align: right;">10</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The number of guides to create.</i></td></tr></tbody>
+					<a name="socialResourcesinitialInterestMinimumlink"/><tbody  bgcolor="#E1E1FF"><tr><td>Initial Interest Minimum</td>
+						<td>Real</td>
+						<td style="text-align: right;">0.05</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The minimum level of interest that a learner will have at the beginning of the model. Initial interest is distributed uniformally between the minimum and maximum value.</i></td></tr></tbody>
+					<a name="socialResourcesinitialInterestMaximumlink"/><tbody ><tr><td>Initial Interest Maximum</td>
+						<td>Real</td>
+						<td style="text-align: right;">0.35</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The maximum level of interest that a learner will have at the beginning of the model. Initial interest is distributed uniformally between the minimum and maximum value.</i></td></tr></tbody>
+					<a name="socialResourcesguideEfficacyMinimumlink"/><tbody  bgcolor="#E1E1FF"><tr><td>Guide Efficacy Minimum</td>
+						<td>Real</td>
+						<td style="text-align: right;">.2</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The minimum efficacy that a given resource will make for learner interest in a given encounter. Efficacy is constant for a resource and affects all learners in the same way. It is distributed uniformally between the minimum and maximum value.</i></td></tr></tbody>
+					<a name="socialResourcesguideEfficacyMaximumlink"/><tbody ><tr><td>Guide Efficacy Maximum</td>
+						<td>Real</td>
+						<td style="text-align: right;">.8</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The maximum efficacy that a given resource will make for learner interest in a given encounter. Efficacy is constant for a resource and affects all learners in the same way. It is distributed uniformally between the minimum and maximum value.</i></td></tr></tbody>
+					<a name="socialResourcesnextLearnerIDlink"/><tbody  bgcolor="#E1E1FF"><tr><td>Next Learner ID</td>
+						<td>Integer</td>
+						<td style="text-align: right;"></td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>(Supports unique IDs for learners.)</i></td></tr></tbody>
+					<a name="socialResourcesnextGuideIDlink"/><tbody ><tr><td>Next Guide ID</td>
+						<td>Integer</td>
+						<td style="text-align: right;"></td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>(Supports unique IDs for resources.)</i></td></tr></tbody>
+					<a name="socialResourcesguideContributionRatelink"/><tbody  bgcolor="#E1E1FF"><tr><td>Guide Contribution Rate</td>
+						<td>Real</td>
+						<td style="text-align: right;">.01</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>Determines the relative level of influence a guide can have on a learner within one model period. See the learning related actions for more details.</i></td></tr></tbody>
+					<a name="socialResourcesselfContributionRatelink"/><tbody ><tr><td>Self Contribution Rate</td>
+						<td>Real</td>
+						<td style="text-align: right;">.01</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>Determines the relative level of influence a learner can have on their own learning interest within one model period. See the learning related actions for more details.</i></td></tr></tbody>
+					<a name="socialResourcesselfContributionThresholdlink"/><tbody  bgcolor="#E1E1FF"><tr><td>Self Contribution Threshold</td>
+						<td>Real</td>
+						<td style="text-align: right;">.2</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>This is the point below which learners are not able to contribute to the growth of their own learning at all. Of course, all people at all ages have some self-motivation to learn but this represents the line below which this interest might not become self-reinforcing.</i></td></tr></tbody>
+		</table>
+			</div>
+		</div>
+			</div>
+			</BODY>
+		</HTML>
+	

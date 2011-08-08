@@ -1,0 +1,36 @@
+digraph learner {
+	compound=true;
+	iteration [fontname=Helvetica,shape=box,fillcolor=lightgray,style="filled,rounded",label="Step"];
+	start [fontname=Helvetica,shape=box,fillcolor=lightgray,style="filled,rounded",label="Start"];
+	subgraph clusterWatch {
+		label="Watch";
+		fontname=Helvetica;
+		style=filled;
+		color=white;
+		fillcolor=ghostwhite;
+		labeljust=l;
+		deriveLearnerIndex [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.0, 0.2, 1.0",label="Derive Learner Index",URL="learner_deriveLearnerIndex.svg"];
+	}
+	subgraph clusterRule {
+		label="Rules";
+		fontname=Helvetica;
+		style=filled;
+		color=white;
+		fillcolor=ghostwhite;
+		labeljust=l;
+		guidedGrowth [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.166, 0.2, 1.0",label="Guided Growth",URL="learner_guidedGrowth.svg"];
+		selfDirectedGrowth [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.666, 0.2, 1.0",label="Self Directed Growth",URL="learner_selfDirectedGrowth.svg"];
+		iteration -> guidedGrowth->selfDirectedGrowth -> iteration [color=darkslategray,penwidth=3.0];
+	}
+	subgraph clusterInit {
+		label="Initialize";
+		fontname=Helvetica;
+		style=filled;
+		color=white;
+		fillcolor=ghostwhite;
+		labeljust=l;
+		initializeState [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.333, 0.2, 1.0",label="Initialize State",URL="learner_initializeState.svg"];
+		pickGuide [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.5, 0.2, 1.0",label="Pick Guide",URL="learner_pickGuide.svg"];
+		start -> initializeState->pickGuide -> iteration [color=darkslategray,penwidth=3.0];
+	}
+}

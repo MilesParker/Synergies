@@ -26,12 +26,12 @@ public class StretchyView extends CellView {
     /**
      * The maximum number of agents that could ever appear in the view.
      */
-    int maxAgents = 50;
+    int maxHeight = 50;
 
     /**
      * The number of agents that will be displayed, fixed.
      */
-    private int maxDisplayAgents;
+    int maxDisplayAgents;
 
     /**
      * Instantiates a new stretchy view.
@@ -42,13 +42,13 @@ public class StretchyView extends CellView {
     /**
      * Instantiates a new stretchy view.
      * 
-     * @param maxAgents
+     * @param maxHeight
      *            the max agents
      * @param maxDisplayAgents
      *            the max display agents
      */
-    public StretchyView(int maxAgents, int maxDisplayAgents) {
-        this.maxAgents = maxAgents;
+    public StretchyView(int maxHeight, int maxDisplayAgents) {
+        this.maxHeight = maxHeight;
         this.maxDisplayAgents = maxDisplayAgents;
         setCellSize(4);
         //setSize(new Dimension(600, 300));
@@ -60,7 +60,7 @@ public class StretchyView extends CellView {
     public Dimension getPreferredSizeWithin(Dimension d) {
         int tempCellSize = calculateAgentSizeForViewSize(d);
         return new Dimension(maxDisplayAgents * tempCellSize,
-            (int) d.getHeight());
+        		(int) d.getHeight());
     }
 
     /* (non-Javadoc)
@@ -69,10 +69,11 @@ public class StretchyView extends CellView {
     public Dimension calculateViewSizeForAgentSize(int cellSize) {
         if ((int) getSize().getHeight() > 0) {
             return new Dimension(maxDisplayAgents * cellSize,
-                (int) getSize().getHeight());
+            		(int) getSize().getHeight());
         } else {
-            return new Dimension(maxDisplayAgents * cellSize,
-                300);
+            Dimension dimension = new Dimension(maxDisplayAgents * cellSize,
+            		maxHeight);
+			return dimension;
         }
     }
 
@@ -81,6 +82,7 @@ public class StretchyView extends CellView {
      */
     public int calculateAgentSizeForViewSize(Dimension d) {
         int width = (int) d.getWidth() / maxDisplayAgents;
+//        int height = (int) d.getHeight() / maxHeight;
         return Math.max(1, width);
     }
 

@@ -93,7 +93,7 @@
 <polygon fill="#70cc14" stroke="#70cc14" points="321.232,-273.204 323.181,-252.104 308.499,-267.383 321.232,-273.204"/>
 </g>
 <!-- moveLearner -->
-<g id="node15" class="node"><title>moveLearner</title>
+<g id="node16" class="node"><title>moveLearner</title>
 <polygon fill="#e5ffcc" stroke="#e5ffcc" points="346,-108 316,-108 304,-96 304,-84 316,-72 346,-72 358,-84 358,-96 346,-108"/>
 <path fill="#e5ffcc" stroke="#e5ffcc" d="M316,-108C310,-108 304,-102 304,-96"/>
 <path fill="#e5ffcc" stroke="#e5ffcc" d="M304,-84C304,-78 310,-72 316,-72"/>
@@ -115,7 +115,7 @@
 <polygon fill="#70cc14" stroke="#70cc14" points="303.505,-126.943 313,-108 293.764,-116.888 303.505,-126.943"/>
 </g>
 <!-- availableQuery -->
-<g id="node13" class="node"><title>availableQuery</title>
+<g id="node14" class="node"><title>availableQuery</title>
 <polygon fill="#ceffcc" stroke="#ceffcc" points="354.928,-180 307.072,-180 295.072,-168 295.072,-156 307.072,-144 354.928,-144 366.928,-156 366.928,-168 354.928,-180"/>
 <path fill="#ceffcc" stroke="#ceffcc" d="M307.072,-180C301.072,-180 295.072,-174 295.072,-168"/>
 <path fill="#ceffcc" stroke="#ceffcc" d="M295.072,-156C295.072,-150 301.072,-144 307.072,-144"/>
@@ -132,7 +132,7 @@
 <text text-anchor="middle" x="331" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Available</text>
 </g>
 <!-- learner&#45;&gt;availableQuery -->
-<g id="edge12" class="edge"><title>learner&#45;&gt;availableQuery</title>
+<g id="edge10" class="edge"><title>learner&#45;&gt;availableQuery</title>
 <path fill="none" stroke="#1ecc14" stroke-width="3" d="M331,-215.697C331,-210.95 331,-205.613 331,-200.206"/>
 <polygon fill="#1ecc14" stroke="#1ecc14" points="338,-200.104 331,-180.104 324,-200.104 338,-200.104"/>
 </g>
@@ -142,22 +142,17 @@
 <polygon fill="#1ecc14" stroke="#1ecc14" points="367.906,-117.569 349,-108 357.812,-127.27 367.906,-117.569"/>
 </g>
 <!-- availableQuery&#45;&gt;moveLearner -->
-<g id="edge10" class="edge"><title>availableQuery&#45;&gt;moveLearner</title>
+<g id="edge12" class="edge"><title>availableQuery&#45;&gt;moveLearner</title>
 <path fill="none" stroke="#1ecc14" stroke-width="3" d="M331,-143.697C331,-138.95 331,-133.613 331,-128.206"/>
 <polygon fill="#1ecc14" stroke="#1ecc14" points="338,-128.104 331,-108.104 324,-128.104 338,-128.104"/>
 </g>
-<!-- learnerhomeID -->
-<g id="node19" class="node"><title>learnerhomeID</title>
-<polygon fill="white" stroke="white" points="582.425,-36 511.575,-36 511.575,-0 582.425,-0 582.425,-36"/>
-<text text-anchor="middle" x="547" y="-12.4" font-family="Helvetica,sans-Serif" font-size="14.00">Home ID</text>
-</g>
 <!-- homehomeID -->
-<g id="node20" class="node"><title>homehomeID</title>
+<g id="node19" class="node"><title>homehomeID</title>
 <polygon fill="white" stroke="white" points="494.425,-180 423.575,-180 423.575,-144 494.425,-144 494.425,-180"/>
 <text text-anchor="middle" x="459" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Home ID</text>
 </g>
 <!-- homeIDAddZero -->
-<g id="node27" class="node"><title>homeIDAddZero</title>
+<g id="node24" class="node"><title>homeIDAddZero</title>
 <polygon fill="#fff2cc" stroke="#fff2cc" points="562,-108 532,-108 520,-96 520,-84 532,-72 562,-72 574,-84 574,-96 562,-108"/>
 <path fill="#fff2cc" stroke="#fff2cc" d="M532,-108C526,-108 520,-102 520,-96"/>
 <path fill="#fff2cc" stroke="#fff2cc" d="M520,-84C520,-78 526,-72 532,-72"/>
@@ -177,6 +172,11 @@
 <g id="edge26" class="edge"><title>homehomeID&#45;&gt;homeIDAddZero:nw</title>
 <path fill="none" stroke="#a8cc14" stroke-width="2" stroke-dasharray="1,5" d="M484.98,-143.919C496.851,-135.582 510.958,-124.918 523.173,-113.601"/>
 <ellipse fill="#a8cc14" stroke="#a8cc14" cx="526.116" cy="-110.772" rx="4.00002" ry="4.00002"/>
+</g>
+<!-- learnerhomeID -->
+<g id="node20" class="node"><title>learnerhomeID</title>
+<polygon fill="white" stroke="white" points="582.425,-36 511.575,-36 511.575,-0 582.425,-0 582.425,-36"/>
+<text text-anchor="middle" x="547" y="-12.4" font-family="Helvetica,sans-Serif" font-size="14.00">Home ID</text>
 </g>
 <!-- findHome -->
 <g id="node21" class="node"><title>findHome</title>
@@ -220,7 +220,7 @@
 <polygon fill="#cc9e14" stroke="#cc9e14" points="554,-272.104 547,-252.104 540,-272.104 554,-272.104"/>
 </g>
 <!-- nearestQuery -->
-<g id="node25" class="node"><title>nearestQuery</title>
+<g id="node26" class="node"><title>nearestQuery</title>
 <polygon fill="#f5ffcc" stroke="#f5ffcc" points="569.183,-180 524.817,-180 512.817,-168 512.817,-156 524.817,-144 569.183,-144 581.183,-156 581.183,-168 569.183,-180"/>
 <path fill="#f5ffcc" stroke="#f5ffcc" d="M524.817,-180C518.817,-180 512.817,-174 512.817,-168"/>
 <path fill="#f5ffcc" stroke="#f5ffcc" d="M512.817,-156C512.817,-150 518.817,-144 524.817,-144"/>
@@ -237,19 +237,19 @@
 <text text-anchor="middle" x="547" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Nearest </text>
 </g>
 <!-- homeLocation&#45;&gt;nearestQuery -->
-<g id="edge20" class="edge"><title>homeLocation&#45;&gt;nearestQuery</title>
+<g id="edge24" class="edge"><title>homeLocation&#45;&gt;nearestQuery</title>
 <path fill="none" stroke="#a8cc14" stroke-width="3" d="M547,-215.697C547,-210.95 547,-205.613 547,-200.206"/>
 <polygon fill="#a8cc14" stroke="#a8cc14" points="554,-200.104 547,-180.104 540,-200.104 554,-200.104"/>
+</g>
+<!-- homeIDAddZero&#45;&gt;learnerhomeID -->
+<g id="edge20" class="edge"><title>homeIDAddZero&#45;&gt;learnerhomeID</title>
+<path fill="none" stroke="#cc9e14" stroke-width="3" d="M547,-71.6966C547,-66.9496 547,-61.6132 547,-56.2063"/>
+<polygon fill="#cc9e14" stroke="#cc9e14" points="554,-56.1043 547,-36.1043 540,-56.1044 554,-56.1043"/>
 </g>
 <!-- nearestQuery&#45;&gt;homeIDAddZero -->
 <g id="edge22" class="edge"><title>nearestQuery&#45;&gt;homeIDAddZero</title>
 <path fill="none" stroke="#a8cc14" stroke-width="3" d="M547,-143.697C547,-138.95 547,-133.613 547,-128.206"/>
 <polygon fill="#a8cc14" stroke="#a8cc14" points="554,-128.104 547,-108.104 540,-128.104 554,-128.104"/>
-</g>
-<!-- homeIDAddZero&#45;&gt;learnerhomeID -->
-<g id="edge24" class="edge"><title>homeIDAddZero&#45;&gt;learnerhomeID</title>
-<path fill="none" stroke="#cc9e14" stroke-width="3" d="M547,-71.6966C547,-66.9496 547,-61.6132 547,-56.2063"/>
-<polygon fill="#cc9e14" stroke="#cc9e14" points="554,-56.1043 547,-36.1043 540,-56.1044 554,-56.1043"/>
 </g>
 <!-- importxyxhomeIDAddZerofunctionszero0 -->
 <g id="node30" class="node"><title>importxyxhomeIDAddZerofunctionszero0</title>
@@ -265,13 +265,18 @@
 <polygon fill="white" stroke="white" points="792.301,-180 671.699,-180 671.699,-144 792.301,-144 792.301,-180"/>
 <text text-anchor="middle" x="732" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Learning Interest</text>
 </g>
+<!-- learnerlearnerID -->
+<g id="node33" class="node"><title>learnerlearnerID</title>
+<polygon fill="white" stroke="white" points="893.108,-180 810.892,-180 810.892,-144 893.108,-144 893.108,-180"/>
+<text text-anchor="middle" x="852" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Learner ID</text>
+</g>
 <!-- spatialResourcesnextLearnerID -->
-<g id="node33" class="node"><title>spatialResourcesnextLearnerID</title>
+<g id="node34" class="node"><title>spatialResourcesnextLearnerID</title>
 <polygon fill="white" stroke="white" points="998.25,-108 883.75,-108 883.75,-72 998.25,-72 998.25,-108"/>
 <text text-anchor="start" x="892" y="-84.5" font-family="Helvetica,sans-Serif" font-size="14.00">Next Learner ID</text>
 </g>
 <!-- incrementNextLearnerID -->
-<g id="node41" class="node"><title>incrementNextLearnerID</title>
+<g id="node42" class="node"><title>incrementNextLearnerID</title>
 <polygon fill="#ccffd8" stroke="#ccffd8" points="977.186,-180 922.814,-180 910.814,-168 910.814,-156 922.814,-144 977.186,-144 989.186,-156 989.186,-168 977.186,-180"/>
 <path fill="#ccffd8" stroke="#ccffd8" d="M922.814,-180C916.814,-180 910.814,-174 910.814,-168"/>
 <path fill="#ccffd8" stroke="#ccffd8" d="M910.814,-156C910.814,-150 916.814,-144 922.814,-144"/>
@@ -288,14 +293,9 @@
 <text text-anchor="middle" x="950" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Increment</text>
 </g>
 <!-- spatialResourcesnextLearnerID&#45;&gt;incrementNextLearnerID -->
-<g id="edge42" class="edge"><title>spatialResourcesnextLearnerID&#45;&gt;incrementNextLearnerID:nw</title>
+<g id="edge44" class="edge"><title>spatialResourcesnextLearnerID&#45;&gt;incrementNextLearnerID:nw</title>
 <path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M928.221,-108.147C921.635,-118.067 914.284,-131.107 910.876,-144 906.787,-159.469 899.833,-168.422 910.876,-180 915.234,-184.57 920.272,-186.45 925.124,-185.177"/>
 <ellipse fill="black" stroke="black" cx="928.581" cy="-183.077" rx="4.00002" ry="4.00002"/>
-</g>
-<!-- learnerlearnerID -->
-<g id="node34" class="node"><title>learnerlearnerID</title>
-<polygon fill="white" stroke="white" points="893.108,-180 810.892,-180 810.892,-144 893.108,-144 893.108,-180"/>
-<text text-anchor="middle" x="852" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Learner ID</text>
 </g>
 <!-- initializeState -->
 <g id="node35" class="node"><title>initializeState</title>
@@ -371,21 +371,21 @@
 <polygon fill="#14cc42" stroke="#14cc42" points="859,-200.104 852,-180.104 845,-200.104 859,-200.104"/>
 </g>
 <!-- setLearnerIDToNextLearnerID&#45;&gt;incrementNextLearnerID -->
-<g id="edge38" class="edge"><title>setLearnerIDToNextLearnerID&#45;&gt;incrementNextLearnerID</title>
+<g id="edge36" class="edge"><title>setLearnerIDToNextLearnerID&#45;&gt;incrementNextLearnerID</title>
 <path fill="none" stroke="#14cc42" stroke-width="3" d="M875.973,-215.876C886.058,-208.673 898.076,-200.088 909.465,-191.954"/>
 <polygon fill="#14cc42" stroke="#14cc42" points="913.728,-197.511 925.934,-180.19 905.591,-186.118 913.728,-197.511"/>
 </g>
 <!-- incrementNextLearnerID&#45;&gt;spatialResourcesnextLearnerID -->
-<g id="edge36" class="edge"><title>incrementNextLearnerID&#45;&gt;spatialResourcesnextLearnerID</title>
+<g id="edge38" class="edge"><title>incrementNextLearnerID&#45;&gt;spatialResourcesnextLearnerID</title>
 <path fill="none" stroke="#14cc42" stroke-width="3" d="M947.775,-143.697C947.165,-138.95 946.479,-133.613 945.784,-128.206"/>
 <polygon fill="#14cc42" stroke="#14cc42" points="952.693,-127.048 943.199,-108.104 938.807,-128.834 952.693,-127.048"/>
 </g>
 <!-- importabcsetLearnerIDToNextLearnerIDspatialResourcesnextLearnerID -->
-<g id="node46" class="node"><title>importabcsetLearnerIDToNextLearnerIDspatialResourcesnextLearnerID</title>
+<g id="node45" class="node"><title>importabcsetLearnerIDToNextLearnerIDspatialResourcesnextLearnerID</title>
 <text text-anchor="middle" x="870" y="-300.4" font-family="Helvetica,sans-Serif" font-size="14.00">Next Learner ID</text>
 </g>
 <!-- importabcsetLearnerIDToNextLearnerIDspatialResourcesnextLearnerID&#45;&gt;setLearnerIDToNextLearnerID -->
-<g id="edge44" class="edge"><title>importabcsetLearnerIDToNextLearnerIDspatialResourcesnextLearnerID&#45;&gt;setLearnerIDToNextLearnerID:ne</title>
+<g id="edge42" class="edge"><title>importabcsetLearnerIDToNextLearnerIDspatialResourcesnextLearnerID&#45;&gt;setLearnerIDToNextLearnerID:ne</title>
 <path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M875.611,-287.826C877.677,-278.67 878.65,-267.513 874.633,-258.727"/>
 <ellipse fill="black" stroke="black" cx="872.269" cy="-255.294" rx="4.00002" ry="4.00002"/>
 </g>

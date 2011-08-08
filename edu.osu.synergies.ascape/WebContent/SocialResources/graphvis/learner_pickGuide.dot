@@ -1,0 +1,61 @@
+digraph pickGuide {
+
+	subgraph clustercontextKey {
+		fontname=Helvetica;
+		label="Parameters";
+		style="filled";
+		fillcolor=ghostwhite;
+		color=white;
+		labeljust=l;
+		contextOverview [style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="black",label=""];
+	}
+	subgraph clusterlearnerKey {
+		fontname=Helvetica;
+		nodesep=0.1;
+		style="filled";
+		fillcolor=ghostwhite;
+		label="Learner";
+		color=white;
+		labeljust=l;
+		pickGuideOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.5, 0.9 , 0.8",label="",URL="learner__Overview.svg"];
+
+	}
+	subgraph clusterguideKey {
+		fontname=Helvetica;
+		nodesep=0.1;
+		style="filled";
+		fillcolor=ghostwhite;
+		label="Guide";
+		color=white;
+		labeljust=l;
+		newGuideOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.574, 0.9 , 0.8",label="",URL="guide__Overview.svg"];
+
+	}
+		learnerguideID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Guide ID"];
+		guideguideID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Guide ID"];
+		guidelearnerCount [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Learner Count"];
+
+//subgraph clusterpickGuide {
+	//style=filled;
+	//color=white;
+	//fillcolor="0.0, 0.0, 0.98";
+		pickGuide [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.5, 0.2, 1.0",label="Pick Guide",URL="learner_pickGuide.svg"];
+	pickGuide ->  newGuide [color="0.5, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		guideIDAddZero [shape=none,style="rounded,filled",fontname=Helvetica,color="0.5, 0.2, 1.0",label="Add"];
+			guideIDAddZero ->  learnerguideID [color="0.5, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		connectLearner [shape=none,style="rounded,filled",fontname=Helvetica,color="0.5, 0.2, 1.0",label="Connect"];
+	pickGuide ->  connectLearner:nw [style=dashed,color="0.5, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	newGuide -> connectLearner:ne [style=dashed,color="0.574, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		incrementLearnerCount [shape=none,style="rounded,filled",fontname=Helvetica,color="0.574, 0.2, 1.0",label="Increment"];
+			incrementLearnerCount ->  guidelearnerCount [color="0.574, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		newGuide [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.574, 0.2, 1.0",label="New Guide"];
+	newGuide ->  connectLearner [color="0.574, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	newGuide ->  guideIDAddZero [color="0.574, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	newGuide ->  incrementLearnerCount [color="0.574, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+//}
+		guideguideID -> guideIDAddZero:nw [style=dotted,arrowhead=dot,color="0.574, 0.9 , 0.8",penwidth=2.0];
+	
+		importxyxguideIDAddZerofunctionszero0 [fontname=Helvetica,shape=none,label="0"];
+		importxyxguideIDAddZerofunctionszero0 -> guideIDAddZero:ne [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+		guidelearnerCount -> incrementLearnerCount:nw [style=dotted,arrowhead=dot,color="0.574, 0.9 , 0.8",penwidth=2.0];
+}

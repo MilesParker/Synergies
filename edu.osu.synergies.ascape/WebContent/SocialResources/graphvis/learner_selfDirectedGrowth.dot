@@ -1,0 +1,72 @@
+digraph selfDirectedGrowth {
+
+	subgraph clustercontextKey {
+		fontname=Helvetica;
+		label="Parameters";
+		style="filled";
+		fillcolor=ghostwhite;
+		color=white;
+		labeljust=l;
+		contextOverview [style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="black",label=""];
+	}
+	subgraph clusterlearnerKey {
+		fontname=Helvetica;
+		nodesep=0.1;
+		style="filled";
+		fillcolor=ghostwhite;
+		label="Learner";
+		color=white;
+		labeljust=l;
+		selfDirectedGrowthOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.666, 0.9 , 0.8",label="",URL="learner__Overview.svg"];
+
+	}
+		learnerlearningInterest [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Learning Interest"];
+		learnerselfContribution [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Self Contribution"];
+		socialResourcesselfContributionThreshold [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label=<<i>Self Contribution Threshold</i>>];
+		socialResourcesselfContributionRate [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label=<<i>Self Contribution Rate</i>>];
+
+//subgraph clusterselfDirectedGrowth {
+	//style=filled;
+	//color=white;
+	//fillcolor="0.0, 0.0, 0.98";
+		selfDirectedGrowth [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.666, 0.2, 1.0",label="Self Directed Growth",URL="learner_selfDirectedGrowth.svg"];
+	selfDirectedGrowth ->  potentialInterestGrowth [color="0.666, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		actualGrowth [shape=none,style="rounded,filled",fontname=Helvetica,color="0.666, 0.2, 1.0",label="Subtract"];
+	actualGrowth ->  selfContributionAddActualGrowth [color="0.666, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	actualGrowth ->  setLearningInterestToMinimum_LearningInterestAddSelfInfluenceUnit_ [color="0.666, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	setLearningInterestToMinimum_LearningInterestAddSelfInfluenceUnit_ ->  learnerlearningInterest [color="0.666, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		selfContributionAddActualGrowth [shape=none,style="rounded,filled",fontname=Helvetica,color="0.666, 0.2, 1.0",label="Add"];
+			selfContributionAddActualGrowth ->  learnerselfContribution [color="0.666, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		potentialInterestGrowth [shape=none,style="rounded,filled",fontname=Helvetica,color="0.666, 0.2, 1.0",label="Subtract"];
+	potentialInterestGrowth ->  potentialInterestGrowthGreaterZeroQuery [color="0.666, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		minimum_LearningInterestAddSelfInfluenceUnit_ [shape=none,style="rounded,filled",fontname=Helvetica,color="0.666, 0.2, 1.0",label="Minimum?"];
+	minimum_LearningInterestAddSelfInfluenceUnit_ ->  actualGrowth [color="0.666, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+
+		setLearningInterestToMinimum_LearningInterestAddSelfInfluenceUnit_ [shape=none,style="rounded,filled",fontname=Helvetica,color="0.666, 0.2, 1.0",label="Set"];
+		selfInfluence [shape=none,style="rounded,filled",fontname=Helvetica,color="0.666, 0.2, 1.0",label="Multiply"];
+	selfInfluence ->  learningInterestAddSelfInfluence [color="0.666, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		learningInterestAddSelfInfluence [shape=none,style="rounded,filled",fontname=Helvetica,color="0.666, 0.2, 1.0",label="Add"];
+	learningInterestAddSelfInfluence ->  minimum_LearningInterestAddSelfInfluenceUnit_ [color="0.666, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		potentialInterestGrowthGreaterZeroQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.666, 0.2, 1.0",label="Greater?"];
+	potentialInterestGrowthGreaterZeroQuery ->  selfInfluence [color="0.666, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+//}
+		learnerlearningInterest -> actualGrowth:ne [style=dotted,arrowhead=dot,color="0.666, 0.9 , 0.8",penwidth=2.0];
+		minimum_LearningInterestAddSelfInfluenceUnit_ -> actualGrowth:nw [style=dotted,arrowhead=dot,color=blue,penwidth=2.0];
+		learnerselfContribution -> selfContributionAddActualGrowth:nw [style=dotted,arrowhead=dot,color="0.666, 0.9 , 0.8",penwidth=2.0];
+		actualGrowth -> selfContributionAddActualGrowth:ne [style=dotted,arrowhead=dot,color=blue,penwidth=2.0];
+		learnerlearningInterest -> potentialInterestGrowth:nw [style=dotted,arrowhead=dot,color="0.666, 0.9 , 0.8",penwidth=2.0];
+		socialResourcesselfContributionThreshold -> potentialInterestGrowth:ne [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+		learningInterestAddSelfInfluence -> minimum_LearningInterestAddSelfInfluenceUnit_:nw [style=dotted,arrowhead=dot,color=blue,penwidth=2.0];
+	
+		importxyxminimum_LearningInterestAddSelfInfluenceUnit_functionsunit1 [fontname=Helvetica,shape=none,label="1"];
+		importxyxminimum_LearningInterestAddSelfInfluenceUnit_functionsunit1 -> minimum_LearningInterestAddSelfInfluenceUnit_:ne [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+		minimum_LearningInterestAddSelfInfluenceUnit_ -> setLearningInterestToMinimum_LearningInterestAddSelfInfluenceUnit_:"ne" [style=dotted,arrowhead=dot,color=blue];
+		socialResourcesselfContributionRate -> selfInfluence:ne [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+		potentialInterestGrowth -> selfInfluence:nw [style=dotted,arrowhead=dot,color=blue,penwidth=2.0];
+		learnerlearningInterest -> learningInterestAddSelfInfluence:nw [style=dotted,arrowhead=dot,color="0.666, 0.9 , 0.8",penwidth=2.0];
+		selfInfluence -> learningInterestAddSelfInfluence:ne [style=dotted,arrowhead=dot,color=blue,penwidth=2.0];
+		potentialInterestGrowth -> potentialInterestGrowthGreaterZeroQuery:nw [style=dotted,arrowhead=dot,color=blue,penwidth=2.0];
+	
+		importxyxpotentialInterestGrowthGreaterZeroQueryfunctionszero1 [fontname=Helvetica,shape=none,label="0"];
+		importxyxpotentialInterestGrowthGreaterZeroQueryfunctionszero1 -> potentialInterestGrowthGreaterZeroQuery:ne [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+}

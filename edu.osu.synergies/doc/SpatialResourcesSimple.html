@@ -1,0 +1,211 @@
+
+		<HTML>
+			<HEAD>
+				<TITLE>Spatial Resources</TITLE>
+			</HEAD>
+			<BODY>
+				<H1>Spatial Resources</H1>
+				
+				<P><h3>Model I of the Synergies project demonstration models</h3>
+<p>The purpose of this model is to explore the interation effects of learners and learning resources across space.
+The closer you are to a resource, the more likely you are to engage with it. The more you know a resource the more likely you are to engage with it in the future.
+How might these basic assumptions effect the distribution of learning interest across a diverse community?</p>
+<i>Synergies Project: John Falk, Lynn Direking, Bill Penuel, Miles Parker
+Model Development: Miles Parker</i></P>
+					<h2>Parameters</h2>
+						
+		
+				<H5>Learner Count  (int, default: 100)</H5>
+				<i>The number of learners to create.</i><BR/>
+		
+				<H5>Learning Resource Count  (int, default: 10)</H5>
+				<i>The number of learning resources to create.</i><BR/>
+		
+				<H5>Initial Interest Minimum  (double, default: 0.05)</H5>
+				<i>The minimum level of interest that a learner will have at the beginning of the model. Initial interest is distributed uniformally between the minimum and maximum value.</i><BR/>
+		
+				<H5>Initial Interest Maximum  (double, default: 0.35)</H5>
+				<i>The maximum level of interest that a learner will have at the beginning of the model. Initial interest is distributed uniformally between the minimum and maximum value.</i><BR/>
+		
+				<H5>Resource Efficacy Minimum  (double, default: 0.02)</H5>
+				<i>The minimum efficacy that a given resource will make for learner interest in a given encounter. Efficacy is constant for a resource and affects all learners in the same way. It is distributed uniformally between the minimum and maximum value.</i><BR/>
+		
+				<H5>Resource Efficacy Maximum  (double, default: 0.09)</H5>
+				<i>The maximum efficacy that a given resource will make for learner interest in a given encounter. Efficacy is constant for a resource and affects all learners in the same way. It is distributed uniformally between the minimum and maximum value.</i><BR/>
+		
+				<H5>Home Count  (int, default: 150)</H5>
+				<i>The number of homes to create.</i><BR/>
+		
+				<H5>Time Segment  (int, default: )</H5>
+				<i>The current time segment in the day. This could represent a slice of time, such as 15 minutes or an hour as defined by Time Segments in Day and is a value between 0 (inclusive) and Time Segments in Day (exclusive).</i><BR/>
+		
+				<H5>Time Segments in Day  (int, default: 96)</H5>
+				<i>The number of time segments in the day. The default value is 96, representing time slices of 15 minute increments [24 * (60 / 15) = 96].</i><BR/>
+		
+				<H5>Time Segments Wandering  (int, default: 24)</H5>
+				<i>The time a learner spends "wandering", that is not engaged in activities at home. (In this intentionally simplified model, school locations are not represented.) The default value is 24, representing 6 hours (24 / (60 / 15) = 6).</i><BR/>
+		
+				<H5>Wandering  (boolean, default: )</H5>
+				<i>Are the learners currently wandering? In this model, all learners wanred at the same time, representing for example time after normal school hours.</i><BR/>
+		
+				<H5>Next Learner ID  (int, default: )</H5>
+				<i>(Supports unique IDs for learners.)</i><BR/>
+		
+				<H5>Next Resource ID  (int, default: )</H5>
+				<i>(Supports unique IDs for resources.)</i><BR/>
+		
+				<H5>Next Home ID  (int, default: )</H5>
+				<i>(Supports unique IDs for homes.)</i><BR/>
+		
+				<H5>Subsequent Engagement Factor   (double, default: .05)</H5>
+				<i>The increasing effect that each subsequent encounter with a learning resource will have on learner interest. This represents the notion that as learners become more familiar with a learning resource the learner is able to get more out of that resource. For example, once a learner knows how to find the books she's interested in at the library, the easier it will be for her to discover books that she might be interested in.</i><BR/>
+		
+				<H5>Lot Count  (int, default: )</H5>
+				<i>The number of lots to create.</i><BR/>
+		
+
+					<h2><ul>Agents</ul></h2>
+						
+							<H3>Home</H3>
+							
+							<H4>Attributes</H4>
+							
+		
+				<H5>Home ID  (int, default: )</H5>
+				<i></i><BR/>
+		
+
+							<H4>Behaviors</H4>
+							
+		
+				<H5>Initialize Location</H5>
+				<i>Initialize Location Initialization. Executed once at the beginning of each model run.</i><BR/>
+		
+				<H5>Initialize ID</H5>
+				<i>Initialize ID Initialization. Executed once at the beginning of each model run.</i><BR/>
+		
+
+						
+							<H3>Learner</H3>
+							
+							<H4>Attributes</H4>
+							
+		
+				<H5>Learning Interest  (double, default: )</H5>
+				<i>How engaged is the learner but the process of learning itelf?</i><BR/>
+		
+				<H5>Learner ID  (int, default: )</H5>
+				<i>A unique identifier for the learner.</i><BR/>
+		
+				<H5>Learner Index  (double, default: )</H5>
+				<i>(Internal Use.)</i><BR/>
+		
+				<H5>Resource Engagements  (int, default: )</H5>
+				<i>The total number of encounters a learner has had with any resource during the model period.</i><BR/>
+		
+				<H5>Behavior  (BehaviorEnum, default: Not Interested)</H5>
+				<i>What is the learner currently doing? He or she is either at home or wandering, in which case they might activly be looking for a resource, wandering aimlessly, or returning home after the wandering period ends.</i><BR/>
+		
+				<H5>Target Resource ID  (int, default: )</H5>
+				<i>A target resource that the learner may be seeking. Once a learner has identified a resource, the learner will seek this same resource out in the future unless they happen upon another resource. This id could be 0 in which case the learner hasn't identified a target learning resource.</i><BR/>
+		
+				<H5>Home ID  (int, default: )</H5>
+				<i>The identifier for this learners home.</i><BR/>
+		
+
+							<H4>Behaviors</H4>
+							
+		
+				<H5>Initialize Location</H5>
+				<i>Initialize Location Initialization. Executed once at the beginning of each model run.</i><BR/>
+		
+				<H5>Initialize State</H5>
+				<i>Initialize State Initialization. Executed once at the beginning of each model run.</i><BR/>
+		
+				<H5>Movement</H5>
+				<i>Movement Rule. Executed every period.</i><BR/>
+		
+				<H5>Resource Engagement</H5>
+				<i>Resource Engagement Rule. Executed every period.</i><BR/>
+		
+				<H5>Derive Learner Index</H5>
+				<i>Derive Learner Index.</i><BR/>
+		
+				<H5>Start Day</H5>
+				<i>Start Day Rule. Executed every period.</i><BR/>
+		
+				<H5>Find Home</H5>
+				<i>Find Home Initialization. Executed once at the beginning of each model run.</i><BR/>
+		
+
+						
+							<H3>Learning Resource</H3>
+							
+							<H4>Attributes</H4>
+							
+		
+				<H5>Efficacy  (double, default: )</H5>
+				<i></i><BR/>
+		
+				<H5>Resource ID  (int, default: )</H5>
+				<i>A unique identifier for the resource.</i><BR/>
+		
+
+							<H4>Behaviors</H4>
+							
+		
+				<H5>Initialize Location</H5>
+				<i>Initialize Location Initialization. Executed once at the beginning of each model run.</i><BR/>
+		
+				<H5>Initialize State</H5>
+				<i>Initialize State Initialization. Executed once at the beginning of each model run.</i><BR/>
+		
+				<H5>Initialize ID</H5>
+				<i>Initialize ID Initialization. Executed once at the beginning of each model run.</i><BR/>
+		
+
+						
+							<H3>Resource Interaction</H3>
+							
+							<H4>Attributes</H4>
+							
+		
+				<H5>Strength  (double, default: )</H5>
+				<i></i><BR/>
+		
+				<H5>Resource ID  (int, default: )</H5>
+				<i></i><BR/>
+		
+				<H5>Learner ID  (int, default: )</H5>
+				<i></i><BR/>
+		
+
+							<H4>Behaviors</H4>
+							
+		
+
+						
+							<H3>Lot</H3>
+							
+							<H4>Attributes</H4>
+							
+		
+
+							<H4>Behaviors</H4>
+							
+		
+
+						
+						
+					<H2>Projections</H2>
+					
+		
+				<H5>District  (2-Dimensional Grid)</H5>
+				<i></i><BR/>
+		
+
+			    
+				<P>Generated by AMF.</P>
+			</BODY>
+		</HTML>
+	

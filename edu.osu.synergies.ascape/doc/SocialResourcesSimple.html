@@ -1,0 +1,141 @@
+
+		<HTML>
+			<HEAD>
+				<TITLE>Social Resources</TITLE>
+			</HEAD>
+			<BODY>
+				<H1>Social Resources</H1>
+				
+				<P><h3>Model II of the Synergies project demonstration models</h3> The purpose of this model is to explore the interaction effects of learners and guides, e.g. club mentors, librarians and museum docents.
+The model shows how two dynamics work together. 
+<ul><li>First, guides have an impact on learners by encouraging their interest in learning itself. Not all guides are created equal -- some guides are much more effective at increasing learning interest over time. But no matter how effective a guide is, there are limits to how much effect they can have on a given learner.</li><li>Second, a learner's learning interest grows by itself over time. This effect is self-reinforcing, the more a learner becomes engaged in learning, the more their learning interest will grow. There is a minimum level below which some learners will not be able to grow their own learning interest at all, and this is where a guide's influence could be most crucial.</li></ul>
+<i>Synergies Project: John Falk, Lynn Direking, Bill Penuel, Miles Parker
+Model Development: Miles Parker</i></P>
+					<h2>Parameters</h2>
+						
+		
+				<H5>Learner Count  (int, default: 100)</H5>
+				<i>The number of learners to create.</i><BR/>
+		
+				<H5>Guide Count  (int, default: 10)</H5>
+				<i>The number of guides to create.</i><BR/>
+		
+				<H5>Initial Interest Minimum  (double, default: 0.05)</H5>
+				<i>The minimum level of interest that a learner will have at the beginning of the model. Initial interest is distributed uniformally between the minimum and maximum value.</i><BR/>
+		
+				<H5>Initial Interest Maximum  (double, default: 0.35)</H5>
+				<i>The maximum level of interest that a learner will have at the beginning of the model. Initial interest is distributed uniformally between the minimum and maximum value.</i><BR/>
+		
+				<H5>Guide Efficacy Minimum  (double, default: .2)</H5>
+				<i>The minimum efficacy that a given resource will make for learner interest in a given encounter. Efficacy is constant for a resource and affects all learners in the same way. It is distributed uniformally between the minimum and maximum value.</i><BR/>
+		
+				<H5>Guide Efficacy Maximum  (double, default: .8)</H5>
+				<i>The maximum efficacy that a given resource will make for learner interest in a given encounter. Efficacy is constant for a resource and affects all learners in the same way. It is distributed uniformally between the minimum and maximum value.</i><BR/>
+		
+				<H5>Next Learner ID  (int, default: )</H5>
+				<i>(Supports unique IDs for learners.)</i><BR/>
+		
+				<H5>Next Guide ID  (int, default: )</H5>
+				<i>(Supports unique IDs for resources.)</i><BR/>
+		
+				<H5>Guide Contribution Rate  (double, default: .01)</H5>
+				<i>Determines the relative level of influence a guide can have on a learner within one model period. See the learning related actions for more details.</i><BR/>
+		
+				<H5>Self Contribution Rate  (double, default: .01)</H5>
+				<i>Determines the relative level of influence a learner can have on their own learning interest within one model period. See the learning related actions for more details.</i><BR/>
+		
+				<H5>Self Contribution Threshold  (double, default: .2)</H5>
+				<i>This is the point below which learners are not able to contribute to the growth of their own learning at all. Of course, all people at all ages have some self-motivation to learn but this represents the line below which this interest might not become self-reinforcing.</i><BR/>
+		
+
+					<h2><ul>Agents</ul></h2>
+						
+							<H3>Guide</H3>
+							
+							<H4>Attributes</H4>
+							
+		
+				<H5>Efficacy  (double, default: )</H5>
+				<i>How effective is this guide at instilling an interest in learning to the learners he or she encounters?</i><BR/>
+		
+				<H5>Guide ID  (int, default: )</H5>
+				<i>A unique identifier for the resource.</i><BR/>
+		
+				<H5>Contribution Total  (double, default: )</H5>
+				<i>How much has this guide contributed to growing learning interest for all learners he or she has encountered?</i><BR/>
+		
+				<H5>Learner Count  (int, default: )</H5>
+				<i>The number of learners with whom this guide interacts.</i><BR/>
+		
+				<H5>Contribution Per Learner  (double, default: )</H5>
+				<i>Contribution Total divided by Learner Count. This measures the effectiveness of the guide on average given the number of learners he or she is working with.</i><BR/>
+		
+
+							<H4>Behaviors</H4>
+							
+		
+				<H5>Initialize State</H5>
+				<i>Initialize State Initialization. Executed once at the beginning of each model run.</i><BR/>
+		
+				<H5>Initialize ID</H5>
+				<i>Initialize ID Initialization. Executed once at the beginning of each model run.</i><BR/>
+		
+				<H5>Derive Contribution Per Learner</H5>
+				<i>Derive Contribution Per Learner.</i><BR/>
+		
+
+						
+							<H3>Learner</H3>
+							
+							<H4>Attributes</H4>
+							
+		
+				<H5>Learning Interest  (double, default: )</H5>
+				<i>How engaged is the learner but the process of learning itelf?</i><BR/>
+		
+				<H5>Learner ID  (int, default: )</H5>
+				<i>A unique identifier for the learner.</i><BR/>
+		
+				<H5>Learner Index  (double, default: )</H5>
+				<i>(Internal Use.)</i><BR/>
+		
+				<H5>Guide ID  (int, default: )</H5>
+				<i>A target resource that the learner may be seeking. Once a learner has identified a resource, the learner will seek this same resource out in the future unless they happen upon another resource. This id could be 0 in which case the learner hasn't identified a target learning resource.</i><BR/>
+		
+				<H5>Self Contribution  (double, default: )</H5>
+				<i>To what extent has the learner contributed to the growth of their own learning interest, excluding the impact of guide influence?</i><BR/>
+		
+
+							<H4>Behaviors</H4>
+							
+		
+				<H5>Initialize State</H5>
+				<i>Initialize State Initialization. Executed once at the beginning of each model run.</i><BR/>
+		
+				<H5>Guided Growth</H5>
+				<i>Guided Growth Rule. Executed every period.</i><BR/>
+		
+				<H5>Derive Learner Index</H5>
+				<i>Derive Learner Index.</i><BR/>
+		
+				<H5>Pick Guide</H5>
+				<i>Pick Guide Initialization. Executed once at the beginning of each model run.</i><BR/>
+		
+				<H5>Self Directed Growth</H5>
+				<i>Self Directed Growth Rule. Executed every period.</i><BR/>
+		
+
+						
+						
+					<H2>Projections</H2>
+					
+		
+				<H5>Guide Relationships  (Network)</H5>
+				<i></i><BR/>
+		
+
+			    
+				<P>Generated by AMF.</P>
+			</BODY>
+		</HTML>
+	

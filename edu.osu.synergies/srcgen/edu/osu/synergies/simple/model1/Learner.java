@@ -266,7 +266,7 @@ public class Learner extends CellOccupant implements IAgentChildProvider {
 	}
 	/**
 	 * <!-- begin-user-doc -->
-	 * A learner may be at home, in which case they are not wandering, or engaged in another movement behavior. See the Behavior attribute for more details.
+	 * Movement Rule. Executed every period.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

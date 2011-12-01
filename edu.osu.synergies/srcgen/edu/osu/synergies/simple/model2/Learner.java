@@ -248,8 +248,7 @@ public class Learner extends CellOccupant implements IAgentChildProvider {
 	}
 	/**
 	 * <!-- begin-user-doc -->
-	 * Defines the effect guides might have on a learner's growth in learning interest. Every period, the guide efficacy is compared to the learners interest. If the learner's interest is already at or above the guide's efficacy, then there is no effect. Otherwise, we look at the gap between the guide's efficacy and the learner's interest. The greater the gap, the more potential the guide has to affect learning interest. This value is then factored down by the guide contribution rate.
-
+	 * Guided Growth Rule. Executed every period.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -282,7 +281,7 @@ public class Learner extends CellOccupant implements IAgentChildProvider {
 	}
 	/**
 	 * <!-- begin-user-doc -->
-	 * Defines how learners and guides are connected with one another. In this model, a learner simply picks a random guide from all the guides that are available.
+	 * Pick Guide Initialization. Executed once at the beginning of each model run.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -301,7 +300,7 @@ public class Learner extends CellOccupant implements IAgentChildProvider {
 	}
 	/**
 	 * <!-- begin-user-doc -->
-	 * Defines the effect learners can have on their own interest in learning. Every period, we take the learner's current learning interest and subtract the Self Contribution Threshold from that. The remaining value reprersents how strongly the learner is currently engaged in learning. We take this number and multiply it by the Self Contribution Rate and increase the learner's interest by that amount.
+	 * Self Directed Growth Rule. Executed every period.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

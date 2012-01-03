@@ -113,12 +113,12 @@
 				<table>
 				<tr>
 					<td width="100%"><H1>Spatial Resources</H1>
-					<P>Model I of the Synergies project demonstration models. The purpose of this model is to explore the interation effects of learners and learning resources across space.
+					<P><h3>Model I of the Synergies project demonstration models</h3>
+<BR/><p>The purpose of this model is to explore the interation effects of learners and learning resources across space.
 <BR/>The closer you are to a resource, the more likely you are to engage with it. The more you know a resource the more likely you are to engage with it in the future.
-<BR/>How might these basic assumptions effect the distribution of learning interest across a diverse community?
-<BR/>
-<BR/>Synergies Project: John Falk, Lynn Direking, Bill Penuel, Miles Parker
-<BR/>Model Development: Miles Parker</P>
+<BR/>How might these basic assumptions effect the distribution of learning interest across a diverse community?</p>
+<BR/><i>Synergies Project: John Falk, Lynn Direking, Bill Penuel, Miles Parker
+<BR/>Model Development: Miles Parker</i></P>
 					</td>
 					<td>Powered by<BR />
 					<img src="../images/MetascapeVertLogo.png" style="border: 0;" width="180"
@@ -212,12 +212,12 @@
 						<td style="text-align: right;">150</td></tr>
 					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The number of homes to create.</i></td></tr></tbody>
 					<a name="spatialResourcestimeSegmentlink"/><tbody ><tr><td>Time Segment</td>
-						<td>Integer</td>
+						<td>Real</td>
 						<td style="text-align: right;"></td></tr>
 					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The current time segment in the day. This could represent a slice of time, such as 15 minutes or an hour as defined by Time Segments in Day and is a value between 0 (inclusive) and Time Segments in Day (exclusive).</i></td></tr></tbody>
 					<a name="spatialResourcestimeSegmentsinDaylink"/><tbody  bgcolor="#E1E1FF"><tr><td>Time Segments in Day</td>
-						<td>Integer</td>
-						<td style="text-align: right;">96</td></tr>
+						<td>Real</td>
+						<td style="text-align: right;">48</td></tr>
 					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The number of time segments in the day. The default value is 96, representing time slices of 15 minute increments [24 * (60 / 15) = 96].</i></td></tr></tbody>
 					<a name="spatialResourcestimeSegmentsWanderinglink"/><tbody ><tr><td>Time Segments Wandering</td>
 						<td>Integer</td>
@@ -247,6 +247,22 @@
 						<td>Integer</td>
 						<td style="text-align: right;"></td></tr>
 					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>The number of lots to create.</i></td></tr></tbody>
+					<a name="spatialResourcesresourceDistributionlink"/><tbody  bgcolor="#E1E1FF"><tr><td>Resource Distribution</td>
+						<td>Symbol</td>
+						<td style="text-align: right;">Regular</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i></i></td></tr></tbody>
+					<a name="spatialResourcesregularYCountlink"/><tbody ><tr><td>RegularYCount</td>
+						<td>Integer</td>
+						<td style="text-align: right;">2</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>When distributing regularly, the number of rows of resources to create. That is, how many horizontal lines will we ditribute all resources across?</i></td></tr></tbody>
+					<a name="spatialResourcesbiasedRegionXlink"/><tbody  bgcolor="#E1E1FF"><tr><td>BiasedRegionX</td>
+						<td>Real</td>
+						<td style="text-align: right;">.5</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i></i></td></tr></tbody>
+					<a name="spatialResourcesbiasedRegionYlink"/><tbody ><tr><td>BiasedRegionY</td>
+						<td>Real</td>
+						<td style="text-align: right;">.5</td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i></i></td></tr></tbody>
 		</table>
     					<h3><a name="behaviorlink">Actions</a></h3>
 		<table CELLPADDING="10px">
@@ -341,7 +357,7 @@
 					</tr>
 					<tr>
 						<td><i><a href="graphvis/svg/learner_movement.svg">Movement</a></i></td>
-						<td>A learner may be at home, in which case they are not wandering, or engaged in another movement behavior. See the Behavior attribute for more details.</td>
+						<td>Movement Rule. Executed every period.</td>
 					</tr>
 					<tr>
 						<td><i><a href="graphvis/svg/learner_resourceEngagement.svg">Resource Engagement</a></i></td>
@@ -374,6 +390,10 @@
 						<td>Integer</td>
 						<td style="text-align: right;"></td></tr>
 					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i>A unique identifier for the resource.</i></td></tr></tbody>
+					<a name="learningResourcelearnerInteractionslink"/><tbody  bgcolor="#E1E1FF"><tr><td>Learner Interactions</td>
+						<td>Integer</td>
+						<td style="text-align: right;"></td></tr>
+					<tr><td style="margin:0px 0px 20px 0px;" colspan="3"><i></i></td></tr></tbody>
 		</table>
 									<H3><a name="learningResource_Actions">Actions</a></H3>
 		<table CELLPADDING="10px">

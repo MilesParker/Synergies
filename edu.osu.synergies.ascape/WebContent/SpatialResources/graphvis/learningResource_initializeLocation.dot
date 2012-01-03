@@ -20,19 +20,33 @@ digraph initializeLocation {
 		initializeLocationOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.25, 0.9 , 0.8",label="",URL="learningResource__Overview.svg"];
 
 	}
+		spatialResourcesresourceDistributionRecord [shape=record,fontname=Helvetica,style=filled,color=none,fillcolor=white,label="{<spatialResourcesresourceDistribution> Resource Distribution | {<spatialResourcesresourceDistributionregular> Regular|<spatialResourcesresourceDistributionclumped> Clumped|<spatialResourcesresourceDistributionrandom> Random}}"];
 
 //subgraph clusterinitializeLocation {
 	//style=filled;
 	//color=white;
 	//fillcolor="0.0, 0.0, 0.98";
 		initializeLocation [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.25, 0.2, 1.0",label="Initialize Location",URL="learningResource_initializeLocation.svg"];
-	initializeLocation ->  learningResource [color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	initializeLocation ->  randomPlacement [color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	initializeLocation ->  regularPlacement [color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	initializeLocation ->  clumpedPlacement [color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		placeRandom [shape=none,style="rounded,filled",fontname=Helvetica,color="0.25, 0.2, 1.0",label="Move"];
+	initializeLocation ->  placeRandom:nw [style=dashed,color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	learningResource -> placeRandom:ne [style=dashed,color="0.324, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		method [shape=none,style="rounded,filled",fontname=Helvetica,color="0.25, 0.2, 1.0",label="Method"];
+		regularMovement [shape=none,style="rounded,filled",fontname=Helvetica,color="0.25, 0.2, 1.0",label="Regular Movement"];
+		clumpedPlacement [shape=none,style="rounded,filled",fontname=Helvetica,color="0.25, 0.2, 1.0",label="Is?"];
+	clumpedPlacement ->  method [color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		randomPlacement [shape=none,style="rounded,filled",fontname=Helvetica,color="0.25, 0.2, 1.0",label="Is?"];
+	randomPlacement ->  learningResource [color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 		learningResource [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.324, 0.2, 1.0",label="Learning Resource"];
 	learningResource ->  availableQuery [color="0.324, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-		moveLearningResource [shape=none,style="rounded,filled",fontname=Helvetica,color="0.25, 0.2, 1.0",label="Move"];
-	initializeLocation ->  moveLearningResource:nw [style=dashed,color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-	learningResource -> moveLearningResource:ne [style=dashed,color="0.324, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		regularPlacement [shape=none,style="rounded,filled",fontname=Helvetica,color="0.25, 0.2, 1.0",label="Is?"];
+	regularPlacement ->  regularMovement [color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 		availableQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.324, 0.2, 1.0",label="Available"];
-	availableQuery ->  moveLearningResource [color="0.324, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+	availableQuery ->  placeRandom [color="0.324, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 //}
+		spatialResourcesresourceDistributionRecord:spatialResourcesresourceDistributionclumped -> clumpedPlacement:ne [style=dotted,arrowhead=dot,color="0.25, 0.9 , 0.8",penwidth=2.0];
+		spatialResourcesresourceDistributionRecord:spatialResourcesresourceDistributionrandom -> randomPlacement:ne [style=dotted,arrowhead=dot,color="0.25, 0.9 , 0.8",penwidth=2.0];
+		spatialResourcesresourceDistributionRecord:spatialResourcesresourceDistributionregular -> regularPlacement:ne [style=dotted,arrowhead=dot,color="0.25, 0.9 , 0.8",penwidth=2.0];
 }

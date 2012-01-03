@@ -41,16 +41,16 @@ initializeLocationOverview -> initializeStateOverview -> findHomeOverview [style
 	//fillcolor="0.0, 0.0, 0.98";
 		initializeLocation [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.25, 0.2, 1.0",label="Initialize Location",URL="learner_initializeLocation.svg"];
 	initializeLocation ->  learner [color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		learner [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.324, 0.2, 1.0",label="Learner"];
+	learner ->  availableQuery [color="0.324, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 		moveLearner [shape=none,style="rounded,filled",fontname=Helvetica,color="0.25, 0.2, 1.0",label="Move"];
 	initializeLocation ->  moveLearner:nw [style=dashed,color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 	learner -> moveLearner:ne [style=dashed,color="0.324, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-		learner [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.324, 0.2, 1.0",label="Learner"];
-	learner ->  availableQuery [color="0.324, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 		availableQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.324, 0.2, 1.0",label="Available"];
 	availableQuery ->  moveLearner [color="0.324, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 //}
-		learnerhomeID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Home ID"];
 		homehomeID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Home ID"];
+		learnerhomeID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Home ID"];
 
 //subgraph clusterfindHome {
 	//style=filled;
@@ -58,10 +58,10 @@ initializeLocationOverview -> initializeStateOverview -> findHomeOverview [style
 	//fillcolor="0.0, 0.0, 0.98";
 		findHome [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.125, 0.2, 1.0",label="Find Home",URL="learner_findHome.svg"];
 	findHome ->  homeLocation [color="0.125, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-		homeIDAddZero [shape=none,style="rounded,filled",fontname=Helvetica,color="0.125, 0.2, 1.0",label="Add"];
-			homeIDAddZero ->  learnerhomeID [color="0.125, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 		nearestQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.199, 0.2, 1.0",label="Nearest "];
 	nearestQuery ->  homeIDAddZero [color="0.199, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		homeIDAddZero [shape=none,style="rounded,filled",fontname=Helvetica,color="0.125, 0.2, 1.0",label="Add"];
+			homeIDAddZero ->  learnerhomeID [color="0.125, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 		homeLocation [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.199, 0.2, 1.0",label="Home Location"];
 	homeLocation ->  nearestQuery [color="0.199, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 //}
@@ -69,9 +69,9 @@ initializeLocationOverview -> initializeStateOverview -> findHomeOverview [style
 	
 		importxyxhomeIDAddZerofunctionszero0 [fontname=Helvetica,shape=none,label="0"];
 		importxyxhomeIDAddZerofunctionszero0 -> homeIDAddZero:ne [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+		learnerlearningInterest [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Learning Interest"];
 		spatialResourcesnextLearnerID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label=<<i>Next Learner ID</i>>];
 		learnerlearnerID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Learner ID"];
-		learnerlearningInterest [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Learning Interest"];
 
 //subgraph clusterinitializeState {
 	//style=filled;
@@ -81,16 +81,16 @@ initializeLocationOverview -> initializeStateOverview -> findHomeOverview [style
 	initializeState ->  initialInterest [color="0.375, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 	initializeState ->  setLearnerIDToNextLearnerID [color="0.375, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 	setLearnerIDToNextLearnerID ->  learnerlearnerID [color="0.375, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		initialInterest [shape=none,style="rounded,filled",fontname=Helvetica,color="0.375, 0.2, 1.0",label="Initial Interest"];
+			initialInterest ->  learnerlearningInterest [color="0.375, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		incrementNextLearnerID [shape=none,style="rounded,filled",fontname=Helvetica,color="0.375, 0.2, 1.0",label="Increment"];
+			incrementNextLearnerID ->  spatialResourcesnextLearnerID [color="0.375, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 
 		setLearnerIDToNextLearnerID [shape=none,style="rounded,filled",fontname=Helvetica,color="0.375, 0.2, 1.0",label="Set"];
 	setLearnerIDToNextLearnerID ->  incrementNextLearnerID [color="0.375, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-		incrementNextLearnerID [shape=none,style="rounded,filled",fontname=Helvetica,color="0.375, 0.2, 1.0",label="Increment"];
-			incrementNextLearnerID ->  spatialResourcesnextLearnerID [color="0.375, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-		initialInterest [shape=none,style="rounded,filled",fontname=Helvetica,color="0.375, 0.2, 1.0",label="Initial Interest"];
-			initialInterest ->  learnerlearningInterest [color="0.375, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 //}
+		spatialResourcesnextLearnerID -> incrementNextLearnerID:nw [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
 
 		importabcsetLearnerIDToNextLearnerIDspatialResourcesnextLearnerID [fontname=Helvetica,shape=none,label="Next Learner ID"];
 		importabcsetLearnerIDToNextLearnerIDspatialResourcesnextLearnerID -> setLearnerIDToNextLearnerID:"ne" [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
-		spatialResourcesnextLearnerID -> incrementNextLearnerID:nw [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
 }

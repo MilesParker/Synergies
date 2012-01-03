@@ -17,13 +17,13 @@
 <polygon fill="ghostwhite" stroke="white" points="157,-443 157,-497 221,-497 221,-443 157,-443"/>
 <text text-anchor="middle" x="189.127" y="-479" font-family="Helvetica,sans-Serif" font-size="14.00">Learner</text>
 </g>
-<g id="graph4" class="cluster"><title>clusterhomeKey</title>
-<polygon fill="ghostwhite" stroke="white" points="229,-363 229,-497 282,-497 282,-363 229,-363"/>
-<text text-anchor="middle" x="255.672" y="-479" font-family="Helvetica,sans-Serif" font-size="14.00">Home</text>
+<g id="graph4" class="cluster"><title>clusterlearningResourceKey</title>
+<polygon fill="ghostwhite" stroke="white" points="229,-443 229,-497 363,-497 363,-443 229,-443"/>
+<text text-anchor="middle" x="296.148" y="-479" font-family="Helvetica,sans-Serif" font-size="14.00">Learning Resource</text>
 </g>
-<g id="graph5" class="cluster"><title>clusterlearningResourceKey</title>
-<polygon fill="ghostwhite" stroke="white" points="290,-443 290,-497 424,-497 424,-443 290,-443"/>
-<text text-anchor="middle" x="357.148" y="-479" font-family="Helvetica,sans-Serif" font-size="14.00">Learning Resource</text>
+<g id="graph5" class="cluster"><title>clusterhomeKey</title>
+<polygon fill="ghostwhite" stroke="white" points="371,-363 371,-497 424,-497 424,-363 371,-363"/>
+<text text-anchor="middle" x="397.672" y="-479" font-family="Helvetica,sans-Serif" font-size="14.00">Home</text>
 </g>
 <!-- contextOverview -->
 <g id="node2" class="node"><title>contextOverview</title>
@@ -35,25 +35,25 @@
 <ellipse fill="#14cccc" stroke="#14cccc" cx="189" cy="-458" rx="7.2" ry="7.2"/>
 </a>
 </g>
-<!-- returnedHomeOverview -->
-<g id="node6" class="node"><title>returnedHomeOverview</title>
-<a xlink:href="home__Overview.svg">
-<ellipse fill="#147acc" stroke="#147acc" cx="255" cy="-458" rx="7.2" ry="7.2"/>
+<!-- targetLearningResourceOverview -->
+<g id="node6" class="node"><title>targetLearningResourceOverview</title>
+<a xlink:href="learningResource__Overview.svg">
+<ellipse fill="#1496cc" stroke="#1496cc" cx="296" cy="-458" rx="7.2" ry="7.2"/>
 </a>
 </g>
 <!-- learnerHomeOverview -->
-<g id="node7" class="node"><title>learnerHomeOverview</title>
+<g id="node8" class="node"><title>learnerHomeOverview</title>
 <a xlink:href="home__Overview.svg">
-<ellipse fill="#145ecc" stroke="#145ecc" cx="255" cy="-378" rx="7.2" ry="7.2"/>
+<ellipse fill="#145ecc" stroke="#145ecc" cx="396" cy="-458" rx="7.2" ry="7.2"/>
 </a>
 </g>
-<!-- returnedHomeOverview&#45;&gt;learnerHomeOverview -->
-<!-- targetLearningResourceOverview -->
-<g id="node10" class="node"><title>targetLearningResourceOverview</title>
-<a xlink:href="learningResource__Overview.svg">
-<ellipse fill="#1496cc" stroke="#1496cc" cx="356" cy="-458" rx="7.2" ry="7.2"/>
+<!-- returnedHomeOverview -->
+<g id="node9" class="node"><title>returnedHomeOverview</title>
+<a xlink:href="home__Overview.svg">
+<ellipse fill="#1444cc" stroke="#1444cc" cx="396" cy="-378" rx="7.2" ry="7.2"/>
 </a>
 </g>
+<!-- learnerHomeOverview&#45;&gt;returnedHomeOverview -->
 <!-- learnerbehaviorRecord -->
 <g id="node11" class="node"><title>learnerbehaviorRecord</title>
 <polygon fill="white" stroke="none" points="544.601,-433.2 544.601,-482.8 849.399,-482.8 849.399,-433.2 544.601,-433.2"/>
@@ -83,7 +83,7 @@
 <text text-anchor="middle" x="907" y="-372.4" font-family="Helvetica,sans-Serif" font-size="14.00">Is Not?</text>
 </g>
 <!-- learnerbehaviorRecord&#45;&gt;behaviorDifferentAtHomeQuery -->
-<g id="edge134" class="edge"><title>learnerbehaviorRecord:learnerbehavioratHome&#45;&gt;behaviorDifferentAtHomeQuery:ne</title>
+<g id="edge124" class="edge"><title>learnerbehaviorRecord:learnerbehavioratHome&#45;&gt;behaviorDifferentAtHomeQuery:ne</title>
 <path fill="none" stroke="#14cccc" stroke-width="2" stroke-dasharray="1,5" d="M850,-446C857.166,-446 852.867,-437.001 858,-432 879.565,-410.991 934.823,-417.809 929.766,-402.665"/>
 <ellipse fill="#14cccc" stroke="#14cccc" cx="927.327" cy="-399.254" rx="4.00002" ry="4.00002"/>
 </g>
@@ -105,12 +105,12 @@
 <text text-anchor="middle" x="985" y="-372.4" font-family="Helvetica,sans-Serif" font-size="14.00">Is Not?</text>
 </g>
 <!-- learnerbehaviorRecord&#45;&gt;behaviorDifferentAtHomeQueryCopy -->
-<g id="edge118" class="edge"><title>learnerbehaviorRecord:learnerbehavioratHome&#45;&gt;behaviorDifferentAtHomeQueryCopy:ne</title>
+<g id="edge126" class="edge"><title>learnerbehaviorRecord:learnerbehavioratHome&#45;&gt;behaviorDifferentAtHomeQueryCopy:ne</title>
 <path fill="none" stroke="#14cccc" stroke-width="2" stroke-dasharray="1,5" d="M850,-446C857.166,-446 852.284,-436.323 858,-432 908.478,-393.825 1037.11,-438.371 1008.41,-401.976"/>
 <ellipse fill="#14cccc" stroke="#14cccc" cx="1005.68" cy="-398.967" rx="4.00002" ry="4.00002"/>
 </g>
 <!-- behaviorIdenticalSeekingResourceQuery -->
-<g id="node64" class="node"><title>behaviorIdenticalSeekingResourceQuery</title>
+<g id="node39" class="node"><title>behaviorIdenticalSeekingResourceQuery</title>
 <polygon fill="#ccffff" stroke="#ccffff" points="631,-324 601,-324 589,-312 589,-300 601,-288 631,-288 643,-300 643,-312 631,-324"/>
 <path fill="#ccffff" stroke="#ccffff" d="M601,-324C595,-324 589,-318 589,-312"/>
 <path fill="#ccffff" stroke="#ccffff" d="M589,-300C589,-294 595,-288 601,-288"/>
@@ -127,12 +127,12 @@
 <text text-anchor="middle" x="616" y="-300.4" font-family="Helvetica,sans-Serif" font-size="14.00">Is?</text>
 </g>
 <!-- learnerbehaviorRecord&#45;&gt;behaviorIdenticalSeekingResourceQuery -->
-<g id="edge120" class="edge"><title>learnerbehaviorRecord:learnerbehaviorseekingResource&#45;&gt;behaviorIdenticalSeekingResourceQuery:ne</title>
+<g id="edge122" class="edge"><title>learnerbehaviorRecord:learnerbehaviorseekingResource&#45;&gt;behaviorIdenticalSeekingResourceQuery:ne</title>
 <path fill="none" stroke="#14cccc" stroke-width="2" stroke-dasharray="1,5" d="M714,-432C714,-410.295 694.31,-413.145 681,-396 659.305,-368.054 660.657,-353.302 639.536,-329.826"/>
 <ellipse fill="#14cccc" stroke="#14cccc" cx="636.756" cy="-326.9" rx="4.00002" ry="4.00002"/>
 </g>
 <!-- behaviorIdenticalNotInterestedQuery -->
-<g id="node75" class="node"><title>behaviorIdenticalNotInterestedQuery</title>
+<g id="node41" class="node"><title>behaviorIdenticalNotInterestedQuery</title>
 <polygon fill="#ccffff" stroke="#ccffff" points="557,-324 527,-324 515,-312 515,-300 527,-288 557,-288 569,-300 569,-312 557,-324"/>
 <path fill="#ccffff" stroke="#ccffff" d="M527,-324C521,-324 515,-318 515,-312"/>
 <path fill="#ccffff" stroke="#ccffff" d="M515,-300C515,-294 521,-288 527,-288"/>
@@ -149,7 +149,7 @@
 <text text-anchor="middle" x="542" y="-300.4" font-family="Helvetica,sans-Serif" font-size="14.00">Is?</text>
 </g>
 <!-- learnerbehaviorRecord&#45;&gt;behaviorIdenticalNotInterestedQuery -->
-<g id="edge132" class="edge"><title>learnerbehaviorRecord:learnerbehaviornotInterested&#45;&gt;behaviorIdenticalNotInterestedQuery:ne</title>
+<g id="edge114" class="edge"><title>learnerbehaviorRecord:learnerbehaviornotInterested&#45;&gt;behaviorIdenticalNotInterestedQuery:ne</title>
 <path fill="none" stroke="#14cccc" stroke-width="2" stroke-dasharray="1,5" d="M597,-432C597,-384.036 595.997,-362.304 565.58,-329.763"/>
 <ellipse fill="#14cccc" stroke="#14cccc" cx="562.782" cy="-326.874" rx="4.00002" ry="4.00002"/>
 </g>
@@ -180,7 +180,7 @@
 <text text-anchor="middle" x="542" y="-372.4" font-family="Helvetica,sans-Serif" font-size="14.00">Is?</text>
 </g>
 <!-- spatialResourceswanderingRecord&#45;&gt;identityWanderingQuery -->
-<g id="edge130" class="edge"><title>spatialResourceswanderingRecord&#45;&gt;identityWanderingQuery:nw</title>
+<g id="edge112" class="edge"><title>spatialResourceswanderingRecord&#45;&gt;identityWanderingQuery:nw</title>
 <path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M494.152,-433.099C500.856,-423.301 509.268,-411.947 518.303,-401.991"/>
 <ellipse fill="black" stroke="black" cx="521.244" cy="-398.899" rx="4.00002" ry="4.00002"/>
 </g>
@@ -202,7 +202,7 @@
 <text text-anchor="middle" x="829" y="-372.4" font-family="Helvetica,sans-Serif" font-size="14.00">Is Not?</text>
 </g>
 <!-- spatialResourceswanderingRecord&#45;&gt;notWandering -->
-<g id="edge112" class="edge"><title>spatialResourceswanderingRecord&#45;&gt;notWandering:nw</title>
+<g id="edge120" class="edge"><title>spatialResourceswanderingRecord&#45;&gt;notWandering:nw</title>
 <path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M526.534,-434.984C529.704,-433.88 532.877,-432.87 536,-432 592.82,-416.168 752.842,-437.583 804.69,-401.251"/>
 <ellipse fill="black" stroke="black" cx="807.925" cy="-398.559" rx="4.00002" ry="4.00002"/>
 </g>
@@ -212,7 +212,7 @@
 <text text-anchor="middle" x="967" y="-228.4" font-family="Helvetica,sans-Serif" font-size="14.00">Home ID</text>
 </g>
 <!-- homeIDIdenticalHomeIDQuery -->
-<g id="node36" class="node"><title>homeIDIdenticalHomeIDQuery</title>
+<g id="node52" class="node"><title>homeIDIdenticalHomeIDQuery</title>
 <polygon fill="#cce0ff" stroke="#cce0ff" points="1036.45,-180 985.552,-180 973.552,-168 973.552,-156 985.552,-144 1036.45,-144 1048.45,-156 1048.45,-168 1036.45,-180"/>
 <path fill="#cce0ff" stroke="#cce0ff" d="M985.552,-180C979.552,-180 973.552,-174 973.552,-168"/>
 <path fill="#cce0ff" stroke="#cce0ff" d="M973.552,-156C973.552,-150 979.552,-144 985.552,-144"/>
@@ -229,34 +229,34 @@
 <text text-anchor="middle" x="1011" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Identical?</text>
 </g>
 <!-- homehomeID&#45;&gt;homeIDIdenticalHomeIDQuery -->
-<g id="edge114" class="edge"><title>homehomeID&#45;&gt;homeIDIdenticalHomeIDQuery:nw</title>
+<g id="edge116" class="edge"><title>homehomeID&#45;&gt;homeIDIdenticalHomeIDQuery:nw</title>
 <path fill="none" stroke="#145ecc" stroke-width="2" stroke-dasharray="1,5" d="M972.105,-215.974C975.453,-206.75 980.552,-195.369 987.711,-186.061"/>
 <ellipse fill="#145ecc" stroke="#145ecc" cx="990.37" cy="-183.014" rx="4.00002" ry="4.00002"/>
 </g>
 <!-- homeIDIdenticalHomeIDQueryCopy -->
-<g id="node57" class="node"><title>homeIDIdenticalHomeIDQueryCopy</title>
-<polygon fill="#cce8ff" stroke="#cce8ff" points="942.448,-180 891.552,-180 879.552,-168 879.552,-156 891.552,-144 942.448,-144 954.448,-156 954.448,-168 942.448,-180"/>
-<path fill="#cce8ff" stroke="#cce8ff" d="M891.552,-180C885.552,-180 879.552,-174 879.552,-168"/>
-<path fill="#cce8ff" stroke="#cce8ff" d="M879.552,-156C879.552,-150 885.552,-144 891.552,-144"/>
-<path fill="#cce8ff" stroke="#cce8ff" d="M942.448,-144C948.448,-144 954.448,-150 954.448,-156"/>
-<path fill="#cce8ff" stroke="#cce8ff" d="M954.448,-168C954.448,-174 948.448,-180 942.448,-180"/>
-<polyline fill="none" stroke="#cce8ff" points="942.448,-180 891.552,-180 "/>
-<path fill="none" stroke="#cce8ff" d="M891.552,-180C885.552,-180 879.552,-174 879.552,-168"/>
-<polyline fill="none" stroke="#cce8ff" points="879.552,-168 879.552,-156 "/>
-<path fill="none" stroke="#cce8ff" d="M879.552,-156C879.552,-150 885.552,-144 891.552,-144"/>
-<polyline fill="none" stroke="#cce8ff" points="891.552,-144 942.448,-144 "/>
-<path fill="none" stroke="#cce8ff" d="M942.448,-144C948.448,-144 954.448,-150 954.448,-156"/>
-<polyline fill="none" stroke="#cce8ff" points="954.448,-156 954.448,-168 "/>
-<path fill="none" stroke="#cce8ff" d="M954.448,-168C954.448,-174 948.448,-180 942.448,-180"/>
+<g id="node84" class="node"><title>homeIDIdenticalHomeIDQueryCopy</title>
+<polygon fill="#ccd9ff" stroke="#ccd9ff" points="942.448,-180 891.552,-180 879.552,-168 879.552,-156 891.552,-144 942.448,-144 954.448,-156 954.448,-168 942.448,-180"/>
+<path fill="#ccd9ff" stroke="#ccd9ff" d="M891.552,-180C885.552,-180 879.552,-174 879.552,-168"/>
+<path fill="#ccd9ff" stroke="#ccd9ff" d="M879.552,-156C879.552,-150 885.552,-144 891.552,-144"/>
+<path fill="#ccd9ff" stroke="#ccd9ff" d="M942.448,-144C948.448,-144 954.448,-150 954.448,-156"/>
+<path fill="#ccd9ff" stroke="#ccd9ff" d="M954.448,-168C954.448,-174 948.448,-180 942.448,-180"/>
+<polyline fill="none" stroke="#ccd9ff" points="942.448,-180 891.552,-180 "/>
+<path fill="none" stroke="#ccd9ff" d="M891.552,-180C885.552,-180 879.552,-174 879.552,-168"/>
+<polyline fill="none" stroke="#ccd9ff" points="879.552,-168 879.552,-156 "/>
+<path fill="none" stroke="#ccd9ff" d="M879.552,-156C879.552,-150 885.552,-144 891.552,-144"/>
+<polyline fill="none" stroke="#ccd9ff" points="891.552,-144 942.448,-144 "/>
+<path fill="none" stroke="#ccd9ff" d="M942.448,-144C948.448,-144 954.448,-150 954.448,-156"/>
+<polyline fill="none" stroke="#ccd9ff" points="954.448,-156 954.448,-168 "/>
+<path fill="none" stroke="#ccd9ff" d="M954.448,-168C954.448,-174 948.448,-180 942.448,-180"/>
 <text text-anchor="middle" x="917" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Identical?</text>
 </g>
 <!-- homehomeID&#45;&gt;homeIDIdenticalHomeIDQueryCopy -->
-<g id="edge126" class="edge"><title>homehomeID&#45;&gt;homeIDIdenticalHomeIDQueryCopy:nw</title>
-<path fill="none" stroke="#147acc" stroke-width="2" stroke-dasharray="1,5" d="M934.966,-215.819C919.787,-206.92 903.911,-196.246 899.011,-188.116"/>
-<ellipse fill="#147acc" stroke="#147acc" cx="899.005" cy="-184" rx="4" ry="4"/>
+<g id="edge132" class="edge"><title>homehomeID&#45;&gt;homeIDIdenticalHomeIDQueryCopy:nw</title>
+<path fill="none" stroke="#1444cc" stroke-width="2" stroke-dasharray="1,5" d="M934.966,-215.819C919.787,-206.92 903.911,-196.246 899.011,-188.116"/>
+<ellipse fill="#1444cc" stroke="#1444cc" cx="899.005" cy="-184" rx="4" ry="4"/>
 </g>
 <!-- homehomeID&#45;&gt;homeIDIdenticalHomeIDQueryCopy -->
-<g id="edge128" class="edge"><title>homehomeID&#45;&gt;homeIDIdenticalHomeIDQueryCopy:ne</title>
+<g id="edge134" class="edge"><title>homehomeID&#45;&gt;homeIDIdenticalHomeIDQueryCopy:ne</title>
 <path fill="none" stroke="#14cccc" stroke-width="2" stroke-dasharray="1,5" d="M959.312,-215.795C954.77,-206.738 948.383,-195.592 940.603,-186.186"/>
 <ellipse fill="#14cccc" stroke="#14cccc" cx="937.685" cy="-182.965" rx="4.00002" ry="4.00002"/>
 </g>
@@ -266,7 +266,7 @@
 <text text-anchor="middle" x="1056" y="-228.4" font-family="Helvetica,sans-Serif" font-size="14.00">Home ID</text>
 </g>
 <!-- learnerhomeID&#45;&gt;homeIDIdenticalHomeIDQuery -->
-<g id="edge116" class="edge"><title>learnerhomeID&#45;&gt;homeIDIdenticalHomeIDQuery:ne</title>
+<g id="edge118" class="edge"><title>learnerhomeID&#45;&gt;homeIDIdenticalHomeIDQuery:ne</title>
 <path fill="none" stroke="#14cccc" stroke-width="2" stroke-dasharray="1,5" d="M1050.31,-215.527C1046.79,-206.467 1041.56,-195.414 1034.49,-186.267"/>
 <ellipse fill="#14cccc" stroke="#14cccc" cx="1031.63" cy="-183.01" rx="4.00002" ry="4.00002"/>
 </g>
@@ -276,7 +276,7 @@
 <text text-anchor="middle" x="308" y="-228.4" font-family="Helvetica,sans-Serif" font-size="14.00">Resource ID</text>
 </g>
 <!-- resourceIDIdenticalTargetResourceIDQuery -->
-<g id="node69" class="node"><title>resourceIDIdenticalTargetResourceIDQuery</title>
+<g id="node96" class="node"><title>resourceIDIdenticalTargetResourceIDQuery</title>
 <polygon fill="#ccf0ff" stroke="#ccf0ff" points="458.448,-180 407.552,-180 395.552,-168 395.552,-156 407.552,-144 458.448,-144 470.448,-156 470.448,-168 458.448,-180"/>
 <path fill="#ccf0ff" stroke="#ccf0ff" d="M407.552,-180C401.552,-180 395.552,-174 395.552,-168"/>
 <path fill="#ccf0ff" stroke="#ccf0ff" d="M395.552,-156C395.552,-150 401.552,-144 407.552,-144"/>
@@ -293,7 +293,7 @@
 <text text-anchor="middle" x="433" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Identical?</text>
 </g>
 <!-- learningResourceresourceID&#45;&gt;resourceIDIdenticalTargetResourceIDQuery -->
-<g id="edge122" class="edge"><title>learningResourceresourceID&#45;&gt;resourceIDIdenticalTargetResourceIDQuery:nw</title>
+<g id="edge128" class="edge"><title>learningResourceresourceID&#45;&gt;resourceIDIdenticalTargetResourceIDQuery:nw</title>
 <path fill="none" stroke="#1496cc" stroke-width="2" stroke-dasharray="1,5" d="M354.549,-217.707C372.639,-210.159 392.821,-199.631 408.851,-185.72"/>
 <ellipse fill="#1496cc" stroke="#1496cc" cx="412.071" cy="-182.724" rx="4.00002" ry="4.00002"/>
 </g>
@@ -303,7 +303,7 @@
 <text text-anchor="middle" x="441" y="-228.4" font-family="Helvetica,sans-Serif" font-size="14.00">Target Resource ID</text>
 </g>
 <!-- learnertargetResourceID&#45;&gt;resourceIDIdenticalTargetResourceIDQuery -->
-<g id="edge124" class="edge"><title>learnertargetResourceID&#45;&gt;resourceIDIdenticalTargetResourceIDQuery:ne</title>
+<g id="edge130" class="edge"><title>learnertargetResourceID&#45;&gt;resourceIDIdenticalTargetResourceIDQuery:ne</title>
 <path fill="none" stroke="#14cccc" stroke-width="2" stroke-dasharray="1,5" d="M451.009,-215.925C455.228,-206.805 458.507,-195.666 455.32,-186.809"/>
 <ellipse fill="#14cccc" stroke="#14cccc" cx="453.143" cy="-183.378" rx="4.00002" ry="4.00002"/>
 </g>
@@ -347,7 +347,7 @@
 <polygon fill="#14cccc" stroke="#14cccc" points="958.89,-415.413 967.959,-396.262 948.927,-405.578 958.89,-415.413"/>
 </g>
 <!-- moveLearnerCopy -->
-<g id="node31" class="node"><title>moveLearnerCopy</title>
+<g id="node33" class="node"><title>moveLearnerCopy</title>
 <polygon fill="#ccffff" stroke="#ccffff" points="266,-36 236,-36 224,-24 224,-12 236,-0 266,-0 278,-12 278,-24 266,-36"/>
 <path fill="#ccffff" stroke="#ccffff" d="M236,-36C230,-36 224,-30 224,-24"/>
 <path fill="#ccffff" stroke="#ccffff" d="M224,-12C224,-6 230,-0 236,-0"/>
@@ -364,56 +364,12 @@
 <text text-anchor="middle" x="251" y="-12.4" font-family="Helvetica,sans-Serif" font-size="14.00">Move</text>
 </g>
 <!-- movement&#45;&gt;moveLearnerCopy -->
-<g id="edge32" class="edge"><title>movement&#45;&gt;moveLearnerCopy:nw</title>
+<g id="edge82" class="edge"><title>movement&#45;&gt;moveLearnerCopy:nw</title>
 <path fill="none" stroke="#14cccc" stroke-width="3" stroke-dasharray="5,2" d="M875.136,-439.998C869.466,-437.229 863.596,-434.464 858,-432 817.055,-413.975 801.749,-420.009 764,-396 705.651,-358.889 714.899,-316.732 652,-288 570.82,-250.918 315.044,-315.172 252,-252 222.151,-222.09 203.839,-104.728 222.764,-53.3203"/>
 <polygon fill="#14cccc" stroke="#14cccc" points="228.851,-56.7794 233,-36 216.798,-49.6564 228.851,-56.7794"/>
 </g>
-<!-- moveLearnerCopyCopyCopy -->
-<g id="node45" class="node"><title>moveLearnerCopyCopyCopy</title>
-<polygon fill="#ccffff" stroke="#ccffff" points="1533,-36 1503,-36 1491,-24 1491,-12 1503,-0 1533,-0 1545,-12 1545,-24 1533,-36"/>
-<path fill="#ccffff" stroke="#ccffff" d="M1503,-36C1497,-36 1491,-30 1491,-24"/>
-<path fill="#ccffff" stroke="#ccffff" d="M1491,-12C1491,-6 1497,-0 1503,-0"/>
-<path fill="#ccffff" stroke="#ccffff" d="M1533,-0C1539,-0 1545,-6 1545,-12"/>
-<path fill="#ccffff" stroke="#ccffff" d="M1545,-24C1545,-30 1539,-36 1533,-36"/>
-<polyline fill="none" stroke="#ccffff" points="1533,-36 1503,-36 "/>
-<path fill="none" stroke="#ccffff" d="M1503,-36C1497,-36 1491,-30 1491,-24"/>
-<polyline fill="none" stroke="#ccffff" points="1491,-24 1491,-12 "/>
-<path fill="none" stroke="#ccffff" d="M1491,-12C1491,-6 1497,-0 1503,-0"/>
-<polyline fill="none" stroke="#ccffff" points="1503,-0 1533,-0 "/>
-<path fill="none" stroke="#ccffff" d="M1533,-0C1539,-0 1545,-6 1545,-12"/>
-<polyline fill="none" stroke="#ccffff" points="1545,-12 1545,-24 "/>
-<path fill="none" stroke="#ccffff" d="M1545,-24C1545,-30 1539,-36 1533,-36"/>
-<text text-anchor="middle" x="1518" y="-12.4" font-family="Helvetica,sans-Serif" font-size="14.00">Move</text>
-</g>
-<!-- movement&#45;&gt;moveLearnerCopyCopyCopy -->
-<g id="edge108" class="edge"><title>movement&#45;&gt;moveLearnerCopyCopyCopy:nw</title>
-<path fill="none" stroke="#14cccc" stroke-width="3" stroke-dasharray="5,2" d="M948.691,-455.46C1082.44,-449.309 1500,-420.978 1500,-307 1500,-307 1500,-307 1500,-161 1500,-113.257 1470.99,-84.2686 1487.76,-52.1276"/>
-<polygon fill="#14cccc" stroke="#14cccc" points="1493.49,-56.1634 1500,-36 1482.33,-47.6998 1493.49,-56.1634"/>
-</g>
-<!-- moveHome -->
-<g id="node78" class="node"><title>moveHome</title>
-<polygon fill="#ccffff" stroke="#ccffff" points="1276,-36 1246,-36 1234,-24 1234,-12 1246,-0 1276,-0 1288,-12 1288,-24 1276,-36"/>
-<path fill="#ccffff" stroke="#ccffff" d="M1246,-36C1240,-36 1234,-30 1234,-24"/>
-<path fill="#ccffff" stroke="#ccffff" d="M1234,-12C1234,-6 1240,-0 1246,-0"/>
-<path fill="#ccffff" stroke="#ccffff" d="M1276,-0C1282,-0 1288,-6 1288,-12"/>
-<path fill="#ccffff" stroke="#ccffff" d="M1288,-24C1288,-30 1282,-36 1276,-36"/>
-<polyline fill="none" stroke="#ccffff" points="1276,-36 1246,-36 "/>
-<path fill="none" stroke="#ccffff" d="M1246,-36C1240,-36 1234,-30 1234,-24"/>
-<polyline fill="none" stroke="#ccffff" points="1234,-24 1234,-12 "/>
-<path fill="none" stroke="#ccffff" d="M1234,-12C1234,-6 1240,-0 1246,-0"/>
-<polyline fill="none" stroke="#ccffff" points="1246,-0 1276,-0 "/>
-<path fill="none" stroke="#ccffff" d="M1276,-0C1282,-0 1288,-6 1288,-12"/>
-<polyline fill="none" stroke="#ccffff" points="1288,-12 1288,-24 "/>
-<path fill="none" stroke="#ccffff" d="M1288,-24C1288,-30 1282,-36 1276,-36"/>
-<text text-anchor="middle" x="1261" y="-12.4" font-family="Helvetica,sans-Serif" font-size="14.00">Move</text>
-</g>
-<!-- movement&#45;&gt;moveHome -->
-<g id="edge66" class="edge"><title>movement&#45;&gt;moveHome:nw</title>
-<path fill="none" stroke="#14cccc" stroke-width="3" stroke-dasharray="5,2" d="M948.409,-456.922C1037.51,-454.41 1243,-434.766 1243,-307 1243,-307 1243,-307 1243,-161 1243,-113.257 1213.99,-84.2686 1230.76,-52.1276"/>
-<polygon fill="#14cccc" stroke="#14cccc" points="1236.49,-56.1634 1243,-36 1225.33,-47.6998 1236.49,-56.1634"/>
-</g>
 <!-- moveLearnerCopyCopy -->
-<g id="node82" class="node"><title>moveLearnerCopyCopy</title>
+<g id="node34" class="node"><title>moveLearnerCopyCopy</title>
 <polygon fill="#ccffff" stroke="#ccffff" points="672,-36 642,-36 630,-24 630,-12 642,-0 672,-0 684,-12 684,-24 672,-36"/>
 <path fill="#ccffff" stroke="#ccffff" d="M642,-36C636,-36 630,-30 630,-24"/>
 <path fill="#ccffff" stroke="#ccffff" d="M630,-12C630,-6 636,-0 642,-0"/>
@@ -430,22 +386,66 @@
 <text text-anchor="middle" x="657" y="-12.4" font-family="Helvetica,sans-Serif" font-size="14.00">Move</text>
 </g>
 <!-- movement&#45;&gt;moveLearnerCopyCopy -->
-<g id="edge72" class="edge"><title>movement&#45;&gt;moveLearnerCopyCopy:nw</title>
+<g id="edge22" class="edge"><title>movement&#45;&gt;moveLearnerCopyCopy:nw</title>
 <path fill="none" stroke="#14cccc" stroke-width="3" stroke-dasharray="5,2" d="M874.121,-439.901C839.784,-422.509 791.485,-397.849 790,-396 696.717,-279.831 795.608,-189.494 704,-72 692.975,-57.8593 667.875,-55.3455 650.973,-52.2634"/>
 <polygon fill="#14cccc" stroke="#14cccc" points="656.494,-47.9561 639,-36 645.22,-56.2562 656.494,-47.9561"/>
 </g>
+<!-- moveHome -->
+<g id="node42" class="node"><title>moveHome</title>
+<polygon fill="#ccffff" stroke="#ccffff" points="1276,-36 1246,-36 1234,-24 1234,-12 1246,-0 1276,-0 1288,-12 1288,-24 1276,-36"/>
+<path fill="#ccffff" stroke="#ccffff" d="M1246,-36C1240,-36 1234,-30 1234,-24"/>
+<path fill="#ccffff" stroke="#ccffff" d="M1234,-12C1234,-6 1240,-0 1246,-0"/>
+<path fill="#ccffff" stroke="#ccffff" d="M1276,-0C1282,-0 1288,-6 1288,-12"/>
+<path fill="#ccffff" stroke="#ccffff" d="M1288,-24C1288,-30 1282,-36 1276,-36"/>
+<polyline fill="none" stroke="#ccffff" points="1276,-36 1246,-36 "/>
+<path fill="none" stroke="#ccffff" d="M1246,-36C1240,-36 1234,-30 1234,-24"/>
+<polyline fill="none" stroke="#ccffff" points="1234,-24 1234,-12 "/>
+<path fill="none" stroke="#ccffff" d="M1234,-12C1234,-6 1240,-0 1246,-0"/>
+<polyline fill="none" stroke="#ccffff" points="1246,-0 1276,-0 "/>
+<path fill="none" stroke="#ccffff" d="M1276,-0C1282,-0 1288,-6 1288,-12"/>
+<polyline fill="none" stroke="#ccffff" points="1288,-12 1288,-24 "/>
+<path fill="none" stroke="#ccffff" d="M1288,-24C1288,-30 1282,-36 1276,-36"/>
+<text text-anchor="middle" x="1261" y="-12.4" font-family="Helvetica,sans-Serif" font-size="14.00">Move</text>
+</g>
+<!-- movement&#45;&gt;moveHome -->
+<g id="edge30" class="edge"><title>movement&#45;&gt;moveHome:nw</title>
+<path fill="none" stroke="#14cccc" stroke-width="3" stroke-dasharray="5,2" d="M948.409,-456.922C1037.51,-454.41 1243,-434.766 1243,-307 1243,-307 1243,-307 1243,-161 1243,-113.257 1213.99,-84.2686 1230.76,-52.1276"/>
+<polygon fill="#14cccc" stroke="#14cccc" points="1236.49,-56.1634 1243,-36 1225.33,-47.6998 1236.49,-56.1634"/>
+</g>
+<!-- moveLearnerCopyCopyCopy -->
+<g id="node62" class="node"><title>moveLearnerCopyCopyCopy</title>
+<polygon fill="#ccffff" stroke="#ccffff" points="1533,-36 1503,-36 1491,-24 1491,-12 1503,-0 1533,-0 1545,-12 1545,-24 1533,-36"/>
+<path fill="#ccffff" stroke="#ccffff" d="M1503,-36C1497,-36 1491,-30 1491,-24"/>
+<path fill="#ccffff" stroke="#ccffff" d="M1491,-12C1491,-6 1497,-0 1503,-0"/>
+<path fill="#ccffff" stroke="#ccffff" d="M1533,-0C1539,-0 1545,-6 1545,-12"/>
+<path fill="#ccffff" stroke="#ccffff" d="M1545,-24C1545,-30 1539,-36 1533,-36"/>
+<polyline fill="none" stroke="#ccffff" points="1533,-36 1503,-36 "/>
+<path fill="none" stroke="#ccffff" d="M1503,-36C1497,-36 1491,-30 1491,-24"/>
+<polyline fill="none" stroke="#ccffff" points="1491,-24 1491,-12 "/>
+<path fill="none" stroke="#ccffff" d="M1491,-12C1491,-6 1497,-0 1503,-0"/>
+<polyline fill="none" stroke="#ccffff" points="1503,-0 1533,-0 "/>
+<path fill="none" stroke="#ccffff" d="M1533,-0C1539,-0 1545,-6 1545,-12"/>
+<polyline fill="none" stroke="#ccffff" points="1545,-12 1545,-24 "/>
+<path fill="none" stroke="#ccffff" d="M1545,-24C1545,-30 1539,-36 1533,-36"/>
+<text text-anchor="middle" x="1518" y="-12.4" font-family="Helvetica,sans-Serif" font-size="14.00">Move</text>
+</g>
+<!-- movement&#45;&gt;moveLearnerCopyCopyCopy -->
+<g id="edge50" class="edge"><title>movement&#45;&gt;moveLearnerCopyCopyCopy:nw</title>
+<path fill="none" stroke="#14cccc" stroke-width="3" stroke-dasharray="5,2" d="M948.691,-455.46C1082.44,-449.309 1500,-420.978 1500,-307 1500,-307 1500,-307 1500,-161 1500,-113.257 1470.99,-84.2686 1487.76,-52.1276"/>
+<polygon fill="#14cccc" stroke="#14cccc" points="1493.49,-56.1634 1500,-36 1482.33,-47.6998 1493.49,-56.1634"/>
+</g>
 <!-- identityWanderingQuery&#45;&gt;behaviorIdenticalSeekingResourceQuery -->
-<g id="edge60" class="edge"><title>identityWanderingQuery&#45;&gt;behaviorIdenticalSeekingResourceQuery</title>
+<g id="edge26" class="edge"><title>identityWanderingQuery&#45;&gt;behaviorIdenticalSeekingResourceQuery</title>
 <path fill="none" stroke="#14cccc" stroke-width="3" d="M560.292,-359.697C567.192,-353.169 575.27,-345.528 583.1,-338.121"/>
 <polygon fill="#14cccc" stroke="#14cccc" points="588.199,-342.934 597.918,-324.104 578.578,-332.763 588.199,-342.934"/>
 </g>
 <!-- identityWanderingQuery&#45;&gt;behaviorIdenticalNotInterestedQuery -->
-<g id="edge62" class="edge"><title>identityWanderingQuery&#45;&gt;behaviorIdenticalNotInterestedQuery</title>
+<g id="edge28" class="edge"><title>identityWanderingQuery&#45;&gt;behaviorIdenticalNotInterestedQuery</title>
 <path fill="none" stroke="#14cccc" stroke-width="3" d="M542,-359.697C542,-354.95 542,-349.613 542,-344.206"/>
 <polygon fill="#14cccc" stroke="#14cccc" points="549,-344.104 542,-324.104 535,-344.104 549,-344.104"/>
 </g>
 <!-- _BehaviorDifferentAtHomeQueryAndNotWandering_ -->
-<g id="node33" class="node"><title>_BehaviorDifferentAtHomeQueryAndNotWandering_</title>
+<g id="node68" class="node"><title>_BehaviorDifferentAtHomeQueryAndNotWandering_</title>
 <polygon fill="#ccffff" stroke="#ccffff" points="896,-324 866,-324 854,-312 854,-300 866,-288 896,-288 908,-300 908,-312 896,-324"/>
 <path fill="#ccffff" stroke="#ccffff" d="M866,-324C860,-324 854,-318 854,-312"/>
 <path fill="#ccffff" stroke="#ccffff" d="M854,-300C854,-294 860,-288 866,-288"/>
@@ -462,17 +462,17 @@
 <text text-anchor="middle" x="881" y="-300.4" font-family="Helvetica,sans-Serif" font-size="14.00">And</text>
 </g>
 <!-- notWandering&#45;&gt;_BehaviorDifferentAtHomeQueryAndNotWandering_ -->
-<g id="edge20" class="edge"><title>notWandering&#45;&gt;_BehaviorDifferentAtHomeQueryAndNotWandering_</title>
+<g id="edge56" class="edge"><title>notWandering&#45;&gt;_BehaviorDifferentAtHomeQueryAndNotWandering_</title>
 <path fill="none" stroke="#14cccc" stroke-width="3" d="M841.854,-359.697C846.199,-353.848 851.209,-347.104 856.162,-340.436"/>
 <polygon fill="#14cccc" stroke="#14cccc" points="861.987,-344.334 868.294,-324.104 850.748,-335.985 861.987,-344.334"/>
 </g>
 <!-- behaviorDifferentAtHomeQuery&#45;&gt;_BehaviorDifferentAtHomeQueryAndNotWandering_ -->
-<g id="edge86" class="edge"><title>behaviorDifferentAtHomeQuery&#45;&gt;_BehaviorDifferentAtHomeQueryAndNotWandering_</title>
+<g id="edge92" class="edge"><title>behaviorDifferentAtHomeQuery&#45;&gt;_BehaviorDifferentAtHomeQueryAndNotWandering_</title>
 <path fill="none" stroke="#14cccc" stroke-width="3" d="M900.573,-359.697C898.684,-354.611 896.543,-348.848 894.389,-343.047"/>
 <polygon fill="#14cccc" stroke="#14cccc" points="900.879,-340.416 887.353,-324.104 887.755,-345.29 900.879,-340.416"/>
 </g>
 <!-- _And_BehaviorDifferentAtHomeQueryCopy -->
-<g id="node52" class="node"><title>_And_BehaviorDifferentAtHomeQueryCopy</title>
+<g id="node88" class="node"><title>_And_BehaviorDifferentAtHomeQueryCopy</title>
 <polygon fill="#ccffff" stroke="#ccffff" points="1000,-324 970,-324 958,-312 958,-300 970,-288 1000,-288 1012,-300 1012,-312 1000,-324"/>
 <path fill="#ccffff" stroke="#ccffff" d="M970,-324C964,-324 958,-318 958,-312"/>
 <path fill="#ccffff" stroke="#ccffff" d="M958,-300C958,-294 964,-288 970,-288"/>
@@ -489,242 +489,17 @@
 <text text-anchor="middle" x="985" y="-300.4" font-family="Helvetica,sans-Serif" font-size="14.00">And</text>
 </g>
 <!-- behaviorDifferentAtHomeQuery&#45;&gt;_And_BehaviorDifferentAtHomeQueryCopy -->
-<g id="edge88" class="edge"><title>behaviorDifferentAtHomeQuery&#45;&gt;_And_BehaviorDifferentAtHomeQueryCopy</title>
+<g id="edge94" class="edge"><title>behaviorDifferentAtHomeQuery&#45;&gt;_And_BehaviorDifferentAtHomeQueryCopy</title>
 <path fill="none" stroke="#14cccc" stroke-width="3" d="M926.281,-359.697C933.743,-353 942.512,-345.13 950.965,-337.544"/>
 <polygon fill="#14cccc" stroke="#14cccc" points="955.731,-342.672 965.941,-324.104 946.381,-332.253 955.731,-342.672"/>
 </g>
 <!-- behaviorDifferentAtHomeQueryCopy&#45;&gt;_And_BehaviorDifferentAtHomeQueryCopy -->
-<g id="edge38" class="edge"><title>behaviorDifferentAtHomeQueryCopy&#45;&gt;_And_BehaviorDifferentAtHomeQueryCopy</title>
+<g id="edge96" class="edge"><title>behaviorDifferentAtHomeQueryCopy&#45;&gt;_And_BehaviorDifferentAtHomeQueryCopy</title>
 <path fill="none" stroke="#14cccc" stroke-width="3" d="M985,-359.697C985,-354.95 985,-349.613 985,-344.206"/>
 <polygon fill="#14cccc" stroke="#14cccc" points="992,-344.104 985,-324.104 978,-344.104 992,-344.104"/>
 </g>
-<!-- neighborQueryCopy -->
-<g id="node26" class="node"><title>neighborQueryCopy</title>
-<polygon fill="#ccd9ff" stroke="#ccd9ff" points="1460.11,-180 1411.89,-180 1399.89,-168 1399.89,-156 1411.89,-144 1460.11,-144 1472.11,-156 1472.11,-168 1460.11,-180"/>
-<path fill="#ccd9ff" stroke="#ccd9ff" d="M1411.89,-180C1405.89,-180 1399.89,-174 1399.89,-168"/>
-<path fill="#ccd9ff" stroke="#ccd9ff" d="M1399.89,-156C1399.89,-150 1405.89,-144 1411.89,-144"/>
-<path fill="#ccd9ff" stroke="#ccd9ff" d="M1460.11,-144C1466.11,-144 1472.11,-150 1472.11,-156"/>
-<path fill="#ccd9ff" stroke="#ccd9ff" d="M1472.11,-168C1472.11,-174 1466.11,-180 1460.11,-180"/>
-<polyline fill="none" stroke="#ccd9ff" points="1460.11,-180 1411.89,-180 "/>
-<path fill="none" stroke="#ccd9ff" d="M1411.89,-180C1405.89,-180 1399.89,-174 1399.89,-168"/>
-<polyline fill="none" stroke="#ccd9ff" points="1399.89,-168 1399.89,-156 "/>
-<path fill="none" stroke="#ccd9ff" d="M1399.89,-156C1399.89,-150 1405.89,-144 1411.89,-144"/>
-<polyline fill="none" stroke="#ccd9ff" points="1411.89,-144 1460.11,-144 "/>
-<path fill="none" stroke="#ccd9ff" d="M1460.11,-144C1466.11,-144 1472.11,-150 1472.11,-156"/>
-<polyline fill="none" stroke="#ccd9ff" points="1472.11,-156 1472.11,-168 "/>
-<path fill="none" stroke="#ccd9ff" d="M1472.11,-168C1472.11,-174 1466.11,-180 1460.11,-180"/>
-<text text-anchor="middle" x="1436" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Neighbor</text>
-</g>
-<!-- _And__Unspecified_QueryCopy -->
-<g id="node28" class="node"><title>_And__Unspecified_QueryCopy</title>
-<polygon fill="#ccd9ff" stroke="#ccd9ff" points="1451,-108 1421,-108 1409,-96 1409,-84 1421,-72 1451,-72 1463,-84 1463,-96 1451,-108"/>
-<path fill="#ccd9ff" stroke="#ccd9ff" d="M1421,-108C1415,-108 1409,-102 1409,-96"/>
-<path fill="#ccd9ff" stroke="#ccd9ff" d="M1409,-84C1409,-78 1415,-72 1421,-72"/>
-<path fill="#ccd9ff" stroke="#ccd9ff" d="M1451,-72C1457,-72 1463,-78 1463,-84"/>
-<path fill="#ccd9ff" stroke="#ccd9ff" d="M1463,-96C1463,-102 1457,-108 1451,-108"/>
-<polyline fill="none" stroke="#ccd9ff" points="1451,-108 1421,-108 "/>
-<path fill="none" stroke="#ccd9ff" d="M1421,-108C1415,-108 1409,-102 1409,-96"/>
-<polyline fill="none" stroke="#ccd9ff" points="1409,-96 1409,-84 "/>
-<path fill="none" stroke="#ccd9ff" d="M1409,-84C1409,-78 1415,-72 1421,-72"/>
-<polyline fill="none" stroke="#ccd9ff" points="1421,-72 1451,-72 "/>
-<path fill="none" stroke="#ccd9ff" d="M1451,-72C1457,-72 1463,-78 1463,-84"/>
-<polyline fill="none" stroke="#ccd9ff" points="1463,-84 1463,-96 "/>
-<path fill="none" stroke="#ccd9ff" d="M1463,-96C1463,-102 1457,-108 1451,-108"/>
-<text text-anchor="middle" x="1436" y="-84.4" font-family="Helvetica,sans-Serif" font-size="14.00">And</text>
-</g>
-<!-- neighborQueryCopy&#45;&gt;_And__Unspecified_QueryCopy -->
-<g id="edge16" class="edge"><title>neighborQueryCopy&#45;&gt;_And__Unspecified_QueryCopy</title>
-<path fill="none" stroke="#1444cc" stroke-width="3" d="M1436,-143.697C1436,-138.95 1436,-133.613 1436,-128.206"/>
-<polygon fill="#1444cc" stroke="#1444cc" points="1443,-128.104 1436,-108.104 1429,-128.104 1443,-128.104"/>
-</g>
-<!-- _And__Unspecified_QueryCopy&#45;&gt;moveLearnerCopyCopyCopy -->
-<g id="edge30" class="edge"><title>_And__Unspecified_QueryCopy&#45;&gt;moveLearnerCopyCopyCopy</title>
-<path fill="none" stroke="#1444cc" stroke-width="3" d="M1456.27,-71.6966C1464.21,-64.9152 1473.57,-56.9309 1482.56,-49.2566"/>
-<polygon fill="#1444cc" stroke="#1444cc" points="1487.3,-54.4136 1497.96,-36.1043 1478.21,-43.7657 1487.3,-54.4136"/>
-</g>
-<!-- _And_NeighborQueryCopyCopy -->
-<g id="node29" class="node"><title>_And_NeighborQueryCopyCopy</title>
-<polygon fill="#ccf7ff" stroke="#ccf7ff" points="184,-108 154,-108 142,-96 142,-84 154,-72 184,-72 196,-84 196,-96 184,-108"/>
-<path fill="#ccf7ff" stroke="#ccf7ff" d="M154,-108C148,-108 142,-102 142,-96"/>
-<path fill="#ccf7ff" stroke="#ccf7ff" d="M142,-84C142,-78 148,-72 154,-72"/>
-<path fill="#ccf7ff" stroke="#ccf7ff" d="M184,-72C190,-72 196,-78 196,-84"/>
-<path fill="#ccf7ff" stroke="#ccf7ff" d="M196,-96C196,-102 190,-108 184,-108"/>
-<polyline fill="none" stroke="#ccf7ff" points="184,-108 154,-108 "/>
-<path fill="none" stroke="#ccf7ff" d="M154,-108C148,-108 142,-102 142,-96"/>
-<polyline fill="none" stroke="#ccf7ff" points="142,-96 142,-84 "/>
-<path fill="none" stroke="#ccf7ff" d="M142,-84C142,-78 148,-72 154,-72"/>
-<polyline fill="none" stroke="#ccf7ff" points="154,-72 184,-72 "/>
-<path fill="none" stroke="#ccf7ff" d="M184,-72C190,-72 196,-78 196,-84"/>
-<polyline fill="none" stroke="#ccf7ff" points="196,-84 196,-96 "/>
-<path fill="none" stroke="#ccf7ff" d="M196,-96C196,-102 190,-108 184,-108"/>
-<text text-anchor="middle" x="169" y="-84.4" font-family="Helvetica,sans-Serif" font-size="14.00">And</text>
-</g>
-<!-- _And_NeighborQueryCopyCopy&#45;&gt;moveLearnerCopy -->
-<g id="edge18" class="edge"><title>_And_NeighborQueryCopyCopy&#45;&gt;moveLearnerCopy</title>
-<path fill="none" stroke="#14b1cc" stroke-width="3" d="M189.27,-71.6966C197.214,-64.9152 206.567,-56.9309 215.557,-49.2566"/>
-<polygon fill="#14b1cc" stroke="#14b1cc" points="220.297,-54.4136 230.963,-36.1043 211.207,-43.7657 220.297,-54.4136"/>
-</g>
-<!-- returnedHome -->
-<g id="node53" class="node"><title>returnedHome</title>
-<polygon fill="#cce8ff" stroke="#cce8ff" points="901.121,-252 810.879,-252 798.879,-240 798.879,-228 810.879,-216 901.121,-216 913.121,-228 913.121,-240 901.121,-252"/>
-<path fill="#cce8ff" stroke="#cce8ff" d="M810.879,-252C804.879,-252 798.879,-246 798.879,-240"/>
-<path fill="#cce8ff" stroke="#cce8ff" d="M798.879,-228C798.879,-222 804.879,-216 810.879,-216"/>
-<path fill="#cce8ff" stroke="#cce8ff" d="M901.121,-216C907.121,-216 913.121,-222 913.121,-228"/>
-<path fill="#cce8ff" stroke="#cce8ff" d="M913.121,-240C913.121,-246 907.121,-252 901.121,-252"/>
-<polyline fill="none" stroke="gray" points="901.121,-252 810.879,-252 "/>
-<path fill="none" stroke="gray" d="M810.879,-252C804.879,-252 798.879,-246 798.879,-240"/>
-<polyline fill="none" stroke="gray" points="798.879,-240 798.879,-228 "/>
-<path fill="none" stroke="gray" d="M798.879,-228C798.879,-222 804.879,-216 810.879,-216"/>
-<polyline fill="none" stroke="gray" points="810.879,-216 901.121,-216 "/>
-<path fill="none" stroke="gray" d="M901.121,-216C907.121,-216 913.121,-222 913.121,-228"/>
-<polyline fill="none" stroke="gray" points="913.121,-228 913.121,-240 "/>
-<path fill="none" stroke="gray" d="M913.121,-240C913.121,-246 907.121,-252 901.121,-252"/>
-<text text-anchor="middle" x="856" y="-228.4" font-family="Helvetica,sans-Serif" font-size="14.00">Returned Home</text>
-</g>
-<!-- _BehaviorDifferentAtHomeQueryAndNotWandering_&#45;&gt;returnedHome -->
-<g id="edge90" class="edge"><title>_BehaviorDifferentAtHomeQueryAndNotWandering_&#45;&gt;returnedHome</title>
-<path fill="none" stroke="#14cccc" stroke-width="3" d="M874.82,-287.697C873.004,-282.611 870.946,-276.848 868.874,-271.047"/>
-<polygon fill="#14cccc" stroke="#14cccc" points="875.428,-268.585 862.109,-252.104 862.243,-273.294 875.428,-268.585"/>
-</g>
-<!-- learnerHome -->
-<g id="node58" class="node"><title>learnerHome</title>
-<polygon fill="#cce0ff" stroke="#cce0ff" points="1202.62,-252 1121.38,-252 1109.38,-240 1109.38,-228 1121.38,-216 1202.62,-216 1214.62,-228 1214.62,-240 1202.62,-252"/>
-<path fill="#cce0ff" stroke="#cce0ff" d="M1121.38,-252C1115.38,-252 1109.38,-246 1109.38,-240"/>
-<path fill="#cce0ff" stroke="#cce0ff" d="M1109.38,-228C1109.38,-222 1115.38,-216 1121.38,-216"/>
-<path fill="#cce0ff" stroke="#cce0ff" d="M1202.62,-216C1208.62,-216 1214.62,-222 1214.62,-228"/>
-<path fill="#cce0ff" stroke="#cce0ff" d="M1214.62,-240C1214.62,-246 1208.62,-252 1202.62,-252"/>
-<polyline fill="none" stroke="gray" points="1202.62,-252 1121.38,-252 "/>
-<path fill="none" stroke="gray" d="M1121.38,-252C1115.38,-252 1109.38,-246 1109.38,-240"/>
-<polyline fill="none" stroke="gray" points="1109.38,-240 1109.38,-228 "/>
-<path fill="none" stroke="gray" d="M1109.38,-228C1109.38,-222 1115.38,-216 1121.38,-216"/>
-<polyline fill="none" stroke="gray" points="1121.38,-216 1202.62,-216 "/>
-<path fill="none" stroke="gray" d="M1202.62,-216C1208.62,-216 1214.62,-222 1214.62,-228"/>
-<polyline fill="none" stroke="gray" points="1214.62,-228 1214.62,-240 "/>
-<path fill="none" stroke="gray" d="M1214.62,-240C1214.62,-246 1208.62,-252 1202.62,-252"/>
-<text text-anchor="middle" x="1162" y="-228.4" font-family="Helvetica,sans-Serif" font-size="14.00">Learner Home</text>
-</g>
-<!-- _BehaviorDifferentAtHomeQueryAndNotWandering_&#45;&gt;learnerHome -->
-<g id="edge92" class="edge"><title>_BehaviorDifferentAtHomeQueryAndNotWandering_&#45;&gt;learnerHome</title>
-<path fill="none" stroke="#14cccc" stroke-width="3" d="M908.117,-298.149C920.565,-295.022 935.523,-291.291 949,-288 1009.87,-273.136 1029.6,-269.702 1089.97,-254.496"/>
-<polygon fill="#14cccc" stroke="#14cccc" points="1091.95,-261.215 1109.6,-249.5 1088.49,-247.647 1091.95,-261.215"/>
-</g>
-<!-- availableQueryCopyCopy -->
-<g id="node34" class="node"><title>availableQueryCopyCopy</title>
-<polygon fill="#ccd9ff" stroke="#ccd9ff" points="1368.93,-180 1321.07,-180 1309.07,-168 1309.07,-156 1321.07,-144 1368.93,-144 1380.93,-156 1380.93,-168 1368.93,-180"/>
-<path fill="#ccd9ff" stroke="#ccd9ff" d="M1321.07,-180C1315.07,-180 1309.07,-174 1309.07,-168"/>
-<path fill="#ccd9ff" stroke="#ccd9ff" d="M1309.07,-156C1309.07,-150 1315.07,-144 1321.07,-144"/>
-<path fill="#ccd9ff" stroke="#ccd9ff" d="M1368.93,-144C1374.93,-144 1380.93,-150 1380.93,-156"/>
-<path fill="#ccd9ff" stroke="#ccd9ff" d="M1380.93,-168C1380.93,-174 1374.93,-180 1368.93,-180"/>
-<polyline fill="none" stroke="#ccd9ff" points="1368.93,-180 1321.07,-180 "/>
-<path fill="none" stroke="#ccd9ff" d="M1321.07,-180C1315.07,-180 1309.07,-174 1309.07,-168"/>
-<polyline fill="none" stroke="#ccd9ff" points="1309.07,-168 1309.07,-156 "/>
-<path fill="none" stroke="#ccd9ff" d="M1309.07,-156C1309.07,-150 1315.07,-144 1321.07,-144"/>
-<polyline fill="none" stroke="#ccd9ff" points="1321.07,-144 1368.93,-144 "/>
-<path fill="none" stroke="#ccd9ff" d="M1368.93,-144C1374.93,-144 1380.93,-150 1380.93,-156"/>
-<polyline fill="none" stroke="#ccd9ff" points="1380.93,-156 1380.93,-168 "/>
-<path fill="none" stroke="#ccd9ff" d="M1380.93,-168C1380.93,-174 1374.93,-180 1368.93,-180"/>
-<text text-anchor="middle" x="1345" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Available</text>
-</g>
-<!-- availableQueryCopyCopy&#45;&gt;_And__Unspecified_QueryCopy -->
-<g id="edge22" class="edge"><title>availableQueryCopyCopy&#45;&gt;_And__Unspecified_QueryCopy</title>
-<path fill="none" stroke="#1444cc" stroke-width="3" d="M1367.49,-143.697C1376.64,-136.661 1387.47,-128.33 1397.79,-120.395"/>
-<polygon fill="#1444cc" stroke="#1444cc" points="1402.18,-125.847 1413.76,-108.104 1393.64,-114.75 1402.18,-125.847"/>
-</g>
-<!-- _TowardQueryAndAvailableQueryCopy_ -->
-<g id="node38" class="node"><title>_TowardQueryAndAvailableQueryCopy_</title>
-<polygon fill="#cce0ff" stroke="#cce0ff" points="1158,-108 1128,-108 1116,-96 1116,-84 1128,-72 1158,-72 1170,-84 1170,-96 1158,-108"/>
-<path fill="#cce0ff" stroke="#cce0ff" d="M1128,-108C1122,-108 1116,-102 1116,-96"/>
-<path fill="#cce0ff" stroke="#cce0ff" d="M1116,-84C1116,-78 1122,-72 1128,-72"/>
-<path fill="#cce0ff" stroke="#cce0ff" d="M1158,-72C1164,-72 1170,-78 1170,-84"/>
-<path fill="#cce0ff" stroke="#cce0ff" d="M1170,-96C1170,-102 1164,-108 1158,-108"/>
-<polyline fill="none" stroke="#cce0ff" points="1158,-108 1128,-108 "/>
-<path fill="none" stroke="#cce0ff" d="M1128,-108C1122,-108 1116,-102 1116,-96"/>
-<polyline fill="none" stroke="#cce0ff" points="1116,-96 1116,-84 "/>
-<path fill="none" stroke="#cce0ff" d="M1116,-84C1116,-78 1122,-72 1128,-72"/>
-<polyline fill="none" stroke="#cce0ff" points="1128,-72 1158,-72 "/>
-<path fill="none" stroke="#cce0ff" d="M1158,-72C1164,-72 1170,-78 1170,-84"/>
-<polyline fill="none" stroke="#cce0ff" points="1170,-84 1170,-96 "/>
-<path fill="none" stroke="#cce0ff" d="M1170,-96C1170,-102 1164,-108 1158,-108"/>
-<text text-anchor="middle" x="1143" y="-84.4" font-family="Helvetica,sans-Serif" font-size="14.00">And</text>
-</g>
-<!-- homeIDIdenticalHomeIDQuery&#45;&gt;_TowardQueryAndAvailableQueryCopy_ -->
-<g id="edge24" class="edge"><title>homeIDIdenticalHomeIDQuery&#45;&gt;_TowardQueryAndAvailableQueryCopy_</title>
-<path fill="none" stroke="#145ecc" stroke-width="3" d="M1043.29,-143.876C1059.83,-135.104 1080.23,-124.285 1098.27,-114.723"/>
-<polygon fill="#145ecc" stroke="#145ecc" points="1101.55,-120.906 1115.94,-105.352 1094.99,-108.538 1101.55,-120.906"/>
-</g>
-<!-- _TowardQueryAndAvailableQueryCopy_&#45;&gt;moveHome -->
-<g id="edge98" class="edge"><title>_TowardQueryAndAvailableQueryCopy_&#45;&gt;moveHome</title>
-<path fill="none" stroke="#145ecc" stroke-width="3" d="M1170.07,-72.9406C1183.77,-64.8173 1200.74,-54.7461 1216.31,-45.5134"/>
-<polygon fill="#145ecc" stroke="#145ecc" points="1220.02,-51.4516 1233.65,-35.2271 1212.87,-39.4108 1220.02,-51.4516"/>
-</g>
-<!-- nearestQueryCopy -->
-<g id="node39" class="node"><title>nearestQueryCopy</title>
-<polygon fill="#ccf0ff" stroke="#ccf0ff" points="555.183,-180 510.817,-180 498.817,-168 498.817,-156 510.817,-144 555.183,-144 567.183,-156 567.183,-168 555.183,-180"/>
-<path fill="#ccf0ff" stroke="#ccf0ff" d="M510.817,-180C504.817,-180 498.817,-174 498.817,-168"/>
-<path fill="#ccf0ff" stroke="#ccf0ff" d="M498.817,-156C498.817,-150 504.817,-144 510.817,-144"/>
-<path fill="#ccf0ff" stroke="#ccf0ff" d="M555.183,-144C561.183,-144 567.183,-150 567.183,-156"/>
-<path fill="#ccf0ff" stroke="#ccf0ff" d="M567.183,-168C567.183,-174 561.183,-180 555.183,-180"/>
-<polyline fill="none" stroke="#ccf0ff" points="555.183,-180 510.817,-180 "/>
-<path fill="none" stroke="#ccf0ff" d="M510.817,-180C504.817,-180 498.817,-174 498.817,-168"/>
-<polyline fill="none" stroke="#ccf0ff" points="498.817,-168 498.817,-156 "/>
-<path fill="none" stroke="#ccf0ff" d="M498.817,-156C498.817,-150 504.817,-144 510.817,-144"/>
-<polyline fill="none" stroke="#ccf0ff" points="510.817,-144 555.183,-144 "/>
-<path fill="none" stroke="#ccf0ff" d="M555.183,-144C561.183,-144 567.183,-150 567.183,-156"/>
-<polyline fill="none" stroke="#ccf0ff" points="567.183,-156 567.183,-168 "/>
-<path fill="none" stroke="#ccf0ff" d="M567.183,-168C567.183,-174 561.183,-180 555.183,-180"/>
-<text text-anchor="middle" x="533" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Nearest </text>
-</g>
-<!-- _SoughtResourceAndTowardQueryCopy_ -->
-<g id="node41" class="node"><title>_SoughtResourceAndTowardQueryCopy_</title>
-<polygon fill="#ccf0ff" stroke="#ccf0ff" points="590,-108 560,-108 548,-96 548,-84 560,-72 590,-72 602,-84 602,-96 590,-108"/>
-<path fill="#ccf0ff" stroke="#ccf0ff" d="M560,-108C554,-108 548,-102 548,-96"/>
-<path fill="#ccf0ff" stroke="#ccf0ff" d="M548,-84C548,-78 554,-72 560,-72"/>
-<path fill="#ccf0ff" stroke="#ccf0ff" d="M590,-72C596,-72 602,-78 602,-84"/>
-<path fill="#ccf0ff" stroke="#ccf0ff" d="M602,-96C602,-102 596,-108 590,-108"/>
-<polyline fill="none" stroke="#ccf0ff" points="590,-108 560,-108 "/>
-<path fill="none" stroke="#ccf0ff" d="M560,-108C554,-108 548,-102 548,-96"/>
-<polyline fill="none" stroke="#ccf0ff" points="548,-96 548,-84 "/>
-<path fill="none" stroke="#ccf0ff" d="M548,-84C548,-78 554,-72 560,-72"/>
-<polyline fill="none" stroke="#ccf0ff" points="560,-72 590,-72 "/>
-<path fill="none" stroke="#ccf0ff" d="M590,-72C596,-72 602,-78 602,-84"/>
-<polyline fill="none" stroke="#ccf0ff" points="602,-84 602,-96 "/>
-<path fill="none" stroke="#ccf0ff" d="M602,-96C602,-102 596,-108 590,-108"/>
-<text text-anchor="middle" x="575" y="-84.4" font-family="Helvetica,sans-Serif" font-size="14.00">And</text>
-</g>
-<!-- nearestQueryCopy&#45;&gt;_SoughtResourceAndTowardQueryCopy_ -->
-<g id="edge26" class="edge"><title>nearestQueryCopy&#45;&gt;_SoughtResourceAndTowardQueryCopy_</title>
-<path fill="none" stroke="#1496cc" stroke-width="3" d="M543.382,-143.697C546.739,-138.102 550.587,-131.689 554.416,-125.306"/>
-<polygon fill="#1496cc" stroke="#1496cc" points="560.45,-128.856 564.737,-108.104 548.445,-121.653 560.45,-128.856"/>
-</g>
-<!-- _SoughtResourceAndTowardQueryCopy_&#45;&gt;moveLearnerCopyCopy -->
-<g id="edge84" class="edge"><title>_SoughtResourceAndTowardQueryCopy_&#45;&gt;moveLearnerCopyCopy</title>
-<path fill="none" stroke="#1496cc" stroke-width="3" d="M595.27,-71.6966C603.214,-64.9152 612.567,-56.9309 621.557,-49.2566"/>
-<polygon fill="#1496cc" stroke="#1496cc" points="626.297,-54.4136 636.963,-36.1043 617.207,-43.7657 626.297,-54.4136"/>
-</g>
-<!-- towardQueryCopy -->
-<g id="node42" class="node"><title>towardQueryCopy</title>
-<polygon fill="#ccf0ff" stroke="#ccf0ff" points="634.348,-180 597.652,-180 585.652,-168 585.652,-156 597.652,-144 634.348,-144 646.348,-156 646.348,-168 634.348,-180"/>
-<path fill="#ccf0ff" stroke="#ccf0ff" d="M597.652,-180C591.652,-180 585.652,-174 585.652,-168"/>
-<path fill="#ccf0ff" stroke="#ccf0ff" d="M585.652,-156C585.652,-150 591.652,-144 597.652,-144"/>
-<path fill="#ccf0ff" stroke="#ccf0ff" d="M634.348,-144C640.348,-144 646.348,-150 646.348,-156"/>
-<path fill="#ccf0ff" stroke="#ccf0ff" d="M646.348,-168C646.348,-174 640.348,-180 634.348,-180"/>
-<polyline fill="none" stroke="#ccf0ff" points="634.348,-180 597.652,-180 "/>
-<path fill="none" stroke="#ccf0ff" d="M597.652,-180C591.652,-180 585.652,-174 585.652,-168"/>
-<polyline fill="none" stroke="#ccf0ff" points="585.652,-168 585.652,-156 "/>
-<path fill="none" stroke="#ccf0ff" d="M585.652,-156C585.652,-150 591.652,-144 597.652,-144"/>
-<polyline fill="none" stroke="#ccf0ff" points="597.652,-144 634.348,-144 "/>
-<path fill="none" stroke="#ccf0ff" d="M634.348,-144C640.348,-144 646.348,-150 646.348,-156"/>
-<polyline fill="none" stroke="#ccf0ff" points="646.348,-156 646.348,-168 "/>
-<path fill="none" stroke="#ccf0ff" d="M646.348,-168C646.348,-174 640.348,-180 634.348,-180"/>
-<text text-anchor="middle" x="616" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Toward</text>
-</g>
-<!-- towardQueryCopy&#45;&gt;_SoughtResourceAndTowardQueryCopy_ -->
-<g id="edge28" class="edge"><title>towardQueryCopy&#45;&gt;_SoughtResourceAndTowardQueryCopy_</title>
-<path fill="none" stroke="#1496cc" stroke-width="3" d="M605.865,-143.697C602.638,-138.187 598.946,-131.883 595.263,-125.596"/>
-<polygon fill="#1496cc" stroke="#1496cc" points="601.167,-121.824 585.018,-108.104 589.086,-128.9 601.167,-121.824"/>
-</g>
 <!-- randomNeighboringLocation -->
-<g id="node47" class="node"><title>randomNeighboringLocation</title>
+<g id="node26" class="node"><title>randomNeighboringLocation</title>
 <polygon fill="#ccf7ff" stroke="#ccf7ff" points="192.342,-252 11.6578,-252 -0.342154,-240 -0.342154,-228 11.6578,-216 192.342,-216 204.342,-228 204.342,-240 192.342,-252"/>
 <path fill="#ccf7ff" stroke="#ccf7ff" d="M11.6578,-252C5.65785,-252 -0.342154,-246 -0.342154,-240"/>
 <path fill="#ccf7ff" stroke="#ccf7ff" d="M-0.342154,-228C-0.342154,-222 5.65785,-216 11.6578,-216"/>
@@ -740,202 +515,89 @@
 <path fill="none" stroke="gray" d="M204.342,-240C204.342,-246 198.342,-252 192.342,-252"/>
 <text text-anchor="middle" x="102" y="-228.4" font-family="Helvetica,sans-Serif" font-size="14.00">Random Neighboring Location</text>
 </g>
-<!-- randomNeighboringLocation&#45;&gt;moveLearnerCopy -->
-<g id="edge34" class="edge"><title>randomNeighboringLocation&#45;&gt;moveLearnerCopy:ne</title>
-<path fill="none" stroke="#14b1cc" stroke-width="3" stroke-dasharray="5,2" d="M158.935,-215.896C178.491,-207.672 199.168,-196.023 214,-180 255.358,-135.322 304.902,-94.5874 281.422,-52.073"/>
-<polygon fill="#14b1cc" stroke="#14b1cc" points="286.769,-47.5442 269,-36 275.691,-56.1054 286.769,-47.5442"/>
-</g>
 <!-- neighborQueryCopyCopy -->
-<g id="node67" class="node"><title>neighborQueryCopyCopy</title>
-<polygon fill="#ccf7ff" stroke="#ccf7ff" points="193.111,-180 144.889,-180 132.889,-168 132.889,-156 144.889,-144 193.111,-144 205.111,-156 205.111,-168 193.111,-180"/>
-<path fill="#ccf7ff" stroke="#ccf7ff" d="M144.889,-180C138.889,-180 132.889,-174 132.889,-168"/>
-<path fill="#ccf7ff" stroke="#ccf7ff" d="M132.889,-156C132.889,-150 138.889,-144 144.889,-144"/>
-<path fill="#ccf7ff" stroke="#ccf7ff" d="M193.111,-144C199.111,-144 205.111,-150 205.111,-156"/>
-<path fill="#ccf7ff" stroke="#ccf7ff" d="M205.111,-168C205.111,-174 199.111,-180 193.111,-180"/>
-<polyline fill="none" stroke="#ccf7ff" points="193.111,-180 144.889,-180 "/>
-<path fill="none" stroke="#ccf7ff" d="M144.889,-180C138.889,-180 132.889,-174 132.889,-168"/>
-<polyline fill="none" stroke="#ccf7ff" points="132.889,-168 132.889,-156 "/>
-<path fill="none" stroke="#ccf7ff" d="M132.889,-156C132.889,-150 138.889,-144 144.889,-144"/>
-<polyline fill="none" stroke="#ccf7ff" points="144.889,-144 193.111,-144 "/>
-<path fill="none" stroke="#ccf7ff" d="M193.111,-144C199.111,-144 205.111,-150 205.111,-156"/>
-<polyline fill="none" stroke="#ccf7ff" points="205.111,-156 205.111,-168 "/>
-<path fill="none" stroke="#ccf7ff" d="M205.111,-168C205.111,-174 199.111,-180 193.111,-180"/>
-<text text-anchor="middle" x="169" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Neighbor</text>
+<g id="node28" class="node"><title>neighborQueryCopyCopy</title>
+<polygon fill="#ccf7ff" stroke="#ccf7ff" points="102.111,-180 53.8891,-180 41.8891,-168 41.8891,-156 53.8891,-144 102.111,-144 114.111,-156 114.111,-168 102.111,-180"/>
+<path fill="#ccf7ff" stroke="#ccf7ff" d="M53.8891,-180C47.8891,-180 41.8891,-174 41.8891,-168"/>
+<path fill="#ccf7ff" stroke="#ccf7ff" d="M41.8891,-156C41.8891,-150 47.8891,-144 53.8891,-144"/>
+<path fill="#ccf7ff" stroke="#ccf7ff" d="M102.111,-144C108.111,-144 114.111,-150 114.111,-156"/>
+<path fill="#ccf7ff" stroke="#ccf7ff" d="M114.111,-168C114.111,-174 108.111,-180 102.111,-180"/>
+<polyline fill="none" stroke="#ccf7ff" points="102.111,-180 53.8891,-180 "/>
+<path fill="none" stroke="#ccf7ff" d="M53.8891,-180C47.8891,-180 41.8891,-174 41.8891,-168"/>
+<polyline fill="none" stroke="#ccf7ff" points="41.8891,-168 41.8891,-156 "/>
+<path fill="none" stroke="#ccf7ff" d="M41.8891,-156C41.8891,-150 47.8891,-144 53.8891,-144"/>
+<polyline fill="none" stroke="#ccf7ff" points="53.8891,-144 102.111,-144 "/>
+<path fill="none" stroke="#ccf7ff" d="M102.111,-144C108.111,-144 114.111,-150 114.111,-156"/>
+<polyline fill="none" stroke="#ccf7ff" points="114.111,-156 114.111,-168 "/>
+<path fill="none" stroke="#ccf7ff" d="M114.111,-168C114.111,-174 108.111,-180 102.111,-180"/>
+<text text-anchor="middle" x="78" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Neighbor</text>
 </g>
 <!-- randomNeighboringLocation&#45;&gt;neighborQueryCopyCopy -->
-<g id="edge94" class="edge"><title>randomNeighboringLocation&#45;&gt;neighborQueryCopyCopy</title>
-<path fill="none" stroke="#14b1cc" stroke-width="3" d="M118.562,-215.697C124.647,-209.339 131.744,-201.924 138.66,-194.699"/>
-<polygon fill="#14b1cc" stroke="#14b1cc" points="143.856,-199.393 152.629,-180.104 133.743,-189.713 143.856,-199.393"/>
-</g>
-<!-- availableQueryCopy -->
-<g id="node86" class="node"><title>availableQueryCopy</title>
-<polygon fill="#ccf7ff" stroke="#ccf7ff" points="101.928,-180 54.0723,-180 42.0723,-168 42.0723,-156 54.0723,-144 101.928,-144 113.928,-156 113.928,-168 101.928,-180"/>
-<path fill="#ccf7ff" stroke="#ccf7ff" d="M54.0723,-180C48.0723,-180 42.0723,-174 42.0723,-168"/>
-<path fill="#ccf7ff" stroke="#ccf7ff" d="M42.0723,-156C42.0723,-150 48.0723,-144 54.0723,-144"/>
-<path fill="#ccf7ff" stroke="#ccf7ff" d="M101.928,-144C107.928,-144 113.928,-150 113.928,-156"/>
-<path fill="#ccf7ff" stroke="#ccf7ff" d="M113.928,-168C113.928,-174 107.928,-180 101.928,-180"/>
-<polyline fill="none" stroke="#ccf7ff" points="101.928,-180 54.0723,-180 "/>
-<path fill="none" stroke="#ccf7ff" d="M54.0723,-180C48.0723,-180 42.0723,-174 42.0723,-168"/>
-<polyline fill="none" stroke="#ccf7ff" points="42.0723,-168 42.0723,-156 "/>
-<path fill="none" stroke="#ccf7ff" d="M42.0723,-156C42.0723,-150 48.0723,-144 54.0723,-144"/>
-<polyline fill="none" stroke="#ccf7ff" points="54.0723,-144 101.928,-144 "/>
-<path fill="none" stroke="#ccf7ff" d="M101.928,-144C107.928,-144 113.928,-150 113.928,-156"/>
-<polyline fill="none" stroke="#ccf7ff" points="113.928,-156 113.928,-168 "/>
-<path fill="none" stroke="#ccf7ff" d="M113.928,-168C113.928,-174 107.928,-180 101.928,-180"/>
-<text text-anchor="middle" x="78" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Available</text>
-</g>
-<!-- randomNeighboringLocation&#45;&gt;availableQueryCopy -->
-<g id="edge96" class="edge"><title>randomNeighboringLocation&#45;&gt;availableQueryCopy</title>
+<g id="edge16" class="edge"><title>randomNeighboringLocation&#45;&gt;neighborQueryCopyCopy</title>
 <path fill="none" stroke="#14b1cc" stroke-width="3" d="M96.0674,-215.697C94.3236,-210.611 92.3478,-204.848 90.3589,-199.047"/>
 <polygon fill="#14b1cc" stroke="#14b1cc" points="96.9725,-196.753 83.8643,-180.104 83.7293,-201.294 96.9725,-196.753"/>
 </g>
-<!-- _HomeIDIdenticalHomeIDQueryCopyAndNeighborQuery_ -->
-<g id="node49" class="node"><title>_HomeIDIdenticalHomeIDQueryCopyAndNeighborQuery_</title>
-<polygon fill="#cce8ff" stroke="#cce8ff" points="840,-108 810,-108 798,-96 798,-84 810,-72 840,-72 852,-84 852,-96 840,-108"/>
-<path fill="#cce8ff" stroke="#cce8ff" d="M810,-108C804,-108 798,-102 798,-96"/>
-<path fill="#cce8ff" stroke="#cce8ff" d="M798,-84C798,-78 804,-72 810,-72"/>
-<path fill="#cce8ff" stroke="#cce8ff" d="M840,-72C846,-72 852,-78 852,-84"/>
-<path fill="#cce8ff" stroke="#cce8ff" d="M852,-96C852,-102 846,-108 840,-108"/>
-<polyline fill="none" stroke="#cce8ff" points="840,-108 810,-108 "/>
-<path fill="none" stroke="#cce8ff" d="M810,-108C804,-108 798,-102 798,-96"/>
-<polyline fill="none" stroke="#cce8ff" points="798,-96 798,-84 "/>
-<path fill="none" stroke="#cce8ff" d="M798,-84C798,-78 804,-72 810,-72"/>
-<polyline fill="none" stroke="#cce8ff" points="810,-72 840,-72 "/>
-<path fill="none" stroke="#cce8ff" d="M840,-72C846,-72 852,-78 852,-84"/>
-<polyline fill="none" stroke="#cce8ff" points="852,-84 852,-96 "/>
-<path fill="none" stroke="#cce8ff" d="M852,-96C852,-102 846,-108 840,-108"/>
-<text text-anchor="middle" x="825" y="-84.4" font-family="Helvetica,sans-Serif" font-size="14.00">And</text>
+<!-- availableQueryCopy -->
+<g id="node30" class="node"><title>availableQueryCopy</title>
+<polygon fill="#ccf7ff" stroke="#ccf7ff" points="192.928,-180 145.072,-180 133.072,-168 133.072,-156 145.072,-144 192.928,-144 204.928,-156 204.928,-168 192.928,-180"/>
+<path fill="#ccf7ff" stroke="#ccf7ff" d="M145.072,-180C139.072,-180 133.072,-174 133.072,-168"/>
+<path fill="#ccf7ff" stroke="#ccf7ff" d="M133.072,-156C133.072,-150 139.072,-144 145.072,-144"/>
+<path fill="#ccf7ff" stroke="#ccf7ff" d="M192.928,-144C198.928,-144 204.928,-150 204.928,-156"/>
+<path fill="#ccf7ff" stroke="#ccf7ff" d="M204.928,-168C204.928,-174 198.928,-180 192.928,-180"/>
+<polyline fill="none" stroke="#ccf7ff" points="192.928,-180 145.072,-180 "/>
+<path fill="none" stroke="#ccf7ff" d="M145.072,-180C139.072,-180 133.072,-174 133.072,-168"/>
+<polyline fill="none" stroke="#ccf7ff" points="133.072,-168 133.072,-156 "/>
+<path fill="none" stroke="#ccf7ff" d="M133.072,-156C133.072,-150 139.072,-144 145.072,-144"/>
+<polyline fill="none" stroke="#ccf7ff" points="145.072,-144 192.928,-144 "/>
+<path fill="none" stroke="#ccf7ff" d="M192.928,-144C198.928,-144 204.928,-150 204.928,-156"/>
+<polyline fill="none" stroke="#ccf7ff" points="204.928,-156 204.928,-168 "/>
+<path fill="none" stroke="#ccf7ff" d="M204.928,-168C204.928,-174 198.928,-180 192.928,-180"/>
+<text text-anchor="middle" x="169" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Available</text>
 </g>
-<!-- _HomeIDIdenticalHomeIDQueryCopyAndNeighborQuery_&#45;&gt;learnerbehaviorRecord -->
-<g id="edge36" class="edge"><title>_HomeIDIdenticalHomeIDQueryCopyAndNeighborQuery_&#45;&gt;learnerbehaviorRecord:learnerbehavioratHome</title>
-<path fill="none" stroke="#14cccc" stroke-width="3" d="M805.689,-108.237C796.295,-117.794 785.803,-130.465 780,-144 741.959,-232.732 762.118,-263.593 757,-360 756.152,-375.977 749.277,-381.987 757,-396 766.717,-413.631 789.108,-410.295 802.755,-415.296"/>
-<polygon fill="#14cccc" stroke="#14cccc" points="797.024,-419.318 814,-432 808.638,-411.5 797.024,-419.318"/>
+<!-- randomNeighboringLocation&#45;&gt;availableQueryCopy -->
+<g id="edge18" class="edge"><title>randomNeighboringLocation&#45;&gt;availableQueryCopy</title>
+<path fill="none" stroke="#14b1cc" stroke-width="3" d="M118.562,-215.697C124.647,-209.339 131.744,-201.924 138.66,-194.699"/>
+<polygon fill="#14b1cc" stroke="#14b1cc" points="143.856,-199.393 152.629,-180.104 133.743,-189.713 143.856,-199.393"/>
 </g>
-<!-- learnerCopy -->
-<g id="node77" class="node"><title>learnerCopy</title>
-<polygon fill="#ccd9ff" stroke="#ccd9ff" points="1422.12,-252 1345.88,-252 1333.88,-240 1333.88,-228 1345.88,-216 1422.12,-216 1434.12,-228 1434.12,-240 1422.12,-252"/>
-<path fill="#ccd9ff" stroke="#ccd9ff" d="M1345.88,-252C1339.88,-252 1333.88,-246 1333.88,-240"/>
-<path fill="#ccd9ff" stroke="#ccd9ff" d="M1333.88,-228C1333.88,-222 1339.88,-216 1345.88,-216"/>
-<path fill="#ccd9ff" stroke="#ccd9ff" d="M1422.12,-216C1428.12,-216 1434.12,-222 1434.12,-228"/>
-<path fill="#ccd9ff" stroke="#ccd9ff" d="M1434.12,-240C1434.12,-246 1428.12,-252 1422.12,-252"/>
-<polyline fill="none" stroke="gray" points="1422.12,-252 1345.88,-252 "/>
-<path fill="none" stroke="gray" d="M1345.88,-252C1339.88,-252 1333.88,-246 1333.88,-240"/>
-<polyline fill="none" stroke="gray" points="1333.88,-240 1333.88,-228 "/>
-<path fill="none" stroke="gray" d="M1333.88,-228C1333.88,-222 1339.88,-216 1345.88,-216"/>
-<polyline fill="none" stroke="gray" points="1345.88,-216 1422.12,-216 "/>
-<path fill="none" stroke="gray" d="M1422.12,-216C1428.12,-216 1434.12,-222 1434.12,-228"/>
-<polyline fill="none" stroke="gray" points="1434.12,-228 1434.12,-240 "/>
-<path fill="none" stroke="gray" d="M1434.12,-240C1434.12,-246 1428.12,-252 1422.12,-252"/>
-<text text-anchor="middle" x="1384" y="-228.4" font-family="Helvetica,sans-Serif" font-size="14.00">Learner Copy</text>
+<!-- randomNeighboringLocation&#45;&gt;moveLearnerCopy -->
+<g id="edge84" class="edge"><title>randomNeighboringLocation&#45;&gt;moveLearnerCopy:ne</title>
+<path fill="none" stroke="#14b1cc" stroke-width="3" stroke-dasharray="5,2" d="M158.935,-215.896C178.491,-207.672 199.168,-196.023 214,-180 255.358,-135.322 304.902,-94.5874 281.422,-52.073"/>
+<polygon fill="#14b1cc" stroke="#14b1cc" points="286.769,-47.5442 269,-36 275.691,-56.1054 286.769,-47.5442"/>
 </g>
-<!-- _And_BehaviorDifferentAtHomeQueryCopy&#45;&gt;learnerCopy -->
-<g id="edge64" class="edge"><title>_And_BehaviorDifferentAtHomeQueryCopy&#45;&gt;learnerCopy</title>
-<path fill="none" stroke="#14cccc" stroke-width="3" d="M1012.11,-300.244C1073.46,-289.481 1224.53,-262.977 1314.12,-247.26"/>
-<polygon fill="#14cccc" stroke="#14cccc" points="1315.37,-254.147 1333.86,-243.796 1312.95,-240.358 1315.37,-254.147"/>
+<!-- _And_NeighborQueryCopyCopy -->
+<g id="node31" class="node"><title>_And_NeighborQueryCopyCopy</title>
+<polygon fill="#ccf7ff" stroke="#ccf7ff" points="184,-108 154,-108 142,-96 142,-84 154,-72 184,-72 196,-84 196,-96 184,-108"/>
+<path fill="#ccf7ff" stroke="#ccf7ff" d="M154,-108C148,-108 142,-102 142,-96"/>
+<path fill="#ccf7ff" stroke="#ccf7ff" d="M142,-84C142,-78 148,-72 154,-72"/>
+<path fill="#ccf7ff" stroke="#ccf7ff" d="M184,-72C190,-72 196,-78 196,-84"/>
+<path fill="#ccf7ff" stroke="#ccf7ff" d="M196,-96C196,-102 190,-108 184,-108"/>
+<polyline fill="none" stroke="#ccf7ff" points="184,-108 154,-108 "/>
+<path fill="none" stroke="#ccf7ff" d="M154,-108C148,-108 142,-102 142,-96"/>
+<polyline fill="none" stroke="#ccf7ff" points="142,-96 142,-84 "/>
+<path fill="none" stroke="#ccf7ff" d="M142,-84C142,-78 148,-72 154,-72"/>
+<polyline fill="none" stroke="#ccf7ff" points="154,-72 184,-72 "/>
+<path fill="none" stroke="#ccf7ff" d="M184,-72C190,-72 196,-78 196,-84"/>
+<polyline fill="none" stroke="#ccf7ff" points="196,-84 196,-96 "/>
+<path fill="none" stroke="#ccf7ff" d="M196,-96C196,-102 190,-108 184,-108"/>
+<text text-anchor="middle" x="169" y="-84.4" font-family="Helvetica,sans-Serif" font-size="14.00">And</text>
 </g>
-<!-- neighborQuery -->
-<g id="node55" class="node"><title>neighborQuery</title>
-<polygon fill="#cce8ff" stroke="#cce8ff" points="849.111,-180 800.889,-180 788.889,-168 788.889,-156 800.889,-144 849.111,-144 861.111,-156 861.111,-168 849.111,-180"/>
-<path fill="#cce8ff" stroke="#cce8ff" d="M800.889,-180C794.889,-180 788.889,-174 788.889,-168"/>
-<path fill="#cce8ff" stroke="#cce8ff" d="M788.889,-156C788.889,-150 794.889,-144 800.889,-144"/>
-<path fill="#cce8ff" stroke="#cce8ff" d="M849.111,-144C855.111,-144 861.111,-150 861.111,-156"/>
-<path fill="#cce8ff" stroke="#cce8ff" d="M861.111,-168C861.111,-174 855.111,-180 849.111,-180"/>
-<polyline fill="none" stroke="#cce8ff" points="849.111,-180 800.889,-180 "/>
-<path fill="none" stroke="#cce8ff" d="M800.889,-180C794.889,-180 788.889,-174 788.889,-168"/>
-<polyline fill="none" stroke="#cce8ff" points="788.889,-168 788.889,-156 "/>
-<path fill="none" stroke="#cce8ff" d="M788.889,-156C788.889,-150 794.889,-144 800.889,-144"/>
-<polyline fill="none" stroke="#cce8ff" points="800.889,-144 849.111,-144 "/>
-<path fill="none" stroke="#cce8ff" d="M849.111,-144C855.111,-144 861.111,-150 861.111,-156"/>
-<polyline fill="none" stroke="#cce8ff" points="861.111,-156 861.111,-168 "/>
-<path fill="none" stroke="#cce8ff" d="M861.111,-168C861.111,-174 855.111,-180 849.111,-180"/>
-<text text-anchor="middle" x="825" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Neighbor</text>
+<!-- neighborQueryCopyCopy&#45;&gt;_And_NeighborQueryCopyCopy -->
+<g id="edge74" class="edge"><title>neighborQueryCopyCopy&#45;&gt;_And_NeighborQueryCopyCopy</title>
+<path fill="none" stroke="#14b1cc" stroke-width="3" d="M100.494,-143.697C109.641,-136.661 120.471,-128.33 130.787,-120.395"/>
+<polygon fill="#14b1cc" stroke="#14b1cc" points="135.18,-125.847 146.764,-108.104 126.644,-114.75 135.18,-125.847"/>
 </g>
-<!-- returnedHome&#45;&gt;neighborQuery -->
-<g id="edge40" class="edge"><title>returnedHome&#45;&gt;neighborQuery</title>
-<path fill="none" stroke="#147acc" stroke-width="3" d="M848.337,-215.697C846.01,-210.441 843.362,-204.463 840.707,-198.467"/>
-<polygon fill="#147acc" stroke="#147acc" points="847.074,-195.557 832.575,-180.104 834.273,-201.226 847.074,-195.557"/>
+<!-- availableQueryCopy&#45;&gt;_And_NeighborQueryCopyCopy -->
+<g id="edge58" class="edge"><title>availableQueryCopy&#45;&gt;_And_NeighborQueryCopyCopy</title>
+<path fill="none" stroke="#14b1cc" stroke-width="3" d="M169,-143.697C169,-138.95 169,-133.613 169,-128.206"/>
+<polygon fill="#14b1cc" stroke="#14b1cc" points="176,-128.104 169,-108.104 162,-128.104 176,-128.104"/>
 </g>
-<!-- returnedHome&#45;&gt;homeIDIdenticalHomeIDQueryCopy -->
-<g id="edge42" class="edge"><title>returnedHome&#45;&gt;homeIDIdenticalHomeIDQueryCopy</title>
-<path fill="none" stroke="#147acc" stroke-width="3" d="M871.079,-215.697C876.471,-209.509 882.736,-202.319 888.873,-195.277"/>
-<polygon fill="#147acc" stroke="#147acc" points="894.233,-199.781 902.095,-180.104 883.678,-190.584 894.233,-199.781"/>
-</g>
-<!-- neighborQuery&#45;&gt;_HomeIDIdenticalHomeIDQueryCopyAndNeighborQuery_ -->
-<g id="edge106" class="edge"><title>neighborQuery&#45;&gt;_HomeIDIdenticalHomeIDQueryCopyAndNeighborQuery_</title>
-<path fill="none" stroke="#147acc" stroke-width="3" d="M825,-143.697C825,-138.95 825,-133.613 825,-128.206"/>
-<polygon fill="#147acc" stroke="#147acc" points="832,-128.104 825,-108.104 818,-128.104 832,-128.104"/>
-</g>
-<!-- homeIDIdenticalHomeIDQueryCopy&#45;&gt;_HomeIDIdenticalHomeIDQueryCopyAndNeighborQuery_ -->
-<g id="edge58" class="edge"><title>homeIDIdenticalHomeIDQueryCopy&#45;&gt;_HomeIDIdenticalHomeIDQueryCopyAndNeighborQuery_</title>
-<path fill="none" stroke="#147acc" stroke-width="3" d="M894.258,-143.697C885.011,-136.661 874.063,-128.33 863.633,-120.395"/>
-<polygon fill="#147acc" stroke="#147acc" points="867.635,-114.644 847.48,-108.104 859.158,-125.786 867.635,-114.644"/>
-</g>
-<!-- learnerHome&#45;&gt;homeIDIdenticalHomeIDQuery -->
-<g id="edge44" class="edge"><title>learnerHome&#45;&gt;homeIDIdenticalHomeIDQuery</title>
-<path fill="none" stroke="#145ecc" stroke-width="3" d="M1125.06,-215.876C1107.35,-207.668 1085.78,-197.666 1066.18,-188.58"/>
-<polygon fill="#145ecc" stroke="#145ecc" points="1068.91,-182.129 1047.82,-180.068 1063.02,-194.831 1068.91,-182.129"/>
-</g>
-<!-- towardQuery -->
-<g id="node61" class="node"><title>towardQuery</title>
-<polygon fill="#cce0ff" stroke="#cce0ff" points="1202.35,-180 1165.65,-180 1153.65,-168 1153.65,-156 1165.65,-144 1202.35,-144 1214.35,-156 1214.35,-168 1202.35,-180"/>
-<path fill="#cce0ff" stroke="#cce0ff" d="M1165.65,-180C1159.65,-180 1153.65,-174 1153.65,-168"/>
-<path fill="#cce0ff" stroke="#cce0ff" d="M1153.65,-156C1153.65,-150 1159.65,-144 1165.65,-144"/>
-<path fill="#cce0ff" stroke="#cce0ff" d="M1202.35,-144C1208.35,-144 1214.35,-150 1214.35,-156"/>
-<path fill="#cce0ff" stroke="#cce0ff" d="M1214.35,-168C1214.35,-174 1208.35,-180 1202.35,-180"/>
-<polyline fill="none" stroke="#cce0ff" points="1202.35,-180 1165.65,-180 "/>
-<path fill="none" stroke="#cce0ff" d="M1165.65,-180C1159.65,-180 1153.65,-174 1153.65,-168"/>
-<polyline fill="none" stroke="#cce0ff" points="1153.65,-168 1153.65,-156 "/>
-<path fill="none" stroke="#cce0ff" d="M1153.65,-156C1153.65,-150 1159.65,-144 1165.65,-144"/>
-<polyline fill="none" stroke="#cce0ff" points="1165.65,-144 1202.35,-144 "/>
-<path fill="none" stroke="#cce0ff" d="M1202.35,-144C1208.35,-144 1214.35,-150 1214.35,-156"/>
-<polyline fill="none" stroke="#cce0ff" points="1214.35,-156 1214.35,-168 "/>
-<path fill="none" stroke="#cce0ff" d="M1214.35,-168C1214.35,-174 1208.35,-180 1202.35,-180"/>
-<text text-anchor="middle" x="1184" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Toward</text>
-</g>
-<!-- learnerHome&#45;&gt;towardQuery -->
-<g id="edge46" class="edge"><title>learnerHome&#45;&gt;towardQuery</title>
-<path fill="none" stroke="#145ecc" stroke-width="3" d="M1167.44,-215.697C1169.01,-210.695 1170.79,-205.04 1172.58,-199.337"/>
-<polygon fill="#145ecc" stroke="#145ecc" points="1179.31,-201.283 1178.62,-180.104 1165.95,-197.085 1179.31,-201.283"/>
-</g>
-<!-- nearestQueryCopyCopy -->
-<g id="node63" class="node"><title>nearestQueryCopyCopy</title>
-<polygon fill="#cce0ff" stroke="#cce0ff" points="1123.18,-180 1078.82,-180 1066.82,-168 1066.82,-156 1078.82,-144 1123.18,-144 1135.18,-156 1135.18,-168 1123.18,-180"/>
-<path fill="#cce0ff" stroke="#cce0ff" d="M1078.82,-180C1072.82,-180 1066.82,-174 1066.82,-168"/>
-<path fill="#cce0ff" stroke="#cce0ff" d="M1066.82,-156C1066.82,-150 1072.82,-144 1078.82,-144"/>
-<path fill="#cce0ff" stroke="#cce0ff" d="M1123.18,-144C1129.18,-144 1135.18,-150 1135.18,-156"/>
-<path fill="#cce0ff" stroke="#cce0ff" d="M1135.18,-168C1135.18,-174 1129.18,-180 1123.18,-180"/>
-<polyline fill="none" stroke="#cce0ff" points="1123.18,-180 1078.82,-180 "/>
-<path fill="none" stroke="#cce0ff" d="M1078.82,-180C1072.82,-180 1066.82,-174 1066.82,-168"/>
-<polyline fill="none" stroke="#cce0ff" points="1066.82,-168 1066.82,-156 "/>
-<path fill="none" stroke="#cce0ff" d="M1066.82,-156C1066.82,-150 1072.82,-144 1078.82,-144"/>
-<polyline fill="none" stroke="#cce0ff" points="1078.82,-144 1123.18,-144 "/>
-<path fill="none" stroke="#cce0ff" d="M1123.18,-144C1129.18,-144 1135.18,-150 1135.18,-156"/>
-<polyline fill="none" stroke="#cce0ff" points="1135.18,-156 1135.18,-168 "/>
-<path fill="none" stroke="#cce0ff" d="M1135.18,-168C1135.18,-174 1129.18,-180 1123.18,-180"/>
-<text text-anchor="middle" x="1101" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Nearest </text>
-</g>
-<!-- learnerHome&#45;&gt;nearestQueryCopyCopy -->
-<g id="edge48" class="edge"><title>learnerHome&#45;&gt;nearestQueryCopyCopy</title>
-<path fill="none" stroke="#145ecc" stroke-width="3" d="M1146.92,-215.697C1141.53,-209.509 1135.26,-202.319 1129.13,-195.277"/>
-<polygon fill="#145ecc" stroke="#145ecc" points="1134.32,-190.584 1115.91,-180.104 1123.77,-199.781 1134.32,-190.584"/>
-</g>
-<!-- learnerHome&#45;&gt;moveHome -->
-<g id="edge68" class="edge"><title>learnerHome&#45;&gt;moveHome:ne</title>
-<path fill="none" stroke="#145ecc" stroke-width="3" stroke-dasharray="5,2" d="M1185.87,-215.822C1229.71,-182.527 1316.32,-107.633 1290.72,-52.4315"/>
-<polygon fill="#145ecc" stroke="#145ecc" points="1296.31,-48.219 1279,-36 1284.91,-56.3478 1296.31,-48.219"/>
-</g>
-<!-- towardQuery&#45;&gt;_TowardQueryAndAvailableQueryCopy_ -->
-<g id="edge70" class="edge"><title>towardQuery&#45;&gt;_TowardQueryAndAvailableQueryCopy_</title>
-<path fill="none" stroke="#145ecc" stroke-width="3" d="M1173.87,-143.697C1170.64,-138.187 1166.95,-131.883 1163.26,-125.596"/>
-<polygon fill="#145ecc" stroke="#145ecc" points="1169.17,-121.824 1153.02,-108.104 1157.09,-128.9 1169.17,-121.824"/>
-</g>
-<!-- nearestQueryCopyCopy&#45;&gt;_TowardQueryAndAvailableQueryCopy_ -->
-<g id="edge56" class="edge"><title>nearestQueryCopyCopy&#45;&gt;_TowardQueryAndAvailableQueryCopy_</title>
-<path fill="none" stroke="#145ecc" stroke-width="3" d="M1111.38,-143.697C1114.74,-138.102 1118.59,-131.689 1122.42,-125.306"/>
-<polygon fill="#145ecc" stroke="#145ecc" points="1128.45,-128.856 1132.74,-108.104 1116.44,-121.653 1128.45,-128.856"/>
+<!-- _And_NeighborQueryCopyCopy&#45;&gt;moveLearnerCopy -->
+<g id="edge20" class="edge"><title>_And_NeighborQueryCopyCopy&#45;&gt;moveLearnerCopy</title>
+<path fill="none" stroke="#14b1cc" stroke-width="3" d="M189.27,-71.6966C197.214,-64.9152 206.567,-56.9309 215.557,-49.2566"/>
+<polygon fill="#14b1cc" stroke="#14b1cc" points="220.297,-54.4136 230.963,-36.1043 211.207,-43.7657 220.297,-54.4136"/>
 </g>
 <!-- targetLearningResource -->
-<g id="node66" class="node"><title>targetLearningResource</title>
+<g id="node36" class="node"><title>targetLearningResource</title>
 <polygon fill="#ccf0ff" stroke="#ccf0ff" points="692.322,-252 539.678,-252 527.678,-240 527.678,-228 539.678,-216 692.322,-216 704.322,-228 704.322,-240 692.322,-252"/>
 <path fill="#ccf0ff" stroke="#ccf0ff" d="M539.678,-252C533.678,-252 527.678,-246 527.678,-240"/>
 <path fill="#ccf0ff" stroke="#ccf0ff" d="M527.678,-228C527.678,-222 533.678,-216 539.678,-216"/>
@@ -951,15 +613,49 @@
 <path fill="none" stroke="gray" d="M704.322,-240C704.322,-246 698.322,-252 692.322,-252"/>
 <text text-anchor="middle" x="616" y="-228.4" font-family="Helvetica,sans-Serif" font-size="14.00">Target Learning Resource</text>
 </g>
-<!-- behaviorIdenticalSeekingResourceQuery&#45;&gt;targetLearningResource -->
-<g id="edge50" class="edge"><title>behaviorIdenticalSeekingResourceQuery&#45;&gt;targetLearningResource</title>
-<path fill="none" stroke="#14cccc" stroke-width="3" d="M616,-287.697C616,-282.95 616,-277.613 616,-272.206"/>
-<polygon fill="#14cccc" stroke="#14cccc" points="623,-272.104 616,-252.104 609,-272.104 623,-272.104"/>
+<!-- targetLearningResource&#45;&gt;moveLearnerCopyCopy -->
+<g id="edge24" class="edge"><title>targetLearningResource&#45;&gt;moveLearnerCopyCopy:ne</title>
+<path fill="none" stroke="#1496cc" stroke-width="3" stroke-dasharray="5,2" d="M630.713,-215.808C658.344,-181.649 712.952,-104.063 686.793,-52.1813"/>
+<polygon fill="#1496cc" stroke="#1496cc" points="692.437,-48.04 675,-36 681.123,-56.2858 692.437,-48.04"/>
+</g>
+<!-- nearestQueryCopy -->
+<g id="node76" class="node"><title>nearestQueryCopy</title>
+<polygon fill="#ccf0ff" stroke="#ccf0ff" points="555.183,-180 510.817,-180 498.817,-168 498.817,-156 510.817,-144 555.183,-144 567.183,-156 567.183,-168 555.183,-180"/>
+<path fill="#ccf0ff" stroke="#ccf0ff" d="M510.817,-180C504.817,-180 498.817,-174 498.817,-168"/>
+<path fill="#ccf0ff" stroke="#ccf0ff" d="M498.817,-156C498.817,-150 504.817,-144 510.817,-144"/>
+<path fill="#ccf0ff" stroke="#ccf0ff" d="M555.183,-144C561.183,-144 567.183,-150 567.183,-156"/>
+<path fill="#ccf0ff" stroke="#ccf0ff" d="M567.183,-168C567.183,-174 561.183,-180 555.183,-180"/>
+<polyline fill="none" stroke="#ccf0ff" points="555.183,-180 510.817,-180 "/>
+<path fill="none" stroke="#ccf0ff" d="M510.817,-180C504.817,-180 498.817,-174 498.817,-168"/>
+<polyline fill="none" stroke="#ccf0ff" points="498.817,-168 498.817,-156 "/>
+<path fill="none" stroke="#ccf0ff" d="M498.817,-156C498.817,-150 504.817,-144 510.817,-144"/>
+<polyline fill="none" stroke="#ccf0ff" points="510.817,-144 555.183,-144 "/>
+<path fill="none" stroke="#ccf0ff" d="M555.183,-144C561.183,-144 567.183,-150 567.183,-156"/>
+<polyline fill="none" stroke="#ccf0ff" points="567.183,-156 567.183,-168 "/>
+<path fill="none" stroke="#ccf0ff" d="M567.183,-168C567.183,-174 561.183,-180 555.183,-180"/>
+<text text-anchor="middle" x="533" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Nearest </text>
 </g>
 <!-- targetLearningResource&#45;&gt;nearestQueryCopy -->
 <g id="edge104" class="edge"><title>targetLearningResource&#45;&gt;nearestQueryCopy</title>
 <path fill="none" stroke="#1496cc" stroke-width="3" d="M595.483,-215.697C587.442,-208.915 577.975,-200.931 568.876,-193.257"/>
 <polygon fill="#1496cc" stroke="#1496cc" points="573.082,-187.647 553.281,-180.104 564.057,-198.349 573.082,-187.647"/>
+</g>
+<!-- towardQueryCopy -->
+<g id="node91" class="node"><title>towardQueryCopy</title>
+<polygon fill="#ccf0ff" stroke="#ccf0ff" points="634.348,-180 597.652,-180 585.652,-168 585.652,-156 597.652,-144 634.348,-144 646.348,-156 646.348,-168 634.348,-180"/>
+<path fill="#ccf0ff" stroke="#ccf0ff" d="M597.652,-180C591.652,-180 585.652,-174 585.652,-168"/>
+<path fill="#ccf0ff" stroke="#ccf0ff" d="M585.652,-156C585.652,-150 591.652,-144 597.652,-144"/>
+<path fill="#ccf0ff" stroke="#ccf0ff" d="M634.348,-144C640.348,-144 646.348,-150 646.348,-156"/>
+<path fill="#ccf0ff" stroke="#ccf0ff" d="M646.348,-168C646.348,-174 640.348,-180 634.348,-180"/>
+<polyline fill="none" stroke="#ccf0ff" points="634.348,-180 597.652,-180 "/>
+<path fill="none" stroke="#ccf0ff" d="M597.652,-180C591.652,-180 585.652,-174 585.652,-168"/>
+<polyline fill="none" stroke="#ccf0ff" points="585.652,-168 585.652,-156 "/>
+<path fill="none" stroke="#ccf0ff" d="M585.652,-156C585.652,-150 591.652,-144 597.652,-144"/>
+<polyline fill="none" stroke="#ccf0ff" points="597.652,-144 634.348,-144 "/>
+<path fill="none" stroke="#ccf0ff" d="M634.348,-144C640.348,-144 646.348,-150 646.348,-156"/>
+<polyline fill="none" stroke="#ccf0ff" points="646.348,-156 646.348,-168 "/>
+<path fill="none" stroke="#ccf0ff" d="M646.348,-168C646.348,-174 640.348,-180 634.348,-180"/>
+<text text-anchor="middle" x="616" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Toward</text>
 </g>
 <!-- targetLearningResource&#45;&gt;towardQueryCopy -->
 <g id="edge102" class="edge"><title>targetLearningResource&#45;&gt;towardQueryCopy</title>
@@ -971,45 +667,349 @@
 <path fill="none" stroke="#1496cc" stroke-width="3" d="M571.233,-215.876C546.612,-206.458 515.819,-194.679 489.549,-184.631"/>
 <polygon fill="#1496cc" stroke="#1496cc" points="491.7,-177.959 470.519,-177.352 486.698,-191.035 491.7,-177.959"/>
 </g>
-<!-- targetLearningResource&#45;&gt;moveLearnerCopyCopy -->
-<g id="edge74" class="edge"><title>targetLearningResource&#45;&gt;moveLearnerCopyCopy:ne</title>
-<path fill="none" stroke="#1496cc" stroke-width="3" stroke-dasharray="5,2" d="M630.713,-215.808C658.344,-181.649 712.952,-104.063 686.793,-52.1813"/>
-<polygon fill="#1496cc" stroke="#1496cc" points="692.437,-48.04 675,-36 681.123,-56.2858 692.437,-48.04"/>
-</g>
-<!-- neighborQueryCopyCopy&#45;&gt;_And_NeighborQueryCopyCopy -->
-<g id="edge52" class="edge"><title>neighborQueryCopyCopy&#45;&gt;_And_NeighborQueryCopyCopy</title>
-<path fill="none" stroke="#14b1cc" stroke-width="3" d="M169,-143.697C169,-138.95 169,-133.613 169,-128.206"/>
-<polygon fill="#14b1cc" stroke="#14b1cc" points="176,-128.104 169,-108.104 162,-128.104 176,-128.104"/>
-</g>
-<!-- resourceIDIdenticalTargetResourceIDQuery&#45;&gt;_SoughtResourceAndTowardQueryCopy_ -->
-<g id="edge54" class="edge"><title>resourceIDIdenticalTargetResourceIDQuery&#45;&gt;_SoughtResourceAndTowardQueryCopy_</title>
-<path fill="none" stroke="#1496cc" stroke-width="3" d="M467.737,-143.876C486.404,-134.674 509.641,-123.219 529.711,-113.326"/>
-<polygon fill="#1496cc" stroke="#1496cc" points="532.885,-119.565 547.729,-104.444 526.695,-107.008 532.885,-119.565"/>
+<!-- behaviorIdenticalSeekingResourceQuery&#45;&gt;targetLearningResource -->
+<g id="edge72" class="edge"><title>behaviorIdenticalSeekingResourceQuery&#45;&gt;targetLearningResource</title>
+<path fill="none" stroke="#14cccc" stroke-width="3" d="M616,-287.697C616,-282.95 616,-277.613 616,-272.206"/>
+<polygon fill="#14cccc" stroke="#14cccc" points="623,-272.104 616,-252.104 609,-272.104 623,-272.104"/>
 </g>
 <!-- behaviorIdenticalNotInterestedQuery&#45;&gt;randomNeighboringLocation -->
-<g id="edge76" class="edge"><title>behaviorIdenticalNotInterestedQuery&#45;&gt;randomNeighboringLocation</title>
+<g id="edge48" class="edge"><title>behaviorIdenticalNotInterestedQuery&#45;&gt;randomNeighboringLocation</title>
 <path fill="none" stroke="#14cccc" stroke-width="3" d="M514.808,-300.674C458.131,-291.657 324.33,-270.371 224.32,-254.46"/>
 <polygon fill="#14cccc" stroke="#14cccc" points="225.336,-247.534 204.485,-251.304 223.137,-261.36 225.336,-247.534"/>
 </g>
-<!-- learnerCopy&#45;&gt;neighborQueryCopy -->
-<g id="edge82" class="edge"><title>learnerCopy&#45;&gt;neighborQueryCopy</title>
-<path fill="none" stroke="#1444cc" stroke-width="3" d="M1396.85,-215.697C1401.2,-209.848 1406.21,-203.104 1411.16,-196.436"/>
-<polygon fill="#1444cc" stroke="#1444cc" points="1416.99,-200.334 1423.29,-180.104 1405.75,-191.985 1416.99,-200.334"/>
+<!-- learnerHome -->
+<g id="node44" class="node"><title>learnerHome</title>
+<polygon fill="#cce0ff" stroke="#cce0ff" points="1202.62,-252 1121.38,-252 1109.38,-240 1109.38,-228 1121.38,-216 1202.62,-216 1214.62,-228 1214.62,-240 1202.62,-252"/>
+<path fill="#cce0ff" stroke="#cce0ff" d="M1121.38,-252C1115.38,-252 1109.38,-246 1109.38,-240"/>
+<path fill="#cce0ff" stroke="#cce0ff" d="M1109.38,-228C1109.38,-222 1115.38,-216 1121.38,-216"/>
+<path fill="#cce0ff" stroke="#cce0ff" d="M1202.62,-216C1208.62,-216 1214.62,-222 1214.62,-228"/>
+<path fill="#cce0ff" stroke="#cce0ff" d="M1214.62,-240C1214.62,-246 1208.62,-252 1202.62,-252"/>
+<polyline fill="none" stroke="gray" points="1202.62,-252 1121.38,-252 "/>
+<path fill="none" stroke="gray" d="M1121.38,-252C1115.38,-252 1109.38,-246 1109.38,-240"/>
+<polyline fill="none" stroke="gray" points="1109.38,-240 1109.38,-228 "/>
+<path fill="none" stroke="gray" d="M1109.38,-228C1109.38,-222 1115.38,-216 1121.38,-216"/>
+<polyline fill="none" stroke="gray" points="1121.38,-216 1202.62,-216 "/>
+<path fill="none" stroke="gray" d="M1202.62,-216C1208.62,-216 1214.62,-222 1214.62,-228"/>
+<polyline fill="none" stroke="gray" points="1214.62,-228 1214.62,-240 "/>
+<path fill="none" stroke="gray" d="M1214.62,-240C1214.62,-246 1208.62,-252 1202.62,-252"/>
+<text text-anchor="middle" x="1162" y="-228.4" font-family="Helvetica,sans-Serif" font-size="14.00">Learner Home</text>
+</g>
+<!-- learnerHome&#45;&gt;moveHome -->
+<g id="edge32" class="edge"><title>learnerHome&#45;&gt;moveHome:ne</title>
+<path fill="none" stroke="#145ecc" stroke-width="3" stroke-dasharray="5,2" d="M1185.87,-215.822C1229.71,-182.527 1316.32,-107.633 1290.72,-52.4315"/>
+<polygon fill="#145ecc" stroke="#145ecc" points="1296.31,-48.219 1279,-36 1284.91,-56.3478 1296.31,-48.219"/>
+</g>
+<!-- learnerHome&#45;&gt;homeIDIdenticalHomeIDQuery -->
+<g id="edge38" class="edge"><title>learnerHome&#45;&gt;homeIDIdenticalHomeIDQuery</title>
+<path fill="none" stroke="#145ecc" stroke-width="3" d="M1125.06,-215.876C1107.35,-207.668 1085.78,-197.666 1066.18,-188.58"/>
+<polygon fill="#145ecc" stroke="#145ecc" points="1068.91,-182.129 1047.82,-180.068 1063.02,-194.831 1068.91,-182.129"/>
+</g>
+<!-- towardQuery -->
+<g id="node54" class="node"><title>towardQuery</title>
+<polygon fill="#cce0ff" stroke="#cce0ff" points="1116.35,-180 1079.65,-180 1067.65,-168 1067.65,-156 1079.65,-144 1116.35,-144 1128.35,-156 1128.35,-168 1116.35,-180"/>
+<path fill="#cce0ff" stroke="#cce0ff" d="M1079.65,-180C1073.65,-180 1067.65,-174 1067.65,-168"/>
+<path fill="#cce0ff" stroke="#cce0ff" d="M1067.65,-156C1067.65,-150 1073.65,-144 1079.65,-144"/>
+<path fill="#cce0ff" stroke="#cce0ff" d="M1116.35,-144C1122.35,-144 1128.35,-150 1128.35,-156"/>
+<path fill="#cce0ff" stroke="#cce0ff" d="M1128.35,-168C1128.35,-174 1122.35,-180 1116.35,-180"/>
+<polyline fill="none" stroke="#cce0ff" points="1116.35,-180 1079.65,-180 "/>
+<path fill="none" stroke="#cce0ff" d="M1079.65,-180C1073.65,-180 1067.65,-174 1067.65,-168"/>
+<polyline fill="none" stroke="#cce0ff" points="1067.65,-168 1067.65,-156 "/>
+<path fill="none" stroke="#cce0ff" d="M1067.65,-156C1067.65,-150 1073.65,-144 1079.65,-144"/>
+<polyline fill="none" stroke="#cce0ff" points="1079.65,-144 1116.35,-144 "/>
+<path fill="none" stroke="#cce0ff" d="M1116.35,-144C1122.35,-144 1128.35,-150 1128.35,-156"/>
+<polyline fill="none" stroke="#cce0ff" points="1128.35,-156 1128.35,-168 "/>
+<path fill="none" stroke="#cce0ff" d="M1128.35,-168C1128.35,-174 1122.35,-180 1116.35,-180"/>
+<text text-anchor="middle" x="1098" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Toward</text>
+</g>
+<!-- learnerHome&#45;&gt;towardQuery -->
+<g id="edge40" class="edge"><title>learnerHome&#45;&gt;towardQuery</title>
+<path fill="none" stroke="#145ecc" stroke-width="3" d="M1146.18,-215.697C1140.44,-209.424 1133.77,-202.122 1127.25,-194.988"/>
+<polygon fill="#145ecc" stroke="#145ecc" points="1132.3,-190.142 1113.64,-180.104 1121.97,-199.588 1132.3,-190.142"/>
+</g>
+<!-- nearestQueryCopyCopy -->
+<g id="node56" class="node"><title>nearestQueryCopyCopy</title>
+<polygon fill="#cce0ff" stroke="#cce0ff" points="1203.18,-180 1158.82,-180 1146.82,-168 1146.82,-156 1158.82,-144 1203.18,-144 1215.18,-156 1215.18,-168 1203.18,-180"/>
+<path fill="#cce0ff" stroke="#cce0ff" d="M1158.82,-180C1152.82,-180 1146.82,-174 1146.82,-168"/>
+<path fill="#cce0ff" stroke="#cce0ff" d="M1146.82,-156C1146.82,-150 1152.82,-144 1158.82,-144"/>
+<path fill="#cce0ff" stroke="#cce0ff" d="M1203.18,-144C1209.18,-144 1215.18,-150 1215.18,-156"/>
+<path fill="#cce0ff" stroke="#cce0ff" d="M1215.18,-168C1215.18,-174 1209.18,-180 1203.18,-180"/>
+<polyline fill="none" stroke="#cce0ff" points="1203.18,-180 1158.82,-180 "/>
+<path fill="none" stroke="#cce0ff" d="M1158.82,-180C1152.82,-180 1146.82,-174 1146.82,-168"/>
+<polyline fill="none" stroke="#cce0ff" points="1146.82,-168 1146.82,-156 "/>
+<path fill="none" stroke="#cce0ff" d="M1146.82,-156C1146.82,-150 1152.82,-144 1158.82,-144"/>
+<polyline fill="none" stroke="#cce0ff" points="1158.82,-144 1203.18,-144 "/>
+<path fill="none" stroke="#cce0ff" d="M1203.18,-144C1209.18,-144 1215.18,-150 1215.18,-156"/>
+<polyline fill="none" stroke="#cce0ff" points="1215.18,-156 1215.18,-168 "/>
+<path fill="none" stroke="#cce0ff" d="M1215.18,-168C1215.18,-174 1209.18,-180 1203.18,-180"/>
+<text text-anchor="middle" x="1181" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Nearest </text>
+</g>
+<!-- learnerHome&#45;&gt;nearestQueryCopyCopy -->
+<g id="edge42" class="edge"><title>learnerHome&#45;&gt;nearestQueryCopyCopy</title>
+<path fill="none" stroke="#145ecc" stroke-width="3" d="M1166.7,-215.697C1168.03,-210.78 1169.54,-205.231 1171.06,-199.627"/>
+<polygon fill="#145ecc" stroke="#145ecc" points="1177.87,-201.24 1176.36,-180.104 1164.36,-197.572 1177.87,-201.24"/>
+</g>
+<!-- learnerCopy -->
+<g id="node46" class="node"><title>learnerCopy</title>
+<polygon fill="#cce8ff" stroke="#cce8ff" points="1422.12,-252 1345.88,-252 1333.88,-240 1333.88,-228 1345.88,-216 1422.12,-216 1434.12,-228 1434.12,-240 1422.12,-252"/>
+<path fill="#cce8ff" stroke="#cce8ff" d="M1345.88,-252C1339.88,-252 1333.88,-246 1333.88,-240"/>
+<path fill="#cce8ff" stroke="#cce8ff" d="M1333.88,-228C1333.88,-222 1339.88,-216 1345.88,-216"/>
+<path fill="#cce8ff" stroke="#cce8ff" d="M1422.12,-216C1428.12,-216 1434.12,-222 1434.12,-228"/>
+<path fill="#cce8ff" stroke="#cce8ff" d="M1434.12,-240C1434.12,-246 1428.12,-252 1422.12,-252"/>
+<polyline fill="none" stroke="gray" points="1422.12,-252 1345.88,-252 "/>
+<path fill="none" stroke="gray" d="M1345.88,-252C1339.88,-252 1333.88,-246 1333.88,-240"/>
+<polyline fill="none" stroke="gray" points="1333.88,-240 1333.88,-228 "/>
+<path fill="none" stroke="gray" d="M1333.88,-228C1333.88,-222 1339.88,-216 1345.88,-216"/>
+<polyline fill="none" stroke="gray" points="1345.88,-216 1422.12,-216 "/>
+<path fill="none" stroke="gray" d="M1422.12,-216C1428.12,-216 1434.12,-222 1434.12,-228"/>
+<polyline fill="none" stroke="gray" points="1434.12,-228 1434.12,-240 "/>
+<path fill="none" stroke="gray" d="M1434.12,-240C1434.12,-246 1428.12,-252 1422.12,-252"/>
+<text text-anchor="middle" x="1384" y="-228.4" font-family="Helvetica,sans-Serif" font-size="14.00">Learner Copy</text>
+</g>
+<!-- availableQueryCopyCopy -->
+<g id="node48" class="node"><title>availableQueryCopyCopy</title>
+<polygon fill="#cce8ff" stroke="#cce8ff" points="1368.93,-180 1321.07,-180 1309.07,-168 1309.07,-156 1321.07,-144 1368.93,-144 1380.93,-156 1380.93,-168 1368.93,-180"/>
+<path fill="#cce8ff" stroke="#cce8ff" d="M1321.07,-180C1315.07,-180 1309.07,-174 1309.07,-168"/>
+<path fill="#cce8ff" stroke="#cce8ff" d="M1309.07,-156C1309.07,-150 1315.07,-144 1321.07,-144"/>
+<path fill="#cce8ff" stroke="#cce8ff" d="M1368.93,-144C1374.93,-144 1380.93,-150 1380.93,-156"/>
+<path fill="#cce8ff" stroke="#cce8ff" d="M1380.93,-168C1380.93,-174 1374.93,-180 1368.93,-180"/>
+<polyline fill="none" stroke="#cce8ff" points="1368.93,-180 1321.07,-180 "/>
+<path fill="none" stroke="#cce8ff" d="M1321.07,-180C1315.07,-180 1309.07,-174 1309.07,-168"/>
+<polyline fill="none" stroke="#cce8ff" points="1309.07,-168 1309.07,-156 "/>
+<path fill="none" stroke="#cce8ff" d="M1309.07,-156C1309.07,-150 1315.07,-144 1321.07,-144"/>
+<polyline fill="none" stroke="#cce8ff" points="1321.07,-144 1368.93,-144 "/>
+<path fill="none" stroke="#cce8ff" d="M1368.93,-144C1374.93,-144 1380.93,-150 1380.93,-156"/>
+<polyline fill="none" stroke="#cce8ff" points="1380.93,-156 1380.93,-168 "/>
+<path fill="none" stroke="#cce8ff" d="M1380.93,-168C1380.93,-174 1374.93,-180 1368.93,-180"/>
+<text text-anchor="middle" x="1345" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Available</text>
 </g>
 <!-- learnerCopy&#45;&gt;availableQueryCopyCopy -->
-<g id="edge80" class="edge"><title>learnerCopy&#45;&gt;availableQueryCopyCopy</title>
-<path fill="none" stroke="#1444cc" stroke-width="3" d="M1374.36,-215.697C1371.29,-210.187 1367.78,-203.883 1364.27,-197.596"/>
-<polygon fill="#1444cc" stroke="#1444cc" points="1370.38,-194.169 1354.53,-180.104 1358.15,-200.983 1370.38,-194.169"/>
+<g id="edge34" class="edge"><title>learnerCopy&#45;&gt;availableQueryCopyCopy</title>
+<path fill="none" stroke="#147acc" stroke-width="3" d="M1374.36,-215.697C1371.29,-210.187 1367.78,-203.883 1364.27,-197.596"/>
+<polygon fill="#147acc" stroke="#147acc" points="1370.38,-194.169 1354.53,-180.104 1358.15,-200.983 1370.38,-194.169"/>
+</g>
+<!-- neighborQueryCopy -->
+<g id="node50" class="node"><title>neighborQueryCopy</title>
+<polygon fill="#cce8ff" stroke="#cce8ff" points="1460.11,-180 1411.89,-180 1399.89,-168 1399.89,-156 1411.89,-144 1460.11,-144 1472.11,-156 1472.11,-168 1460.11,-180"/>
+<path fill="#cce8ff" stroke="#cce8ff" d="M1411.89,-180C1405.89,-180 1399.89,-174 1399.89,-168"/>
+<path fill="#cce8ff" stroke="#cce8ff" d="M1399.89,-156C1399.89,-150 1405.89,-144 1411.89,-144"/>
+<path fill="#cce8ff" stroke="#cce8ff" d="M1460.11,-144C1466.11,-144 1472.11,-150 1472.11,-156"/>
+<path fill="#cce8ff" stroke="#cce8ff" d="M1472.11,-168C1472.11,-174 1466.11,-180 1460.11,-180"/>
+<polyline fill="none" stroke="#cce8ff" points="1460.11,-180 1411.89,-180 "/>
+<path fill="none" stroke="#cce8ff" d="M1411.89,-180C1405.89,-180 1399.89,-174 1399.89,-168"/>
+<polyline fill="none" stroke="#cce8ff" points="1399.89,-168 1399.89,-156 "/>
+<path fill="none" stroke="#cce8ff" d="M1399.89,-156C1399.89,-150 1405.89,-144 1411.89,-144"/>
+<polyline fill="none" stroke="#cce8ff" points="1411.89,-144 1460.11,-144 "/>
+<path fill="none" stroke="#cce8ff" d="M1460.11,-144C1466.11,-144 1472.11,-150 1472.11,-156"/>
+<polyline fill="none" stroke="#cce8ff" points="1472.11,-156 1472.11,-168 "/>
+<path fill="none" stroke="#cce8ff" d="M1472.11,-168C1472.11,-174 1466.11,-180 1460.11,-180"/>
+<text text-anchor="middle" x="1436" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Neighbor</text>
+</g>
+<!-- learnerCopy&#45;&gt;neighborQueryCopy -->
+<g id="edge36" class="edge"><title>learnerCopy&#45;&gt;neighborQueryCopy</title>
+<path fill="none" stroke="#147acc" stroke-width="3" d="M1396.85,-215.697C1401.2,-209.848 1406.21,-203.104 1411.16,-196.436"/>
+<polygon fill="#147acc" stroke="#147acc" points="1416.99,-200.334 1423.29,-180.104 1405.75,-191.985 1416.99,-200.334"/>
 </g>
 <!-- learnerCopy&#45;&gt;moveLearnerCopyCopyCopy -->
-<g id="edge110" class="edge"><title>learnerCopy&#45;&gt;moveLearnerCopyCopyCopy:ne</title>
-<path fill="none" stroke="#1444cc" stroke-width="3" stroke-dasharray="5,2" d="M1430.11,-215.993C1447.97,-207.484 1467.37,-195.612 1481,-180 1521.04,-134.14 1571.61,-94.3243 1548.37,-52.0291"/>
-<polygon fill="#1444cc" stroke="#1444cc" points="1553.76,-47.5546 1536,-36 1542.68,-56.1093 1553.76,-47.5546"/>
+<g id="edge52" class="edge"><title>learnerCopy&#45;&gt;moveLearnerCopyCopyCopy:ne</title>
+<path fill="none" stroke="#147acc" stroke-width="3" stroke-dasharray="5,2" d="M1430.11,-215.993C1447.97,-207.484 1467.37,-195.612 1481,-180 1521.04,-134.14 1571.61,-94.3243 1548.37,-52.0291"/>
+<polygon fill="#147acc" stroke="#147acc" points="1553.76,-47.5546 1536,-36 1542.68,-56.1093 1553.76,-47.5546"/>
 </g>
-<!-- availableQueryCopy&#45;&gt;_And_NeighborQueryCopyCopy -->
-<g id="edge78" class="edge"><title>availableQueryCopy&#45;&gt;_And_NeighborQueryCopyCopy</title>
-<path fill="none" stroke="#14b1cc" stroke-width="3" d="M100.494,-143.697C109.641,-136.661 120.471,-128.33 130.787,-120.395"/>
-<polygon fill="#14b1cc" stroke="#14b1cc" points="135.18,-125.847 146.764,-108.104 126.644,-114.75 135.18,-125.847"/>
+<!-- _And__Unspecified_QueryCopy -->
+<g id="node60" class="node"><title>_And__Unspecified_QueryCopy</title>
+<polygon fill="#cce8ff" stroke="#cce8ff" points="1451,-108 1421,-108 1409,-96 1409,-84 1421,-72 1451,-72 1463,-84 1463,-96 1451,-108"/>
+<path fill="#cce8ff" stroke="#cce8ff" d="M1421,-108C1415,-108 1409,-102 1409,-96"/>
+<path fill="#cce8ff" stroke="#cce8ff" d="M1409,-84C1409,-78 1415,-72 1421,-72"/>
+<path fill="#cce8ff" stroke="#cce8ff" d="M1451,-72C1457,-72 1463,-78 1463,-84"/>
+<path fill="#cce8ff" stroke="#cce8ff" d="M1463,-96C1463,-102 1457,-108 1451,-108"/>
+<polyline fill="none" stroke="#cce8ff" points="1451,-108 1421,-108 "/>
+<path fill="none" stroke="#cce8ff" d="M1421,-108C1415,-108 1409,-102 1409,-96"/>
+<polyline fill="none" stroke="#cce8ff" points="1409,-96 1409,-84 "/>
+<path fill="none" stroke="#cce8ff" d="M1409,-84C1409,-78 1415,-72 1421,-72"/>
+<polyline fill="none" stroke="#cce8ff" points="1421,-72 1451,-72 "/>
+<path fill="none" stroke="#cce8ff" d="M1451,-72C1457,-72 1463,-78 1463,-84"/>
+<polyline fill="none" stroke="#cce8ff" points="1463,-84 1463,-96 "/>
+<path fill="none" stroke="#cce8ff" d="M1463,-96C1463,-102 1457,-108 1451,-108"/>
+<text text-anchor="middle" x="1436" y="-84.4" font-family="Helvetica,sans-Serif" font-size="14.00">And</text>
+</g>
+<!-- availableQueryCopyCopy&#45;&gt;_And__Unspecified_QueryCopy -->
+<g id="edge46" class="edge"><title>availableQueryCopyCopy&#45;&gt;_And__Unspecified_QueryCopy</title>
+<path fill="none" stroke="#147acc" stroke-width="3" d="M1367.49,-143.697C1376.64,-136.661 1387.47,-128.33 1397.79,-120.395"/>
+<polygon fill="#147acc" stroke="#147acc" points="1402.18,-125.847 1413.76,-108.104 1393.64,-114.75 1402.18,-125.847"/>
+</g>
+<!-- neighborQueryCopy&#45;&gt;_And__Unspecified_QueryCopy -->
+<g id="edge88" class="edge"><title>neighborQueryCopy&#45;&gt;_And__Unspecified_QueryCopy</title>
+<path fill="none" stroke="#147acc" stroke-width="3" d="M1436,-143.697C1436,-138.95 1436,-133.613 1436,-128.206"/>
+<polygon fill="#147acc" stroke="#147acc" points="1443,-128.104 1436,-108.104 1429,-128.104 1443,-128.104"/>
+</g>
+<!-- _TowardQueryAndAvailableQueryCopy_ -->
+<g id="node66" class="node"><title>_TowardQueryAndAvailableQueryCopy_</title>
+<polygon fill="#cce0ff" stroke="#cce0ff" points="1155,-108 1125,-108 1113,-96 1113,-84 1125,-72 1155,-72 1167,-84 1167,-96 1155,-108"/>
+<path fill="#cce0ff" stroke="#cce0ff" d="M1125,-108C1119,-108 1113,-102 1113,-96"/>
+<path fill="#cce0ff" stroke="#cce0ff" d="M1113,-84C1113,-78 1119,-72 1125,-72"/>
+<path fill="#cce0ff" stroke="#cce0ff" d="M1155,-72C1161,-72 1167,-78 1167,-84"/>
+<path fill="#cce0ff" stroke="#cce0ff" d="M1167,-96C1167,-102 1161,-108 1155,-108"/>
+<polyline fill="none" stroke="#cce0ff" points="1155,-108 1125,-108 "/>
+<path fill="none" stroke="#cce0ff" d="M1125,-108C1119,-108 1113,-102 1113,-96"/>
+<polyline fill="none" stroke="#cce0ff" points="1113,-96 1113,-84 "/>
+<path fill="none" stroke="#cce0ff" d="M1113,-84C1113,-78 1119,-72 1125,-72"/>
+<polyline fill="none" stroke="#cce0ff" points="1125,-72 1155,-72 "/>
+<path fill="none" stroke="#cce0ff" d="M1155,-72C1161,-72 1167,-78 1167,-84"/>
+<polyline fill="none" stroke="#cce0ff" points="1167,-84 1167,-96 "/>
+<path fill="none" stroke="#cce0ff" d="M1167,-96C1167,-102 1161,-108 1155,-108"/>
+<text text-anchor="middle" x="1140" y="-84.4" font-family="Helvetica,sans-Serif" font-size="14.00">And</text>
+</g>
+<!-- homeIDIdenticalHomeIDQuery&#45;&gt;_TowardQueryAndAvailableQueryCopy_ -->
+<g id="edge54" class="edge"><title>homeIDIdenticalHomeIDQuery&#45;&gt;_TowardQueryAndAvailableQueryCopy_</title>
+<path fill="none" stroke="#145ecc" stroke-width="3" d="M1042.56,-143.876C1058.33,-135.316 1077.7,-124.805 1095.01,-115.416"/>
+<polygon fill="#145ecc" stroke="#145ecc" points="1098.46,-121.505 1112.7,-105.813 1091.78,-109.199 1098.46,-121.505"/>
+</g>
+<!-- towardQuery&#45;&gt;_TowardQueryAndAvailableQueryCopy_ -->
+<g id="edge66" class="edge"><title>towardQuery&#45;&gt;_TowardQueryAndAvailableQueryCopy_</title>
+<path fill="none" stroke="#145ecc" stroke-width="3" d="M1108.38,-143.697C1111.74,-138.102 1115.59,-131.689 1119.42,-125.306"/>
+<polygon fill="#145ecc" stroke="#145ecc" points="1125.45,-128.856 1129.74,-108.104 1113.44,-121.653 1125.45,-128.856"/>
+</g>
+<!-- nearestQueryCopyCopy&#45;&gt;_TowardQueryAndAvailableQueryCopy_ -->
+<g id="edge60" class="edge"><title>nearestQueryCopyCopy&#45;&gt;_TowardQueryAndAvailableQueryCopy_</title>
+<path fill="none" stroke="#145ecc" stroke-width="3" d="M1170.87,-143.697C1167.64,-138.187 1163.95,-131.883 1160.26,-125.596"/>
+<polygon fill="#145ecc" stroke="#145ecc" points="1166.17,-121.824 1150.02,-108.104 1154.09,-128.9 1166.17,-121.824"/>
+</g>
+<!-- _SoughtResourceAndTowardQueryCopy_ -->
+<g id="node57" class="node"><title>_SoughtResourceAndTowardQueryCopy_</title>
+<polygon fill="#ccf0ff" stroke="#ccf0ff" points="590,-108 560,-108 548,-96 548,-84 560,-72 590,-72 602,-84 602,-96 590,-108"/>
+<path fill="#ccf0ff" stroke="#ccf0ff" d="M560,-108C554,-108 548,-102 548,-96"/>
+<path fill="#ccf0ff" stroke="#ccf0ff" d="M548,-84C548,-78 554,-72 560,-72"/>
+<path fill="#ccf0ff" stroke="#ccf0ff" d="M590,-72C596,-72 602,-78 602,-84"/>
+<path fill="#ccf0ff" stroke="#ccf0ff" d="M602,-96C602,-102 596,-108 590,-108"/>
+<polyline fill="none" stroke="#ccf0ff" points="590,-108 560,-108 "/>
+<path fill="none" stroke="#ccf0ff" d="M560,-108C554,-108 548,-102 548,-96"/>
+<polyline fill="none" stroke="#ccf0ff" points="548,-96 548,-84 "/>
+<path fill="none" stroke="#ccf0ff" d="M548,-84C548,-78 554,-72 560,-72"/>
+<polyline fill="none" stroke="#ccf0ff" points="560,-72 590,-72 "/>
+<path fill="none" stroke="#ccf0ff" d="M590,-72C596,-72 602,-78 602,-84"/>
+<polyline fill="none" stroke="#ccf0ff" points="602,-84 602,-96 "/>
+<path fill="none" stroke="#ccf0ff" d="M602,-96C602,-102 596,-108 590,-108"/>
+<text text-anchor="middle" x="575" y="-84.4" font-family="Helvetica,sans-Serif" font-size="14.00">And</text>
+</g>
+<!-- _SoughtResourceAndTowardQueryCopy_&#45;&gt;moveLearnerCopyCopy -->
+<g id="edge44" class="edge"><title>_SoughtResourceAndTowardQueryCopy_&#45;&gt;moveLearnerCopyCopy</title>
+<path fill="none" stroke="#1496cc" stroke-width="3" d="M595.27,-71.6966C603.214,-64.9152 612.567,-56.9309 621.557,-49.2566"/>
+<polygon fill="#1496cc" stroke="#1496cc" points="626.297,-54.4136 636.963,-36.1043 617.207,-43.7657 626.297,-54.4136"/>
+</g>
+<!-- _And__Unspecified_QueryCopy&#45;&gt;moveLearnerCopyCopyCopy -->
+<g id="edge70" class="edge"><title>_And__Unspecified_QueryCopy&#45;&gt;moveLearnerCopyCopyCopy</title>
+<path fill="none" stroke="#147acc" stroke-width="3" d="M1456.27,-71.6966C1464.21,-64.9152 1473.57,-56.9309 1482.56,-49.2566"/>
+<polygon fill="#147acc" stroke="#147acc" points="1487.3,-54.4136 1497.96,-36.1043 1478.21,-43.7657 1487.3,-54.4136"/>
+</g>
+<!-- _TowardQueryAndAvailableQueryCopy_&#45;&gt;moveHome -->
+<g id="edge64" class="edge"><title>_TowardQueryAndAvailableQueryCopy_&#45;&gt;moveHome</title>
+<path fill="none" stroke="#145ecc" stroke-width="3" d="M1167.15,-73.2906C1181.71,-64.8695 1200.01,-54.2816 1216.58,-44.6972"/>
+<polygon fill="#145ecc" stroke="#145ecc" points="1220.13,-50.7312 1233.94,-34.6569 1213.12,-38.6129 1220.13,-50.7312"/>
+</g>
+<!-- _BehaviorDifferentAtHomeQueryAndNotWandering_&#45;&gt;learnerHome -->
+<g id="edge108" class="edge"><title>_BehaviorDifferentAtHomeQueryAndNotWandering_&#45;&gt;learnerHome</title>
+<path fill="none" stroke="#14cccc" stroke-width="3" d="M908.117,-298.149C920.565,-295.022 935.523,-291.291 949,-288 1009.87,-273.136 1029.6,-269.702 1089.97,-254.496"/>
+<polygon fill="#14cccc" stroke="#14cccc" points="1091.95,-261.215 1109.6,-249.5 1088.49,-247.647 1091.95,-261.215"/>
+</g>
+<!-- returnedHome -->
+<g id="node81" class="node"><title>returnedHome</title>
+<polygon fill="#ccd9ff" stroke="#ccd9ff" points="901.121,-252 810.879,-252 798.879,-240 798.879,-228 810.879,-216 901.121,-216 913.121,-228 913.121,-240 901.121,-252"/>
+<path fill="#ccd9ff" stroke="#ccd9ff" d="M810.879,-252C804.879,-252 798.879,-246 798.879,-240"/>
+<path fill="#ccd9ff" stroke="#ccd9ff" d="M798.879,-228C798.879,-222 804.879,-216 810.879,-216"/>
+<path fill="#ccd9ff" stroke="#ccd9ff" d="M901.121,-216C907.121,-216 913.121,-222 913.121,-228"/>
+<path fill="#ccd9ff" stroke="#ccd9ff" d="M913.121,-240C913.121,-246 907.121,-252 901.121,-252"/>
+<polyline fill="none" stroke="gray" points="901.121,-252 810.879,-252 "/>
+<path fill="none" stroke="gray" d="M810.879,-252C804.879,-252 798.879,-246 798.879,-240"/>
+<polyline fill="none" stroke="gray" points="798.879,-240 798.879,-228 "/>
+<path fill="none" stroke="gray" d="M798.879,-228C798.879,-222 804.879,-216 810.879,-216"/>
+<polyline fill="none" stroke="gray" points="810.879,-216 901.121,-216 "/>
+<path fill="none" stroke="gray" d="M901.121,-216C907.121,-216 913.121,-222 913.121,-228"/>
+<polyline fill="none" stroke="gray" points="913.121,-228 913.121,-240 "/>
+<path fill="none" stroke="gray" d="M913.121,-240C913.121,-246 907.121,-252 901.121,-252"/>
+<text text-anchor="middle" x="856" y="-228.4" font-family="Helvetica,sans-Serif" font-size="14.00">Returned Home</text>
+</g>
+<!-- _BehaviorDifferentAtHomeQueryAndNotWandering_&#45;&gt;returnedHome -->
+<g id="edge106" class="edge"><title>_BehaviorDifferentAtHomeQueryAndNotWandering_&#45;&gt;returnedHome</title>
+<path fill="none" stroke="#14cccc" stroke-width="3" d="M874.82,-287.697C873.004,-282.611 870.946,-276.848 868.874,-271.047"/>
+<polygon fill="#14cccc" stroke="#14cccc" points="875.428,-268.585 862.109,-252.104 862.243,-273.294 875.428,-268.585"/>
+</g>
+<!-- neighborQuery -->
+<g id="node71" class="node"><title>neighborQuery</title>
+<polygon fill="#ccd9ff" stroke="#ccd9ff" points="849.111,-180 800.889,-180 788.889,-168 788.889,-156 800.889,-144 849.111,-144 861.111,-156 861.111,-168 849.111,-180"/>
+<path fill="#ccd9ff" stroke="#ccd9ff" d="M800.889,-180C794.889,-180 788.889,-174 788.889,-168"/>
+<path fill="#ccd9ff" stroke="#ccd9ff" d="M788.889,-156C788.889,-150 794.889,-144 800.889,-144"/>
+<path fill="#ccd9ff" stroke="#ccd9ff" d="M849.111,-144C855.111,-144 861.111,-150 861.111,-156"/>
+<path fill="#ccd9ff" stroke="#ccd9ff" d="M861.111,-168C861.111,-174 855.111,-180 849.111,-180"/>
+<polyline fill="none" stroke="#ccd9ff" points="849.111,-180 800.889,-180 "/>
+<path fill="none" stroke="#ccd9ff" d="M800.889,-180C794.889,-180 788.889,-174 788.889,-168"/>
+<polyline fill="none" stroke="#ccd9ff" points="788.889,-168 788.889,-156 "/>
+<path fill="none" stroke="#ccd9ff" d="M788.889,-156C788.889,-150 794.889,-144 800.889,-144"/>
+<polyline fill="none" stroke="#ccd9ff" points="800.889,-144 849.111,-144 "/>
+<path fill="none" stroke="#ccd9ff" d="M849.111,-144C855.111,-144 861.111,-150 861.111,-156"/>
+<polyline fill="none" stroke="#ccd9ff" points="861.111,-156 861.111,-168 "/>
+<path fill="none" stroke="#ccd9ff" d="M861.111,-168C861.111,-174 855.111,-180 849.111,-180"/>
+<text text-anchor="middle" x="825" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Neighbor</text>
+</g>
+<!-- _HomeIDIdenticalHomeIDQueryCopyAndNeighborQuery_ -->
+<g id="node73" class="node"><title>_HomeIDIdenticalHomeIDQueryCopyAndNeighborQuery_</title>
+<polygon fill="#ccd9ff" stroke="#ccd9ff" points="840,-108 810,-108 798,-96 798,-84 810,-72 840,-72 852,-84 852,-96 840,-108"/>
+<path fill="#ccd9ff" stroke="#ccd9ff" d="M810,-108C804,-108 798,-102 798,-96"/>
+<path fill="#ccd9ff" stroke="#ccd9ff" d="M798,-84C798,-78 804,-72 810,-72"/>
+<path fill="#ccd9ff" stroke="#ccd9ff" d="M840,-72C846,-72 852,-78 852,-84"/>
+<path fill="#ccd9ff" stroke="#ccd9ff" d="M852,-96C852,-102 846,-108 840,-108"/>
+<polyline fill="none" stroke="#ccd9ff" points="840,-108 810,-108 "/>
+<path fill="none" stroke="#ccd9ff" d="M810,-108C804,-108 798,-102 798,-96"/>
+<polyline fill="none" stroke="#ccd9ff" points="798,-96 798,-84 "/>
+<path fill="none" stroke="#ccd9ff" d="M798,-84C798,-78 804,-72 810,-72"/>
+<polyline fill="none" stroke="#ccd9ff" points="810,-72 840,-72 "/>
+<path fill="none" stroke="#ccd9ff" d="M840,-72C846,-72 852,-78 852,-84"/>
+<polyline fill="none" stroke="#ccd9ff" points="852,-84 852,-96 "/>
+<path fill="none" stroke="#ccd9ff" d="M852,-96C852,-102 846,-108 840,-108"/>
+<text text-anchor="middle" x="825" y="-84.4" font-family="Helvetica,sans-Serif" font-size="14.00">And</text>
+</g>
+<!-- neighborQuery&#45;&gt;_HomeIDIdenticalHomeIDQueryCopyAndNeighborQuery_ -->
+<g id="edge62" class="edge"><title>neighborQuery&#45;&gt;_HomeIDIdenticalHomeIDQueryCopyAndNeighborQuery_</title>
+<path fill="none" stroke="#1444cc" stroke-width="3" d="M825,-143.697C825,-138.95 825,-133.613 825,-128.206"/>
+<polygon fill="#1444cc" stroke="#1444cc" points="832,-128.104 825,-108.104 818,-128.104 832,-128.104"/>
+</g>
+<!-- _HomeIDIdenticalHomeIDQueryCopyAndNeighborQuery_&#45;&gt;learnerbehaviorRecord -->
+<g id="edge80" class="edge"><title>_HomeIDIdenticalHomeIDQueryCopyAndNeighborQuery_&#45;&gt;learnerbehaviorRecord:learnerbehavioratHome</title>
+<path fill="none" stroke="#14cccc" stroke-width="3" d="M805.689,-108.237C796.295,-117.794 785.803,-130.465 780,-144 741.959,-232.732 762.118,-263.593 757,-360 756.152,-375.977 749.277,-381.987 757,-396 766.717,-413.631 789.108,-410.295 802.755,-415.296"/>
+<polygon fill="#14cccc" stroke="#14cccc" points="797.024,-419.318 814,-432 808.638,-411.5 797.024,-419.318"/>
+</g>
+<!-- nearestQueryCopy&#45;&gt;_SoughtResourceAndTowardQueryCopy_ -->
+<g id="edge68" class="edge"><title>nearestQueryCopy&#45;&gt;_SoughtResourceAndTowardQueryCopy_</title>
+<path fill="none" stroke="#1496cc" stroke-width="3" d="M543.382,-143.697C546.739,-138.102 550.587,-131.689 554.416,-125.306"/>
+<polygon fill="#1496cc" stroke="#1496cc" points="560.45,-128.856 564.737,-108.104 548.445,-121.653 560.45,-128.856"/>
+</g>
+<!-- returnedHome&#45;&gt;neighborQuery -->
+<g id="edge76" class="edge"><title>returnedHome&#45;&gt;neighborQuery</title>
+<path fill="none" stroke="#1444cc" stroke-width="3" d="M848.337,-215.697C846.01,-210.441 843.362,-204.463 840.707,-198.467"/>
+<polygon fill="#1444cc" stroke="#1444cc" points="847.074,-195.557 832.575,-180.104 834.273,-201.226 847.074,-195.557"/>
+</g>
+<!-- returnedHome&#45;&gt;homeIDIdenticalHomeIDQueryCopy -->
+<g id="edge78" class="edge"><title>returnedHome&#45;&gt;homeIDIdenticalHomeIDQueryCopy</title>
+<path fill="none" stroke="#1444cc" stroke-width="3" d="M871.079,-215.697C876.471,-209.509 882.736,-202.319 888.873,-195.277"/>
+<polygon fill="#1444cc" stroke="#1444cc" points="894.233,-199.781 902.095,-180.104 883.678,-190.584 894.233,-199.781"/>
+</g>
+<!-- homeIDIdenticalHomeIDQueryCopy&#45;&gt;_HomeIDIdenticalHomeIDQueryCopyAndNeighborQuery_ -->
+<g id="edge110" class="edge"><title>homeIDIdenticalHomeIDQueryCopy&#45;&gt;_HomeIDIdenticalHomeIDQueryCopyAndNeighborQuery_</title>
+<path fill="none" stroke="#1444cc" stroke-width="3" d="M894.258,-143.697C885.011,-136.661 874.063,-128.33 863.633,-120.395"/>
+<polygon fill="#1444cc" stroke="#1444cc" points="867.635,-114.644 847.48,-108.104 859.158,-125.786 867.635,-114.644"/>
+</g>
+<!-- _And_BehaviorDifferentAtHomeQueryCopy&#45;&gt;learnerCopy -->
+<g id="edge86" class="edge"><title>_And_BehaviorDifferentAtHomeQueryCopy&#45;&gt;learnerCopy</title>
+<path fill="none" stroke="#14cccc" stroke-width="3" d="M1012.11,-300.244C1073.46,-289.481 1224.53,-262.977 1314.12,-247.26"/>
+<polygon fill="#14cccc" stroke="#14cccc" points="1315.37,-254.147 1333.86,-243.796 1312.95,-240.358 1315.37,-254.147"/>
+</g>
+<!-- towardQueryCopy&#45;&gt;_SoughtResourceAndTowardQueryCopy_ -->
+<g id="edge90" class="edge"><title>towardQueryCopy&#45;&gt;_SoughtResourceAndTowardQueryCopy_</title>
+<path fill="none" stroke="#1496cc" stroke-width="3" d="M605.865,-143.697C602.638,-138.187 598.946,-131.883 595.263,-125.596"/>
+<polygon fill="#1496cc" stroke="#1496cc" points="601.167,-121.824 585.018,-108.104 589.086,-128.9 601.167,-121.824"/>
+</g>
+<!-- resourceIDIdenticalTargetResourceIDQuery&#45;&gt;_SoughtResourceAndTowardQueryCopy_ -->
+<g id="edge98" class="edge"><title>resourceIDIdenticalTargetResourceIDQuery&#45;&gt;_SoughtResourceAndTowardQueryCopy_</title>
+<path fill="none" stroke="#1496cc" stroke-width="3" d="M467.737,-143.876C486.404,-134.674 509.641,-123.219 529.711,-113.326"/>
+<polygon fill="#1496cc" stroke="#1496cc" points="532.885,-119.565 547.729,-104.444 526.695,-107.008 532.885,-119.565"/>
 </g>
 </g>
 </svg>

@@ -1,18 +1,24 @@
-<project default="create_run_jar" name="Create Runnable Jar for Project edu.osu.synergies.ascape with Jar-in-Jar Loader">
-    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
-    <!--ANT 1.7 is required                                        -->
-    <property name="source.jar.dir" value="/Users/milesparker/Documents/amoLicenses4b"/>
-    <property name="tp.jar.dir" value="/Users/milesparker/Documents/amoLicenses4b/TP/plugins"/>
+<project default="create_run_jar" name="Create Runnable Jar for Project ewith Jar-in-Jar Loader">
+    <description>
+        Create Web-Deployable Jar for Applet.
+		To use:
+		1. launch Run As.. Ant Build.
+    	2. Grab the latest Ascape source and build them if neccesary. (Currently https://ascape.svn.sourceforge.net/svnroot/ascape)
+    	3. If you don't have org.apache.commons.lang in eclipse plugins (or somewhere else) put it there.
+		4. Go to the Environment Tab.
+		5. Set property dir.ascape.projects to the location of the Ascape sourcecode.
+		5. Set property eclipse.plugins to the location of the org.apache.commons.lang jar. (Change version number below if neccessary.)
+    </description>
     <target name="create_run_jar">
         <jar destfile="../SpatialResourcesApp.jar">
             <manifest>
                 <attribute name="Main-Class" value="org.ascape.runtime.swing.SwingRunner"/>
                 <attribute name="Class-Path" value="."/>
             </manifest>
-            <fileset dir="${source.jar.dir}/org.ascape.ui.swing/bin"/>
-            <fileset dir="${source.jar.dir}/org.ascape.core/bin"/>
-            <fileset dir="${source.jar.dir}/org.ascape.common.lib"/>
-            <zipfileset dir="${tp.jar.dir}" includes="org.apache.commons.lang_2.4.0.v201005080502.jar"/>
+            <fileset dir="${dir.ascape.projects}/org.ascape.ui.swing/bin"/>
+            <fileset dir="${dir.ascape.projects}/org.ascape.core/bin"/>
+            <fileset dir="${dir.ascape.projects}/org.ascape.common.lib"/>
+            <zipfileset dir="${eclipse.plugins}" includes="org.apache.commons.lang_2.4.0.v201005080502.jar"/>
             <fileset dir="../../../bin"/>
         </jar>
     </target>

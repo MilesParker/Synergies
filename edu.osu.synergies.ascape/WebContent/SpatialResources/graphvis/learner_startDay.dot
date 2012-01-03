@@ -32,12 +32,12 @@ digraph startDay {
 
 	}
 		learnerbehaviorRecord [shape=record,fontname=Helvetica,style=filled,color=none,fillcolor=white,label="{<learnerbehavior> Behavior | {<learnerbehaviornotInterested> Not Interested|<learnerbehaviorseekingResource> Seeking Resource}}"];
-		learnertargetResourceID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Target Resource ID"];
-		resourceInteractionresourceID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Resource ID"];
-		spatialResourcestimeSegment [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label=<<i>Time Segment</i>>];
 		resourceInteractionlearnerID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Learner ID"];
 		learnerlearnerID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Learner ID"];
+		learnertargetResourceID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Target Resource ID"];
 		learnerbehaviorRecord [shape=record,fontname=Helvetica,style=filled,color=none,fillcolor=white,label="{<learnerbehavior> Behavior | {<learnerbehaviornotInterested> Not Interested|<learnerbehaviorseekingResource> Seeking Resource}}"];
+		spatialResourcestimeSegment [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label=<<i>Time Segment</i>>];
+		resourceInteractionresourceID [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Resource ID"];
 		spatialResourcessubsequentEngagementFactor [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label=<<i>Subsequent Engagement Factor </i>>];
 		resourceInteractionstrength [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Strength"];
 
@@ -47,42 +47,42 @@ digraph startDay {
 	//fillcolor="0.0, 0.0, 0.98";
 		startDay [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.75, 0.2, 1.0",label="Start Day",URL="learner_startDay.svg"];
 	startDay ->  timeSegmentIdenticalZeroQuery [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-		resourceIDAddZeroCopy [shape=none,style="rounded,filled",fontname=Helvetica,color="0.824, 0.2, 1.0",label="Add"];
-			resourceIDAddZeroCopy ->  learnertargetResourceID [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		randomUnit [shape=none,style="rounded,filled",fontname=Helvetica,color="0.75, 0.2, 1.0",label="Random Unit"];
+	randomUnit ->  randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		learnerIDIdenticalLearnerIDQueryCopy [shape=none,style="rounded,filled",fontname=Helvetica,color="0.824, 0.2, 1.0",label="Identical?"];
+	learnerIDIdenticalLearnerIDQueryCopy ->  strengthMultiplySubsequentEngagementFactor [color="0.824, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+
+		setTargetResourceIDToZero [shape=none,style="rounded,filled",fontname=Helvetica,color="0.75, 0.2, 1.0",label="Set"];
+	setTargetResourceIDToZero ->  targetResource [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 		targetResource [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.824, 0.2, 1.0",label="Target Resource"];
 	targetResource ->  learnerIDIdenticalLearnerIDQueryCopy [color="0.824, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 		timeSegmentIdenticalZeroQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.75, 0.2, 1.0",label="Identical?"];
 		timeSegmentIdenticalZeroQuery ->  setTargetResourceIDToZero [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 	setTargetResourceIDToZero ->  learnertargetResourceID [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 			timeSegmentIdenticalZeroQuery ->  learnerbehaviorRecord:learnerbehaviornotInterested [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-		learnerIDIdenticalLearnerIDQueryCopy [shape=none,style="rounded,filled",fontname=Helvetica,color="0.824, 0.2, 1.0",label="Identical?"];
-	learnerIDIdenticalLearnerIDQueryCopy ->  strengthMultiplySubsequentEngagementFactor [color="0.824, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 		randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.75, 0.2, 1.0",label="Lesser?"];
 	randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery ->  resourceIDAddZeroCopy [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 			randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery ->  learnerbehaviorRecord:learnerbehaviorseekingResource [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-		randomUnit [shape=none,style="rounded,filled",fontname=Helvetica,color="0.75, 0.2, 1.0",label="Random Unit"];
-	randomUnit ->  randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-
-		setTargetResourceIDToZero [shape=none,style="rounded,filled",fontname=Helvetica,color="0.75, 0.2, 1.0",label="Set"];
-	setTargetResourceIDToZero ->  targetResource [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		resourceIDAddZeroCopy [shape=none,style="rounded,filled",fontname=Helvetica,color="0.824, 0.2, 1.0",label="Add"];
+			resourceIDAddZeroCopy ->  learnertargetResourceID [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 		strengthMultiplySubsequentEngagementFactor [shape=none,style="rounded,filled",fontname=Helvetica,color="0.75, 0.2, 1.0",label="Multiply"];
 	strengthMultiplySubsequentEngagementFactor ->  randomUnit [color="0.75, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 //}
-		resourceInteractionresourceID -> resourceIDAddZeroCopy:nw [style=dotted,arrowhead=dot,color="0.824, 0.9 , 0.8",penwidth=2.0];
-	
-		importxyxresourceIDAddZeroCopyfunctionszero0 [fontname=Helvetica,shape=none,label="0"];
-		importxyxresourceIDAddZeroCopyfunctionszero0 -> resourceIDAddZeroCopy:ne [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+		learnerlearnerID -> learnerIDIdenticalLearnerIDQueryCopy:nw [style=dotted,arrowhead=dot,color="0.75, 0.9 , 0.8",penwidth=2.0];
+		resourceInteractionlearnerID -> learnerIDIdenticalLearnerIDQueryCopy:ne [style=dotted,arrowhead=dot,color="0.824, 0.9 , 0.8",penwidth=2.0];
+
+		importabcsetTargetResourceIDToZerofunctionszero [fontname=Helvetica,shape=none,label="0"];
+		importabcsetTargetResourceIDToZerofunctionszero -> setTargetResourceIDToZero:"ne" [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
 		spatialResourcestimeSegment -> timeSegmentIdenticalZeroQuery:nw [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
 	
 		importxyxtimeSegmentIdenticalZeroQueryfunctionszero0 [fontname=Helvetica,shape=none,label="0"];
 		importxyxtimeSegmentIdenticalZeroQueryfunctionszero0 -> timeSegmentIdenticalZeroQuery:ne [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
-		learnerlearnerID -> learnerIDIdenticalLearnerIDQueryCopy:nw [style=dotted,arrowhead=dot,color="0.75, 0.9 , 0.8",penwidth=2.0];
-		resourceInteractionlearnerID -> learnerIDIdenticalLearnerIDQueryCopy:ne [style=dotted,arrowhead=dot,color="0.824, 0.9 , 0.8",penwidth=2.0];
 		randomUnit -> randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery:nw [style=dotted,arrowhead=dot,color=blue,penwidth=2.0];
 		strengthMultiplySubsequentEngagementFactor -> randomUnitLesserStrengthMultiplySubsequentEngagementFactorQuery:ne [style=dotted,arrowhead=dot,color=blue,penwidth=2.0];
-
-		importabcsetTargetResourceIDToZerofunctionszero [fontname=Helvetica,shape=none,label="0"];
-		importabcsetTargetResourceIDToZerofunctionszero -> setTargetResourceIDToZero:"ne" [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+		resourceInteractionresourceID -> resourceIDAddZeroCopy:nw [style=dotted,arrowhead=dot,color="0.824, 0.9 , 0.8",penwidth=2.0];
+	
+		importxyxresourceIDAddZeroCopyfunctionszero0 [fontname=Helvetica,shape=none,label="0"];
+		importxyxresourceIDAddZeroCopyfunctionszero0 -> resourceIDAddZeroCopy:ne [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
 		resourceInteractionstrength -> strengthMultiplySubsequentEngagementFactor:nw [style=dotted,arrowhead=dot,color="0.824, 0.9 , 0.8",penwidth=2.0];
 		spatialResourcessubsequentEngagementFactor -> strengthMultiplySubsequentEngagementFactor:ne [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
 }

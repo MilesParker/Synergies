@@ -50,19 +50,19 @@
 <text text-anchor="middle" x="110" y="-12.4" font-family="Helvetica,sans-Serif" font-size="14.00">Increment</text>
 </g>
 <!-- socialResourcesnextLearnerID&#45;&gt;incrementNextLearnerID -->
-<g id="edge16" class="edge"><title>socialResourcesnextLearnerID&#45;&gt;incrementNextLearnerID:nw</title>
+<g id="edge18" class="edge"><title>socialResourcesnextLearnerID&#45;&gt;incrementNextLearnerID:nw</title>
 <path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M89.2148,-71.8513C86.0812,-62.7038 83.9595,-51.5517 87.5439,-42.7476"/>
 <ellipse fill="black" stroke="black" cx="89.7957" cy="-39.3378" rx="4.00002" ry="4.00002"/>
 </g>
-<!-- learnerlearnerID -->
-<g id="node6" class="node"><title>learnerlearnerID</title>
-<polygon fill="white" stroke="white" points="389.108,-36 306.892,-36 306.892,-0 389.108,-0 389.108,-36"/>
-<text text-anchor="middle" x="348" y="-12.4" font-family="Helvetica,sans-Serif" font-size="14.00">Learner ID</text>
-</g>
 <!-- learnerlearningInterest -->
-<g id="node7" class="node"><title>learnerlearningInterest</title>
+<g id="node6" class="node"><title>learnerlearningInterest</title>
 <polygon fill="white" stroke="white" points="288.301,-36 167.699,-36 167.699,-0 288.301,-0 288.301,-36"/>
 <text text-anchor="middle" x="228" y="-12.4" font-family="Helvetica,sans-Serif" font-size="14.00">Learning Interest</text>
+</g>
+<!-- learnerlearnerID -->
+<g id="node7" class="node"><title>learnerlearnerID</title>
+<polygon fill="white" stroke="white" points="389.108,-36 306.892,-36 306.892,-0 389.108,-0 389.108,-36"/>
+<text text-anchor="middle" x="348" y="-12.4" font-family="Helvetica,sans-Serif" font-size="14.00">Learner ID</text>
 </g>
 <!-- initializeState -->
 <g id="node8" class="node"><title>initializeState</title>
@@ -128,7 +128,7 @@
 <polygon fill="#14cc14" stroke="#14cc14" points="292.423,-125.278 304.952,-108.19 284.501,-113.735 292.423,-125.278"/>
 </g>
 <!-- initialInterest&#45;&gt;learnerlearningInterest -->
-<g id="edge10" class="edge"><title>initialInterest&#45;&gt;learnerlearningInterest</title>
+<g id="edge12" class="edge"><title>initialInterest&#45;&gt;learnerlearningInterest</title>
 <path fill="none" stroke="#14cc14" stroke-width="3" d="M228,-71.6966C228,-66.9496 228,-61.6132 228,-56.2063"/>
 <polygon fill="#14cc14" stroke="#14cc14" points="235,-56.1043 228,-36.1043 221,-56.1044 235,-56.1043"/>
 </g>
@@ -138,21 +138,21 @@
 <polygon fill="#14cc14" stroke="#14cc14" points="345.4,-57.2175 343.602,-36.1043 331.841,-53.7309 345.4,-57.2175"/>
 </g>
 <!-- setLearnerIDToNextLearnerID&#45;&gt;incrementNextLearnerID -->
-<g id="edge14" class="edge"><title>setLearnerIDToNextLearnerID&#45;&gt;incrementNextLearnerID</title>
+<g id="edge10" class="edge"><title>setLearnerIDToNextLearnerID&#45;&gt;incrementNextLearnerID</title>
 <path fill="none" stroke="#14cc14" stroke-width="3" d="M302.684,-77.9861C297.193,-75.9027 291.439,-73.811 286,-72 235.954,-55.3356 218.147,-53.9791 168.601,-39.1277"/>
 <polygon fill="#14cc14" stroke="#14cc14" points="170.397,-32.356 149.221,-33.129 166.257,-45.73 170.397,-32.356"/>
 </g>
 <!-- incrementNextLearnerID&#45;&gt;socialResourcesnextLearnerID -->
-<g id="edge12" class="edge"><title>incrementNextLearnerID&#45;&gt;socialResourcesnextLearnerID</title>
+<g id="edge14" class="edge"><title>incrementNextLearnerID&#45;&gt;socialResourcesnextLearnerID</title>
 <path fill="none" stroke="#14cc14" stroke-width="3" d="M106.823,-36.1043C105.929,-40.9192 104.92,-46.3523 103.898,-51.8563"/>
 <polygon fill="#14cc14" stroke="#14cc14" points="96.9831,-50.7547 100.213,-71.6966 110.748,-53.311 96.9831,-50.7547"/>
 </g>
 <!-- importabcsetLearnerIDToNextLearnerIDsocialResourcesnextLearnerID -->
-<g id="node19" class="node"><title>importabcsetLearnerIDToNextLearnerIDsocialResourcesnextLearnerID</title>
+<g id="node18" class="node"><title>importabcsetLearnerIDToNextLearnerIDsocialResourcesnextLearnerID</title>
 <text text-anchor="middle" x="355" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Next Learner ID</text>
 </g>
 <!-- importabcsetLearnerIDToNextLearnerIDsocialResourcesnextLearnerID&#45;&gt;setLearnerIDToNextLearnerID -->
-<g id="edge18" class="edge"><title>importabcsetLearnerIDToNextLearnerIDsocialResourcesnextLearnerID&#45;&gt;setLearnerIDToNextLearnerID:ne</title>
+<g id="edge16" class="edge"><title>importabcsetLearnerIDToNextLearnerIDsocialResourcesnextLearnerID&#45;&gt;setLearnerIDToNextLearnerID:ne</title>
 <path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M357.65,-143.875C358.258,-134.645 357.619,-123.365 352.808,-114.503"/>
 <ellipse fill="black" stroke="black" cx="350.378" cy="-111.216" rx="4.00002" ry="4.00002"/>
 </g>

@@ -31,10 +31,10 @@ digraph guidedGrowth {
 		guideOverview [fontname=Helvetica,style=filled,shape=point,fixedsize=true,width=.2,height=.2,fontcolor=white,color="0.240, 0.9 , 0.8",label="",URL="guide__Overview.svg"];
 
 	}
-		guidecontributionTotal [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Contribution Total"];
 		learnerlearningInterest [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Learning Interest"];
-		guideefficacy [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Efficacy"];
+		guidecontributionTotal [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Contribution Total"];
 		socialResourcesguideContributionRate [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label=<<i>Guide Contribution Rate</i>>];
+		guideefficacy [shape=none,fontsize=14,style="filled",fontname=Helvetica,color=none,fillcolor=white,label="Efficacy"];
 
 //subgraph clusterguidedGrowth {
 	//style=filled;
@@ -42,32 +42,32 @@ digraph guidedGrowth {
 	//fillcolor="0.0, 0.0, 0.98";
 		guidedGrowth [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.166, 0.2, 1.0",label="Guided Growth",URL="learner_guidedGrowth.svg"];
 	guidedGrowth ->  guide [color="0.166, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-		guide [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.240, 0.2, 1.0",label="Guide"];
-	guide ->  neighborQuery [color="0.240, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-		performanceAddGuideInfluence [shape=none,style="rounded,filled",fontname=Helvetica,color="0.240, 0.2, 1.0",label="Add"];
-			performanceAddGuideInfluence ->  guidecontributionTotal [color="0.240, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-		potentialInfluenceGreaterZeroQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.166, 0.2, 1.0",label="Greater?"];
-	potentialInfluenceGreaterZeroQuery ->  guideInfluence [color="0.166, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 		newInterestLevel [shape=none,style="rounded,filled",fontname=Helvetica,color="0.166, 0.2, 1.0",label="Add"];
 			newInterestLevel ->  learnerlearningInterest [color="0.166, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 		neighborQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.240, 0.2, 1.0",label="Neighbor"];
 	neighborQuery ->  potentialInfluence [color="0.240, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-		potentialInfluence [shape=none,style="rounded,filled",fontname=Helvetica,color="0.166, 0.2, 1.0",label="Subtract"];
-	potentialInfluence ->  potentialInfluenceGreaterZeroQuery [color="0.166, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		potentialInfluenceGreaterZeroQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.166, 0.2, 1.0",label="Greater?"];
+	potentialInfluenceGreaterZeroQuery ->  guideInfluence [color="0.166, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		performanceAddGuideInfluence [shape=none,style="rounded,filled",fontname=Helvetica,color="0.240, 0.2, 1.0",label="Add"];
+			performanceAddGuideInfluence ->  guidecontributionTotal [color="0.240, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 		guideInfluence [shape=none,style="rounded,filled",fontname=Helvetica,color="0.166, 0.2, 1.0",label="Multiply"];
 	guideInfluence ->  performanceAddGuideInfluence [color="0.166, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 	guideInfluence ->  newInterestLevel [color="0.166, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		potentialInfluence [shape=none,style="rounded,filled",fontname=Helvetica,color="0.166, 0.2, 1.0",label="Subtract"];
+	potentialInfluence ->  potentialInfluenceGreaterZeroQuery [color="0.166, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		guide [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.240, 0.2, 1.0",label="Guide"];
+	guide ->  neighborQuery [color="0.240, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 //}
-		guidecontributionTotal -> performanceAddGuideInfluence:nw [style=dotted,arrowhead=dot,color="0.240, 0.9 , 0.8",penwidth=2.0];
-		guideInfluence -> performanceAddGuideInfluence:ne [style=dotted,arrowhead=dot,color=blue,penwidth=2.0];
+		learnerlearningInterest -> newInterestLevel:nw [style=dotted,arrowhead=dot,color="0.166, 0.9 , 0.8",penwidth=2.0];
+		guideInfluence -> newInterestLevel:ne [style=dotted,arrowhead=dot,color=blue,penwidth=2.0];
 		potentialInfluence -> potentialInfluenceGreaterZeroQuery:nw [style=dotted,arrowhead=dot,color=blue,penwidth=2.0];
 	
 		importxyxpotentialInfluenceGreaterZeroQueryfunctionszero1 [fontname=Helvetica,shape=none,label="0"];
 		importxyxpotentialInfluenceGreaterZeroQueryfunctionszero1 -> potentialInfluenceGreaterZeroQuery:ne [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
-		learnerlearningInterest -> newInterestLevel:nw [style=dotted,arrowhead=dot,color="0.166, 0.9 , 0.8",penwidth=2.0];
-		guideInfluence -> newInterestLevel:ne [style=dotted,arrowhead=dot,color=blue,penwidth=2.0];
-		guideefficacy -> potentialInfluence:nw [style=dotted,arrowhead=dot,color="0.240, 0.9 , 0.8",penwidth=2.0];
-		learnerlearningInterest -> potentialInfluence:ne [style=dotted,arrowhead=dot,color="0.166, 0.9 , 0.8",penwidth=2.0];
+		guidecontributionTotal -> performanceAddGuideInfluence:nw [style=dotted,arrowhead=dot,color="0.240, 0.9 , 0.8",penwidth=2.0];
+		guideInfluence -> performanceAddGuideInfluence:ne [style=dotted,arrowhead=dot,color=blue,penwidth=2.0];
 		socialResourcesguideContributionRate -> guideInfluence:ne [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
 		potentialInfluence -> guideInfluence:nw [style=dotted,arrowhead=dot,color=blue,penwidth=2.0];
+		guideefficacy -> potentialInfluence:nw [style=dotted,arrowhead=dot,color="0.240, 0.9 , 0.8",penwidth=2.0];
+		learnerlearningInterest -> potentialInfluence:ne [style=dotted,arrowhead=dot,color="0.166, 0.9 , 0.8",penwidth=2.0];
 }

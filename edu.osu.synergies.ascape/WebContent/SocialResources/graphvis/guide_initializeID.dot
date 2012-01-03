@@ -30,14 +30,14 @@ digraph initializeID {
 		initializeID [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.25, 0.2, 1.0",label="Initialize ID",URL="guide_initializeID.svg"];
 	initializeID ->  setGuideIDToNextGuideID [color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 	setGuideIDToNextGuideID ->  guideguideID [color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-		incrementGuideID [shape=none,style="rounded,filled",fontname=Helvetica,color="0.25, 0.2, 1.0",label="Increment"];
-			incrementGuideID ->  socialResourcesnextGuideID [color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 
 		setGuideIDToNextGuideID [shape=none,style="rounded,filled",fontname=Helvetica,color="0.25, 0.2, 1.0",label="Set"];
 	setGuideIDToNextGuideID ->  incrementGuideID [color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		incrementGuideID [shape=none,style="rounded,filled",fontname=Helvetica,color="0.25, 0.2, 1.0",label="Increment"];
+			incrementGuideID ->  socialResourcesnextGuideID [color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 //}
-		guideguideID -> incrementGuideID:nw [style=dotted,arrowhead=dot,color="0.25, 0.9 , 0.8",penwidth=2.0];
 
 		importabcsetGuideIDToNextGuideIDsocialResourcesnextGuideID [fontname=Helvetica,shape=none,label="Next Guide ID"];
 		importabcsetGuideIDToNextGuideIDsocialResourcesnextGuideID -> setGuideIDToNextGuideID:"ne" [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+		guideguideID -> incrementGuideID:nw [style=dotted,arrowhead=dot,color="0.25, 0.9 , 0.8",penwidth=2.0];
 }

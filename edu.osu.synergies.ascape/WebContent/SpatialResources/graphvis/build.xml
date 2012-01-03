@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="project" default="export_All">
     <description>
-            Export GraphVis Output
+        Export GraphVis Output.
+		To use:
+		1. launch Run As.. Ant Build.
+		2. Go to the Environment Tab.
+		3. Add an entry for Variable: PATH, Value: "/usr/local/bin" or wherever the dot application is installed.
+		4. Select Run.
     </description>
 
     <target name="export_home_svg" description="description">

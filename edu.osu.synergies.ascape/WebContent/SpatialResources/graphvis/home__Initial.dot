@@ -47,14 +47,14 @@ initializeLocationOverview -> initializeIDOverview [style=invis];
 		initializeID [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.0, 0.2, 1.0",label="Initialize ID",URL="home_initializeID.svg"];
 	initializeID ->  setHomeIDToNextHomeID [color="0.0, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 	setHomeIDToNextHomeID ->  homehomeID [color="0.0, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		incrementNextHomeID [shape=none,style="rounded,filled",fontname=Helvetica,color="0.0, 0.2, 1.0",label="Increment"];
+			incrementNextHomeID ->  spatialResourcesnextHomeID [color="0.0, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 
 		setHomeIDToNextHomeID [shape=none,style="rounded,filled",fontname=Helvetica,color="0.0, 0.2, 1.0",label="Set"];
 	setHomeIDToNextHomeID ->  incrementNextHomeID [color="0.0, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-		incrementNextHomeID [shape=none,style="rounded,filled",fontname=Helvetica,color="0.0, 0.2, 1.0",label="Increment"];
-			incrementNextHomeID ->  spatialResourcesnextHomeID [color="0.0, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 //}
+		spatialResourcesnextHomeID -> incrementNextHomeID:nw [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
 
 		importabcsetHomeIDToNextHomeIDspatialResourcesnextHomeID [fontname=Helvetica,shape=none,label="Next Home ID"];
 		importabcsetHomeIDToNextHomeIDspatialResourcesnextHomeID -> setHomeIDToNextHomeID:"ne" [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
-		spatialResourcesnextHomeID -> incrementNextHomeID:nw [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
 }

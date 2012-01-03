@@ -27,174 +27,174 @@
 <ellipse fill="#cc1414" stroke="#cc1414" cx="129" cy="-162" rx="7.2" ry="7.2"/>
 </a>
 </g>
-<!-- guidecontributionTotal -->
-<g id="node5" class="node"><title>guidecontributionTotal</title>
-<polygon fill="white" stroke="white" points="257.03,-108 132.97,-108 132.97,-72 257.03,-72 257.03,-108"/>
-<text text-anchor="middle" x="195" y="-84.4" font-family="Helvetica,sans-Serif" font-size="14.00">Contribution Total</text>
-</g>
-<!-- contributionTotalDivideLearnerCount -->
-<g id="node13" class="node"><title>contributionTotalDivideLearnerCount</title>
-<polygon fill="#ffcccc" stroke="#ffcccc" points="326.178,-36 295.822,-36 283.822,-24 283.822,-12 295.822,-0 326.178,-0 338.178,-12 338.178,-24 326.178,-36"/>
-<path fill="#ffcccc" stroke="#ffcccc" d="M295.822,-36C289.822,-36 283.822,-30 283.822,-24"/>
-<path fill="#ffcccc" stroke="#ffcccc" d="M283.822,-12C283.822,-6 289.822,-0 295.822,-0"/>
-<path fill="#ffcccc" stroke="#ffcccc" d="M326.178,-0C332.178,-0 338.178,-6 338.178,-12"/>
-<path fill="#ffcccc" stroke="#ffcccc" d="M338.178,-24C338.178,-30 332.178,-36 326.178,-36"/>
-<polyline fill="none" stroke="#ffcccc" points="326.178,-36 295.822,-36 "/>
-<path fill="none" stroke="#ffcccc" d="M295.822,-36C289.822,-36 283.822,-30 283.822,-24"/>
-<polyline fill="none" stroke="#ffcccc" points="283.822,-24 283.822,-12 "/>
-<path fill="none" stroke="#ffcccc" d="M283.822,-12C283.822,-6 289.822,-0 295.822,-0"/>
-<polyline fill="none" stroke="#ffcccc" points="295.822,-0 326.178,-0 "/>
-<path fill="none" stroke="#ffcccc" d="M326.178,-0C332.178,-0 338.178,-6 338.178,-12"/>
-<polyline fill="none" stroke="#ffcccc" points="338.178,-12 338.178,-24 "/>
-<path fill="none" stroke="#ffcccc" d="M338.178,-24C338.178,-30 332.178,-36 326.178,-36"/>
-<text text-anchor="middle" x="311" y="-12.4" font-family="Helvetica,sans-Serif" font-size="14.00">Divide</text>
-</g>
-<!-- guidecontributionTotal&#45;&gt;contributionTotalDivideLearnerCount -->
-<g id="edge12" class="edge"><title>guidecontributionTotal&#45;&gt;contributionTotalDivideLearnerCount:nw</title>
-<path fill="none" stroke="#cc1414" stroke-width="2" stroke-dasharray="1,5" d="M239.093,-71.8635C255.092,-64.25 272.742,-54.1257 287.075,-41.543"/>
-<ellipse fill="#cc1414" stroke="#cc1414" cx="290.079" cy="-38.7327" rx="4.00002" ry="4.00002"/>
-</g>
 <!-- guidelearnerCount -->
-<g id="node6" class="node"><title>guidelearnerCount</title>
-<polygon fill="white" stroke="white" points="466.13,-180 361.87,-180 361.87,-144 466.13,-144 466.13,-180"/>
-<text text-anchor="middle" x="414" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Learner Count</text>
+<g id="node5" class="node"><title>guidelearnerCount</title>
+<polygon fill="white" stroke="white" points="342.13,-180 237.87,-180 237.87,-144 342.13,-144 342.13,-180"/>
+<text text-anchor="middle" x="290" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Learner Count</text>
 </g>
 <!-- learnerCountIdenticalZeroQuery -->
 <g id="node12" class="node"><title>learnerCountIdenticalZeroQuery</title>
-<polygon fill="#ffcccc" stroke="#ffcccc" points="617.448,-108 566.552,-108 554.552,-96 554.552,-84 566.552,-72 617.448,-72 629.448,-84 629.448,-96 617.448,-108"/>
-<path fill="#ffcccc" stroke="#ffcccc" d="M566.552,-108C560.552,-108 554.552,-102 554.552,-96"/>
-<path fill="#ffcccc" stroke="#ffcccc" d="M554.552,-84C554.552,-78 560.552,-72 566.552,-72"/>
-<path fill="#ffcccc" stroke="#ffcccc" d="M617.448,-72C623.448,-72 629.448,-78 629.448,-84"/>
-<path fill="#ffcccc" stroke="#ffcccc" d="M629.448,-96C629.448,-102 623.448,-108 617.448,-108"/>
-<polyline fill="none" stroke="#ffcccc" points="617.448,-108 566.552,-108 "/>
-<path fill="none" stroke="#ffcccc" d="M566.552,-108C560.552,-108 554.552,-102 554.552,-96"/>
-<polyline fill="none" stroke="#ffcccc" points="554.552,-96 554.552,-84 "/>
-<path fill="none" stroke="#ffcccc" d="M554.552,-84C554.552,-78 560.552,-72 566.552,-72"/>
-<polyline fill="none" stroke="#ffcccc" points="566.552,-72 617.448,-72 "/>
-<path fill="none" stroke="#ffcccc" d="M617.448,-72C623.448,-72 629.448,-78 629.448,-84"/>
-<polyline fill="none" stroke="#ffcccc" points="629.448,-84 629.448,-96 "/>
-<path fill="none" stroke="#ffcccc" d="M629.448,-96C629.448,-102 623.448,-108 617.448,-108"/>
-<text text-anchor="middle" x="592" y="-84.4" font-family="Helvetica,sans-Serif" font-size="14.00">Identical?</text>
+<polygon fill="#ffcccc" stroke="#ffcccc" points="333.448,-108 282.552,-108 270.552,-96 270.552,-84 282.552,-72 333.448,-72 345.448,-84 345.448,-96 333.448,-108"/>
+<path fill="#ffcccc" stroke="#ffcccc" d="M282.552,-108C276.552,-108 270.552,-102 270.552,-96"/>
+<path fill="#ffcccc" stroke="#ffcccc" d="M270.552,-84C270.552,-78 276.552,-72 282.552,-72"/>
+<path fill="#ffcccc" stroke="#ffcccc" d="M333.448,-72C339.448,-72 345.448,-78 345.448,-84"/>
+<path fill="#ffcccc" stroke="#ffcccc" d="M345.448,-96C345.448,-102 339.448,-108 333.448,-108"/>
+<polyline fill="none" stroke="#ffcccc" points="333.448,-108 282.552,-108 "/>
+<path fill="none" stroke="#ffcccc" d="M282.552,-108C276.552,-108 270.552,-102 270.552,-96"/>
+<polyline fill="none" stroke="#ffcccc" points="270.552,-96 270.552,-84 "/>
+<path fill="none" stroke="#ffcccc" d="M270.552,-84C270.552,-78 276.552,-72 282.552,-72"/>
+<polyline fill="none" stroke="#ffcccc" points="282.552,-72 333.448,-72 "/>
+<path fill="none" stroke="#ffcccc" d="M333.448,-72C339.448,-72 345.448,-78 345.448,-84"/>
+<polyline fill="none" stroke="#ffcccc" points="345.448,-84 345.448,-96 "/>
+<path fill="none" stroke="#ffcccc" d="M345.448,-96C345.448,-102 339.448,-108 333.448,-108"/>
+<text text-anchor="middle" x="308" y="-84.4" font-family="Helvetica,sans-Serif" font-size="14.00">Identical?</text>
 </g>
 <!-- guidelearnerCount&#45;&gt;learnerCountIdenticalZeroQuery -->
-<g id="edge16" class="edge"><title>guidelearnerCount&#45;&gt;learnerCountIdenticalZeroQuery:nw</title>
-<path fill="none" stroke="#cc1414" stroke-width="2" stroke-dasharray="1,5" d="M466.166,-146.257C502.941,-135.517 548.756,-121.336 566.96,-112.382"/>
-<ellipse fill="#cc1414" stroke="#cc1414" cx="570.604" cy="-110.114" rx="4.00002" ry="4.00002"/>
+<g id="edge14" class="edge"><title>guidelearnerCount&#45;&gt;learnerCountIdenticalZeroQuery:nw</title>
+<path fill="none" stroke="#cc1414" stroke-width="2" stroke-dasharray="1,5" d="M284.389,-143.826C282.323,-134.67 281.35,-123.513 285.367,-114.727"/>
+<ellipse fill="#cc1414" stroke="#cc1414" cx="287.731" cy="-111.294" rx="4.00002" ry="4.00002"/>
+</g>
+<!-- contributionTotalDivideLearnerCount -->
+<g id="node15" class="node"><title>contributionTotalDivideLearnerCount</title>
+<polygon fill="#ffcccc" stroke="#ffcccc" points="555.178,-36 524.822,-36 512.822,-24 512.822,-12 524.822,-0 555.178,-0 567.178,-12 567.178,-24 555.178,-36"/>
+<path fill="#ffcccc" stroke="#ffcccc" d="M524.822,-36C518.822,-36 512.822,-30 512.822,-24"/>
+<path fill="#ffcccc" stroke="#ffcccc" d="M512.822,-12C512.822,-6 518.822,-0 524.822,-0"/>
+<path fill="#ffcccc" stroke="#ffcccc" d="M555.178,-0C561.178,-0 567.178,-6 567.178,-12"/>
+<path fill="#ffcccc" stroke="#ffcccc" d="M567.178,-24C567.178,-30 561.178,-36 555.178,-36"/>
+<polyline fill="none" stroke="#ffcccc" points="555.178,-36 524.822,-36 "/>
+<path fill="none" stroke="#ffcccc" d="M524.822,-36C518.822,-36 512.822,-30 512.822,-24"/>
+<polyline fill="none" stroke="#ffcccc" points="512.822,-24 512.822,-12 "/>
+<path fill="none" stroke="#ffcccc" d="M512.822,-12C512.822,-6 518.822,-0 524.822,-0"/>
+<polyline fill="none" stroke="#ffcccc" points="524.822,-0 555.178,-0 "/>
+<path fill="none" stroke="#ffcccc" d="M555.178,-0C561.178,-0 567.178,-6 567.178,-12"/>
+<polyline fill="none" stroke="#ffcccc" points="567.178,-12 567.178,-24 "/>
+<path fill="none" stroke="#ffcccc" d="M567.178,-24C567.178,-30 561.178,-36 555.178,-36"/>
+<text text-anchor="middle" x="540" y="-12.4" font-family="Helvetica,sans-Serif" font-size="14.00">Divide</text>
 </g>
 <!-- guidelearnerCount&#45;&gt;contributionTotalDivideLearnerCount -->
-<g id="edge14" class="edge"><title>guidelearnerCount&#45;&gt;contributionTotalDivideLearnerCount:ne</title>
-<path fill="none" stroke="#cc1414" stroke-width="2" stroke-dasharray="1,5" d="M405.037,-143.749C391.984,-119.666 365.887,-75.2019 334.851,-42.0509"/>
-<ellipse fill="#cc1414" stroke="#cc1414" cx="331.78" cy="-38.8756" rx="4.00002" ry="4.00002"/>
+<g id="edge20" class="edge"><title>guidelearnerCount&#45;&gt;contributionTotalDivideLearnerCount:ne</title>
+<path fill="none" stroke="#cc1414" stroke-width="2" stroke-dasharray="1,5" d="M342.358,-146.337C345.614,-145.521 348.848,-144.734 352,-144 434.43,-124.795 477.158,-165.784 539,-108 561.009,-87.4349 578.08,-64.0469 563.326,-42.3662"/>
+<ellipse fill="#cc1414" stroke="#cc1414" cx="560.567" cy="-39.0681" rx="4.00002" ry="4.00002"/>
+</g>
+<!-- guidecontributionTotal -->
+<g id="node6" class="node"><title>guidecontributionTotal</title>
+<polygon fill="white" stroke="white" points="530.03,-108 405.97,-108 405.97,-72 530.03,-72 530.03,-108"/>
+<text text-anchor="middle" x="468" y="-84.4" font-family="Helvetica,sans-Serif" font-size="14.00">Contribution Total</text>
+</g>
+<!-- guidecontributionTotal&#45;&gt;contributionTotalDivideLearnerCount -->
+<g id="edge18" class="edge"><title>guidecontributionTotal&#45;&gt;contributionTotalDivideLearnerCount:nw</title>
+<path fill="none" stroke="#cc1414" stroke-width="2" stroke-dasharray="1,5" d="M485.592,-71.8966C494.533,-63.1699 505.709,-52.2107 516.236,-41.7457"/>
+<ellipse fill="#cc1414" stroke="#cc1414" cx="519.167" cy="-38.824" rx="4.00002" ry="4.00002"/>
 </g>
 <!-- socialResourceslearnerCount -->
 <g id="node7" class="node"><title>socialResourceslearnerCount</title>
-<polygon fill="white" stroke="white" points="271,-180 165,-180 165,-144 271,-144 271,-180"/>
-<text text-anchor="start" x="173.5" y="-156.5" font-family="Helvetica,sans-Serif" font-size="14.00">Learner Count</text>
+<polygon fill="white" stroke="white" points="699,-180 593,-180 593,-144 699,-144 699,-180"/>
+<text text-anchor="start" x="601.5" y="-156.5" font-family="Helvetica,sans-Serif" font-size="14.00">Learner Count</text>
 </g>
 <!-- learnerCountGreaterZeroQuery -->
 <g id="node10" class="node"><title>learnerCountGreaterZeroQuery</title>
-<polygon fill="#ffcccc" stroke="#ffcccc" points="334.435,-108 287.565,-108 275.565,-96 275.565,-84 287.565,-72 334.435,-72 346.435,-84 346.435,-96 334.435,-108"/>
-<path fill="#ffcccc" stroke="#ffcccc" d="M287.565,-108C281.565,-108 275.565,-102 275.565,-96"/>
-<path fill="#ffcccc" stroke="#ffcccc" d="M275.565,-84C275.565,-78 281.565,-72 287.565,-72"/>
-<path fill="#ffcccc" stroke="#ffcccc" d="M334.435,-72C340.435,-72 346.435,-78 346.435,-84"/>
-<path fill="#ffcccc" stroke="#ffcccc" d="M346.435,-96C346.435,-102 340.435,-108 334.435,-108"/>
-<polyline fill="none" stroke="#ffcccc" points="334.435,-108 287.565,-108 "/>
-<path fill="none" stroke="#ffcccc" d="M287.565,-108C281.565,-108 275.565,-102 275.565,-96"/>
-<polyline fill="none" stroke="#ffcccc" points="275.565,-96 275.565,-84 "/>
-<path fill="none" stroke="#ffcccc" d="M275.565,-84C275.565,-78 281.565,-72 287.565,-72"/>
-<polyline fill="none" stroke="#ffcccc" points="287.565,-72 334.435,-72 "/>
-<path fill="none" stroke="#ffcccc" d="M334.435,-72C340.435,-72 346.435,-78 346.435,-84"/>
-<polyline fill="none" stroke="#ffcccc" points="346.435,-84 346.435,-96 "/>
-<path fill="none" stroke="#ffcccc" d="M346.435,-96C346.435,-102 340.435,-108 334.435,-108"/>
-<text text-anchor="middle" x="311" y="-84.4" font-family="Helvetica,sans-Serif" font-size="14.00">Greater?</text>
+<polygon fill="#ffcccc" stroke="#ffcccc" points="666.435,-108 619.565,-108 607.565,-96 607.565,-84 619.565,-72 666.435,-72 678.435,-84 678.435,-96 666.435,-108"/>
+<path fill="#ffcccc" stroke="#ffcccc" d="M619.565,-108C613.565,-108 607.565,-102 607.565,-96"/>
+<path fill="#ffcccc" stroke="#ffcccc" d="M607.565,-84C607.565,-78 613.565,-72 619.565,-72"/>
+<path fill="#ffcccc" stroke="#ffcccc" d="M666.435,-72C672.435,-72 678.435,-78 678.435,-84"/>
+<path fill="#ffcccc" stroke="#ffcccc" d="M678.435,-96C678.435,-102 672.435,-108 666.435,-108"/>
+<polyline fill="none" stroke="#ffcccc" points="666.435,-108 619.565,-108 "/>
+<path fill="none" stroke="#ffcccc" d="M619.565,-108C613.565,-108 607.565,-102 607.565,-96"/>
+<polyline fill="none" stroke="#ffcccc" points="607.565,-96 607.565,-84 "/>
+<path fill="none" stroke="#ffcccc" d="M607.565,-84C607.565,-78 613.565,-72 619.565,-72"/>
+<polyline fill="none" stroke="#ffcccc" points="619.565,-72 666.435,-72 "/>
+<path fill="none" stroke="#ffcccc" d="M666.435,-72C672.435,-72 678.435,-78 678.435,-84"/>
+<polyline fill="none" stroke="#ffcccc" points="678.435,-84 678.435,-96 "/>
+<path fill="none" stroke="#ffcccc" d="M678.435,-96C678.435,-102 672.435,-108 666.435,-108"/>
+<text text-anchor="middle" x="643" y="-84.4" font-family="Helvetica,sans-Serif" font-size="14.00">Greater?</text>
 </g>
 <!-- socialResourceslearnerCount&#45;&gt;learnerCountGreaterZeroQuery -->
 <g id="edge22" class="edge"><title>socialResourceslearnerCount&#45;&gt;learnerCountGreaterZeroQuery:nw</title>
-<path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M246.829,-143.944C259.495,-135.773 274.332,-125.258 286.984,-113.733"/>
-<ellipse fill="black" stroke="black" cx="290.104" cy="-110.759" rx="4.00002" ry="4.00002"/>
+<path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M630.572,-143.755C624.031,-134.809 618.415,-123.913 620.876,-114.968"/>
+<ellipse fill="black" stroke="black" cx="622.963" cy="-111.442" rx="4.00002" ry="4.00002"/>
 </g>
 <!-- deriveContributionPerLearner -->
 <g id="node8" class="node"><title>deriveContributionPerLearner</title>
 <a xlink:href="guide_deriveContributionPerLearner.svg" xlink:title="Derive Contribution Per Learner">
-<polygon fill="#ffcccc" stroke="#ffcccc" points="686.242,-180 497.758,-180 485.758,-168 485.758,-156 497.758,-144 686.242,-144 698.242,-156 698.242,-168 686.242,-180"/>
-<path fill="#ffcccc" stroke="#ffcccc" d="M497.758,-180C491.758,-180 485.758,-174 485.758,-168"/>
-<path fill="#ffcccc" stroke="#ffcccc" d="M485.758,-156C485.758,-150 491.758,-144 497.758,-144"/>
-<path fill="#ffcccc" stroke="#ffcccc" d="M686.242,-144C692.242,-144 698.242,-150 698.242,-156"/>
-<path fill="#ffcccc" stroke="#ffcccc" d="M698.242,-168C698.242,-174 692.242,-180 686.242,-180"/>
-<polyline fill="none" stroke="black" points="686.242,-180 497.758,-180 "/>
-<path fill="none" stroke="black" d="M497.758,-180C491.758,-180 485.758,-174 485.758,-168"/>
-<polyline fill="none" stroke="black" points="485.758,-168 485.758,-156 "/>
-<path fill="none" stroke="black" d="M485.758,-156C485.758,-150 491.758,-144 497.758,-144"/>
-<polyline fill="none" stroke="black" points="497.758,-144 686.242,-144 "/>
-<path fill="none" stroke="black" d="M686.242,-144C692.242,-144 698.242,-150 698.242,-156"/>
-<polyline fill="none" stroke="black" points="698.242,-156 698.242,-168 "/>
-<path fill="none" stroke="black" d="M698.242,-168C698.242,-174 692.242,-180 686.242,-180"/>
-<text text-anchor="middle" x="592" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Derive Contribution Per Learner</text>
+<polygon fill="#ffcccc" stroke="#ffcccc" points="562.242,-180 373.758,-180 361.758,-168 361.758,-156 373.758,-144 562.242,-144 574.242,-156 574.242,-168 562.242,-180"/>
+<path fill="#ffcccc" stroke="#ffcccc" d="M373.758,-180C367.758,-180 361.758,-174 361.758,-168"/>
+<path fill="#ffcccc" stroke="#ffcccc" d="M361.758,-156C361.758,-150 367.758,-144 373.758,-144"/>
+<path fill="#ffcccc" stroke="#ffcccc" d="M562.242,-144C568.242,-144 574.242,-150 574.242,-156"/>
+<path fill="#ffcccc" stroke="#ffcccc" d="M574.242,-168C574.242,-174 568.242,-180 562.242,-180"/>
+<polyline fill="none" stroke="black" points="562.242,-180 373.758,-180 "/>
+<path fill="none" stroke="black" d="M373.758,-180C367.758,-180 361.758,-174 361.758,-168"/>
+<polyline fill="none" stroke="black" points="361.758,-168 361.758,-156 "/>
+<path fill="none" stroke="black" d="M361.758,-156C361.758,-150 367.758,-144 373.758,-144"/>
+<polyline fill="none" stroke="black" points="373.758,-144 562.242,-144 "/>
+<path fill="none" stroke="black" d="M562.242,-144C568.242,-144 574.242,-150 574.242,-156"/>
+<polyline fill="none" stroke="black" points="574.242,-156 574.242,-168 "/>
+<path fill="none" stroke="black" d="M574.242,-168C574.242,-174 568.242,-180 562.242,-180"/>
+<text text-anchor="middle" x="468" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">Derive Contribution Per Learner</text>
 </a>
 </g>
 <!-- deriveContributionPerLearner&#45;&gt;learnerCountGreaterZeroQuery -->
 <g id="edge4" class="edge"><title>deriveContributionPerLearner&#45;&gt;learnerCountGreaterZeroQuery</title>
-<path fill="none" stroke="#cc1414" stroke-width="3" d="M523.619,-143.966C475.266,-131.92 411.278,-115.98 366.173,-104.744"/>
-<polygon fill="#cc1414" stroke="#cc1414" points="367.701,-97.911 346.602,-99.8689 364.317,-111.496 367.701,-97.911"/>
+<path fill="none" stroke="#cc1414" stroke-width="3" d="M510.81,-143.876C534.32,-134.472 563.714,-122.714 588.81,-112.676"/>
+<polygon fill="#cc1414" stroke="#cc1414" points="591.438,-119.164 607.407,-105.237 586.238,-106.166 591.438,-119.164"/>
 </g>
 <!-- deriveContributionPerLearner&#45;&gt;learnerCountIdenticalZeroQuery -->
 <g id="edge6" class="edge"><title>deriveContributionPerLearner&#45;&gt;learnerCountIdenticalZeroQuery</title>
-<path fill="none" stroke="#cc1414" stroke-width="3" d="M592,-143.697C592,-138.95 592,-133.613 592,-128.206"/>
-<polygon fill="#cc1414" stroke="#cc1414" points="599,-128.104 592,-108.104 585,-128.104 599,-128.104"/>
+<path fill="none" stroke="#cc1414" stroke-width="3" d="M428.86,-143.876C409.353,-135.342 385.415,-124.869 364.005,-115.502"/>
+<polygon fill="#cc1414" stroke="#cc1414" points="366.763,-109.068 345.635,-107.465 361.152,-121.895 366.763,-109.068"/>
 </g>
 <!-- learnerCountGreaterZeroQuery&#45;&gt;contributionTotalDivideLearnerCount -->
 <g id="edge10" class="edge"><title>learnerCountGreaterZeroQuery&#45;&gt;contributionTotalDivideLearnerCount</title>
-<path fill="none" stroke="#cc1414" stroke-width="3" d="M311,-71.6966C311,-66.9496 311,-61.6132 311,-56.2063"/>
-<polygon fill="#cc1414" stroke="#cc1414" points="318,-56.1043 311,-36.1043 304,-56.1044 318,-56.1043"/>
+<path fill="none" stroke="#cc1414" stroke-width="3" d="M617.803,-71.8761C607.079,-64.588 594.276,-55.8863 582.181,-47.6667"/>
+<polygon fill="#cc1414" stroke="#cc1414" points="585.77,-41.6421 565.293,-36.1898 577.9,-53.2211 585.77,-41.6421"/>
 </g>
 <!-- originalValueZero -->
-<g id="node15" class="node"><title>originalValueZero</title>
-<polygon fill="#ffcccc" stroke="#ffcccc" points="598.179,-36 519.821,-36 507.821,-24 507.821,-12 519.821,-0 598.179,-0 610.179,-12 610.179,-24 598.179,-36"/>
-<path fill="#ffcccc" stroke="#ffcccc" d="M519.821,-36C513.821,-36 507.821,-30 507.821,-24"/>
-<path fill="#ffcccc" stroke="#ffcccc" d="M507.821,-12C507.821,-6 513.821,-0 519.821,-0"/>
-<path fill="#ffcccc" stroke="#ffcccc" d="M598.179,-0C604.179,-0 610.179,-6 610.179,-12"/>
-<path fill="#ffcccc" stroke="#ffcccc" d="M610.179,-24C610.179,-30 604.179,-36 598.179,-36"/>
-<polyline fill="none" stroke="#ffcccc" points="598.179,-36 519.821,-36 "/>
-<path fill="none" stroke="#ffcccc" d="M519.821,-36C513.821,-36 507.821,-30 507.821,-24"/>
-<polyline fill="none" stroke="#ffcccc" points="507.821,-24 507.821,-12 "/>
-<path fill="none" stroke="#ffcccc" d="M507.821,-12C507.821,-6 513.821,-0 519.821,-0"/>
-<polyline fill="none" stroke="#ffcccc" points="519.821,-0 598.179,-0 "/>
-<path fill="none" stroke="#ffcccc" d="M598.179,-0C604.179,-0 610.179,-6 610.179,-12"/>
-<polyline fill="none" stroke="#ffcccc" points="610.179,-12 610.179,-24 "/>
-<path fill="none" stroke="#ffcccc" d="M610.179,-24C610.179,-30 604.179,-36 598.179,-36"/>
-<text text-anchor="middle" x="559" y="-12.4" font-family="Helvetica,sans-Serif" font-size="14.00">Original Value</text>
+<g id="node13" class="node"><title>originalValueZero</title>
+<polygon fill="#ffcccc" stroke="#ffcccc" points="315.179,-36 236.821,-36 224.821,-24 224.821,-12 236.821,-0 315.179,-0 327.179,-12 327.179,-24 315.179,-36"/>
+<path fill="#ffcccc" stroke="#ffcccc" d="M236.821,-36C230.821,-36 224.821,-30 224.821,-24"/>
+<path fill="#ffcccc" stroke="#ffcccc" d="M224.821,-12C224.821,-6 230.821,-0 236.821,-0"/>
+<path fill="#ffcccc" stroke="#ffcccc" d="M315.179,-0C321.179,-0 327.179,-6 327.179,-12"/>
+<path fill="#ffcccc" stroke="#ffcccc" d="M327.179,-24C327.179,-30 321.179,-36 315.179,-36"/>
+<polyline fill="none" stroke="#ffcccc" points="315.179,-36 236.821,-36 "/>
+<path fill="none" stroke="#ffcccc" d="M236.821,-36C230.821,-36 224.821,-30 224.821,-24"/>
+<polyline fill="none" stroke="#ffcccc" points="224.821,-24 224.821,-12 "/>
+<path fill="none" stroke="#ffcccc" d="M224.821,-12C224.821,-6 230.821,-0 236.821,-0"/>
+<polyline fill="none" stroke="#ffcccc" points="236.821,-0 315.179,-0 "/>
+<path fill="none" stroke="#ffcccc" d="M315.179,-0C321.179,-0 327.179,-6 327.179,-12"/>
+<polyline fill="none" stroke="#ffcccc" points="327.179,-12 327.179,-24 "/>
+<path fill="none" stroke="#ffcccc" d="M327.179,-24C327.179,-30 321.179,-36 315.179,-36"/>
+<text text-anchor="middle" x="276" y="-12.4" font-family="Helvetica,sans-Serif" font-size="14.00">Original Value</text>
 </g>
 <!-- learnerCountIdenticalZeroQuery&#45;&gt;originalValueZero -->
 <g id="edge8" class="edge"><title>learnerCountIdenticalZeroQuery&#45;&gt;originalValueZero</title>
-<path fill="none" stroke="#cc1414" stroke-width="3" d="M583.843,-71.6966C581.365,-66.441 578.547,-60.4629 575.72,-54.4666"/>
-<polygon fill="#cc1414" stroke="#cc1414" points="581.924,-51.2099 567.063,-36.1043 569.26,-57.1798 581.924,-51.2099"/>
+<path fill="none" stroke="#cc1414" stroke-width="3" d="M300.09,-71.6966C297.687,-66.441 294.954,-60.4629 292.213,-54.4666"/>
+<polygon fill="#cc1414" stroke="#cc1414" points="298.501,-51.3835 283.819,-36.1043 285.768,-57.2042 298.501,-51.3835"/>
+</g>
+<!-- importxyxoriginalValueZerofunctionszero0 -->
+<g id="node17" class="node"><title>importxyxoriginalValueZerofunctionszero0</title>
+<text text-anchor="middle" x="225" y="-84.4" font-family="Helvetica,sans-Serif" font-size="14.00">0</text>
+</g>
+<!-- importxyxoriginalValueZerofunctionszero0&#45;&gt;originalValueZero -->
+<g id="edge12" class="edge"><title>importxyxoriginalValueZerofunctionszero0&#45;&gt;originalValueZero:nw</title>
+<path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M233.084,-71.8522C237.867,-62.7287 244.555,-51.4623 252.558,-41.9541"/>
+<ellipse fill="black" stroke="black" cx="255.301" cy="-38.9525" rx="4.00002" ry="4.00002"/>
 </g>
 <!-- importxyxlearnerCountIdenticalZeroQueryfunctionszero0 -->
 <g id="node20" class="node"><title>importxyxlearnerCountIdenticalZeroQueryfunctionszero0</title>
-<text text-anchor="middle" x="744" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">0</text>
+<text text-anchor="middle" x="192" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">0</text>
 </g>
 <!-- importxyxlearnerCountIdenticalZeroQueryfunctionszero0&#45;&gt;learnerCountIdenticalZeroQuery -->
-<g id="edge18" class="edge"><title>importxyxlearnerCountIdenticalZeroQueryfunctionszero0&#45;&gt;learnerCountIdenticalZeroQuery:ne</title>
-<path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M716.622,-148.143C713.394,-146.709 710.134,-145.3 707,-144 667.177,-127.489 645.347,-138.874 615.981,-113.569"/>
-<ellipse fill="black" stroke="black" cx="612.927" cy="-110.726" rx="4.00002" ry="4.00002"/>
-</g>
-<!-- importxyxoriginalValueZerofunctionszero0 -->
-<g id="node22" class="node"><title>importxyxoriginalValueZerofunctionszero0</title>
-<text text-anchor="middle" x="509" y="-84.4" font-family="Helvetica,sans-Serif" font-size="14.00">0</text>
-</g>
-<!-- importxyxoriginalValueZerofunctionszero0&#45;&gt;originalValueZero -->
-<g id="edge20" class="edge"><title>importxyxoriginalValueZerofunctionszero0&#45;&gt;originalValueZero:nw</title>
-<path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M516.688,-71.7947C521.23,-62.7383 527.617,-51.5921 535.397,-42.1865"/>
-<ellipse fill="black" stroke="black" cx="538.315" cy="-38.9648" rx="4.00002" ry="4.00002"/>
+<g id="edge16" class="edge"><title>importxyxlearnerCountIdenticalZeroQueryfunctionszero0&#45;&gt;learnerCountIdenticalZeroQuery:ne</title>
+<path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M219.01,-147.929C222.026,-146.564 225.067,-145.228 228,-144 267.79,-127.336 346.658,-138.9 331.187,-114.244"/>
+<ellipse fill="black" stroke="black" cx="328.556" cy="-111.077" rx="4.00002" ry="4.00002"/>
 </g>
 <!-- importxyxlearnerCountGreaterZeroQueryfunctionszero0 -->
 <g id="node25" class="node"><title>importxyxlearnerCountGreaterZeroQueryfunctionszero0</title>
-<text text-anchor="middle" x="316" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">0</text>
+<text text-anchor="middle" x="744" y="-156.4" font-family="Helvetica,sans-Serif" font-size="14.00">0</text>
 </g>
 <!-- importxyxlearnerCountGreaterZeroQueryfunctionszero0&#45;&gt;learnerCountGreaterZeroQuery -->
 <g id="edge24" class="edge"><title>importxyxlearnerCountGreaterZeroQueryfunctionszero0&#45;&gt;learnerCountGreaterZeroQuery:ne</title>
-<path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M327.366,-143.993C332.245,-134.897 336.223,-123.77 333.257,-114.864"/>
-<ellipse fill="black" stroke="black" cx="331.108" cy="-111.399" rx="4.00002" ry="4.00002"/>
+<path fill="none" stroke="black" stroke-width="2" stroke-dasharray="1,5" d="M716.839,-147.61C701.541,-139.274 682.454,-127.505 666.962,-113.633"/>
+<ellipse fill="black" stroke="black" cx="663.908" cy="-110.747" rx="4.00002" ry="4.00002"/>
 </g>
 </g>
 </svg>

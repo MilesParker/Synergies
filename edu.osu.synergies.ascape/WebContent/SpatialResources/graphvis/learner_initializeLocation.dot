@@ -27,11 +27,11 @@ digraph initializeLocation {
 	//fillcolor="0.0, 0.0, 0.98";
 		initializeLocation [shape=box,style="rounded,filled",fontname=Helvetica,color=black,fillcolor="0.25, 0.2, 1.0",label="Initialize Location",URL="learner_initializeLocation.svg"];
 	initializeLocation ->  learner [color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		learner [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.324, 0.2, 1.0",label="Learner"];
+	learner ->  availableQuery [color="0.324, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 		moveLearner [shape=none,style="rounded,filled",fontname=Helvetica,color="0.25, 0.2, 1.0",label="Move"];
 	initializeLocation ->  moveLearner:nw [style=dashed,color="0.25, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 	learner -> moveLearner:ne [style=dashed,color="0.324, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-		learner [shape=none,style="rounded,filled",fontname=Helvetica,color=gray,fillcolor="0.324, 0.2, 1.0",label="Learner"];
-	learner ->  availableQuery [color="0.324, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 		availableQuery [shape=none,style="rounded,filled",fontname=Helvetica,color="0.324, 0.2, 1.0",label="Available"];
 	availableQuery ->  moveLearner [color="0.324, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 //}

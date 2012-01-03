@@ -32,16 +32,16 @@ digraph initializeState {
 	initializeState ->  initialInterest [color="0.333, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 	initializeState ->  setLearnerIDToNextLearnerID [color="0.333, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 	setLearnerIDToNextLearnerID ->  learnerlearnerID [color="0.333, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-		incrementNextLearnerID [shape=none,style="rounded,filled",fontname=Helvetica,color="0.333, 0.2, 1.0",label="Increment"];
-			incrementNextLearnerID ->  socialResourcesnextLearnerID [color="0.333, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
-		initialInterest [shape=none,style="rounded,filled",fontname=Helvetica,color="0.333, 0.2, 1.0",label="Initial Interest"];
-			initialInterest ->  learnerlearningInterest [color="0.333, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 
 		setLearnerIDToNextLearnerID [shape=none,style="rounded,filled",fontname=Helvetica,color="0.333, 0.2, 1.0",label="Set"];
 	setLearnerIDToNextLearnerID ->  incrementNextLearnerID [color="0.333, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		initialInterest [shape=none,style="rounded,filled",fontname=Helvetica,color="0.333, 0.2, 1.0",label="Initial Interest"];
+			initialInterest ->  learnerlearningInterest [color="0.333, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
+		incrementNextLearnerID [shape=none,style="rounded,filled",fontname=Helvetica,color="0.333, 0.2, 1.0",label="Increment"];
+			incrementNextLearnerID ->  socialResourcesnextLearnerID [color="0.333, 0.9 , 0.8",penwidth=3.0,arrowsize=2.0];
 //}
-		socialResourcesnextLearnerID -> incrementNextLearnerID:nw [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
 
 		importabcsetLearnerIDToNextLearnerIDsocialResourcesnextLearnerID [fontname=Helvetica,shape=none,label="Next Learner ID"];
 		importabcsetLearnerIDToNextLearnerIDsocialResourcesnextLearnerID -> setLearnerIDToNextLearnerID:"ne" [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
+		socialResourcesnextLearnerID -> incrementNextLearnerID:nw [style=dotted,arrowhead=dot,color=black,penwidth=2.0];
 }

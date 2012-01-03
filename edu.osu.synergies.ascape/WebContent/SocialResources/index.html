@@ -299,8 +299,7 @@
 					</tr>
 					<tr>
 						<td><i><a href="graphvis/svg/learner_guidedGrowth.svg">Guided Growth</a></i></td>
-						<td>Defines the effect guides might have on a learner's growth in learning interest. Every period, the guide efficacy is compared to the learners interest. If the learner's interest is already at or above the guide's efficacy, then there is no effect. Otherwise, we look at the gap between the guide's efficacy and the learner's interest. The greater the gap, the more potential the guide has to affect learning interest. This value is then factored down by the guide contribution rate.
-</td>
+						<td>Guided Growth Rule. Executed every period.</td>
 					</tr>
 					<tr>
 						<td><i><a href="graphvis/svg/learner_deriveLearnerIndex.svg">Derive Learner Index</a></i></td>
@@ -308,11 +307,11 @@
 					</tr>
 					<tr>
 						<td><i><a href="graphvis/svg/learner_pickGuide.svg">Pick Guide</a></i></td>
-						<td>Defines how learners and guides are connected with one another. In this model, a learner simply picks a random guide from all the guides that are available.</td>
+						<td>Pick Guide Initialization. Executed once at the beginning of each model run.</td>
 					</tr>
 					<tr>
 						<td><i><a href="graphvis/svg/learner_selfDirectedGrowth.svg">Self Directed Growth</a></i></td>
-						<td>Defines the effect learners can have on their own interest in learning. Every period, we take the learner's current learning interest and subtract the Self Contribution Threshold from that. The remaining value reprersents how strongly the learner is currently engaged in learning. We take this number and multiply it by the Self Contribution Rate and increase the learner's interest by that amount.</td>
+						<td>Self Directed Growth Rule. Executed every period.</td>
 					</tr>
 		</table>
 								</div>

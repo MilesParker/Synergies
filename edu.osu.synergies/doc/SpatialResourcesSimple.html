@@ -36,10 +36,10 @@ Model Development: Miles Parker</i></P>
 				<H5>Home Count  (int, default: 150)</H5>
 				<i>The number of homes to create.</i><BR/>
 		
-				<H5>Time Segment  (int, default: )</H5>
+				<H5>Time Segment  (double, default: )</H5>
 				<i>The current time segment in the day. This could represent a slice of time, such as 15 minutes or an hour as defined by Time Segments in Day and is a value between 0 (inclusive) and Time Segments in Day (exclusive).</i><BR/>
 		
-				<H5>Time Segments in Day  (int, default: 96)</H5>
+				<H5>Time Segments in Day  (double, default: 48)</H5>
 				<i>The number of time segments in the day. The default value is 96, representing time slices of 15 minute increments [24 * (60 / 15) = 96].</i><BR/>
 		
 				<H5>Time Segments Wandering  (int, default: 24)</H5>
@@ -62,6 +62,18 @@ Model Development: Miles Parker</i></P>
 		
 				<H5>Lot Count  (int, default: )</H5>
 				<i>The number of lots to create.</i><BR/>
+		
+				<H5>Resource Distribution  (ResourceDistributionEnum, default: Regular)</H5>
+				<i></i><BR/>
+		
+				<H5>RegularYCount  (int, default: 2)</H5>
+				<i>When distributing regularly, the number of rows of resources to create. That is, how many horizontal lines will we ditribute all resources across?</i><BR/>
+		
+				<H5>BiasedRegionX  (double, default: .5)</H5>
+				<i></i><BR/>
+		
+				<H5>BiasedRegionY  (double, default: .5)</H5>
+				<i></i><BR/>
 		
 
 					<h2><ul>Agents</ul></h2>
@@ -149,6 +161,9 @@ Model Development: Miles Parker</i></P>
 		
 				<H5>Resource ID  (int, default: )</H5>
 				<i>A unique identifier for the resource.</i><BR/>
+		
+				<H5>Learner Interactions  (int, default: )</H5>
+				<i></i><BR/>
 		
 
 							<H4>Behaviors</H4>

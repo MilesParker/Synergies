@@ -24,7 +24,7 @@
     </members>
     <members xsi:type="act:ABuildNetwork" label="Build Networks" ID="buildNetworks" sources="//@rootActivity/@members[ID='buildSimpleResources']" selected="//@rootActivity/@members[ID='buildSimpleResources']" pluralLabel="Build Networkss" agents="//@agents[ID='guide'] //@agents[ID='learner']" projection="//@projections[ID='guideRelationships']"/>
   </rootActivity>
-  <implementation package="edu.osu.synergies.simple.model2" className="SocialResources" basePath=""/>
+  <implementation package="edu.osu.synergies.social" className="SocialResources" basePath=""/>
   <agents label="Guide" ID="guide" pluralLabel="Guides">
     <attributes label="Efficacy" ID="efficacy" pluralLabel="Efficacys" description="How effective is this guide at instilling an interest in learning to the learners he or she encounters?" sType="REAL" gatherData="true"/>
     <attributes label="Guide ID" ID="guideID" pluralLabel="Guide IDs" description="A unique identifier for the resource."/>

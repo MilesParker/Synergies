@@ -101,12 +101,12 @@
 			<div id="wrap">
     			<div id="header">
     				<H1>Spatial Resources</H1>
-					<P>Model I of the Synergies project demonstration models. The purpose of this model is to explore the interation effects of learners and learning resources across space.
+					<P><h3>Model I of the Synergies project demonstration models</h3>
+<p>The purpose of this model is to explore the interation effects of learners and learning resources across space.
 The closer you are to a resource, the more likely you are to engage with it. The more you know a resource the more likely you are to engage with it in the future.
-How might these basic assumptions effect the distribution of learning interest across a diverse community?
-
-Synergies Project: John Falk, Lynn Direking, Bill Penuel, Miles Parker
-Model Development: Miles Parker</P>
+How might these basic assumptions effect the distribution of learning interest across a diverse community?</p>
+<i>Synergies Project: John Falk, Lynn Direking, Bill Penuel, Miles Parker
+Model Development: Miles Parker</i></P>
     			</div>
     			<div id="sidebarfake">
     				<H1>   </H1>
@@ -161,12 +161,12 @@ Model Development: Miles Parker</P>
 						<td>150</td></tr>
 					<tr><td colspan="3"><i>The number of homes to create.</i></td></tr></tbody>
 					<tbody ><tr><td>Time Segment</td>
-						<td>Integer</td>
+						<td>Real</td>
 						<td></td></tr>
 					<tr><td colspan="3"><i>The current time segment in the day. This could represent a slice of time, such as 15 minutes or an hour as defined by Time Segments in Day and is a value between 0 (inclusive) and Time Segments in Day (exclusive).</i></td></tr></tbody>
 					<tbody ><tr><td>Time Segments in Day</td>
-						<td>Integer</td>
-						<td>96</td></tr>
+						<td>Real</td>
+						<td>48</td></tr>
 					<tr><td colspan="3"><i>The number of time segments in the day. The default value is 96, representing time slices of 15 minute increments [24 * (60 / 15) = 96].</i></td></tr></tbody>
 					<tbody ><tr><td>Time Segments Wandering</td>
 						<td>Integer</td>
@@ -196,6 +196,22 @@ Model Development: Miles Parker</P>
 						<td>Integer</td>
 						<td></td></tr>
 					<tr><td colspan="3"><i>The number of lots to create.</i></td></tr></tbody>
+					<tbody ><tr><td>Resource Distribution</td>
+						<td>Symbol</td>
+						<td>Regular</td></tr>
+					<tr><td colspan="3"><i></i></td></tr></tbody>
+					<tbody ><tr><td>RegularYCount</td>
+						<td>Integer</td>
+						<td>2</td></tr>
+					<tr><td colspan="3"><i>When distributing regularly, the number of rows of resources to create. That is, how many horizontal lines will we ditribute all resources across?</i></td></tr></tbody>
+					<tbody ><tr><td>BiasedRegionX</td>
+						<td>Real</td>
+						<td>.5</td></tr>
+					<tr><td colspan="3"><i></i></td></tr></tbody>
+					<tbody ><tr><td>BiasedRegionY</td>
+						<td>Real</td>
+						<td>.5</td></tr>
+					<tr><td colspan="3"><i></i></td></tr></tbody>
 		</table>
     					<h3><a name="behaviorlink">Behaviors</a></h3>
 		<table CELLPADDING="10px">
@@ -323,6 +339,10 @@ Model Development: Miles Parker</P>
 						<td>Integer</td>
 						<td></td></tr>
 					<tr><td colspan="3"><i>A unique identifier for the resource.</i></td></tr></tbody>
+					<tbody ><tr><td>Learner Interactions</td>
+						<td>Integer</td>
+						<td></td></tr>
+					<tr><td colspan="3"><i></i></td></tr></tbody>
 		</table>
 									<H3>Behaviors</H3>
 		<table CELLPADDING="10px">
